@@ -1,0 +1,2267 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<!-- start head -->
+
+<head>
+    <!-- start meta tags & title -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <title>HUD Elements | UltraViolet</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end meta tags & title -->
+    <!-- start plugins -->
+    <!-- The main CDN being used -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Vector Map -->
+    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
+    <!-- Scrollbar Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.css">
+    <!-- Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Grid JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- BProgress Loading Indicator -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
+    <!-- Form Enhancement CSS -->
+    <!-- TinyMCE CSS is included in the editor itself -->
+    <!-- Choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- BS5 Lightbox - Image Modal Gallery -->
+    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- end plugins -->
+    <!-- start vite CSS & JS -->
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <style>
+    /* Scrollspy container styling */
+        .scrollspy-example {
+            padding: 1rem 0;
+        }
+
+        /* Make the sticky-sidebar sticky */
+        .sticky-sidebar {
+            position: sticky;
+            top: 20px;
+            align-self: flex-start;
+        }
+
+        /* Style the nav links */
+        #tableOfContents .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.25rem;
+            transition: all 0.2s ease;
+            color: var(--bs-body-color);
+        }
+
+        /* Style the active link */
+        #tableOfContents .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+            font-weight: 600;
+        }
+
+        #tableOfContents .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add some space between sections for better scroll tracking */
+        section {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+    <!-- end vite CSS & JS -->
+</head>
+<style>
+    /* Scrollspy container styling */
+            .scrollspy-example {
+                padding: 1rem 0;
+            }
+    
+            /* Make the sticky-sidebar sticky */
+            .sticky-sidebar {
+                position: sticky;
+                top: 20px;
+                align-self: flex-start;
+            }
+    
+            /* Style the nav links */
+            #tableOfContents .nav-link {
+                padding: 0.5rem 1rem;
+                border-radius: 0.25rem;
+                margin-bottom: 0.25rem;
+                transition: all 0.2s ease;
+                color: var(--bs-body-color);
+            }
+    
+            /* Style the active link */
+            #tableOfContents .nav-link.active {
+                background-color: #0d6efd;
+                color: white;
+                font-weight: 600;
+            }
+    
+            #tableOfContents .nav-link:hover {
+                background-color: rgba(13, 110, 253, 0.1);
+            }
+    
+            /* Add some space between sections for better scroll tracking */
+            section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+</style>
+<!-- Theme Initialization (runs before page render to prevent flash) -->
+<script>
+    (function() {
+                // Check localStorage for theme preference (default: dark)
+                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            })();
+</script>
+</head>
+<!-- end head -->
+
+<body class="space-grotesk-300 vertical-menu " dir="ltr">
+    <!-- Background animation container -->
+    <div id="admin-background">
+    </div>
+    <!-- start page action bar -->
+    <header class="ultraviolet-action-bar ">
+        <nav class="navbar navbar-expand align-items-center gap-4 ">
+            <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
+            </div>
+            <!-- SEARCH BAR -->
+            <div class="search-bar flex-grow-1">
+                <div class="position-relative">
+                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                    <div class="search-popup">
+                        <div class="card rounded-4 overflow-hidden">
+                            <div class="card-header d-lg-none">
+                                <div class="position-relative">
+                                    <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
+                                </div>
+                            </div>
+                            <div class="card-body search-content">
+                                <div class="row g-3">
+                                    <!-- Left Column: Recently Visited -->
+                                    <div class="col-md-6">
+                                        <p class="search-title fw-bold mb-3 text-uppercase text-info">Recently Visited</p>
+                                        <div class="search-list d-flex flex-column gap-2"> <a href="admin-dashboard.html" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-primary">dashboard</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Dashboard</h6>
+                                                <p class="mb-0 small text-muted">Main admin dashboard</p>
+                                            </div>
+                                            <div class="text-muted small">2m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-success">table_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Data Tables</h6>
+                                                <p class="mb-0 small text-muted">Grid components</p>
+                                            </div>
+                                            <div class="text-muted small">15m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-info">bar_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Analytics</h6>
+                                                <p class="mb-0 small text-muted">Charts & statistics</p>
+                                            </div>
+                                            <div class="text-muted small">1h</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-warning">settings</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Settings</h6>
+                                                <p class="mb-0 small text-muted">Configuration</p>
+                                            </div>
+                                            <div class="text-muted small">3h</div>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    <!-- Right Column: Quick Access -->
+                                    <div class="col-md-6 border-start-md">
+                                        <p class="search-title fw-semibold mb-3 text-uppercase text-info">Quick Access</p>
+                                        <div class="row g-2">
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-danger"
+                                                        style="font-size: 2.5rem;">description</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Form Wizard</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-purple"
+                                                        style="font-size: 2.5rem;">calendar_month</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Calendar</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-cyan"
+                                                        style="font-size: 2.5rem;">email</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Email</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-teal"
+                                                        style="font-size: 2.5rem;">group</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Users</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-warning"
+                                                        style="font-size: 2.5rem;">shopping_cart</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Orders</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-success"
+                                                        style="font-size: 2.5rem;">inventory</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Products</h6>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SEARCH BAR -->
+            <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+                <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
+                </li>
+                <!-- Fixed Header Toggle (only visible in horizontal mode) -->
+                <!-- Menu Type Toggle (vert / horiz) -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    </a>
+                </li>
+                <!-- Apps -->
+                <li class="nav-item dropdown"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
+                        <div class="border rounded-4 overflow-hidden p-relative z-5">
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-email.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-envelope-fill icon-xl" style="color: #ea4335;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Email Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-chat.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-dots-fill icon-xl" style="color: #00aff0;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Chat Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Calendar</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Taskboard</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-invoice.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-receipt icon-xl" style="color: #f59e0b;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Invoice</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-maps.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-map-fill icon-xl" style="color: #06b6d4;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Maps</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-editor.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-file-text-fill icon-xl" style="color: #6366f1;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Text Editor</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-ai-agent.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-robot icon-xl" style="color: #ec4899;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">AI Agent</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-micro-blog.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-left-text-fill icon-xl" style="color: #14b8a6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Micro Blog</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0">
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-youtube icon-xl" style="color: #ff0000;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">YouTube</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-facebook icon-xl" style="color: #1877f2;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Facebook</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-instagram icon-xl" style="color: #e4405f;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Instagram</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </li>
+                <!-- Settings Toggle Button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;" id="admin-settings-toggle" title="Settings" data-bs-toggle="tooltip" data-bs-title="Settings"> <i class="material-symbols-rounded">settings</i>
+                    </a>
+                </li>
+                <!-- Notifications -->
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
+                        class="material-symbols-rounded">notifications</i>
+                    <span class="badge-notify">5</span>
+                </a>
+                    <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
+                        <div class="px-2 pb-1 d-flex align-items-center justify-content-between border-bottom">
+                            <h5 class="notiy-title mb-0">Notifications</h5>
+                            <!-- notifications options menu -->
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-xs dropdown-toggle dropdown-no-caret p-relative z-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="material-symbols-rounded">more_vert</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">inventory_2</i>Archive All</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">done_all</i>Mark all as read</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">mic_off</i>Disable Notifications</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">grade</i>What's new ?</a>
+                                    </div>
+                                    <div>
+                                        <hr class="dropdown-divider">
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">leaderboard</i>Reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end options menu -->
+                        </div>
+                        <div class="notify-list" data-simplebar="true">
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">System Update Available</h5>
+                                        <p class="mb-0 notify-desc">Version 2.4.1 is ready to install with new
+                                            features.</p>
+                                        <p class="mb-0 notify-time">2 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-success text-dark">
+                                        <span>AB</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">New User Registration</h5>
+                                        <p class="mb-0 notify-desc">Alex Brown from Canada has joined the platform.</p>
+                                        <p class="mb-0 notify-time">15 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Backup Completed</h5>
+                                        <p class="mb-0 notify-desc">Daily backup has been successfully completed.</p>
+                                        <p class="mb-0 notify-time">1 hour ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Security Alert</h5>
+                                        <p class="mb-0 notify-desc">Unusual login activity detected from new location.
+                                        </p>
+                                        <p class="mb-0 notify-time">3 hours ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Monthly Report Ready</h5>
+                                        <p class="mb-0 notify-desc">Your analytics report for September is now
+                                            available.</p>
+                                        <p class="mb-0 notify-time">Yesterday</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-warning text-white">
+                                        <span>MJ</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Server Maintenance</h5>
+                                        <p class="mb-0 notify-desc">Scheduled maintenance will begin at 2:00 AM EST.
+                                        </p>
+                                        <p class="mb-0 notify-time">2 days ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- User Dropdown -->
+                <li class="nav-item dropdown"> <a href=".html" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                            width="45" height="45" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
+                            <div class="text-center">
+                                <img src="images/assets/profile-image.png"
+                                    class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
+                                <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
+                            </div>
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">person_outline</i>Profile</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">local_bar</i>Setting</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">dashboard</i>Dashboard</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">account_balance</i>Earning</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">cloud_download</i>Downloads</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="login.html"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Admin Settings Menu (slides down from top) -->
+    <div id="admin-settings-menu" class="admin-settings-menu">
+        <div class="admin-settings-panel">
+            <div class="mb-3">
+                <label for="admin-background-select" class="form-label">Background Animation</label>
+                <select class="form-select form-select-sm" id="admin-background-select">
+                    <option value="none">None (Off)</option>
+                    <option value="wave-lines">Wave Lines</option>
+                    <option value="node-lines">Node Lines</option>
+                    <option value="circles">Circles</option>
+                    <option value="space">Starfield</option>
+                    <option value="hud">HUD Lines</option>
+                </select>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
+                <label class="form-check-label" for="admin-rtl-switch">RTL / LTR</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
+                <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
+            </div>
+            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+        </div>
+    </div>
+    <!-- end page action bar -->
+    <!-- HUI VERTICAL MENU -->
+    <aside class="sidebar-wrapper" id="sidebarWrapper" data-simplebar="true">
+        <!-- start sidebar header -->
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">
+                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                </h5>
+            </div>
+            <div class="sidebar-close d-xl-none">
+                <a href="javascript:;" class="sidebar-close-btn" aria-label="Close"> <i class="material-symbols-rounded">close</i>
+                </a>
+            </div>
+        </div>
+        <!-- end sidebar header -->
+        <!-- start sidebar navigation -->
+        <div class="sidebar-nav">
+            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
+                            aria-expanded="" aria-controls="collapse_dashboards"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                            </div>
+                                                    <div class="menu-title">Dashboards</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_dashboards">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Freebie Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Freebie Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Analytics">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Analytics
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
+                            aria-expanded="" aria-controls="collapse_templates"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                            </div>
+                                                    <div class="menu-title">Templates</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_templates">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Calendar">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Calendar
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Taskboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Taskboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
+                            aria-expanded="" aria-controls="collapse_ui_elements"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                            </div>
+                                                    <div class="menu-title">UI Elements</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_ui_elements">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Alerts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Alerts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Buttons">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Buttons
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Grid & Flexbox">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Grid & Flexbox
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
+                            aria-expanded="" aria-controls="collapse_components"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                            </div>
+                                                    <div class="menu-title">Components</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_components">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Toasts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Toasts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Timeline">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Timeline
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Carousel">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Carousel
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Tabs">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Tabs
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Progress">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Progress
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Modals">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Modals
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Popovers & Tooltips">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Popovers & Tooltips
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Source Code">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Source Code
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link active"
+                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="HUD Elements">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    HUD Elements
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
+                            aria-expanded="" aria-controls="collapse_jobs"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                            </div>
+                                                    <div class="menu-title">Jobs</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_jobs">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Job Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Job Dashboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <div class="menu-label">Upgrade</div>
+                    </li>
+                    <li class="admin-nav-item px-0 mt-2">
+                        <a class="admin-nav-link bg-success text-dark"
+                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
+                                                        <div class="parent-icon">
+                                <i class="material-symbols-rounded">shopping_cart</i>
+                            </div>
+                                                    <div class="menu-title">Purchase PRO Version</div>
+                        </a>
+                    </li>
+</ul>
+        </div>
+        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3" />
+        <!-- end sidebar navigation -->
+    </aside>
+    <!-- END HUI VERTICAL MENU -->
+    <!-- start main wrapper -->
+    <main class="ultraviolet-main-wrapper">
+        <div class="ultraviolet-content container-fluid">
+            <!-- start breadcrumb -->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center dashboard-margin position-relative z-100">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb-chevron">
+                        <li class="breadcrumb-item">
+                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#"> <span class="material-symbols-rounded">folder</span>
+                                Components</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="#"> <span class="material-symbols-rounded">dashboard</span>
+                                Hud elements</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="ms-auto">
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="btn btn-cyber btn-sm" data-bs-toggle="modal" data-bs-target="#hudModalDemo"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">launch</i>
+                            Demo Modal</button>
+                        <button type="button" class="btn btn-cyber btn-sm" data-bs-toggle="offcanvas" data-bs-target="#hudOffcanvasDemo"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">menu</i>
+                            Demo Menu</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end breadcrumb -->
+            <!-- start page content -->
+            <div class="row">
+                <div class="col-md-9">
+                    <div data-bs-spy="scroll" data-bs-target="#tableOfContents" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0" style="max-height: calc(100vh - 200px); overflow-y: auto; position: relative;">
+                        <!-- Introduction Section -->
+                        <section id="introduction" class="mb-5">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="mb-3">HUD (Heads-Up Display) Components</h2>
+                                    <p class="lead mb-3">Futuristic interface components with a cyberpunk HUD aesthetic, featuring glowing borders, glassmorphism effects, and animated SVG frames.</p>
+                                    <p class="text-muted mb-0">HUD components are perfect for creating immersive, sci-fi themed dashboards and interfaces. They include modals, offcanvas panels, cards, and buttons with glowing neon effects.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- HUD Modal Section -->
+                        <section id="modal-component" class="mb-5">
+                            <div class="d-flex align-items-center dashboard-margin bg-primary py-2 rounded-2">
+                                <div class="border-start border-3 border-white card-section-divider">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3 class="mb-1 text-white">HUD Modal Component</h3>
+                                    <p class="text-white-50 mb-0">Futuristic modal dialogs with glassmorphism and glowing effects</p>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Live Demo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">Click the buttons to see HUD modals in action:</p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#hudModalDemo"> <i class="material-symbols-rounded me-2">launch</i>Basic Modal</button>
+                                            <button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#hudModalLarge"> <i class="material-symbols-rounded me-2">open_in_full</i>Large Modal</button>
+                                            <button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#hudModalForm"> <i class="material-symbols-rounded me-2">edit_note</i>Form Modal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Basic Modal Structure</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>A basic HUD modal with header and footer:</p> <pre><code class="language-markup">&lt;div class="modal fade modal-hud" id="hudModal" tabindex="-1" 
+     aria-labelledby="hudModalLabel" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog modal-dialog-centered modal-lg"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;div class="hud-header-svg-container" aria-hidden="true"&gt;
+                    &#64;include("components.hud.modal-header-svg")
+                &lt;/div&gt;
+                &lt;h5 class="modal-title orbitron" id="hudModalLabel"&gt;System Alert&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal" 
+                        aria-label="Close"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                &lt;p&gt;Modal content goes here.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;div class="hud-footer-svg-container" aria-hidden="true"&gt;
+                    &#64;include("components.hud.modal-footer-svg")
+                &lt;/div&gt;
+                &lt;button type="button" class="btn btn-cyber" data-bs-dismiss="modal"&gt;
+                    Close
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger --&gt;
+&lt;button class="btn btn-cyber" data-bs-toggle="modal" data-bs-target="#hudModal"&gt;
+    Launch HUD Modal
+&lt;/button&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Usage Guidelines</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ol>
+                                            <li>Add the <code>.modal-hud</code> class to the modal wrapper</li>
+                                            <li>Include SVG header/footer decorations using the provided components</li>
+                                            <li>Use the <code>.orbitron</code> font class for modal titles</li>
+                                            <li>Use <code>.btn-cyber</code> buttons for actions to maintain the HUD aesthetic</li>
+                                        </ol>
+                                        <div class="alert alert-info mt-3 mb-0"> <i class="material-symbols-rounded me-2">lightbulb</i>
+                                            <strong>Tip:</strong> The SVG decorations add animated glowing effects that enhance the futuristic feel.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- HUD Offcanvas Section -->
+                        <section id="offcanvas-component" class="mb-5">
+                            <div class="d-flex align-items-center dashboard-margin bg-success py-2 rounded-2">
+                                <div class="border-start border-3 border-black card-section-divider">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3 class="mb-1 text-black">HUD Offcanvas Component</h3>
+                                    <p class="text-dark mb-0">Slide-in panels with HUD styling for navigation and menus</p>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Live Demo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">Click to open a HUD offcanvas panel:</p>
+                                        <button class="btn btn-cyber" data-bs-toggle="offcanvas" data-bs-target="#hudOffcanvasDemo"> <i class="material-symbols-rounded me-2">menu</i>Open HUD Menu</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Offcanvas Structure</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Basic HUD offcanvas with menu items:</p> <pre><code class="language-markup">&lt;div class="offcanvas offcanvas-start offcanvas-hud" tabindex="-1" 
+     id="hudOffcanvas" aria-labelledby="hudOffcanvasLabel"&gt;
+    &lt;div class="offcanvas-header"&gt;
+        &lt;h5 class="offcanvas-title orbitron" id="hudOffcanvasLabel"&gt;
+            System Interface
+        &lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="offcanvas" 
+                aria-label="Close"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="hud-divider-top" aria-hidden="true"&gt;
+        &#64;include("components.hud.offcanvas-divider-top")
+    &lt;/div&gt;
+
+    &lt;div class="offcanvas-body"&gt;
+        &lt;div class="menu-header orbitron"&gt;Navigation&lt;/div&gt;
+        &lt;div class="list-group list-group-flush"&gt;
+            &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+                &lt;span class="material-symbols-rounded"&gt;dashboard&lt;/span&gt;
+                Dashboard
+            &lt;/a&gt;
+            &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+                &lt;span class="material-symbols-rounded"&gt;settings&lt;/span&gt;
+                Settings
+            &lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;div class="hud-divider-bottom" aria-hidden="true"&gt;
+            &#64;include("components.hud.offcanvas-divider-bottom")
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Trigger --&gt;
+&lt;button class="btn btn-cyber" data-bs-toggle="offcanvas" data-bs-target="#hudOffcanvas"&gt;
+    Open HUD Menu
+&lt;/button&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Usage Guidelines</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ol>
+                                            <li>Add the <code>.offcanvas-hud</code> class to the offcanvas element</li>
+                                            <li>Include top and bottom SVG dividers for visual separation</li>
+                                            <li>Use <code>.menu-header.orbitron</code> for section headers</li>
+                                            <li>Standard Bootstrap list-group items work seamlessly</li>
+                                        </ol>
+                                        <div class="alert alert-info mt-3 mb-0"> <i class="material-symbols-rounded me-2">lightbulb</i>
+                                            <strong>Tip:</strong> The HUD offcanvas works great for quick action menus or navigation panels.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- HUD Card Section -->
+                        <section id="card-component" class="mb-5">
+                            <div class="d-flex align-items-center dashboard-margin bg-info py-2 rounded-2">
+                                <div class="border-start border-3 border-black card-section-divider">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3 class="mb-1 text-dark">HUD Card Component</h3>
+                                    <p class="text-dark mb-0">Glassmorphism cards with glowing borders and neon effects</p>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Live Demo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">Interactive HUD cards with hover effects:</p>
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <div class="hud-card">
+                                                    <h6 class="orbitron">Active Users</h6>
+                                                    <h2 class="text-primary mb-2">1,247</h2>
+                                                    <p class="text-muted small mb-0">Currently online</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="hud-card">
+                                                    <h6 class="orbitron">Server Load</h6>
+                                                    <h2 class="text-success mb-2">42%</h2>
+                                                    <p class="text-muted small mb-0">Optimal performance</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="hud-card">
+                                                    <h6 class="orbitron">Response Time</h6>
+                                                    <h2 class="text-info mb-2">28ms</h2>
+                                                    <p class="text-muted small mb-0">Average latency</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Basic HUD Card</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Simple HUD card for displaying metrics:</p> <pre><code class="language-html">&lt;div class="hud-card"&gt;
+    &lt;h6 class="orbitron"&gt;Card Title&lt;/h6&gt;
+    &lt;h2 class="text-primary mb-2"&gt;1,247&lt;/h2&gt;
+    &lt;p class="text-muted small mb-0"&gt;Subtitle or description&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Grid Layout with HUD Cards</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Multiple HUD cards in a responsive grid:</p> <pre><code class="language-html">&lt;div class="row g-3"&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="hud-card"&gt;
+            &lt;h6 class="orbitron"&gt;Metric 1&lt;/h6&gt;
+            &lt;h2 class="text-success"&gt;98%&lt;/h2&gt;
+            &lt;p class="text-muted small mb-0"&gt;Status message&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="hud-card"&gt;
+            &lt;h6 class="orbitron"&gt;Metric 2&lt;/h6&gt;
+            &lt;h2 class="text-warning"&gt;76%&lt;/h2&gt;
+            &lt;p class="text-muted small mb-0"&gt;Status message&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+        &lt;div class="hud-card"&gt;
+            &lt;h6 class="orbitron"&gt;Metric 3&lt;/h6&gt;
+            &lt;h2 class="text-info"&gt;125&lt;/h2&gt;
+            &lt;p class="text-muted small mb-0"&gt;Status message&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Usage Guidelines</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ol>
+                                            <li>Add the <code>.hud-card</code> class to any container element</li>
+                                            <li>Use <code>.orbitron</code> font for headings to enhance the futuristic look</li>
+                                            <li>Cards automatically include hover effects with enhanced glow</li>
+                                            <li>Ideal for metrics, stats, and data visualization panels</li>
+                                        </ol>
+                                        <div class="alert alert-info mt-3 mb-0"> <i class="material-symbols-rounded me-2">lightbulb</i>
+                                            <strong>Tip:</strong> HUD cards work great on darker backgrounds for maximum visual impact.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- HUD Button Section -->
+                        <section id="button-components" class="mb-5">
+                            <div class="d-flex align-items-center dashboard-margin bg-secondary py-2 rounded-2">
+                                <div class="border-start border-3 border-black card-section-divider">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3 class="mb-1 text-black">HUD Buttons</h3>
+                                    <p class="text-dark mb-0">Futuristic buttons with glowing borders and cyberpunk aesthetics</p>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Cyber Button - Live Demo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">Cyber buttons with glowing cyan borders in various sizes:</p>
+                                        <div class="d-flex flex-wrap gap-2 align-items-center mb-4">
+                                            <button class="btn btn-cyber btn-lg"> <i class="material-symbols-rounded me-2">bolt</i>Large Button</button>
+                                            <button class="btn btn-cyber"> <i class="material-symbols-rounded me-2">settings</i>Standard Button</button>
+                                            <button class="btn btn-cyber btn-sm"> <i class="material-symbols-rounded me-2">download</i>Small Button</button>
+                                        </div>
+                                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                                            <button class="btn btn-cyber">No Icon Button</button>
+                                            <button class="btn btn-cyber" disabled> <i class="material-symbols-rounded me-2">block</i>Disabled</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">CPU Button - Live Demo</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="mb-3">CPU buttons with contextual color variants:</p>
+                                        <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+                                            <button class="cpubtn"> <i class="material-symbols-rounded me-2">info</i>Default</button>
+                                            <button class="cpubtn cpubtn-primary"> <i class="material-symbols-rounded me-2">check_circle</i>Primary</button>
+                                            <button class="cpubtn cpubtn-success"> <i class="material-symbols-rounded me-2">check</i>Success</button>
+                                            <button class="cpubtn cpubtn-warning"> <i class="material-symbols-rounded me-2">warning</i>Warning</button>
+                                            <button class="cpubtn cpubtn-danger"> <i class="material-symbols-rounded me-2">error</i>Danger</button>
+                                            <button class="cpubtn cpubtn-info"> <i class="material-symbols-rounded me-2">info</i>Info</button>
+                                        </div>
+                                        <p class="mb-3">CPU buttons in different sizes:</p>
+                                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                                            <button class="cpubtn cpubtn-primary btn-lg"> <i class="material-symbols-rounded me-2">rocket_launch</i>Large</button>
+                                            <button class="cpubtn cpubtn-success"> <i class="material-symbols-rounded me-2">check</i>Standard</button>
+                                            <button class="cpubtn cpubtn-danger btn-sm"> <i class="material-symbols-rounded me-2">close</i>Small</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Cyber Button Examples</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Simple cyber button with glowing cyan effect:</p> <pre><code class="language-html">&lt;!-- Basic cyber button --&gt;
+&lt;button class="btn btn-cyber"&gt;
+    Launch System
+&lt;/button&gt;
+
+&lt;!-- With icon --&gt;
+&lt;button class="btn btn-cyber"&gt;
+    &lt;i class="material-symbols-rounded me-2"&gt;bolt&lt;/i&gt;Quick Actions
+&lt;/button&gt;
+
+&lt;!-- Size variants --&gt;
+&lt;button class="btn btn-cyber btn-lg"&gt;Large Button&lt;/button&gt;
+&lt;button class="btn btn-cyber"&gt;Standard Button&lt;/button&gt;
+&lt;button class="btn btn-cyber btn-sm"&gt;Small Button&lt;/button&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">CPU Button Examples</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>CPU buttons with contextual colors and variants:</p> <pre><code class="language-html">&lt;!-- Basic CPU button --&gt;
+&lt;button class="cpubtn"&gt;Default&lt;/button&gt;
+
+&lt;!-- Color variants --&gt;
+&lt;button class="cpubtn cpubtn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-success"&gt;Success&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-info"&gt;Info&lt;/button&gt;
+
+&lt;!-- Size variants --&gt;
+&lt;button class="cpubtn cpubtn-primary btn-lg"&gt;Large&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-success"&gt;Standard&lt;/button&gt;
+&lt;button class="cpubtn cpubtn-danger btn-sm"&gt;Small&lt;/button&gt;
+
+&lt;!-- With icons --&gt;
+&lt;button class="cpubtn cpubtn-danger"&gt;
+    &lt;i class="material-symbols-rounded me-2"&gt;delete&lt;/i&gt;Delete
+&lt;/button&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Button with Dropdown</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Cyber button integrated with Bootstrap dropdown:</p> <pre><code class="language-html">&lt;div class="dropdown"&gt;
+    &lt;button type="button" class="btn btn-cyber dropdown-toggle" 
+            data-bs-toggle="dropdown" aria-expanded="false"&gt;
+        System Actions
+    &lt;/button&gt;
+    &lt;ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg"&gt;
+        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;
+            &lt;i class="material-symbols-rounded me-2"&gt;refresh&lt;/i&gt;Refresh
+        &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;
+            &lt;i class="material-symbols-rounded me-2"&gt;download&lt;/i&gt;Export
+        &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;
+            &lt;i class="material-symbols-rounded me-2"&gt;settings&lt;/i&gt;Configure
+        &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0">Usage Guidelines</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ol>
+                                            <li>Add the <code>.btn-cyber</code> class to any button element</li>
+                                            <li>Combine with Material Symbols icons for enhanced visual appeal</li>
+                                            <li>Works with Bootstrap utilities like <code>btn-sm</code>
+                                            </li>
+                                            <li>Automatically includes hover glow effects and transitions</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Styling Reference Section -->
+                        <section id="styling-reference" class="mb-5">
+                            <div class="d-flex align-items-center dashboard-margin bg-warning py-2 rounded-2">
+                                <div class="border-start border-3 border-dark card-section-divider">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h3 class="mb-1 text-dark">Styling Reference</h3>
+                                    <p class="text-dark mb-0">Quick reference for all HUD component classes</p>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0"> <i class="material-symbols-rounded me-2">palette</i>
+                                            Class Reference</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Class</th>
+                                                        <th>Component</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><code>.modal-hud</code>
+                                                        </td>
+                                                        <td>Modal</td>
+                                                        <td>Applies HUD styling to modals - glassmorphism, glowing borders, animated SVG decorations</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><code>.offcanvas-hud</code>
+                                                        </td>
+                                                        <td>Offcanvas</td>
+                                                        <td>Applies HUD styling to offcanvas panels with glowing effects</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><code>.hud-card</code>
+                                                        </td>
+                                                        <td>Container</td>
+                                                        <td>Glassmorphism card with glowing cyan/magenta borders, includes hover glow animation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><code>.btn-cyber</code>
+                                                        </td>
+                                                        <td>Button</td>
+                                                        <td>Glowing cyan button with hover effects and glassmorphism background</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><code>.orbitron</code>
+                                                        </td>
+                                                        <td>Typography</td>
+                                                        <td>Orbitron font for futuristic headings and labels</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><code>.menu-header</code>
+                                                        </td>
+                                                        <td>Typography</td>
+                                                        <td>Styled section header for offcanvas menus</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0"> <i class="material-symbols-rounded me-2">css</i>
+                                            CSS Reference</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Core CSS for HUD components:</p> <pre><code class="language-css">/* HUD Modal Styles */
+.modal-hud {
+  --bs-modal-bg: transparent;
+  --bs-modal-border-color: transparent;
+}
+
+.modal-hud .modal-content {
+  background: rgba(13, 2, 33, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  border-left: 1px solid rgba(0, 255, 255, 0.3);
+  border-right: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* HUD Offcanvas Styles */
+.offcanvas-hud {
+  background: rgba(13, 2, 33, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  border-right: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* HUD Card Styles */
+.hud-card {
+  background: rgba(13, 2, 33, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.hud-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+/* Cyber Button Styles */
+.btn-cyber {
+  background-color: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.btn-cyber:hover {
+  background-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  color: #ffffff;
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-body-tertiary">
+                                        <h5 class="mb-0"> <i class="material-symbols-rounded me-2">info</i>
+                                            Best Practices</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="mb-0">
+                                            <li><strong>Typography:</strong> Always use the <code>.orbitron</code> class for HUD component titles</li>
+                                            <li><strong>Icons:</strong> Material Symbols Rounded work best with the HUD aesthetic</li>
+                                            <li><strong>Colors:</strong> Stick to cyan, magenta, and neon colors for consistency</li>
+                                            <li><strong>Background:</strong> HUD components look best against dark backgrounds</li>
+                                            <li><strong>Accessibility:</strong> Always include proper ARIA labels and roles</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!-- Sticky Sidebar "Table of Contents" Column -->
+                <div class="col-md-3">
+                    <nav id="tableOfContents" class="nav nav-pills flex-column sticky-sidebar"> <a class="nav-link" href="#introduction">Introduction</a>
+                        <a class="nav-link" href="#modal-component">HUD Modal</a>
+                        <a class="nav-link" href="#offcanvas-component">HUD Offcanvas</a>
+                        <a class="nav-link" href="#card-component">HUD Card</a>
+                        <a class="nav-link" href="#button-components">HUD Buttons</a>
+                        <a class="nav-link" href="#styling-reference">Styling Reference</a>
+                    </nav>
+                </div>
+            </div>
+            <!-- Live Demo Modals -->
+            <!-- Basic HUD Modal Demo -->
+            <div class="modal fade modal-hud" id="hudModalDemo" tabindex="-1" aria-labelledby="hudModalDemoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="hud-header-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 802.6 51.7" preserveAspectRatio="none">
+                                    <g>
+                                        <g>
+                                            <polygon class="hud-svg-fill" points="536.4 33 498.4 33 474.7 8.9 512.7 8.9 536.4 33" />
+                                            <g>
+                                                <polygon class="hud-svg-fill" points="591.8 33 568.1 8.9 530 8.9 553.7 33 591.8 33" />
+                                                <polygon class="hud-svg-fill" points="647.1 33 623.4 8.9 585.3 8.9 609 33 647.1 33" />
+                                                <polygon class="hud-svg-fill" points="702.4 33 678.7 8.9 640.6 8.9 664.3 33 702.4 33" />
+                                                <polygon class="hud-svg-fill" points="781.2 30.3 731.2 30.3 709 8.1 707.4 9.7 730.3 32.6 780.3 32.6 797.2 49.4 401.8 49.4 400.8 49.4 5.5 49.4 22.4 32.6 72.4 32.6 95.2 9.7 93.6 8.1 71.4 30.3 21.4 30.3 0 51.7 400.8 51.7 401.8 51.7 802.6 51.7 781.2 30.3" />
+                                                <polygon class="hud-svg-fill" points="36.7 41.1 314.2 41.1 329.1 26.2 399.8 26.2 402.8 26.2 473.5 26.2 488.4 41.1 766 41.1 766 39.9 488.9 39.9 474 25 402.8 25 399.8 25 328.7 25 313.7 39.9 36.7 39.9 36.7 41.1" />
+                                                <polygon class="hud-svg-fill" points="248.9 33 272.6 8.9 234.6 8.9 210.9 33 248.9 33" />
+                                                <polygon class="hud-svg-fill" points="193.6 33 217.3 8.9 179.3 8.9 155.6 33 193.6 33" />
+                                                <polygon class="hud-svg-fill" points="162 8.9 123.9 8.9 100.2 33 138.3 33 162 8.9" />
+                                            </g>
+                                        </g>
+                                        <polygon class="hud-svg-fill" points="745.7 26.8 720.1 1.1 82.1 1.1 56.9 26.4 56.1 25.6 81.7 0 720.6 0 746.6 26 745.7 26.8" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h5 class="modal-title orbitron" id="hudModalDemoLabel">System Notification</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is a live demonstration of the HUD Modal component.</p>
+                            <p>It features:</p>
+                            <ul>
+                                <li>Glassmorphism background with backdrop blur</li>
+                                <li>Glowing cyan borders</li>
+                                <li>Animated SVG decorations in header and footer</li>
+                                <li>Futuristic Orbitron font for titles</li>
+                                <li>Cyberpunk-themed buttons</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="hud-footer-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 934.6 62.7" preserveAspectRatio="none">
+                                    <g>
+                                        <path class="hud-svg-fill" d="M635.1,46.9H615.4L596,66.3H542.2v1.3h52.5l-5.3,5.3H382.2l-5.3-5.3h52.6V66.3H375.6L356.2,46.9H336.5L324.3,34.7H127.4V36H323.8l10.9,10.9H292.6v2.6h44.7l18.1,18.1h17.9l7.8,7.8H590.5l7.8-7.8h17.9l18.1-18.1H679V46.9H636.9L647.8,36H844.2V34.7H647.3ZM356,66.3,339.1,49.5h16.1L372,66.3Zm259.7,0H599.6l16.9-16.8h16Z" transform="translate(-18.5 -12.8)" />
+                                        <polygon class="hud-svg-fill" points="647.9 0.4 635.8 12.5 922.7 12.3 934.6 0.4 647.9 0.4" />
+                                        <polygon class="hud-svg-fill" points="418.7 36.7 436.1 54.2 466.6 54.2 468.1 54.2 498.5 54.2 516 36.7 574.6 36.7 611.4 0 573.5 0 562.3 11.2 468.1 11.2 466.6 11.2 372.4 11.2 361.2 0 323.3 0 360 36.7 418.7 36.7" />
+                                        <polygon class="hud-svg-fill" points="286.7 0.4 0 0.4 11.9 12.3 298.8 12.5 286.7 0.4" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <button type="button" class="btn btn-cyber" data-bs-dismiss="modal"> <i class="material-symbols-rounded me-2">close</i>Close Transmission</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Large HUD Modal Demo -->
+            <div class="modal fade modal-hud" id="hudModalLarge" tabindex="-1" aria-labelledby="hudModalLargeLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="hud-header-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 802.6 51.7" preserveAspectRatio="none">
+                                    <g>
+                                        <g>
+                                            <polygon class="hud-svg-fill" points="536.4 33 498.4 33 474.7 8.9 512.7 8.9 536.4 33" />
+                                            <g>
+                                                <polygon class="hud-svg-fill" points="591.8 33 568.1 8.9 530 8.9 553.7 33 591.8 33" />
+                                                <polygon class="hud-svg-fill" points="647.1 33 623.4 8.9 585.3 8.9 609 33 647.1 33" />
+                                                <polygon class="hud-svg-fill" points="702.4 33 678.7 8.9 640.6 8.9 664.3 33 702.4 33" />
+                                                <polygon class="hud-svg-fill" points="781.2 30.3 731.2 30.3 709 8.1 707.4 9.7 730.3 32.6 780.3 32.6 797.2 49.4 401.8 49.4 400.8 49.4 5.5 49.4 22.4 32.6 72.4 32.6 95.2 9.7 93.6 8.1 71.4 30.3 21.4 30.3 0 51.7 400.8 51.7 401.8 51.7 802.6 51.7 781.2 30.3" />
+                                                <polygon class="hud-svg-fill" points="36.7 41.1 314.2 41.1 329.1 26.2 399.8 26.2 402.8 26.2 473.5 26.2 488.4 41.1 766 41.1 766 39.9 488.9 39.9 474 25 402.8 25 399.8 25 328.7 25 313.7 39.9 36.7 39.9 36.7 41.1" />
+                                                <polygon class="hud-svg-fill" points="248.9 33 272.6 8.9 234.6 8.9 210.9 33 248.9 33" />
+                                                <polygon class="hud-svg-fill" points="193.6 33 217.3 8.9 179.3 8.9 155.6 33 193.6 33" />
+                                                <polygon class="hud-svg-fill" points="162 8.9 123.9 8.9 100.2 33 138.3 33 162 8.9" />
+                                            </g>
+                                        </g>
+                                        <polygon class="hud-svg-fill" points="745.7 26.8 720.1 1.1 82.1 1.1 56.9 26.4 56.1 25.6 81.7 0 720.6 0 746.6 26 745.7 26.8" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h5 class="modal-title orbitron" id="hudModalLargeLabel">System Diagnostics</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="hud-card">
+                                        <h6 class="orbitron">CPU Status</h6>
+                                        <h2 class="text-success">98%</h2>
+                                        <p class="text-muted small mb-0">All cores operational</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hud-card">
+                                        <h6 class="orbitron">Memory</h6>
+                                        <h2 class="text-warning">76%</h2>
+                                        <p class="text-muted small mb-0">12.8 GB / 16 GB</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="hud-card">
+                                        <h6 class="orbitron">Network</h6>
+                                        <h2 class="text-info">125 Mbps</h2>
+                                        <p class="text-muted small mb-0">Connection stable</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="hud-footer-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 934.6 62.7" preserveAspectRatio="none">
+                                    <g>
+                                        <path class="hud-svg-fill" d="M635.1,46.9H615.4L596,66.3H542.2v1.3h52.5l-5.3,5.3H382.2l-5.3-5.3h52.6V66.3H375.6L356.2,46.9H336.5L324.3,34.7H127.4V36H323.8l10.9,10.9H292.6v2.6h44.7l18.1,18.1h17.9l7.8,7.8H590.5l7.8-7.8h17.9l18.1-18.1H679V46.9H636.9L647.8,36H844.2V34.7H647.3ZM356,66.3,339.1,49.5h16.1L372,66.3Zm259.7,0H599.6l16.9-16.8h16Z" transform="translate(-18.5 -12.8)" />
+                                        <polygon class="hud-svg-fill" points="647.9 0.4 635.8 12.5 922.7 12.3 934.6 0.4 647.9 0.4" />
+                                        <polygon class="hud-svg-fill" points="418.7 36.7 436.1 54.2 466.6 54.2 468.1 54.2 498.5 54.2 516 36.7 574.6 36.7 611.4 0 573.5 0 562.3 11.2 468.1 11.2 466.6 11.2 372.4 11.2 361.2 0 323.3 0 360 36.7 418.7 36.7" />
+                                        <polygon class="hud-svg-fill" points="286.7 0.4 0 0.4 11.9 12.3 298.8 12.5 286.7 0.4" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <button type="button" class="btn btn-cyber" data-bs-dismiss="modal"> <i class="material-symbols-rounded me-2">close</i>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form HUD Modal Demo -->
+            <div class="modal fade modal-hud" id="hudModalForm" tabindex="-1" aria-labelledby="hudModalFormLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="hud-header-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 802.6 51.7" preserveAspectRatio="none">
+                                    <g>
+                                        <g>
+                                            <polygon class="hud-svg-fill" points="536.4 33 498.4 33 474.7 8.9 512.7 8.9 536.4 33" />
+                                            <g>
+                                                <polygon class="hud-svg-fill" points="591.8 33 568.1 8.9 530 8.9 553.7 33 591.8 33" />
+                                                <polygon class="hud-svg-fill" points="647.1 33 623.4 8.9 585.3 8.9 609 33 647.1 33" />
+                                                <polygon class="hud-svg-fill" points="702.4 33 678.7 8.9 640.6 8.9 664.3 33 702.4 33" />
+                                                <polygon class="hud-svg-fill" points="781.2 30.3 731.2 30.3 709 8.1 707.4 9.7 730.3 32.6 780.3 32.6 797.2 49.4 401.8 49.4 400.8 49.4 5.5 49.4 22.4 32.6 72.4 32.6 95.2 9.7 93.6 8.1 71.4 30.3 21.4 30.3 0 51.7 400.8 51.7 401.8 51.7 802.6 51.7 781.2 30.3" />
+                                                <polygon class="hud-svg-fill" points="36.7 41.1 314.2 41.1 329.1 26.2 399.8 26.2 402.8 26.2 473.5 26.2 488.4 41.1 766 41.1 766 39.9 488.9 39.9 474 25 402.8 25 399.8 25 328.7 25 313.7 39.9 36.7 39.9 36.7 41.1" />
+                                                <polygon class="hud-svg-fill" points="248.9 33 272.6 8.9 234.6 8.9 210.9 33 248.9 33" />
+                                                <polygon class="hud-svg-fill" points="193.6 33 217.3 8.9 179.3 8.9 155.6 33 193.6 33" />
+                                                <polygon class="hud-svg-fill" points="162 8.9 123.9 8.9 100.2 33 138.3 33 162 8.9" />
+                                            </g>
+                                        </g>
+                                        <polygon class="hud-svg-fill" points="745.7 26.8 720.1 1.1 82.1 1.1 56.9 26.4 56.1 25.6 81.7 0 720.6 0 746.6 26 745.7 26.8" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h5 class="modal-title orbitron" id="hudModalFormLabel">User Registration</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="hudForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" class="form-control" id="username" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="accessLevel" class="form-label">Access Level</label>
+                                        <select class="form-select" id="accessLevel">
+                                            <option>Standard User</option>
+                                            <option>Administrator</option>
+                                            <option>Super Admin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="hud-footer-svg-container" aria-hidden="true">
+                                <svg viewBox="0 0 934.6 62.7" preserveAspectRatio="none">
+                                    <g>
+                                        <path class="hud-svg-fill" d="M635.1,46.9H615.4L596,66.3H542.2v1.3h52.5l-5.3,5.3H382.2l-5.3-5.3h52.6V66.3H375.6L356.2,46.9H336.5L324.3,34.7H127.4V36H323.8l10.9,10.9H292.6v2.6h44.7l18.1,18.1h17.9l7.8,7.8H590.5l7.8-7.8h17.9l18.1-18.1H679V46.9H636.9L647.8,36H844.2V34.7H647.3ZM356,66.3,339.1,49.5h16.1L372,66.3Zm259.7,0H599.6l16.9-16.8h16Z" transform="translate(-18.5 -12.8)" />
+                                        <polygon class="hud-svg-fill" points="647.9 0.4 635.8 12.5 922.7 12.3 934.6 0.4 647.9 0.4" />
+                                        <polygon class="hud-svg-fill" points="418.7 36.7 436.1 54.2 466.6 54.2 468.1 54.2 498.5 54.2 516 36.7 574.6 36.7 611.4 0 573.5 0 562.3 11.2 468.1 11.2 466.6 11.2 372.4 11.2 361.2 0 323.3 0 360 36.7 418.7 36.7" />
+                                        <polygon class="hud-svg-fill" points="286.7 0.4 0 0.4 11.9 12.3 298.8 12.5 286.7 0.4" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <button type="button" class="btn btn-cyber" data-bs-dismiss="modal"> <i class="material-symbols-rounded me-2">close</i>Cancel</button>
+                            <button type="submit" form="hudForm" class="btn btn-primary"> <i class="material-symbols-rounded me-2">person_add</i>Register User</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HUD Offcanvas Demo -->
+            <div class="offcanvas offcanvas-start offcanvas-hud" tabindex="-1" id="hudOffcanvasDemo" aria-labelledby="hudOffcanvasDemoLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title orbitron" id="hudOffcanvasDemoLabel">System Interface</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                <div class="hud-divider-top" aria-hidden="true">
+                    <svg viewBox="0 0 573 31.6" preserveAspectRatio="none">
+                        <g>
+                            <g>
+                                <rect class="hud-svg-fill" x="231.6" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="259.8" y="15.8" width="7" height="5.98" />
+                                <polygon class="hud-svg-fill" points="154.9 15.8 138.4 15.8 145.5 21.8 154.9 21.8 154.9 15.8" />
+                                <rect class="hud-svg-fill" x="217.5" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="245.7" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="162" y="15.8" width="6.8" height="5.98" />
+                                <rect class="hud-svg-fill" x="203.6" y="15.8" width="6.8" height="5.98" />
+                                <polygon class="hud-svg-fill" points="273.9 21.8 282.4 21.8 289.4 15.8 273.9 15.8 273.9 21.8" />
+                                <rect class="hud-svg-fill" x="189.7" y="15.8" width="6.8" height="5.98" />
+                                <rect class="hud-svg-fill" x="175.8" y="15.8" width="6.8" height="5.98" />
+                            </g>
+                            <path class="hud-svg-fill" d="M573,1.9a2,2,0,0,1-2.2,1.8,2.3,2.3,0,0,1-2.2-1.4H337.1L310,25.3H114.8l-.9-.7H309.6l27.1-23H568.6A2.2,2.2,0,0,1,570.8,0,2,2,0,0,1,573,1.9Z" />
+                            <path class="hud-svg-fill" d="M505.8,12.3a2.2,2.2,0,0,1-4.4,0,2.2,2.2,0,0,1,4.4,0Z" />
+                            <path class="hud-svg-fill" d="M528.2,20.5l12.3,10.4H313.8L326,20.5H528.2m.2-.7H325.8L312.7,30.9H59.3v.7H542.4l-14-11.8Z" />
+                            <polygon class="hud-svg-fill" points="503.6 12.3 502.2 13 75.4 13 75.4 12.3 503.6 12.3" />
+                            <polygon class="hud-svg-fill" points="116 25.3 114.8 25.3 99.4 12.3 100.6 12.3 116 25.3" />
+                            <polygon class="hud-svg-fill" points="101.5 13 0 13 0 12.3 100.6 12.3 101.5 13" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="menu-header orbitron">Core Systems</div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">dashboard</span>
+                            Dashboard</a> <a href="#submenu-diagnostics" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="collapse" aria-expanded="false">
+                    <div>
+                        <span class="material-symbols-rounded me-3">memory</span>
+                        Diagnostics
+                    </div>
+                    <span class="material-symbols-rounded float-end">expand_more</span>
+                </a>
+                        <div class="collapse" id="submenu-diagnostics">
+                            <div class="list-group list-group-flush"> <a href="#" class="list-group-item list-group-item-action ps-5">Core Temp Analysis</a>
+                                <a href="#" class="list-group-item list-group-item-action ps-5">Memory Integrity Scan</a>
+                                <a href="#" class="list-group-item list-group-item-action ps-5">Network Packet Sniffer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-header orbitron">Network</div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">public</span>
+                            Global Uplink</a>
+                        <a href="#" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">wifi_tethering</span>
+                            Proximal Relays</a>
+                    </div>
+                    <div class="hud-divider-bottom" aria-hidden="true">
+                        <svg viewBox="0 0 503.7 42.4" preserveAspectRatio="none">
+                            <g>
+                                <g>
+                                    <path class="hud-svg-fill" d="M390.7,21.2H126.8l-9.9-8.5H5.1L0,17v4.2H71.5l10,8.5H503.7V21.2Zm112,7.6H81.9l-9.7-8.2-.3-.3H1V17.4l4.5-3.8H116.4l9.7,8.2.3.2H502.7Z" />
+                                    <path class="hud-svg-fill" d="M131.5,16.9h29.9L141.5,0H7.6V8.5H121.5ZM8.6.8H141l18,15.3H132l-9.8-8.2-.2-.3H8.6Z" />
+                                    <polygon class="hud-svg-fill" points="140.6 33.9 47.5 33.9 37.5 25.4 7.6 25.4 27.6 42.4 140.6 42.4 161.4 42.4 503.7 42.4 503.7 33.9 161.4 33.9 140.6 33.9" />
+                                    <path class="hud-svg-fill" d="M255.8,16.9h20.4V0H148.5l20,16.9Zm0-16.1V16.1H168.9L150.9.8Z" />
+                                    <rect class="hud-svg-fill" x="288.2" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="300.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="312.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="324.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="336.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="348" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="360" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="372" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="384" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="395.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="407.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="419.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="431.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="443.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="455.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="467.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="479.7" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="491.7" width="6" height="16.95" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+    </main>
+    <!-- end main wrapper -->
+    <!-- start overlay -->
+    <div class="overlay btn-toggle">
+    </div>
+    <!-- end overlay -->
+    <!-- start footer -->
+    <footer class="page-footer bg-secondary bg-opacity-25">
+        <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
+    </footer>
+    <!-- end footer -->
+    <!-- start CDN scripts -->
+    <!-- start core javascript libraries -->
+    <!-- Bootstrap 5.3.5 Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- Anime.js 3.2.1 from CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BProgress Loading Indicator -->
+    <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <!-- end core javascript libraries -->
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+    <!-- JSVector Maps Core Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <!-- end chart & visualization libraries -->
+    <!-- start UI component libraries -->
+    <!-- Grid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.13/index.global.min.js'></script>
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Simplebar scrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.3.2/dist/simplebar.min.js"></script>
+    <!-- modal lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+    <!-- Masonry Layout -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+    </script>
+    <!-- Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <!-- CosmicWave Component -->
+    <script src="https://cdn.jsdelivr.net/npm/@huement/cosmicwave/dist/cosmicwave.min.js"></script>
+    <!-- fit text -->
+    <script src="https://cdn.jsdelivr.net/npm/fitty@2.3.6/dist/fitty.min.js"></script>
+    <!-- Form Enhancement Libraries -->
+    <!-- TinyMCE -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"></script>
+    <!-- Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Cleave.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- end UI component libraries -->
+    <!-- end CDN scripts -->
+    <!-- Jquery Free JSON Table (local asset) -->
+    <script src="./js/JsonTable.js"></script>
+    <!-- start custom application scripts -->
+    <!-- end custom application scripts -->
+    <!-- start site-wide javascript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+            const viewportDebugger = document.getElementById('viewport-debugger');
+            if (viewportDebugger) {
+                viewportDebugger.addEventListener('click', function() {
+                    this.remove();
+                });
+            }
+
+            // BProgress Configuration
+            const {
+                BProgress
+            } = BProgressJS;
+            BProgress.configure({
+                color: '#FF3300', // RED
+                height: '6px',
+                position: 'top',
+                showSpinner: false,
+                trickleSpeed: 200,
+                minimum: 0.08
+            });
+
+            // Global BProgress functions for easy access
+            window.showProgress = () => {
+                BProgress.start();
+            };
+            window.hideProgress = () => BProgress.done();
+
+            window.setProgress = (percent) => {
+                BProgress.set(percent);
+            };
+
+            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
+            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
+                el.addEventListener('click', Lightbox.initialize);
+            });
+
+            // Auto-trigger BProgress on dropdown item clicks
+            document.addEventListener('click', function(e) {
+                // Check if clicked element is a dropdown item
+                const dropdownItem = e.target.closest('.dropdown-item');
+                if (dropdownItem) {
+                    // Skip if it's a divider or disabled
+                    if (dropdownItem.classList.contains('dropdown-divider') ||
+                        dropdownItem.classList.contains('disabled') ||
+                        dropdownItem.hasAttribute('disabled')) {
+                        return;
+                    }
+
+                    // Skip if it's a JavaScript link (no real action)
+                    const href = dropdownItem.getAttribute('href');
+                    if (href === 'javascript:;' || href === '#') {
+                        return;
+                    }
+
+                    // Skip if it's an admin navigation link (handled by page transition)
+                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
+                        return;
+                    }
+
+                    console.log('Dropdown item clicked, triggering BProgress');
+
+                    // Quick BProgress sequence
+                    BProgress.start();
+                    setTimeout(() => BProgress.set(30), 100);
+                    setTimeout(() => BProgress.set(60), 200);
+                    setTimeout(() => BProgress.set(90), 300);
+                    setTimeout(() => BProgress.done(), 400);
+                }
+            });
+
+            // BProgress on page navigation
+            // Intercept all admin navigation links
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                // Only handle admin links
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
+                    return;
+                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
+
+                console.log("Admin navigation detected, starting BProgress");
+
+                // Start BProgress for navigation
+                BProgress.start();
+
+                // Let the navigation happen naturally
+            });
+
+            // Page load - BProgress only
+            window.addEventListener('load', function() {
+                // Start BProgress for page load
+                BProgress.start();
+                setTimeout(() => BProgress.set(50), 100);
+                setTimeout(() => BProgress.set(80), 200);
+                setTimeout(() => BProgress.set(100), 300);
+
+                // Complete BProgress
+                setTimeout(() => {
+                    BProgress.done();
+                }, 400);
+            });
+        });
+    </script>
+    <!-- end site-wide javascript -->
+    <!-- start page-specific scripts -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Prism.js highlighting if available
+            if (typeof Prism !== 'undefined') {
+                Prism.highlightAll();
+            }
+        });
+    </script>
+    <!-- end page-specific scripts -->
+    <!-- start additional utilities -->
+    <script>
+    // Store menu preference
+                    sessionStorage.setItem('menu_type', 'vertical');
+        
+        // Menu toggle links work normally - middleware handles cookie setting and page reload
+
+        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
+        function fixCosmicWaveOverflow() {
+            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
+            cosmicWaves.forEach(svg => {
+                // Only fix the sizing, don't change the viewBox
+                svg.style.width = '100%';
+                svg.style.height = '100%';
+                svg.style.maxWidth = '100%';
+                svg.style.overflow = 'hidden';
+            });
+        }
+
+        // Run immediately and also after a delay to catch dynamically loaded waves
+        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
+        setTimeout(fixCosmicWaveOverflow, 100);
+        setTimeout(fixCosmicWaveOverflow, 500);
+        setTimeout(fixCosmicWaveOverflow, 1000);
+
+        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
+        if (typeof MutationObserver !== 'undefined') {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
+                                        'cosmic-wave')) {
+                                    setTimeout(fixCosmicWaveOverflow, 50);
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        // Sidebar hover functionality for collapsed state
+        function initSidebarHover() {
+            const sidebar = document.querySelector('.sidebar-wrapper');
+            const body = document.body;
+
+            if (!sidebar) return;
+
+            // Only apply hover behavior when sidebar is toggled (collapsed)
+            function handleSidebarHover() {
+                if (body.classList.contains('toggled')) {
+                    sidebar.addEventListener('mouseenter', function() {
+                        body.classList.add('sidebar-hovered');
+                    });
+
+                    sidebar.addEventListener('mouseleave', function() {
+                        body.classList.remove('sidebar-hovered');
+                    });
+                }
+            }
+
+            // Initialize on page load
+            handleSidebarHover();
+
+            // Re-initialize when toggle state changes
+            const toggleButton = document.querySelector('.btn-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    // Wait for the toggle animation to complete
+                    setTimeout(handleSidebarHover, 300);
+                });
+            }
+        }
+
+        // Initialize sidebar hover when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSidebarHover);
+        } else {
+            initSidebarHover();
+        }
+    </script>
+    <!-- end additional utilities -->
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+    // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+                console.log('Material Symbols font loaded');
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        // The font is usually cached after first page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+
+        // Watch for dynamically added icons (e.g., from AJAX content)
+        const iconObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if the node itself is an icon
+                        if (node.classList && (node.classList.contains(
+                                'material-symbols-rounded') || node.classList.contains(
+                                'material-icons'))) {
+                            node.classList.add('material-symbols-rounded--loaded');
+                        }
+                        // Check for icons within the added node
+                        if (node.querySelectorAll) {
+                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
+                                .forEach(function(icon) {
+                                    icon.classList.add('material-symbols-rounded--loaded');
+                                });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Start observing the document body for changes
+        iconObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/basic.js"></script>
+    <script src="./js/freebie.js"></script>
+<!-- Upgrade to Pro Modal -->
+<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-dark">
+        <h5 class="modal-title" id="upgradeModalLabel">
+          <i class="material-symbols-rounded me-2" style="vertical-align: middle;">star</i>
+          Upgrade to UltraViolet Pro
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center py-4">
+          <i class="material-symbols-rounded text-primary mb-3" style="font-size: 64px;">workspace_premium</i>
+          <h4 class="mb-3">Unlock All Features</h4>
+          <p class="mb-4">Get access to the full UltraViolet Pro with 80+ pages, horizontal menu layouts, advanced apps, and much more!</p>
+          <ul class="text-start mb-4">
+            <li>Horizontal & Vertical menu layouts</li>
+            <li>80+ admin pages and templates</li>
+            <li>Advanced apps (Email, Chat, Calendar, etc.)</li>
+            <li>Laravel Livewire edition included</li>
+            <li>Premium support and updates</li>
+          </ul>
+          <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg w-100" target="_blank">
+            <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
+            Purchase on ThemeForest
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

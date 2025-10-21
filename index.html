@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <title>Freebie | UltraViolet</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- The main CDN being used -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Vector Map -->
+    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
+    <!-- Scrollbar Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.css">
+    <!-- Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Grid JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- BProgress Loading Indicator -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
+    <!-- Form Enhancement CSS -->
+    <!-- TinyMCE CSS is included in the editor itself -->
+    <!-- Choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- BS5 Lightbox - Image Modal Gallery -->
+    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- start vite CSS & JS -->
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/docs.css">
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end vite CSS & JS -->
+</head>
+</head>
+
+<body class="font-sans antialiased basic-layout ">
+    <header class="header fixed-top bg-dark">
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+                    <div class="site-logo"> <a class="navbar-brand" href="index.html">
+                            <img class="logo-icon me-2" src="images/uv/UV.png" width="45"
+                                alt="logo">
+                            <span class="logo-text"><img src="images/uv/ultra-white.png" class="img-fluid"
+                                alt="UltraViolet Logo Text" width="170" height="17"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+                        <li class="list-inline-item">
+                            <a href="https://huement.com" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit Huement.com"> <i class="material-symbols-rounded">work</i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/huement" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="bottom" title="GitHub Repository"> <i class="material-symbols-rounded">code</i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://x.com/huement" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Follow on X (Twitter)"> <i class="material-symbols-rounded">chat</i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://linkedin.com/company/huement" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Connect on LinkedIn"> <i class="material-symbols-rounded">link</i>
+                            </a>
+                        </li>
+                    </ul> <a href="admin-dashboard.html" class="btn btn-primary d-none text-dark d-lg-flex">ULTRAVIOLET</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-header theme-bg-primary py-5 text-center position-relative">
+        <div class="theme-bg-shapes-right" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="theme-bg-shapes-left" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="container pt-5 pb-4" style="position: relative; z-index: 10;">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="w-100 d-block pt-4 pb-3">
+                        <img src="images/promo/dashbooard-preview.png" class="img-fluid rounded shadow-lg" alt="UltraViolet Dashboard Preview">
+                    </div>
+                    <h1 class="display-3 fw-bold text-dark mb-3 mt-4">Welcome to <span class="text-white">UltraViolet</span> FREE</h1>
+                    <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Experience the power of UltraViolet with this free edition. Get a taste of modern Bootstrap 5 admin dashboard design with production-ready HTML templates. Perfect for small projects and learning.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="admin-dashboard.html" class="btn btn-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">dashboard</i>
+                            Explore Free Dashboard</a>
+                        <a href="#upgrade-section" class="btn btn-outline-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">star</i>
+                            Upgrade to PRO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3 text-white">What's in the <span class="text-primary">FREE</span> Edition?</h2>
+                <p class="lead text-white-50">Essential components to get you started with UltraViolet</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center"> <i class="material-symbols-rounded text-primary mb-3" style="font-size: 120px;">dashboard</i>
+                            <h4 class="fw-bold mb-3">Sample Dashboard</h4>
+                            <p class="text-muted">A fully functional dashboard page with charts, stats widgets, and modern UI components to explore the design system.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center"> <i class="material-symbols-rounded text-success mb-3" style="font-size: 120px;">widgets</i>
+                            <h4 class="fw-bold mb-3">Core UI Components</h4>
+                            <p class="text-muted">Essential Bootstrap 5 components including alerts, buttons, cards, modals, and forms to build your interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center"> <i class="material-symbols-rounded text-info mb-3" style="font-size: 120px;">code</i>
+                            <h4 class="fw-bold mb-3">Clean, Modern Code</h4>
+                            <p class="text-muted">No jQuery, pure vanilla JavaScript with Vite build system. Production-ready HTML you can learn from and extend.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                    <div class="card shadow-lg border-0 h-100"> <a href="images/promo/outrun-hud.png" data-toggle="lightbox" data-caption="Vertical Sidebar Layout">
+                            <div
+                                style="height: 250px; background-image: url('images/promo/outrun-hud.png'); background-size: cover; background-position: center; cursor: pointer;">
+                            </div>
+                        </a>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-primary me-3" style="font-size: 48px;">view_sidebar</i>
+                                <h3 class="h5 fw-bold mb-0">Vertical Sidebar Layout</h3>
+                            </div>
+                            <p class="text-muted mb-0">Classic sidebar navigation included in the free version. Collapsible sections, responsive design, and mobile-friendly drawer menu.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow-lg border-0 h-100"> <a href="images/promo/dashbooard-preview.png" data-toggle="lightbox" data-caption="Light & Dark Themes">
+                            <div
+                                style="height: 250px; background-image: url('images/promo/dashbooard-preview.png'); background-size: cover; background-position: center; cursor: pointer;">
+                            </div>
+                        </a>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-warning me-3" style="font-size: 48px;">dark_mode</i>
+                                <h3 class="h5 fw-bold mb-0">Light & Dark Themes</h3>
+                            </div>
+                            <p class="text-muted mb-0">Beautiful theming system with smooth transitions. Toggle between light and dark modes to match user preferences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-warning border-0 shadow mt-5 text-center"> <i class="material-symbols-rounded me-2" style="font-size: 24px; vertical-align: middle;">info</i>
+                <strong>Perfect for Learning:</strong> The free version is ideal for exploring UltraViolet's design system and code quality. Upgrade to PRO for 80+ pages and complete applications.</div>
+        </div>
+    </section>
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3 text-white">What is <span class="text-primary">UltraViolet</span>?</h2>
+                <p class="lead text-white-50 mx-auto" style="max-width: 800px;">UltraViolet is a modern Bootstrap 5 admin dashboard template with a stunning design, clean code, and production-ready components. Built for developers who care about quality.</p>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4"> <i class="material-symbols-rounded text-primary" style="font-size: 80px;">auto_awesome</i>
+                            </div>
+                            <h3 class="h4 fw-bold text-center mb-3">Modern Web Standards</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Bootstrap
+                                        5.3.8</strong> - Latest stable release</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>No
+                                        jQuery</strong> - Pure vanilla JavaScript</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Vite
+                                        Build System</strong> - Fast development</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>TypeScript
+                                        Support</strong> - Type-safe code</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>SASS
+                                        Stylesheets</strong> - Easy customization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow h-100">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4"> <i class="material-symbols-rounded text-success" style="font-size: 80px;">design_services</i>
+                            </div>
+                            <h3 class="h4 fw-bold text-center mb-3">Beautiful Design System</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Outrun
+                                        HUD Mode</strong> - Futuristic cyberpunk style</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Animated
+                                        Backgrounds</strong> - Eye-catching effects</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Material
+                                        Icons</strong> - 2,500+ beautiful icons</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Gradient
+                                        Accents</strong> - Modern color schemes</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2">check_circle</i><strong>Smooth
+                                        Animations</strong> - Polished interactions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card border-primary border-3 shadow-lg">
+                <div class="card-body p-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h3 class="h3 fw-bold mb-3"> <i class="material-symbols-rounded text-primary me-2" style="font-size: 32px; vertical-align: middle;">verified</i>
+                                Production-Ready, Not Just a Template</h3>
+                            <p class="lead mb-3">Unlike most admin templates, UltraViolet is built with real-world projects in mind. Clean, maintainable code using only modern, actively-maintained libraries.</p>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-success me-2">check</i>
+                                        <span><strong>No Technical Debt</strong> - No abandoned plugins or legacy
+                                            code</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-success me-2">check</i>
+                                        <span><strong>Actively Maintained</strong> - Regular updates and improvements</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-success me-2">check</i>
+                                        <span><strong>Well Documented</strong> - Comprehensive guides and examples</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-success me-2">check</i>
+                                        <span><strong>Developer-Friendly</strong> - Easy to understand and customize</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-center"> <a href="images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design">
+                                <img src="images/promo/hud-menu.png" class="img-fluid rounded shadow"
+                                    alt="UltraViolet Design" style="max-height: 250px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 theme-bg-dark position-relative" id="upgrade-section">
+        <div class="theme-bg-shapes-right" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="theme-bg-shapes-left" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-white mb-3">Unlock the Full <span class="text-primary">UltraViolet</span> Experience</h2>
+                <p class="lead text-white-50">Upgrade to PRO and get 80+ pages, dual layouts, complete applications, and so much more</p>
+            </div>
+            <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design System">
+                        <div class="rounded shadow-lg"
+                            style="height: 350px; background-image: url('images/promo/hud-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-white ps-lg-4">
+                        <div class="badge bg-primary mb-3">PRO Exclusive</div>
+                        <h3 class="h2 fw-bold mb-4 text-primary">Outrun HUD Design System</h3>
+                        <p class="lead text-white-50 mb-4">Transform your dashboard with futuristic, cyberpunk-inspired components that make your interface unforgettable</p>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-primary" style="font-size: 24px;">auto_awesome</i>
+                                Animated Glowing Borders</h5>
+                            <p class="text-white-50">Eye-catching neon-style borders that pulse and animate, perfect for highlighting important data and creating that signature Outrun aesthetic.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-primary" style="font-size: 24px;">gradient</i>
+                                Retro-Futuristic Color Schemes</h5>
+                            <p class="text-white-50">Vibrant cyan, magenta, and purple gradients inspired by 1980s aesthetics and modern cyberpunk design.</p>
+                        </div>
+                        <div class="alert alert-primary border-0"> <i class="material-symbols-rounded me-2">info</i>
+                            <strong>Completely Optional:</strong> Use standard Bootstrap or enable HUD mode with a single toggle!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0"> <a href="images/promo/horizontal-menu.png" data-toggle="lightbox" data-caption="Horizontal Mega Menu Layout">
+                        <div class="rounded shadow-lg"
+                            style="height: 350px; background-image: url('images/promo/horizontal-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="text-white pe-lg-4">
+                        <div class="badge bg-info mb-3">PRO Exclusive</div>
+                        <h3 class="h2 fw-bold mb-4 text-info">Horizontal Mega Menu Layout</h3>
+                        <p class="lead text-white-50 mb-4">Switch to a modern top navigation system with beautiful dropdown mega menus</p>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-info" style="font-size: 24px;">horizontal_split</i>
+                                Top Navigation with Dropdowns</h5>
+                            <p class="text-white-50">Modern horizontal navigation with multi-level dropdown menus. Perfect for public-facing dashboards and clean, spacious layouts.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-info" style="font-size: 24px;">swap_horiz</i>
+                                Instant Layout Switching</h5>
+                            <p class="text-white-50">Toggle between vertical sidebar and horizontal menu layouts instantly. Adapt your dashboard to any project need.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-info" style="font-size: 24px;">phone_android</i>
+                                Mobile Responsive</h5>
+                            <p class="text-white-50">Both layouts work perfectly on mobile. Horizontal converts to offcanvas menu for touch-friendly navigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="images/promo/animated-backgrounds.png" data-toggle="lightbox" data-caption="Animated Background Effects">
+                        <div class="rounded shadow-lg"
+                            style="height: 350px; background-image: url('images/promo/animated-backgrounds.png'); background-size: cover; background-position: center; cursor: pointer;">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-white ps-lg-4">
+                        <div class="badge bg-success mb-3">PRO Exclusive</div>
+                        <h3 class="h2 fw-bold mb-4 text-success">Animated Backgrounds</h3>
+                        <p class="lead text-white-50 mb-4">Bring your dashboard to life with stunning animated backgrounds</p>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-success" style="font-size: 24px;">grid_4x4</i>
+                                Multiple Animation Styles</h5>
+                            <p class="text-white-50">Choose from grid patterns, particle effects, geometric shapes, and gradient animations. Each carefully optimized for performance.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"> <i class="material-symbols-rounded me-2 text-success" style="font-size: 24px;">speed</i>
+                                Performance First</h5>
+                            <p class="text-white-50">Beautiful animations that don't sacrifice performance. Hardware-accelerated CSS and optimized JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3 text-white">80+ Pages in <span class="text-primary">PRO Edition</span>
+                </h2>
+                <p class="lead text-white-50">Complete applications and templates for every common use case</p>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-primary me-3" style="font-size: 42px;">mail</i>
+                                <h4 class="h5 fw-bold mb-0">Email Client</h4>
+                            </div>
+                            <p class="text-muted small">Full inbox, compose, read, and manage emails with threading, attachments, and categories.</p>
+                            <div class="badge bg-primary">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-success me-3" style="font-size: 42px;">chat</i>
+                                <h4 class="h5 fw-bold mb-0">Chat Application</h4>
+                            </div>
+                            <p class="text-muted small">Real-time messaging interface with user presence, typing indicators, and conversation history.</p>
+                            <div class="badge bg-success">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-info me-3" style="font-size: 42px;">event</i>
+                                <h4 class="h5 fw-bold mb-0">Calendar & Scheduling</h4>
+                            </div>
+                            <p class="text-muted small">FullCalendar v6 integration with drag-drop events, multiple views, and event management.</p>
+                            <div class="badge bg-info">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-warning me-3" style="font-size: 42px;">dashboard_customize</i>
+                                <h4 class="h5 fw-bold mb-0">Kanban Board</h4>
+                            </div>
+                            <p class="text-muted small">Drag-and-drop task management with SortableJS, perfect for project management workflows.</p>
+                            <div class="badge bg-warning">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-danger me-3" style="font-size: 42px;">receipt_long</i>
+                                <h4 class="h5 fw-bold mb-0">Invoice Generator</h4>
+                            </div>
+                            <p class="text-muted small">Professional invoice templates with print and PDF export capabilities for billing.</p>
+                            <div class="badge bg-danger">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"> <i class="material-symbols-rounded text-purple me-3" style="font-size: 42px;">folder</i>
+                                <h4 class="h5 fw-bold mb-0">File Manager</h4>
+                            </div>
+                            <p class="text-muted small">Upload, organize, preview files and folders with grid and list views.</p>
+                            <div class="badge bg-purple">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="card border-primary border-2 shadow h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start mb-3"> <i class="material-symbols-rounded text-primary me-3" style="font-size: 48px;">shopping_cart</i>
+                                <div>
+                                    <h3 class="h4 fw-bold mb-2">Complete Ecommerce Suite</h3>
+                                    <p class="text-muted mb-3">Full-featured online store management system</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Product Catalog & Management</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Order Processing & Tracking</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Inventory Management</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Customer Management</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Sales Analytics Dashboard</li>
+                            </ul>
+                            <div class="badge bg-primary">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card border-success border-2 shadow h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start mb-3"> <i class="material-symbols-rounded text-success me-3" style="font-size: 48px;">currency_bitcoin</i>
+                                <div>
+                                    <h3 class="h4 fw-bold mb-2">Cryptocurrency Platform</h3>
+                                    <p class="text-muted mb-3">Complete crypto management and trading interface</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Wallet Dashboard & Management</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Exchange Trading Interface</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>ICO Landing Page</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Lending & Borrowing Platform</li>
+                                <li class="mb-2"><i class="material-symbols-rounded text-success me-2" style="font-size: 18px;">check</i>Transaction History & Analytics</li>
+                            </ul>
+                            <div class="badge bg-success">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card bg-primary text-white border-0 shadow h-100">
+                        <div class="card-body text-center p-4"> <i class="material-symbols-rounded mb-3" style="font-size: 64px;">work</i>
+                            <h4 class="fw-bold mb-2">Job Board</h4>
+                            <p class="mb-3 opacity-75">Complete job listing platform with applications, categories, and employer management</p>
+                            <div class="badge bg-white text-primary">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-success text-dark border-0 shadow h-100">
+                        <div class="card-body text-center p-4"> <i class="material-symbols-rounded mb-3 text-dark" style="font-size: 64px;">smart_toy</i>
+                            <h4 class="fw-bold mb-2 text-dark">AI Agent Interface</h4>
+                            <p class="mb-3 text-dark" style="opacity: 0.75;">Modern chat UI perfect for AI chatbots, assistants, and conversational interfaces</p>
+                            <div class="badge bg-white text-success">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card bg-info text-white border-0 shadow h-100">
+                        <div class="card-body text-center p-4"> <i class="material-symbols-rounded mb-3" style="font-size: 64px;">bolt</i>
+                            <h4 class="fw-bold mb-2">Laravel Livewire Edition</h4>
+                            <p class="mb-3 opacity-75">Full Laravel app with working examples, real-time components, and database integration</p>
+                            <div class="badge bg-white text-info">PRO Only</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5"> <a href="images/promo/app-taskboard.png" data-toggle="lightbox" data-caption="Application Taskboard Example">
+                    <div class="rounded shadow-lg mb-4 mx-auto"
+                        style="height: 400px; max-width: 800px; background-image: url('images/promo/app-taskboard.png'); background-size: cover; background-position: center; cursor: pointer;">
+                    </div>
+                </a>
+                <p class="lead text-white"> <strong>Plus:</strong> Advanced forms, data tables, multiple chart types, maps, authentication pages, user management, and much more!</p>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bg-dark">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3 text-white">FREE vs <span class="text-primary">PRO</span>
+                </h2>
+                <p class="lead text-white-50">See what you get when you upgrade</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th class="py-3">Feature</th>
+                                            <th class="text-center py-3">FREE</th>
+                                            <th class="text-center py-3 bg-primary text-white">PRO</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-3"><strong>Dashboard Pages</strong>
+                                            </td>
+                                            <td class="text-center py-3">1 Sample</td>
+                                            <td class="text-center py-3"><strong class="text-primary">15+
+                                                    Variations</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Total Pages</strong>
+                                            </td>
+                                            <td class="text-center py-3">~5 Pages</td>
+                                            <td class="text-center py-3"><strong class="text-primary">80+ Pages</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Vertical Sidebar Menu</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Horizontal Mega Menu</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Outrun HUD Design System</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Animated Backgrounds</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Complete Apps (Email, Chat, Calendar, etc.)</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Ecommerce Suite</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Crypto Platform Templates</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Laravel Livewire Edition</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Advanced Charts & Data Visualization</strong>
+                                            </td>
+                                            <td class="text-center py-3">Basic</td>
+                                            <td class="text-center py-3"><strong class="text-primary">Complete
+                                                    Library</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Light & Dark Themes</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Documentation</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Lifetime Updates</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3"><strong>Premium Support</strong>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-danger">cancel</i>
+                                            </td>
+                                            <td class="text-center py-3"><i class="material-symbols-rounded text-success">check_circle</i>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-dark">
+                                            <td class="py-4"><strong class="h5 mb-0">Price</strong>
+                                            </td>
+                                            <td class="text-center py-4">
+                                                <h4 class="text-success mb-0">FREE</h4>
+                                            </td>
+                                            <td class="text-center py-4 bg-primary">
+                                                <h4 class="text-white mb-1">One-Time Purchase</h4>
+                                                <p class="mb-0 text-white-50 small">Lifetime access, no subscriptions</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="btn btn-primary btn-lg px-5 py-3"> <i class="material-symbols-rounded me-2">star</i>
+                            Upgrade to PRO Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section text-center py-5 theme-bg-primary position-relative">
+        <div class="theme-bg-shapes-right" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="theme-bg-shapes-left" style="z-index: 0; pointer-events: none;">
+        </div>
+        <div class="container py-4" style="position: relative; z-index: 10;">
+            <h2 class="display-5 fw-bold text-dark mb-3">Ready to <span class="text-white">Upgrade</span>?</h2>
+            <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Join hundreds of developers using UltraViolet PRO to build stunning admin interfaces. Get both HTML and Laravel editions, 80+ pages, complete apps, and lifetime updates.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+                <a class="btn btn-dark btn-lg px-5" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-2">shopping_cart</i>
+                    Purchase PRO Version</a>
+                <a class="btn btn-outline-dark btn-lg px-5" href="admin-dashboard.html"> <i class="material-symbols-rounded me-2">dashboard</i>
+                    Explore FREE Dashboard</a>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-3 text-center mb-3">
+                    <div class="display-4 fw-bold text-white">80+</div>
+                    <div class="text-dark">Pages in PRO</div>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <div class="display-4 fw-bold text-white">2</div>
+                    <div class="text-dark">Editions (HTML + Laravel)</div>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <div class="display-4 fw-bold text-white">10+</div>
+                    <div class="text-dark">Complete Applications</div>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <div class="display-4 fw-bold text-white">∞</div>
+                    <div class="text-dark">Possibilities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Upgrade to Pro Modal -->
+    <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary border-0">
+                    <h5 class="modal-title text-dark fw-bold" id="upgradeModalLabel"> <i class="material-symbols-rounded me-2" style="vertical-align: middle; font-size: 28px;">star</i>
+                        Upgrade to UltraViolet PRO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-3" style="width: 100px; height: 100px;"> <i class="material-symbols-rounded text-dark" style="font-size: 56px;">workspace_premium</i>
+                        </div>
+                        <h3 class="fw-bold mb-3">Unlock the Complete UltraViolet Experience</h3>
+                        <p class="lead text-muted mb-4">Get 80+ pages, dual layouts, complete applications, and lifetime updates with a one-time purchase</p>
+                    </div>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>80+ Pre-built Pages</strong>
+                                    <p class="small text-muted mb-0">Complete templates for every use case</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Horizontal & Vertical Menus</strong>
+                                    <p class="small text-muted mb-0">Dual layout options to fit any project</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Complete Applications</strong>
+                                    <p class="small text-muted mb-0">Email, Chat, Calendar, Kanban, and more</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Outrun HUD Design System</strong>
+                                    <p class="small text-muted mb-0">Futuristic cyberpunk components</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Laravel Livewire Edition</strong>
+                                    <p class="small text-muted mb-0">Full Laravel app with working examples</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Ecommerce & Crypto Suites</strong>
+                                    <p class="small text-muted mb-0">Complete business application templates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Lifetime Updates</strong>
+                                    <p class="small text-muted mb-0">Free updates for life, no subscriptions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start"> <i class="material-symbols-rounded text-primary me-2 mt-1">check_circle</i>
+                                <div> <strong>Premium Support</strong>
+                                    <p class="small text-muted mb-0">Direct access to our support team</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info border-0 mb-4">
+                        <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2" style="font-size: 24px;">info</i>
+                            <div> <strong>One-Time Purchase</strong> - Pay once, own forever. No recurring fees or subscriptions.</div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg" target="_blank"> <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
+                            Purchase UltraViolet PRO</a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Maybe Later</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- start core javascript libraries -->
+    <!-- Bootstrap 5.3.5 Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- Anime.js 3.2.1 from CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BProgress Loading Indicator -->
+    <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <!-- end core javascript libraries -->
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+    <!-- JSVector Maps Core Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <!-- end chart & visualization libraries -->
+    <!-- start UI component libraries -->
+    <!-- Grid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.13/index.global.min.js'></script>
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Simplebar scrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.3.2/dist/simplebar.min.js"></script>
+    <!-- modal lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+    <!-- Masonry Layout -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+    </script>
+    <!-- Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <!-- CosmicWave Component -->
+    <script src="https://cdn.jsdelivr.net/npm/@huement/cosmicwave/dist/cosmicwave.min.js"></script>
+    <!-- fit text -->
+    <script src="https://cdn.jsdelivr.net/npm/fitty@2.3.6/dist/fitty.min.js"></script>
+    <!-- Form Enhancement Libraries -->
+    <!-- TinyMCE -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"></script>
+    <!-- Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Cleave.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- end UI component libraries -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/basic.js"></script>
+
+
+    <script>
+    // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
+                el.addEventListener('click', Lightbox.initialize);
+            });
+        });
+    </script>
+    <script>
+    // Essential functionality for static export (no ES modules)
+        document.addEventListener('DOMContentLoaded', function() {
+          // Sidebar toggle functionality
+          const toggleBtn = document.querySelector('.btn-toggle');
+          const sidebar = document.querySelector('.sidebar-wrapper');
+          const overlay = document.querySelector('.overlay');
+          
+          if (toggleBtn && sidebar) {
+            toggleBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              if (window.innerWidth < 992) {
+                // Mobile: offcanvas behavior
+                sidebar.classList.toggle('mobile-open');
+                if (overlay) {
+                  if (sidebar.classList.contains('mobile-open')) {
+                    overlay.style.display = 'block';
+                    setTimeout(() => {
+                      overlay.style.opacity = '1';
+                      overlay.style.visibility = 'visible';
+                    }, 10);
+                  } else {
+                    overlay.style.opacity = '0';
+                    overlay.style.visibility = 'hidden';
+                    setTimeout(() => overlay.style.display = 'none', 300);
+                  }
+                }
+              } else {
+                // Desktop: collapsed sidebar
+                document.body.classList.toggle('toggled');
+                
+                if (document.body.classList.contains('toggled')) {
+                  sidebar.addEventListener('mouseenter', function() {
+                    document.body.classList.add('sidebar-hovered');
+                  });
+                  sidebar.addEventListener('mouseleave', function() {
+                    document.body.classList.remove('sidebar-hovered');
+                  });
+                }
+              }
+            });
+          }
+          
+          // Close sidebar on overlay click
+          if (overlay) {
+            overlay.addEventListener('click', function() {
+              document.body.classList.remove('toggled', 'sidebar-hovered');
+              if (sidebar) {
+                sidebar.classList.remove('mobile-open');
+                overlay.style.opacity = '0';
+                overlay.style.visibility = 'hidden';
+                setTimeout(() => overlay.style.display = 'none', 300);
+              }
+            });
+          }
+          
+          // Initialize Bootstrap components
+          if (typeof bootstrap !== 'undefined') {
+            // Popovers
+            [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+              .map(el => new bootstrap.Popover(el));
+            
+            // Dropdowns
+            [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+              .map(el => new bootstrap.Dropdown(el));
+          }
+          
+          // Initialize SimpleBar if available
+          if (typeof SimpleBar !== 'undefined') {
+            document.querySelectorAll('[data-simplebar]').forEach(el => {
+              new SimpleBar(el, { autoHide: false });
+            });
+          }
+          
+          // Watch for body style changes (Bootstrap offcanvas adds overflow: hidden)
+          // When offcanvas opens, add mobile-menu-open class to body
+          const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                const style = document.body.getAttribute('style');
+                if (style && style.includes('overflow: hidden')) {
+                  document.body.classList.add('mobile-menu-open');
+                } else if (!style || !style.includes('overflow: hidden')) {
+                  document.body.classList.remove('mobile-menu-open');
+                }
+              }
+            });
+          });
+          
+          observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ['style']
+          });
+          
+          // Fixed header toggle (horizontal layout only)
+          const fixedHeaderToggle = document.querySelector('[data-bs-title="Toggle Fixed Header"]');
+          if (fixedHeaderToggle) {
+            const header = document.querySelector('.ultraviolet-action-bar');
+            const icon = fixedHeaderToggle.querySelector('.material-symbols-rounded');
+            
+            // No localStorage - server controls initial state via exported HTML
+            
+            // Toggle handler
+            fixedHeaderToggle.addEventListener('click', function(e) {
+              e.preventDefault();
+              if (header) {
+                header.classList.toggle('fixed-to-top');
+                
+                // Toggle icon color
+                if (icon) {
+                  icon.classList.toggle('text-primary');
+                }
+                
+                // Toggle background
+                this.classList.toggle('bg-info');
+                
+                // Toggle body class
+                document.body.classList.toggle('fixed-top-header');
+              }
+            });
+          }
+        });
+    </script>
+
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+        // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<!-- start head -->
+
+<head>
+    <!-- start meta tags & title -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <title>Popovers &amp; Tooltips | UltraViolet</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end meta tags & title -->
+    <!-- start plugins -->
+    <!-- The main CDN being used -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Vector Map -->
+    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
+    <!-- Scrollbar Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.css">
+    <!-- Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Grid JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- BProgress Loading Indicator -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
+    <!-- Form Enhancement CSS -->
+    <!-- TinyMCE CSS is included in the editor itself -->
+    <!-- Choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- BS5 Lightbox - Image Modal Gallery -->
+    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- end plugins -->
+    <!-- start vite CSS & JS -->
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end vite CSS & JS -->
+</head>
+<!-- Theme Initialization (runs before page render to prevent flash) -->
+<script>
+    (function() {
+                // Check localStorage for theme preference (default: dark)
+                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            })();
+</script>
+</head>
+<!-- end head -->
+
+<body class="space-grotesk-300 vertical-menu " dir="ltr">
+    <!-- Background animation container -->
+    <div id="admin-background">
+    </div>
+    <!-- start page action bar -->
+    <header class="ultraviolet-action-bar ">
+        <nav class="navbar navbar-expand align-items-center gap-4 ">
+            <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
+            </div>
+            <!-- SEARCH BAR -->
+            <div class="search-bar flex-grow-1">
+                <div class="position-relative">
+                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                    <div class="search-popup">
+                        <div class="card rounded-4 overflow-hidden">
+                            <div class="card-header d-lg-none">
+                                <div class="position-relative">
+                                    <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
+                                </div>
+                            </div>
+                            <div class="card-body search-content">
+                                <div class="row g-3">
+                                    <!-- Left Column: Recently Visited -->
+                                    <div class="col-md-6">
+                                        <p class="search-title fw-bold mb-3 text-uppercase text-info">Recently Visited</p>
+                                        <div class="search-list d-flex flex-column gap-2"> <a href="admin-dashboard.html" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-primary">dashboard</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Dashboard</h6>
+                                                <p class="mb-0 small text-muted">Main admin dashboard</p>
+                                            </div>
+                                            <div class="text-muted small">2m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-success">table_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Data Tables</h6>
+                                                <p class="mb-0 small text-muted">Grid components</p>
+                                            </div>
+                                            <div class="text-muted small">15m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-info">bar_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Analytics</h6>
+                                                <p class="mb-0 small text-muted">Charts & statistics</p>
+                                            </div>
+                                            <div class="text-muted small">1h</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-warning">settings</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Settings</h6>
+                                                <p class="mb-0 small text-muted">Configuration</p>
+                                            </div>
+                                            <div class="text-muted small">3h</div>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    <!-- Right Column: Quick Access -->
+                                    <div class="col-md-6 border-start-md">
+                                        <p class="search-title fw-semibold mb-3 text-uppercase text-info">Quick Access</p>
+                                        <div class="row g-2">
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-danger"
+                                                        style="font-size: 2.5rem;">description</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Form Wizard</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-purple"
+                                                        style="font-size: 2.5rem;">calendar_month</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Calendar</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-cyan"
+                                                        style="font-size: 2.5rem;">email</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Email</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-teal"
+                                                        style="font-size: 2.5rem;">group</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Users</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-warning"
+                                                        style="font-size: 2.5rem;">shopping_cart</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Orders</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-success"
+                                                        style="font-size: 2.5rem;">inventory</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Products</h6>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SEARCH BAR -->
+            <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+                <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
+                </li>
+                <!-- Fixed Header Toggle (only visible in horizontal mode) -->
+                <!-- Menu Type Toggle (vert / horiz) -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    </a>
+                </li>
+                <!-- Apps -->
+                <li class="nav-item dropdown"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
+                        <div class="border rounded-4 overflow-hidden p-relative z-5">
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-email.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-envelope-fill icon-xl" style="color: #ea4335;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Email Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-chat.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-dots-fill icon-xl" style="color: #00aff0;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Chat Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Calendar</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Taskboard</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-invoice.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-receipt icon-xl" style="color: #f59e0b;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Invoice</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-maps.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-map-fill icon-xl" style="color: #06b6d4;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Maps</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-editor.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-file-text-fill icon-xl" style="color: #6366f1;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Text Editor</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-ai-agent.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-robot icon-xl" style="color: #ec4899;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">AI Agent</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-micro-blog.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-left-text-fill icon-xl" style="color: #14b8a6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Micro Blog</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0">
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-youtube icon-xl" style="color: #ff0000;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">YouTube</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-facebook icon-xl" style="color: #1877f2;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Facebook</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-instagram icon-xl" style="color: #e4405f;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Instagram</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </li>
+                <!-- Settings Toggle Button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;" id="admin-settings-toggle" title="Settings" data-bs-toggle="tooltip" data-bs-title="Settings"> <i class="material-symbols-rounded">settings</i>
+                    </a>
+                </li>
+                <!-- Notifications -->
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
+                        class="material-symbols-rounded">notifications</i>
+                    <span class="badge-notify">5</span>
+                </a>
+                    <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
+                        <div class="px-2 pb-1 d-flex align-items-center justify-content-between border-bottom">
+                            <h5 class="notiy-title mb-0">Notifications</h5>
+                            <!-- notifications options menu -->
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-xs dropdown-toggle dropdown-no-caret p-relative z-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="material-symbols-rounded">more_vert</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">inventory_2</i>Archive All</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">done_all</i>Mark all as read</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">mic_off</i>Disable Notifications</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">grade</i>What's new ?</a>
+                                    </div>
+                                    <div>
+                                        <hr class="dropdown-divider">
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">leaderboard</i>Reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end options menu -->
+                        </div>
+                        <div class="notify-list" data-simplebar="true">
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">System Update Available</h5>
+                                        <p class="mb-0 notify-desc">Version 2.4.1 is ready to install with new
+                                            features.</p>
+                                        <p class="mb-0 notify-time">2 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-success text-dark">
+                                        <span>AB</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">New User Registration</h5>
+                                        <p class="mb-0 notify-desc">Alex Brown from Canada has joined the platform.</p>
+                                        <p class="mb-0 notify-time">15 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Backup Completed</h5>
+                                        <p class="mb-0 notify-desc">Daily backup has been successfully completed.</p>
+                                        <p class="mb-0 notify-time">1 hour ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Security Alert</h5>
+                                        <p class="mb-0 notify-desc">Unusual login activity detected from new location.
+                                        </p>
+                                        <p class="mb-0 notify-time">3 hours ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Monthly Report Ready</h5>
+                                        <p class="mb-0 notify-desc">Your analytics report for September is now
+                                            available.</p>
+                                        <p class="mb-0 notify-time">Yesterday</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-warning text-white">
+                                        <span>MJ</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Server Maintenance</h5>
+                                        <p class="mb-0 notify-desc">Scheduled maintenance will begin at 2:00 AM EST.
+                                        </p>
+                                        <p class="mb-0 notify-time">2 days ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- User Dropdown -->
+                <li class="nav-item dropdown"> <a href=".html" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                            width="45" height="45" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
+                            <div class="text-center">
+                                <img src="images/assets/profile-image.png"
+                                    class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
+                                <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
+                            </div>
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">person_outline</i>Profile</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">local_bar</i>Setting</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">dashboard</i>Dashboard</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">account_balance</i>Earning</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">cloud_download</i>Downloads</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="login.html"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Admin Settings Menu (slides down from top) -->
+    <div id="admin-settings-menu" class="admin-settings-menu">
+        <div class="admin-settings-panel">
+            <div class="mb-3">
+                <label for="admin-background-select" class="form-label">Background Animation</label>
+                <select class="form-select form-select-sm" id="admin-background-select">
+                    <option value="none">None (Off)</option>
+                    <option value="wave-lines">Wave Lines</option>
+                    <option value="node-lines">Node Lines</option>
+                    <option value="circles">Circles</option>
+                    <option value="space">Starfield</option>
+                    <option value="hud">HUD Lines</option>
+                </select>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
+                <label class="form-check-label" for="admin-rtl-switch">RTL / LTR</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
+                <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
+            </div>
+            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+        </div>
+    </div>
+    <!-- end page action bar -->
+    <!-- HUI VERTICAL MENU -->
+    <aside class="sidebar-wrapper" id="sidebarWrapper" data-simplebar="true">
+        <!-- start sidebar header -->
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">
+                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                </h5>
+            </div>
+            <div class="sidebar-close d-xl-none">
+                <a href="javascript:;" class="sidebar-close-btn" aria-label="Close"> <i class="material-symbols-rounded">close</i>
+                </a>
+            </div>
+        </div>
+        <!-- end sidebar header -->
+        <!-- start sidebar navigation -->
+        <div class="sidebar-nav">
+            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
+                            aria-expanded="" aria-controls="collapse_dashboards"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                            </div>
+                                                    <div class="menu-title">Dashboards</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_dashboards">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Freebie Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Freebie Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Analytics">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Analytics
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
+                            aria-expanded="" aria-controls="collapse_templates"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                            </div>
+                                                    <div class="menu-title">Templates</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_templates">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Calendar">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Calendar
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Taskboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Taskboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
+                            aria-expanded="" aria-controls="collapse_ui_elements"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                            </div>
+                                                    <div class="menu-title">UI Elements</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_ui_elements">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Alerts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Alerts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Buttons">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Buttons
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Grid & Flexbox">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Grid & Flexbox
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
+                            aria-expanded="" aria-controls="collapse_components"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                            </div>
+                                                    <div class="menu-title">Components</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_components">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Toasts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Toasts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Timeline">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Timeline
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Carousel">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Carousel
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Tabs">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Tabs
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Progress">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Progress
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Modals">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Modals
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link active"
+                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Popovers & Tooltips">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Popovers & Tooltips
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Source Code">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Source Code
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="HUD Elements">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    HUD Elements
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
+                            aria-expanded="" aria-controls="collapse_jobs"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                            </div>
+                                                    <div class="menu-title">Jobs</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_jobs">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Job Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Job Dashboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <div class="menu-label">Upgrade</div>
+                    </li>
+                    <li class="admin-nav-item px-0 mt-2">
+                        <a class="admin-nav-link bg-success text-dark"
+                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
+                                                        <div class="parent-icon">
+                                <i class="material-symbols-rounded">shopping_cart</i>
+                            </div>
+                                                    <div class="menu-title">Purchase PRO Version</div>
+                        </a>
+                    </li>
+</ul>
+        </div>
+        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3" />
+        <!-- end sidebar navigation -->
+    </aside>
+    <!-- END HUI VERTICAL MENU -->
+    <!-- start main wrapper -->
+    <main class="ultraviolet-main-wrapper">
+        <div class="ultraviolet-content container-fluid">
+            <!-- start breadcrumb -->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center dashboard-margin position-relative z-100">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb-chevron">
+                        <li class="breadcrumb-item">
+                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#"> <span class="material-symbols-rounded">folder</span>
+                                UI Elements</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="#"> <span class="material-symbols-rounded">dashboard</span>
+                                Popovers</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="ms-auto">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-cyber btn-sm">Settings</button>
+                        <button type="button" class="btn btn-cyber btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <div class="dropdown-divider">
+                            </div> <a class="dropdown-item" href="javascript:;">Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end breadcrumb -->
+            <!-- start page content -->
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Popovers & Tooltips</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Basic Tooltips -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Basic Tooltips</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">Tooltip on top</button>
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Tooltip on right</button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">Tooltip on left</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tooltip with HTML -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Tooltips with HTML</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">HTML Tooltip</button>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-html="true" title="<strong>Bold text</strong><br><small>Small text</small>">Multi-line Tooltip</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tooltips on Different Elements -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Tooltips on Different Elements</h3>
+                            <div class="d-flex flex-wrap gap-3 align-items-center"> <a href="#" class="text-primary" data-bs-toggle="tooltip" title="This is a link tooltip">Link with tooltip</a>
+                                <span class="badge bg-info" data-bs-toggle="tooltip" title="This is a badge tooltip">Badge with tooltip</span>
+                                <i class="material-symbols-rounded text-warning" data-bs-toggle="tooltip" title="This is an icon tooltip">help</i>
+                                <div class="bg-light border rounded p-2 d-inline-block" data-bs-toggle="tooltip" title="This is a div tooltip">Div with tooltip</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic Popovers -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Basic Popovers <small class="fst-italic text-info">click to show</small>
+                            </h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Popover on top">Popover on top</button>
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Popover on right">Popover on right</button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Popover on bottom">Popover on bottom</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Popover on left">Popover on left</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Popovers with Title -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Popovers with Title</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-info" data-bs-toggle="popover" data-bs-placement="top" data-bs-title="Popover Title" data-bs-content="This popover has a title and some content.">Popover with Title</button>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="Warning" data-bs-content="This is a warning popover with important information.">Warning Popover</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Popovers with HTML Content -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Popovers with HTML Content</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="top" data-bs-title="<strong>HTML Popover</strong>" data-bs-content="<em>This popover</em> contains <u>HTML content</u> with <b>formatting</b>.">HTML Popover</button>
+                                <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="right" data-bs-title="<i class='material-symbols-rounded'>info</i> Info" data-bs-content="<ul><li>First item</li><li>Second item</li><li>Third item</li></ul>">List Popover</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dismissible Popovers -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Dismissible Popovers</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-title="Dismissible" data-bs-content="This popover can be dismissed by clicking outside of it.">Dismissible Popover</button>
+                                <button type="button" class="btn btn-info" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" data-bs-title="Hover Trigger" data-bs-content="This popover appears on hover and disappears when you move away.">Hover Popover</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Popovers on Different Elements -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Popovers on Different Elements</h3>
+                            <div class="d-flex flex-wrap gap-3 align-items-center"> <a href="#" class="btn btn-outline-primary" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="This is a link popover">Link Popover</a>
+                                <span class="badge bg-secondary" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="This is a badge popover">Badge Popover</span>
+                                <i class="material-symbols-rounded text-warning" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="This is an icon popover">info</i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Custom Styled Popovers -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h3 class="h4 mb-3">Custom Styled Popovers</h3>
+                            <div class="d-flex flex-wrap gap-3">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="top" data-bs-title="<span class='text-primary'><i class='material-symbols-rounded'>check_circle</i> Success</span>" data-bs-content="<div class='text-success'>Your action was completed successfully!</div>">Success Popover</button>
+                                <button type="button" class="btn btn-warning" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="<span class='text-warning'><i class='material-symbols-rounded'>warning</i> Warning</span>" data-bs-content="<div class='text-warning'>Please review your input before proceeding.</div>">Warning Popover</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+    // Initialize tooltips and popovers
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    
+        // Initialize all popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+        });
+    });
+            </script>
+            <!-- end page content -->
+        </div>
+    </main>
+    <!-- end main wrapper -->
+    <!-- start overlay -->
+    <div class="overlay btn-toggle">
+    </div>
+    <!-- end overlay -->
+    <!-- start footer -->
+    <footer class="page-footer bg-secondary bg-opacity-25">
+        <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
+    </footer>
+    <!-- end footer -->
+    <!-- start CDN scripts -->
+    <!-- start core javascript libraries -->
+    <!-- Bootstrap 5.3.5 Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- Anime.js 3.2.1 from CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BProgress Loading Indicator -->
+    <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <!-- end core javascript libraries -->
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+    <!-- JSVector Maps Core Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <!-- end chart & visualization libraries -->
+    <!-- start UI component libraries -->
+    <!-- Grid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.13/index.global.min.js'></script>
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Simplebar scrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.3.2/dist/simplebar.min.js"></script>
+    <!-- modal lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+    <!-- Masonry Layout -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+    </script>
+    <!-- Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <!-- CosmicWave Component -->
+    <script src="https://cdn.jsdelivr.net/npm/@huement/cosmicwave/dist/cosmicwave.min.js"></script>
+    <!-- fit text -->
+    <script src="https://cdn.jsdelivr.net/npm/fitty@2.3.6/dist/fitty.min.js"></script>
+    <!-- Form Enhancement Libraries -->
+    <!-- TinyMCE -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"></script>
+    <!-- Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Cleave.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- end UI component libraries -->
+    <!-- end CDN scripts -->
+    <!-- Jquery Free JSON Table (local asset) -->
+    <script src="./js/JsonTable.js"></script>
+    <!-- start custom application scripts -->
+    <!-- end custom application scripts -->
+    <!-- start site-wide javascript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+            const viewportDebugger = document.getElementById('viewport-debugger');
+            if (viewportDebugger) {
+                viewportDebugger.addEventListener('click', function() {
+                    this.remove();
+                });
+            }
+
+            // BProgress Configuration
+            const {
+                BProgress
+            } = BProgressJS;
+            BProgress.configure({
+                color: '#FF3300', // RED
+                height: '6px',
+                position: 'top',
+                showSpinner: false,
+                trickleSpeed: 200,
+                minimum: 0.08
+            });
+
+            // Global BProgress functions for easy access
+            window.showProgress = () => {
+                BProgress.start();
+            };
+            window.hideProgress = () => BProgress.done();
+
+            window.setProgress = (percent) => {
+                BProgress.set(percent);
+            };
+
+            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
+            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
+                el.addEventListener('click', Lightbox.initialize);
+            });
+
+            // Auto-trigger BProgress on dropdown item clicks
+            document.addEventListener('click', function(e) {
+                // Check if clicked element is a dropdown item
+                const dropdownItem = e.target.closest('.dropdown-item');
+                if (dropdownItem) {
+                    // Skip if it's a divider or disabled
+                    if (dropdownItem.classList.contains('dropdown-divider') ||
+                        dropdownItem.classList.contains('disabled') ||
+                        dropdownItem.hasAttribute('disabled')) {
+                        return;
+                    }
+
+                    // Skip if it's a JavaScript link (no real action)
+                    const href = dropdownItem.getAttribute('href');
+                    if (href === 'javascript:;' || href === '#') {
+                        return;
+                    }
+
+                    // Skip if it's an admin navigation link (handled by page transition)
+                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
+                        return;
+                    }
+
+                    console.log('Dropdown item clicked, triggering BProgress');
+
+                    // Quick BProgress sequence
+                    BProgress.start();
+                    setTimeout(() => BProgress.set(30), 100);
+                    setTimeout(() => BProgress.set(60), 200);
+                    setTimeout(() => BProgress.set(90), 300);
+                    setTimeout(() => BProgress.done(), 400);
+                }
+            });
+
+            // BProgress on page navigation
+            // Intercept all admin navigation links
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                // Only handle admin links
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
+                    return;
+                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
+
+                console.log("Admin navigation detected, starting BProgress");
+
+                // Start BProgress for navigation
+                BProgress.start();
+
+                // Let the navigation happen naturally
+            });
+
+            // Page load - BProgress only
+            window.addEventListener('load', function() {
+                // Start BProgress for page load
+                BProgress.start();
+                setTimeout(() => BProgress.set(50), 100);
+                setTimeout(() => BProgress.set(80), 200);
+                setTimeout(() => BProgress.set(100), 300);
+
+                // Complete BProgress
+                setTimeout(() => {
+                    BProgress.done();
+                }, 400);
+            });
+        });
+    </script>
+    <!-- end site-wide javascript -->
+    <!-- start page-specific scripts -->
+    <!-- end page-specific scripts -->
+    <!-- start additional utilities -->
+    <script>
+    // Store menu preference
+                    sessionStorage.setItem('menu_type', 'vertical');
+        
+        // Menu toggle links work normally - middleware handles cookie setting and page reload
+
+        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
+        function fixCosmicWaveOverflow() {
+            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
+            cosmicWaves.forEach(svg => {
+                // Only fix the sizing, don't change the viewBox
+                svg.style.width = '100%';
+                svg.style.height = '100%';
+                svg.style.maxWidth = '100%';
+                svg.style.overflow = 'hidden';
+            });
+        }
+
+        // Run immediately and also after a delay to catch dynamically loaded waves
+        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
+        setTimeout(fixCosmicWaveOverflow, 100);
+        setTimeout(fixCosmicWaveOverflow, 500);
+        setTimeout(fixCosmicWaveOverflow, 1000);
+
+        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
+        if (typeof MutationObserver !== 'undefined') {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
+                                        'cosmic-wave')) {
+                                    setTimeout(fixCosmicWaveOverflow, 50);
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        // Sidebar hover functionality for collapsed state
+        function initSidebarHover() {
+            const sidebar = document.querySelector('.sidebar-wrapper');
+            const body = document.body;
+
+            if (!sidebar) return;
+
+            // Only apply hover behavior when sidebar is toggled (collapsed)
+            function handleSidebarHover() {
+                if (body.classList.contains('toggled')) {
+                    sidebar.addEventListener('mouseenter', function() {
+                        body.classList.add('sidebar-hovered');
+                    });
+
+                    sidebar.addEventListener('mouseleave', function() {
+                        body.classList.remove('sidebar-hovered');
+                    });
+                }
+            }
+
+            // Initialize on page load
+            handleSidebarHover();
+
+            // Re-initialize when toggle state changes
+            const toggleButton = document.querySelector('.btn-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    // Wait for the toggle animation to complete
+                    setTimeout(handleSidebarHover, 300);
+                });
+            }
+        }
+
+        // Initialize sidebar hover when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSidebarHover);
+        } else {
+            initSidebarHover();
+        }
+    </script>
+    <!-- end additional utilities -->
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+    // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+                console.log('Material Symbols font loaded');
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        // The font is usually cached after first page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+
+        // Watch for dynamically added icons (e.g., from AJAX content)
+        const iconObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if the node itself is an icon
+                        if (node.classList && (node.classList.contains(
+                                'material-symbols-rounded') || node.classList.contains(
+                                'material-icons'))) {
+                            node.classList.add('material-symbols-rounded--loaded');
+                        }
+                        // Check for icons within the added node
+                        if (node.querySelectorAll) {
+                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
+                                .forEach(function(icon) {
+                                    icon.classList.add('material-symbols-rounded--loaded');
+                                });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Start observing the document body for changes
+        iconObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/basic.js"></script>
+    <script src="./js/freebie.js"></script>
+<!-- Upgrade to Pro Modal -->
+<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-dark">
+        <h5 class="modal-title" id="upgradeModalLabel">
+          <i class="material-symbols-rounded me-2" style="vertical-align: middle;">star</i>
+          Upgrade to UltraViolet Pro
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center py-4">
+          <i class="material-symbols-rounded text-primary mb-3" style="font-size: 64px;">workspace_premium</i>
+          <h4 class="mb-3">Unlock All Features</h4>
+          <p class="mb-4">Get access to the full UltraViolet Pro with 80+ pages, horizontal menu layouts, advanced apps, and much more!</p>
+          <ul class="text-start mb-4">
+            <li>Horizontal & Vertical menu layouts</li>
+            <li>80+ admin pages and templates</li>
+            <li>Advanced apps (Email, Chat, Calendar, etc.)</li>
+            <li>Laravel Livewire edition included</li>
+            <li>Premium support and updates</li>
+          </ul>
+          <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg w-100" target="_blank">
+            <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
+            Purchase on ThemeForest
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

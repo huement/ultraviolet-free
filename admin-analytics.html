@@ -1,0 +1,3098 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<!-- start head -->
+
+<head>
+    <!-- start meta tags & title -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <title>Analytics | UltraViolet</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end meta tags & title -->
+    <!-- start plugins -->
+    <!-- The main CDN being used -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Vector Map -->
+    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
+    <!-- Scrollbar Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.css">
+    <!-- Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Grid JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- BProgress Loading Indicator -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
+    <!-- Form Enhancement CSS -->
+    <!-- TinyMCE CSS is included in the editor itself -->
+    <!-- Choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- BS5 Lightbox - Image Modal Gallery -->
+    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- end plugins -->
+    <!-- start vite CSS & JS -->
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end vite CSS & JS -->
+</head>
+<!-- Theme Initialization (runs before page render to prevent flash) -->
+<script>
+    (function() {
+                // Check localStorage for theme preference (default: dark)
+                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            })();
+</script>
+</head>
+<!-- end head -->
+
+<body class="space-grotesk-300 vertical-menu " dir="ltr">
+    <!-- Background animation container -->
+    <div id="admin-background">
+    </div>
+    <!-- start page action bar -->
+    <header class="ultraviolet-action-bar ">
+        <nav class="navbar navbar-expand align-items-center gap-4 ">
+            <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
+            </div>
+            <!-- SEARCH BAR -->
+            <div class="search-bar flex-grow-1">
+                <div class="position-relative">
+                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                    <div class="search-popup">
+                        <div class="card rounded-4 overflow-hidden">
+                            <div class="card-header d-lg-none">
+                                <div class="position-relative">
+                                    <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
+                                </div>
+                            </div>
+                            <div class="card-body search-content">
+                                <div class="row g-3">
+                                    <!-- Left Column: Recently Visited -->
+                                    <div class="col-md-6">
+                                        <p class="search-title fw-bold mb-3 text-uppercase text-info">Recently Visited</p>
+                                        <div class="search-list d-flex flex-column gap-2"> <a href="admin-dashboard.html" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-primary">dashboard</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Dashboard</h6>
+                                                <p class="mb-0 small text-muted">Main admin dashboard</p>
+                                            </div>
+                                            <div class="text-muted small">2m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-success">table_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Data Tables</h6>
+                                                <p class="mb-0 small text-muted">Grid components</p>
+                                            </div>
+                                            <div class="text-muted small">15m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-info">bar_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Analytics</h6>
+                                                <p class="mb-0 small text-muted">Charts & statistics</p>
+                                            </div>
+                                            <div class="text-muted small">1h</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-warning">settings</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Settings</h6>
+                                                <p class="mb-0 small text-muted">Configuration</p>
+                                            </div>
+                                            <div class="text-muted small">3h</div>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    <!-- Right Column: Quick Access -->
+                                    <div class="col-md-6 border-start-md">
+                                        <p class="search-title fw-semibold mb-3 text-uppercase text-info">Quick Access</p>
+                                        <div class="row g-2">
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-danger"
+                                                        style="font-size: 2.5rem;">description</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Form Wizard</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-purple"
+                                                        style="font-size: 2.5rem;">calendar_month</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Calendar</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-cyan"
+                                                        style="font-size: 2.5rem;">email</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Email</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-teal"
+                                                        style="font-size: 2.5rem;">group</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Users</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-warning"
+                                                        style="font-size: 2.5rem;">shopping_cart</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Orders</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-success"
+                                                        style="font-size: 2.5rem;">inventory</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Products</h6>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SEARCH BAR -->
+            <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+                <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
+                </li>
+                <!-- Fixed Header Toggle (only visible in horizontal mode) -->
+                <!-- Menu Type Toggle (vert / horiz) -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    </a>
+                </li>
+                <!-- Apps -->
+                <li class="nav-item dropdown"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
+                        <div class="border rounded-4 overflow-hidden p-relative z-5">
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-email.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-envelope-fill icon-xl" style="color: #ea4335;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Email Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-chat.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-dots-fill icon-xl" style="color: #00aff0;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Chat Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Calendar</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Taskboard</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-invoice.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-receipt icon-xl" style="color: #f59e0b;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Invoice</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-maps.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-map-fill icon-xl" style="color: #06b6d4;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Maps</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-editor.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-file-text-fill icon-xl" style="color: #6366f1;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Text Editor</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-ai-agent.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-robot icon-xl" style="color: #ec4899;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">AI Agent</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-micro-blog.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-left-text-fill icon-xl" style="color: #14b8a6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Micro Blog</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0">
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-youtube icon-xl" style="color: #ff0000;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">YouTube</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-facebook icon-xl" style="color: #1877f2;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Facebook</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-instagram icon-xl" style="color: #e4405f;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Instagram</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </li>
+                <!-- Settings Toggle Button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;" id="admin-settings-toggle" title="Settings" data-bs-toggle="tooltip" data-bs-title="Settings"> <i class="material-symbols-rounded">settings</i>
+                    </a>
+                </li>
+                <!-- Notifications -->
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
+                        class="material-symbols-rounded">notifications</i>
+                    <span class="badge-notify">5</span>
+                </a>
+                    <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
+                        <div class="px-2 pb-1 d-flex align-items-center justify-content-between border-bottom">
+                            <h5 class="notiy-title mb-0">Notifications</h5>
+                            <!-- notifications options menu -->
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-xs dropdown-toggle dropdown-no-caret p-relative z-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="material-symbols-rounded">more_vert</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">inventory_2</i>Archive All</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">done_all</i>Mark all as read</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">mic_off</i>Disable Notifications</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">grade</i>What's new ?</a>
+                                    </div>
+                                    <div>
+                                        <hr class="dropdown-divider">
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">leaderboard</i>Reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end options menu -->
+                        </div>
+                        <div class="notify-list" data-simplebar="true">
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">System Update Available</h5>
+                                        <p class="mb-0 notify-desc">Version 2.4.1 is ready to install with new
+                                            features.</p>
+                                        <p class="mb-0 notify-time">2 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-success text-dark">
+                                        <span>AB</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">New User Registration</h5>
+                                        <p class="mb-0 notify-desc">Alex Brown from Canada has joined the platform.</p>
+                                        <p class="mb-0 notify-time">15 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Backup Completed</h5>
+                                        <p class="mb-0 notify-desc">Daily backup has been successfully completed.</p>
+                                        <p class="mb-0 notify-time">1 hour ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Security Alert</h5>
+                                        <p class="mb-0 notify-desc">Unusual login activity detected from new location.
+                                        </p>
+                                        <p class="mb-0 notify-time">3 hours ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Monthly Report Ready</h5>
+                                        <p class="mb-0 notify-desc">Your analytics report for September is now
+                                            available.</p>
+                                        <p class="mb-0 notify-time">Yesterday</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-warning text-white">
+                                        <span>MJ</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Server Maintenance</h5>
+                                        <p class="mb-0 notify-desc">Scheduled maintenance will begin at 2:00 AM EST.
+                                        </p>
+                                        <p class="mb-0 notify-time">2 days ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- User Dropdown -->
+                <li class="nav-item dropdown"> <a href=".html" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                            width="45" height="45" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
+                            <div class="text-center">
+                                <img src="images/assets/profile-image.png"
+                                    class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
+                                <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
+                            </div>
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">person_outline</i>Profile</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">local_bar</i>Setting</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">dashboard</i>Dashboard</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">account_balance</i>Earning</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">cloud_download</i>Downloads</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="login.html"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Admin Settings Menu (slides down from top) -->
+    <div id="admin-settings-menu" class="admin-settings-menu">
+        <div class="admin-settings-panel">
+            <div class="mb-3">
+                <label for="admin-background-select" class="form-label">Background Animation</label>
+                <select class="form-select form-select-sm" id="admin-background-select">
+                    <option value="none">None (Off)</option>
+                    <option value="wave-lines">Wave Lines</option>
+                    <option value="node-lines">Node Lines</option>
+                    <option value="circles">Circles</option>
+                    <option value="space">Starfield</option>
+                    <option value="hud">HUD Lines</option>
+                </select>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
+                <label class="form-check-label" for="admin-rtl-switch">RTL / LTR</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
+                <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
+            </div>
+            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+        </div>
+    </div>
+    <!-- end page action bar -->
+    <!-- HUI VERTICAL MENU -->
+    <aside class="sidebar-wrapper" id="sidebarWrapper" data-simplebar="true">
+        <!-- start sidebar header -->
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">
+                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                </h5>
+            </div>
+            <div class="sidebar-close d-xl-none">
+                <a href="javascript:;" class="sidebar-close-btn" aria-label="Close"> <i class="material-symbols-rounded">close</i>
+                </a>
+            </div>
+        </div>
+        <!-- end sidebar header -->
+        <!-- start sidebar navigation -->
+        <div class="sidebar-nav">
+            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
+                            aria-expanded="" aria-controls="collapse_dashboards"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                            </div>
+                                                    <div class="menu-title">Dashboards</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_dashboards">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Freebie Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Freebie Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link active"
+                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Analytics">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Analytics
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
+                            aria-expanded="" aria-controls="collapse_templates"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                            </div>
+                                                    <div class="menu-title">Templates</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_templates">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Calendar">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Calendar
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Taskboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Taskboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
+                            aria-expanded="" aria-controls="collapse_ui_elements"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                            </div>
+                                                    <div class="menu-title">UI Elements</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_ui_elements">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Alerts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Alerts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Buttons">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Buttons
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Grid & Flexbox">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Grid & Flexbox
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
+                            aria-expanded="" aria-controls="collapse_components"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                            </div>
+                                                    <div class="menu-title">Components</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_components">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Toasts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Toasts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Timeline">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Timeline
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Carousel">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Carousel
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Tabs">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Tabs
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Progress">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Progress
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Modals">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Modals
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Popovers & Tooltips">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Popovers & Tooltips
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Source Code">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Source Code
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="HUD Elements">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    HUD Elements
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
+                            aria-expanded="" aria-controls="collapse_jobs"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                            </div>
+                                                    <div class="menu-title">Jobs</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_jobs">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Job Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Job Dashboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <div class="menu-label">Upgrade</div>
+                    </li>
+                    <li class="admin-nav-item px-0 mt-2">
+                        <a class="admin-nav-link bg-success text-dark"
+                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
+                                                        <div class="parent-icon">
+                                <i class="material-symbols-rounded">shopping_cart</i>
+                            </div>
+                                                    <div class="menu-title">Purchase PRO Version</div>
+                        </a>
+                    </li>
+</ul>
+        </div>
+        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3" />
+        <!-- end sidebar navigation -->
+    </aside>
+    <!-- END HUI VERTICAL MENU -->
+    <!-- start main wrapper -->
+    <main class="ultraviolet-main-wrapper">
+        <div class="ultraviolet-content container-fluid">
+            <!-- start breadcrumb -->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center dashboard-margin position-relative z-100">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb-chevron">
+                        <li class="breadcrumb-item">
+                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">folder</span>
+                                Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="#"> <span class="material-symbols-rounded">dashboard</span>
+                                Analytics</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="ms-auto">
+                    <div class="dropdown">
+                        <button type="button" class="cpubtn cpubtn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Page Actions</button>
+                        <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">all_inclusive</i>All Activities</a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">person_add</i>User Activities</a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">payment</i>Payments</a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">warning</i>Alerts</a>
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">star</i>Active Awesomeness</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                        style="font-size: 16px;">settings</i>Activity Settings</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end breadcrumb -->
+            <!-- start page content -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-3">
+                <div class="col d-flex">
+                    <div class="card w-100 card-component dashboard-margin">
+                        <div class="card-header pb-0 border-none">
+                            <div class="card-action float-end">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-info btn-xs dropdown-toggle" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">all_inclusive</i>All Sales</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">person_add</i>User Sales</a></a> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">warning</i>Lost Sales</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">Weekly Sales</h6>
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">$47K</p> <span class="badge bg-success rounded-pill fs-6">+3.5%</span>
+                                    <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales"><i
+                                    class="material-symbols-rounded text-primary"
+                                    style="font-size: 1rem;">question_mark</i></span>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="minimal-chart" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card w-100 card-component dashboard-margin">
+                        <div class="card-header pb-0 border-none">
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">New Customers</h6>
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">14</div>
+                                    <div class="d-block p-relative w-100"> <span class="badge bg-success rounded-pill fs-6">+13.5%</span>
+                                        <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's signups"><i
+                                        class="material-symbols-rounded text-primary"
+                                        style="font-size: 1rem;">question_mark</i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="minimal-chart-2" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- WEATHER WIDGET -->
+                <div class="col d-flex">
+                    <div class="card w-100 card-component dashboard-margin">
+                        <div class="card-header pb-0 border-none">
+                            <div class="card-action float-end">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary btn-xs dropdown-toggle" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">star</i> Action 1</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">circle</i> Action 2</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">autorenew</i> Action 3</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">Current Weather</h6>
+                        </div>
+                        <div class="card-body pt-2 pb-1">
+                            <div class="row g-2 align-items-center justify-content-center h-100">
+                                <div class="col-4 text-center"> <i class="material-symbols-rounded text-warning" style="font-size: 3rem;">wb_sunny</i>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <h6 class="mb-1 fs-6">Anytown</h6>
+                                    <div class="text-warning fw-bold small">Sunny</div>
+                                    <div class="text-muted" style="font-size: 0.7rem;">PRECIP: 50%</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="weather-stat text-primary mb-0">31&deg;</div>
+                                    <div class="small text-muted">32&deg; / 25&deg;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card w-100 card-component dashboard-margin">
+                        <div class="card-header pb-0 border-none">
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">API Requests</h6>
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">42K</p> <span class="badge bg-danger rounded-pill fs-6">-8.0%</span>
+                                    <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's requests"><i
+                                    class="material-symbols-rounded text-primary"
+                                    style="font-size: 1rem;">question_mark</i></span>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="minimal-chart-3" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row dashboard-margin">
+                <div class="col-md-6">
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+                        <div class="col-6">
+                            <div class="card text-center dashboard-margin">
+                                <div class="card-body"> <i class="material-symbols-rounded text-danger" style="font-size: 3rem;">support_agent</i>
+                                    <h5 class="card-title mt-3">Support Tickets</h5>
+                                    <h2 class="text-danger">23</h2> <small class="text-danger">-15% from last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-center dashboard-margin">
+                                <div class="card-body"> <i class="material-symbols-rounded text-info" style="font-size: 3rem;">speed</i>
+                                    <h5 class="card-title mt-3">Avg Response Time</h5>
+                                    <h2 class="text-info">2.4s</h2> <small class="text-success">+18% faster</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+                        <div class="col-6">
+                            <div class="card text-center dashboard-margin">
+                                <div class="card-body"> <i class="material-symbols-rounded text-warning" style="font-size: 3rem;">storage</i>
+                                    <h5 class="card-title mt-3">Storage Used</h5>
+                                    <h2 class="text-warning">78%</h2> <small class="text-warning">+5% from last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card text-center">
+                                <div class="card-body"> <i class="material-symbols-rounded text-success" style="font-size: 3rem;">security</i>
+                                    <h5 class="card-title mt-3">Security Score</h5>
+                                    <h2 class="text-success">94</h2> <small class="text-success">+3 points</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-component  w-100">
+                        <div class="card-body pt-2" style="min-height: 500px;">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="mb-0">Financial Transactions</h5>
+                                <div class="dropdown">
+                                    <button class="btn btn-xs btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">filter_list</i>Filter</button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                            style="font-size: 16px;">all_inclusive</i>All Activities</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                            style="font-size: 16px;">person_add</i>User Activities</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                            style="font-size: 16px;">payment</i>Payments</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                            style="font-size: 16px;">warning</i>Alerts</a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                            style="font-size: 16px;">settings</i>Activity Settings</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="table-responsive" style="height: 435px;overflow-y:scroll;" data-simplebar="true">
+                                <table class="table align-middle mb-0 table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Source Name</th>
+                                            <th>Status</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 15, 2024</h6>
+                                                    <p class="mb-0">2:45 PM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#0070ba" />
+                                                            <path d="M7.5 8.5h9v7h-9z" fill="white" />
+                                                            <path d="M10.5 10.5h3v3h-3z" fill="#0070ba" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">PayPal</h6>
+                                                        <p class="mb-0">Premium Subscription</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$2,847</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 14, 2024</h6>
+                                                    <p class="mb-0">11:30 AM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#1a1f71" />
+                                                            <path d="M4 8h16v8H4z" fill="white" />
+                                                            <circle cx="8" cy="12" r="2" fill="#1a1f71" />
+                                                            <circle cx="16" cy="12" r="2" fill="#1a1f71" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Visa</h6>
+                                                        <p class="mb-0">Enterprise License</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">schedule</i>Pending
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$4,250</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 13, 2024</h6>
+                                                    <p class="mb-0">9:15 AM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#1769ff" />
+                                                            <path d="M6 8h12v2H6z" fill="white" />
+                                                            <path d="M6 11h12v2H6z" fill="white" />
+                                                            <path d="M6 14h8v2H6z" fill="white" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Adobe</h6>
+                                                        <p class="mb-0">Creative Suite</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle   text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$1,680</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 12, 2024</h6>
+                                                    <p class="mb-0">4:20 PM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#1db954" />
+                                                            <circle cx="12" cy="12" r="8" fill="white" />
+                                                            <path d="M8 12l2 2 4-4" stroke="#1db954" stroke-width="2" fill="none" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Spotify</h6>
+                                                        <p class="mb-0">Family Plan</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-danger-subtle   text-danger px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">cancel</i>Failed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$15.99</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 11, 2024</h6>
+                                                    <p class="mb-0">1:10 PM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#4285f4" />
+                                                            <path d="M12 4l-2 2h4l-2-2z" fill="white" />
+                                                            <path d="M8 6h8v12H8z" fill="white" />
+                                                            <path d="M10 8h4v8h-4z" fill="#4285f4" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Google</h6>
+                                                        <p class="mb-0">Workspace Pro</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle   text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$3,200</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 10, 2024</h6>
+                                                    <p class="mb-0">7:55 AM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#000000" />
+                                                            <path d="M12 4l-1.5 1.5L12 7l1.5-1.5L12 4z" fill="white" />
+                                                            <path d="M8 8h8v8H8z" fill="white" />
+                                                            <path d="M10 10h4v4h-4z" fill="#000000" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Apple</h6>
+                                                        <p class="mb-0">Developer Program</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle   text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$99.00</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 9, 2024</h6>
+                                                    <p class="mb-0">3:30 PM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#ff6b35" />
+                                                            <path d="M6 6h12v12H6z" fill="white" />
+                                                            <path d="M8 8h8v2H8z" fill="#ff6b35" />
+                                                            <path d="M8 11h6v1H8z" fill="#ff6b35" />
+                                                            <path d="M8 13h4v1H8z" fill="#ff6b35" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Figma</h6>
+                                                        <p class="mb-0">Professional Plan</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-warning-subtle   text-warning px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">schedule</i>Pending
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$144.00</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 8, 2024</h6>
+                                                    <p class="mb-0">10:45 AM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#0077b5" />
+                                                            <path d="M6 6h12v12H6z" fill="white" />
+                                                            <path d="M8 8h8v1H8z" fill="#0077b5" />
+                                                            <path d="M8 10h6v1H8z" fill="#0077b5" />
+                                                            <path d="M8 12h4v1H8z" fill="#0077b5" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">LinkedIn</h6>
+                                                        <p class="mb-0">Sales Navigator</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle   text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$79.99</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 9, 2024</h6>
+                                                    <p class="mb-0">3:30 PM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#ff6b35" />
+                                                            <path d="M6 6h12v12H6z" fill="white" />
+                                                            <path d="M8 8h8v2H8z" fill="#ff6b35" />
+                                                            <path d="M8 11h6v1H8z" fill="#ff6b35" />
+                                                            <path d="M8 13h4v1H8z" fill="#ff6b35" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">Figma</h6>
+                                                        <p class="mb-0">Professional Plan</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-warning-subtle   text-warning px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">schedule</i>Pending
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$144.00</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="">
+                                                    <h6 class="mb-0">Dec 8, 2024</h6>
+                                                    <p class="mb-0">10:45 AM</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex align-items-center flex-row gap-3">
+                                                    <div class="">
+                                                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect width="24" height="24" rx="4" fill="#0077b5" />
+                                                            <path d="M6 6h12v12H6z" fill="white" />
+                                                            <path d="M8 8h8v1H8z" fill="#0077b5" />
+                                                            <path d="M8 10h6v1H8z" fill="#0077b5" />
+                                                            <path d="M8 12h4v1H8z" fill="#0077b5" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="">
+                                                        <h6 class="mb-0">LinkedIn</h6>
+                                                        <p class="mb-0">Sales Navigator</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td> <span class="badge bg-success-subtle   text-success px-3 py-2 rounded-pill">
+                                            <i class="material-symbols-rounded me-1"
+                                                style="font-size: 14px;">check_circle</i>Completed
+                                        </span>
+                                            </td>
+                                            <td>
+                                                <h5 class="mb-0">$79.99</h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row dashboard-margin">
+                <div class="col-md-6">
+                    <div class="card card-height-100">
+                        <div class="card-body px-3 pt-3 pb-0" style="min-height: 500px;">
+                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                <h4 class="mb-0">Revenue Analytics</h4>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-soft-primary btn-sm chart-period-btn active" data-period="12m">12M</button>
+                                    <button type="button" class="btn btn-soft-secondary btn-sm chart-period-btn" data-period="6m">6M</button>
+                                    <button type="button" class="btn btn-soft-secondary btn-sm chart-period-btn" data-period="3m">3M</button>
+                                    <button type="button" class="btn btn-soft-secondary btn-sm chart-period-btn" data-period="1m">1M</button>
+                                </div>
+                            </div>
+                            <div id="chartdashboard" style="height: 400px; width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- CARD WIDGET -->
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column pt-2" style="min-height: 400px;">
+                            <div class="d-flex justify-content-between align-items-start mb-0">
+                                <h5 class="mb-0">Scoring Widget</h5>
+                                <div class="dropdown font-sans-serif btn-reveal-trigger">
+                                    <button class="btn btn-info text-600 btn-xs dropdown-toggle dropdown-no-caret btn-reveal" type="button" id="dropdown-bandwidth-saved" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="material-symbols-rounded fs-11">more_horiz</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end border py-2" aria-labelledby="dropdown-bandwidth-saved"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
+                                        <div class="dropdown-divider">
+                                        </div><a class="dropdown-item text-danger" href="#!">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+                                <div class="d-flex justify-content-center position-relative">
+                                    <div id="donut-chart" style="height: 180px; width: 180px;">
+                                    </div>
+                                    <div class="score-value position-absolute top-50 start-50 translate-middle text-center" style="font-size: 24px; font-weight: 700; color: #ffffff; z-index: 10;">45%</div>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <h6 class="fs-9 mb-1"><span class="material-symbols-rounded text-success me-1" style="font-size: 12px;">check</span>2,847 tasks completed</h6>
+                                    <p class="fs-10 mb-0">6,324 total tasks assigned</p>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-3 border-top">
+                                <div class="row flex-between-center">
+                                    <div class="col-auto">
+                                        <select class="form-select form-select-sm">
+                                            <option>Last 6 Months</option>
+                                            <option>Last Year</option>
+                                            <option>Last 2 Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="col"> <span class="float-end text-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Sample Data about the widget"><i class="material-symbols-rounded text-primary"
+                                        style="font-size: 1rem;">question_mark</i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- BASIC WIDGET -->
+                    <div class="card text-center">
+                        <div class="card-body"> <i class="material-symbols-rounded text-warning" style="font-size: 3rem;">shopping_cart</i>
+                            <h5 class="card-title mt-3">Orders</h5>
+                            <h2 class="text-warning">1,247</h2> <small class="text-success">+23% from last month</small>
+                        </div>
+                    </div>
+                    <div class="card text-center mt-4">
+                        <div class="card-body"> <i class="material-symbols-rounded text-danger" style="font-size: 3rem;">trending_down</i>
+                            <h5 class="card-title mt-3">Bounce Rate</h5>
+                            <h2 class="text-danger">34.2%</h2> <small class="text-danger">-8% from last month</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row dashboard-margin">
+                <div class="col-12">
+                    <div class="card card-component">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h4 class="mb-0">Top Performing Pages</h4>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-soft-primary btn-sm active">Today</button>
+                                    <button type="button" class="btn btn-soft-secondary btn-sm">Week</button>
+                                    <button type="button" class="btn btn-soft-secondary btn-sm">Month</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Page</th>
+                                            <th>Views</th>
+                                            <th>Unique Visitors</th>
+                                            <th>Avg. Time</th>
+                                            <th>Bounce Rate</th>
+                                            <th>Performance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2 text-primary">home</i>
+                                                    <div>
+                                                        <h6 class="mb-0">/home</h6> <small class="text-muted">Landing Page</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><strong>12,847</strong>
+                                            </td>
+                                            <td>8,234</td>
+                                            <td>3m 24s</td>
+                                            <td><span class="badge bg-success">23.4%</span>
+                                            </td>
+                                            <td>
+                                                <div class="progress" style="height: 6px; width: 100px;">
+                                                    <div class="progress-bar bg-success" style="width: 85%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2 text-success">shopping_cart</i>
+                                                    <div>
+                                                        <h6 class="mb-0">/products</h6> <small class="text-muted">Product Catalog</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><strong>9,234</strong>
+                                            </td>
+                                            <td>6,123</td>
+                                            <td>5m 12s</td>
+                                            <td><span class="badge bg-success">18.2%</span>
+                                            </td>
+                                            <td>
+                                                <div class="progress" style="height: 6px; width: 100px;">
+                                                    <div class="progress-bar bg-success" style="width: 92%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2 text-info">info</i>
+                                                    <div>
+                                                        <h6 class="mb-0">/about</h6> <small class="text-muted">About Us</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><strong>6,842</strong>
+                                            </td>
+                                            <td>5,234</td>
+                                            <td>2m 45s</td>
+                                            <td><span class="badge bg-warning">34.8%</span>
+                                            </td>
+                                            <td>
+                                                <div class="progress" style="height: 6px; width: 100px;">
+                                                    <div class="progress-bar bg-warning" style="width: 68%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2 text-warning">mail</i>
+                                                    <div>
+                                                        <h6 class="mb-0">/contact</h6> <small class="text-muted">Contact Form</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><strong>4,523</strong>
+                                            </td>
+                                            <td>3,842</td>
+                                            <td>4m 18s</td>
+                                            <td><span class="badge bg-success">15.3%</span>
+                                            </td>
+                                            <td>
+                                                <div class="progress" style="height: 6px; width: 100px;">
+                                                    <div class="progress-bar bg-success" style="width: 88%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 dashboard-margin">
+                <!-- Real-time User Activity Feed -->
+                <div class="col-lg-4">
+                    <div class="card dashboard-margin" style="max-height: 35rem">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">Live User Activity</h5> <span class="badge bg-success rounded-pill">
+                            <i class="material-symbols-rounded" style="font-size: 14px;">circle</i> Live
+                        </span>
+                            </div>
+                        </div>
+                        <div class="card-body" style="max-height: 29rem; overflow-y: auto;" data-simplebar="true">
+                            <div id="user-activity-feed" class="activity-timeline">
+                                <!-- Activities will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Traffic Source Monitor -->
+                <div class="col-lg-4">
+                    <div class="card dashboard-margin" style="max-height: 35rem">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Traffic Sources</h5>
+                        </div>
+                        <div class="card-body" style="max-height: 29rem; overflow-y: auto;" data-simplebar="true">
+                            <div class="row g-2">
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border border-primary border-opacity-25">
+                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span class="text-primary fw-bold">Organic Search</span>
+                                            <i class="material-symbols-rounded text-primary">search</i>
+                                        </div>
+                                        <div class="small text-muted">Visitors: <span id="organic-visitors" class="text-primary fw-bold">15,247</span>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div id="organic-progress" class="progress-bar bg-primary" style="width: 65%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border border-info border-opacity-25">
+                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span class="text-info fw-bold">Direct Traffic</span>
+                                            <i class="material-symbols-rounded text-info">near_me</i>
+                                        </div>
+                                        <div class="small text-muted">Visitors: <span id="direct-visitors" class="text-info fw-bold">8,432</span>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div id="direct-progress" class="progress-bar bg-info" style="width: 48%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border border-success border-opacity-25">
+                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span class="text-success fw-bold">Social Media</span>
+                                            <i class="material-symbols-rounded text-success">share</i>
+                                        </div>
+                                        <div class="small text-muted">Visitors: <span id="social-visitors" class="text-success fw-bold">5,621</span>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div id="social-progress" class="progress-bar bg-success" style="width: 38%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="p-3 rounded-4 border border-warning border-opacity-25">
+                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span class="text-warning fw-bold">Referrals</span>
+                                            <i class="material-symbols-rounded text-warning">link</i>
+                                        </div>
+                                        <div class="small text-muted">Visitors: <span id="referral-visitors" class="text-warning fw-bold">3,128</span>
+                                        </div>
+                                        <div class="progress mt-2" style="height: 6px;">
+                                            <div id="referral-progress" class="progress-bar bg-warning" style="width: 28%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-card-footer">
+                            <div class="d-flex justify-content-between align-items-center mb-2"> <span class="small text-muted text-uppercase">Total Sessions:</span>
+                                <span id="total-sessions" class="fw-bold">32,428</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center"> <span class="small text-muted text-uppercase">Avg. Session Time:</span>
+                                <span id="avg-session-time" class="fw-bold">4m 32s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Engagement Metrics -->
+                <div class="col-lg-4">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <div class="card dashboard-margin">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">User Details</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <div class="text-muted small mb-1">Page Views</div>
+                                            <h3 class="mb-0" id="realtime-pageviews">127,482</h3>
+                                        </div>
+                                        <div> <i class="material-symbols-rounded text-primary" style="font-size: 3rem;">visibility</i>
+                                        </div>
+                                    </div>
+                                    <div class="progress mt-2" style="height: 6px;">
+                                        <div id="pageviews-progress" class="progress-bar bg-primary" style="width: 85%">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2">
+                                        <div>
+                                            <div class="text-muted small mb-1">Active Users</div>
+                                            <h3 class="mb-0" id="realtime-users">4,523</h3>
+                                        </div>
+                                        <div> <i class="material-symbols-rounded text-success" style="font-size: 3rem;">person</i>
+                                        </div>
+                                    </div>
+                                    <div class="progress mt-2" style="height: 6px;">
+                                        <div id="users-progress" class="progress-bar bg-success" style="width: 72%">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2">
+                                        <div>
+                                            <div class="text-muted small mb-1">Bounce Rate</div>
+                                            <h3 class="mb-0" id="realtime-bounce">24.8%</h3>
+                                        </div>
+                                        <div> <i class="material-symbols-rounded text-warning" style="font-size: 3rem;">trending_down</i>
+                                        </div>
+                                    </div>
+                                    <div class="progress mt-2" style="height: 6px;">
+                                        <div id="bounce-progress" class="progress-bar bg-warning" style="width: 25%">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2">
+                                        <div>
+                                            <div class="text-muted small mb-1">Conversion Rate</div>
+                                            <h3 class="mb-0" id="realtime-conversion">8.4%</h3>
+                                        </div>
+                                        <div> <i class="material-symbols-rounded text-info" style="font-size: 3rem;">trending_up</i>
+                                        </div>
+                                    </div>
+                                    <div class="progress mt-2 mb-2" style="height: 6px;">
+                                        <div id="conversion-progress" class="progress-bar bg-info" style="width: 84%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row dashboard-margin">
+                <div class="col-md-8">
+                    <div class="card ">
+                        <div class="card-body">
+                            <h4 class="mb-3">Welcome to UltraViolet Admin Dashboard!</h4>
+                            <p>This is a professional Bootstrap 5 admin dashboard with Laravel Livewire and Mapbox integration. You can switch between horizontal and vertical menu layouts using the toggle in the header.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="pe-3">
+                                        <img src="images/uv/watermark-logo.png" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="border rounded-4 p-3">
+                                        <h6 class="mb-3 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Project Information</h6>
+                                        <div>
+                                            <h5 class="card-title">System Status</h5>
+                                            <ul class="list-group list-group-flush rounded-2">
+                                                <li class="list-group-item d-flex justify-content-between"> <span>Laravel Version</span>
+                                                    <span class="badge bg-primary">11.44.7</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between"> <span>Livewire Version</span>
+                                                    <span class="badge bg-success">3.6.3</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between"> <span>Bootstrap Version</span>
+                                                    <span class="badge bg-info">5.3.3</span>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between"> <span>Menu Type</span>
+                                                    <span class="badge bg-secondary">vertical</span>
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn-primary w-100 d-flex align-items-center justify-content-center mt-3" type="button"> <i class="material-symbols-rounded me-2">star</i>
+                                                <span>Confirm Data</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card ">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="mb-0">Quick Actions</h5>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-dark dropdown-toggle dropdown-no-caret" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="material-symbols-rounded" style="font-size: 16px;">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">settings</i>Settings</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">refresh</i>Refresh</a>
+                                        <div class="dropdown-divider">
+                                        </div> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">help</i>Help</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-components-cards.html" class="btn btn-outline-primary w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">widgets</i>
+                                        <small class="text-center">Components</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-maps-google.html" class="btn btn-outline-success w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">map</i>
+                                        <small class="text-center">Maps</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-tables-overview.html?page=basic" class="btn btn-outline-info w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">table_chart</i>
+                                        <small class="text-center">Tables</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="../docs/docs.html" class="btn btn-soft-warning w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">menu_book</i>
+                                        <small class="text-center">Documentation</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-charts-apex.html" class="btn btn-soft-primary w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">analytics</i>
+                                        <small class="text-center">Apex</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-apps-email.html?page=email" class="btn btn-outline-danger w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">email</i>
+                                        <small class="text-center">Email</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-widgets-live-data.html" class="btn btn-outline-success w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">trending_up</i>
+                                        <small class="text-center">Live</small>
+                                    </a>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <a href="admin-forms-elements.html?page=basic" class="btn btn-outline-info w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">add_circle</i>
+                                        <small class="text-center">Create</small>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3 pt-3 border-top"> <small class="text-muted">Quick access to frequently used features</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-start offcanvas-hud" tabindex="-1" id="quickActionsOffcanvas" aria-labelledby="quickActionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title orbitron" id="quickActionsLabel">Quick Actions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                <div class="hud-divider-top" aria-hidden="true">
+                    <svg viewBox="0 0 573 31.6" preserveAspectRatio="none">
+                        <g>
+                            <g>
+                                <rect class="hud-svg-fill" x="231.6" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="259.8" y="15.8" width="7" height="5.98" />
+                                <polygon class="hud-svg-fill" points="154.9 15.8 138.4 15.8 145.5 21.8 154.9 21.8 154.9 15.8" />
+                                <rect class="hud-svg-fill" x="217.5" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="245.7" y="15.8" width="7" height="5.98" />
+                                <rect class="hud-svg-fill" x="162" y="15.8" width="6.8" height="5.98" />
+                                <rect class="hud-svg-fill" x="203.6" y="15.8" width="6.8" height="5.98" />
+                                <polygon class="hud-svg-fill" points="273.9 21.8 282.4 21.8 289.4 15.8 273.9 15.8 273.9 21.8" />
+                                <rect class="hud-svg-fill" x="189.7" y="15.8" width="6.8" height="5.98" />
+                                <rect class="hud-svg-fill" x="175.8" y="15.8" width="6.8" height="5.98" />
+                            </g>
+                            <path class="hud-svg-fill" d="M573,1.9a2,2,0,0,1-2.2,1.8,2.3,2.3,0,0,1-2.2-1.4H337.1L310,25.3H114.8l-.9-.7H309.6l27.1-23H568.6A2.2,2.2,0,0,1,570.8,0,2,2,0,0,1,573,1.9Z" />
+                            <path class="hud-svg-fill" d="M505.8,12.3a2.2,2.2,0,0,1-4.4,0,2.2,2.2,0,0,1,4.4,0Z" />
+                            <path class="hud-svg-fill" d="M528.2,20.5l12.3,10.4H313.8L326,20.5H528.2m.2-.7H325.8L312.7,30.9H59.3v.7H542.4l-14-11.8Z" />
+                            <polygon class="hud-svg-fill" points="503.6 12.3 502.2 13 75.4 13 75.4 12.3 503.6 12.3" />
+                            <polygon class="hud-svg-fill" points="116 25.3 114.8 25.3 99.4 12.3 100.6 12.3 116 25.3" />
+                            <polygon class="hud-svg-fill" points="101.5 13 0 13 0 12.3 100.6 12.3 101.5 13" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="menu-header orbitron">Navigation</div>
+                    <div class="list-group list-group-flush">
+                        <a href="admin-dashboard.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">dashboard</span>
+                            Main Dashboard</a>
+                        <a href="admin-widgets-multi-part.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">widgets</span>
+                            Widgets</a>
+                        <a href="admin-components-cards.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">extension</span>
+                            Components</a>
+                    </div>
+                    <div class="menu-header orbitron">System</div>
+                    <div class="list-group list-group-flush">
+                        <a href="javascript:;" class="list-group-item list-group-item-action" onclick="changeBackgroundMode()"> <span class="material-symbols-rounded">wallpaper</span>
+                            Change Background</a>
+                        <a href="../docs/docs.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">menu_book</span>
+                            Documentation</a>
+                        <a href="javascript:;" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">settings</span>
+                            Settings</a>
+                    </div>
+                    <div class="hud-divider-bottom" aria-hidden="true">
+                        <svg viewBox="0 0 503.7 42.4" preserveAspectRatio="none">
+                            <g>
+                                <g>
+                                    <path class="hud-svg-fill" d="M390.7,21.2H126.8l-9.9-8.5H5.1L0,17v4.2H71.5l10,8.5H503.7V21.2Zm112,7.6H81.9l-9.7-8.2-.3-.3H1V17.4l4.5-3.8H116.4l9.7,8.2.3.2H502.7Z" />
+                                    <path class="hud-svg-fill" d="M131.5,16.9h29.9L141.5,0H7.6V8.5H121.5ZM8.6.8H141l18,15.3H132l-9.8-8.2-.2-.3H8.6Z" />
+                                    <polygon class="hud-svg-fill" points="140.6 33.9 47.5 33.9 37.5 25.4 7.6 25.4 27.6 42.4 140.6 42.4 161.4 42.4 503.7 42.4 503.7 33.9 161.4 33.9 140.6 33.9" />
+                                    <path class="hud-svg-fill" d="M255.8,16.9h20.4V0H148.5l20,16.9Zm0-16.1V16.1H168.9L150.9.8Z" />
+                                    <rect class="hud-svg-fill" x="288.2" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="300.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="312.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="324.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="336.1" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="348" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="360" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="372" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="384" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="395.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="407.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="419.9" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="431.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="443.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="455.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="467.8" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="479.7" width="6" height="16.95" />
+                                    <rect class="hud-svg-fill" x="491.7" width="6" height="16.95" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+    </main>
+    <!-- end main wrapper -->
+    <!-- start overlay -->
+    <div class="overlay btn-toggle">
+    </div>
+    <!-- end overlay -->
+    <!-- start footer -->
+    <footer class="page-footer bg-secondary bg-opacity-25">
+        <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
+    </footer>
+    <!-- end footer -->
+    <!-- start CDN scripts -->
+    <!-- start core javascript libraries -->
+    <!-- Bootstrap 5.3.5 Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- Anime.js 3.2.1 from CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BProgress Loading Indicator -->
+    <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <!-- end core javascript libraries -->
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+    <!-- JSVector Maps Core Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <!-- end chart & visualization libraries -->
+    <!-- start UI component libraries -->
+    <!-- Grid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.13/index.global.min.js'></script>
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Simplebar scrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.3.2/dist/simplebar.min.js"></script>
+    <!-- modal lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+    <!-- Masonry Layout -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+    </script>
+    <!-- Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <!-- CosmicWave Component -->
+    <script src="https://cdn.jsdelivr.net/npm/@huement/cosmicwave/dist/cosmicwave.min.js"></script>
+    <!-- fit text -->
+    <script src="https://cdn.jsdelivr.net/npm/fitty@2.3.6/dist/fitty.min.js"></script>
+    <!-- Form Enhancement Libraries -->
+    <!-- TinyMCE -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"></script>
+    <!-- Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Cleave.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- end UI component libraries -->
+    <!-- end CDN scripts -->
+    <!-- Jquery Free JSON Table (local asset) -->
+    <script src="./js/JsonTable.js"></script>
+    <!-- start custom application scripts -->
+    <!-- end custom application scripts -->
+    <!-- start site-wide javascript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+            const viewportDebugger = document.getElementById('viewport-debugger');
+            if (viewportDebugger) {
+                viewportDebugger.addEventListener('click', function() {
+                    this.remove();
+                });
+            }
+
+            // BProgress Configuration
+            const {
+                BProgress
+            } = BProgressJS;
+            BProgress.configure({
+                color: '#FF3300', // RED
+                height: '6px',
+                position: 'top',
+                showSpinner: false,
+                trickleSpeed: 200,
+                minimum: 0.08
+            });
+
+            // Global BProgress functions for easy access
+            window.showProgress = () => {
+                BProgress.start();
+            };
+            window.hideProgress = () => BProgress.done();
+
+            window.setProgress = (percent) => {
+                BProgress.set(percent);
+            };
+
+            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
+            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
+                el.addEventListener('click', Lightbox.initialize);
+            });
+
+            // Auto-trigger BProgress on dropdown item clicks
+            document.addEventListener('click', function(e) {
+                // Check if clicked element is a dropdown item
+                const dropdownItem = e.target.closest('.dropdown-item');
+                if (dropdownItem) {
+                    // Skip if it's a divider or disabled
+                    if (dropdownItem.classList.contains('dropdown-divider') ||
+                        dropdownItem.classList.contains('disabled') ||
+                        dropdownItem.hasAttribute('disabled')) {
+                        return;
+                    }
+
+                    // Skip if it's a JavaScript link (no real action)
+                    const href = dropdownItem.getAttribute('href');
+                    if (href === 'javascript:;' || href === '#') {
+                        return;
+                    }
+
+                    // Skip if it's an admin navigation link (handled by page transition)
+                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
+                        return;
+                    }
+
+                    console.log('Dropdown item clicked, triggering BProgress');
+
+                    // Quick BProgress sequence
+                    BProgress.start();
+                    setTimeout(() => BProgress.set(30), 100);
+                    setTimeout(() => BProgress.set(60), 200);
+                    setTimeout(() => BProgress.set(90), 300);
+                    setTimeout(() => BProgress.done(), 400);
+                }
+            });
+
+            // BProgress on page navigation
+            // Intercept all admin navigation links
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                // Only handle admin links
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
+                    return;
+                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
+
+                console.log("Admin navigation detected, starting BProgress");
+
+                // Start BProgress for navigation
+                BProgress.start();
+
+                // Let the navigation happen naturally
+            });
+
+            // Page load - BProgress only
+            window.addEventListener('load', function() {
+                // Start BProgress for page load
+                BProgress.start();
+                setTimeout(() => BProgress.set(50), 100);
+                setTimeout(() => BProgress.set(80), 200);
+                setTimeout(() => BProgress.set(100), 300);
+
+                // Complete BProgress
+                setTimeout(() => {
+                    BProgress.done();
+                }, 400);
+            });
+        });
+    </script>
+    <!-- end site-wide javascript -->
+    <!-- start page-specific scripts -->
+    <script>
+    // Helper function to get CSS variables for theme-aware charts
+        function getCSSVar(varName) {
+            return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        }
+
+        // Get theme-aware colors
+        const chartTextColor = getCSSVar('--chart-text-color') || 'rgba(255, 255, 255, 0.8)';
+        const chartGridColor = getCSSVar('--chart-grid-color') || 'rgba(255, 255, 255, 0.1)';
+
+        // Wait for ApexCharts to be available
+        function initMinimalChart() {
+            if (typeof ApexCharts === 'undefined') {
+                setTimeout(initMinimalChart, 100);
+                return;
+            }
+
+            // Minimal line chart with no labels
+            var minimalOptions = {
+                series: [{
+                    data: [30, 40, 35, 50, 49, 60, 70, 91, 125, 110, 95, 80]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    width: '100%',
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2,
+                    colors: ['#61bcff']
+                },
+                fill: {
+                    type: 'solid',
+                    colors: ['#61bcff'],
+                    opacity: 0.3
+                },
+                grid: {
+                    show: false
+                },
+                xaxis: {
+                    show: false
+                },
+                yaxis: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    show: false
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var minimalChart = new ApexCharts(document.querySelector("#minimal-chart"), minimalOptions);
+            minimalChart.render();
+
+            // Second chart with different styling
+            var minimalOptions2 = {
+                series: [{
+                    data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    width: '100%',
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2,
+                    colors: ['#10b981']
+                },
+                fill: {
+                    type: 'solid',
+                    colors: ['#10b981'],
+                    opacity: 0.4
+                },
+                grid: {
+                    show: false
+                },
+                xaxis: {
+                    show: false
+                },
+                yaxis: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    show: false
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var minimalChart2 = new ApexCharts(document.querySelector("#minimal-chart-2"), minimalOptions2);
+            minimalChart2.render();
+
+            // Third chart with red styling
+            var minimalOptions3 = {
+                series: [{
+                    data: [80, 90, 85, 70, 75, 60, 55, 40, 35, 25, 20, 15]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    width: '100%',
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2,
+                    colors: ['#f56565']
+                },
+                fill: {
+                    type: 'solid',
+                    colors: ['#f56565'],
+                    opacity: 0.3
+                },
+                grid: {
+                    show: false
+                },
+                xaxis: {
+                    show: false
+                },
+                yaxis: {
+                    show: false
+                },
+                tooltip: {
+                    enabled: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    show: false
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var minimalChart3 = new ApexCharts(document.querySelector("#minimal-chart-3"), minimalOptions3);
+            minimalChart3.render();
+
+            // Equalize card heights after chart is rendered
+            if (window.adminDashboard) {
+                setTimeout(() => window.adminDashboard.recalculateEqualHeights(), 200);
+            }
+        }
+
+        // Start the initialization
+        initMinimalChart();
+
+        // Initialize the main dashboard chart
+        function initDashboardChart() {
+            if (typeof ApexCharts === 'undefined') {
+                setTimeout(initDashboardChart, 100);
+                return;
+            }
+
+            const chartElement = document.getElementById('chartdashboard');
+            if (!chartElement) {
+                console.error('Chart container #chartdashboard not found');
+                return;
+            }
+
+            console.log('Initializing dashboard chart...');
+
+            // Generate demo data for the last 12 months
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const revenueData = [45000, 52000, 48000, 61000, 55000, 67000, 72000, 68000, 75000, 82000, 78000, 89000];
+            const profitData = revenueData.map(revenue => Math.round(revenue * (0.15 + Math.random() * 0.1)));
+            const userData = [1200, 1350, 1420, 1580, 1650, 1820, 1950, 2100, 2250, 2400, 2580, 2750];
+
+            const options = {
+                series: [{
+                        name: 'Revenue',
+                        data: revenueData,
+                        color: '#6366f1'
+                    },
+                    {
+                        name: 'Profit',
+                        data: profitData,
+                        color: '#10b981'
+                    },
+                    {
+                        name: 'Users',
+                        data: userData,
+                        color: '#f59e0b'
+                    }
+                ],
+                chart: {
+                    type: 'line',
+                    height: 400,
+                    toolbar: {
+                        show: true,
+                        offsetX: 0,
+                        offsetY: -10,
+                        position: 'bottom',
+                        tools: {
+                            download: true,
+                            selection: true,
+                            zoom: true,
+                            zoomin: true,
+                            zoomout: true,
+                            pan: true,
+                            reset: true
+                        }
+                    },
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: [3, 3, 3]
+                },
+                markers: {
+                    size: [6, 6, 6],
+                    colors: ['#6366f1', '#10b981', '#f59e0b'],
+                    strokeColors: '#fff',
+                    strokeWidth: 2,
+                    hover: {
+                        size: 8
+                    }
+                },
+                grid: {
+                    borderColor: '#374151',
+                    strokeDashArray: 4
+                },
+                xaxis: {
+                    categories: months,
+                    labels: {
+                        style: {
+                            colors: chartTextColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                yaxis: [{
+                        title: {
+                            text: 'Revenue & Profit ($)',
+                            style: {
+                                color: '#ffffff',
+                                fontSize: '12px'
+                            }
+                        },
+                        labels: {
+                            style: {
+                                colors: chartTextColor,
+                                fontSize: '11px'
+                            },
+                            formatter: function(val) {
+                                return '$' + (val / 1000).toFixed(0) + 'k';
+                            }
+                        }
+                    },
+                    {
+                        opposite: true,
+                        title: {
+                            text: 'Users',
+                            style: {
+                                color: '#ffffff',
+                                fontSize: '12px'
+                            }
+                        },
+                        labels: {
+                            style: {
+                                colors: chartTextColor,
+                                fontSize: '11px'
+                            },
+                            formatter: function(val) {
+                                return val.toFixed(0);
+                            }
+                        }
+                    }
+                ],
+                tooltip: {
+                    shared: true,
+                    intersect: false,
+                    theme: 'dark',
+                    style: {
+                        fontSize: '12px',
+                        fontFamily: 'Inter, sans-serif'
+                    },
+                    y: [{
+                            formatter: function(val) {
+                                return '$' + val.toLocaleString();
+                            }
+                        },
+                        {
+                            formatter: function(val) {
+                                return '$' + val.toLocaleString();
+                            }
+                        },
+                        {
+                            formatter: function(val) {
+                                return val.toLocaleString() + ' users';
+                            }
+                        }
+                    ]
+                },
+                legend: {
+                    position: 'top',
+                    horizontalAlign: 'left',
+                    floating: true,
+                    offsetY: -25,
+                    offsetX: 0,
+                    labels: {
+                        colors: chartTextColor
+                    }
+                }
+            };
+
+            try {
+                const chart = new ApexCharts(chartElement, options);
+                chart.render();
+                chartElement.__apexChart = chart;
+                console.log('Dashboard chart rendered successfully');
+            } catch (error) {
+                console.error('Error creating dashboard chart:', error);
+            }
+        }
+
+        // Initialize dashboard chart
+        initDashboardChart();
+
+        // Setup chart period buttons
+        function setupChartPeriodButtons() {
+            const periodButtons = document.querySelectorAll('.chart-period-btn');
+            periodButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const target = e.target;
+                    const period = target.getAttribute('data-period');
+
+                    // Update button states
+                    periodButtons.forEach(btn => {
+                        btn.classList.remove('btn-soft-primary', 'active');
+                        btn.classList.add('btn-soft-secondary');
+                    });
+                    target.classList.remove('btn-soft-secondary');
+                    target.classList.add('btn-soft-primary', 'active');
+
+                    // Update chart data based on period
+                    updateChartByPeriod(period);
+                });
+            });
+        }
+
+        function updateChartByPeriod(period) {
+            const chartElement = document.getElementById('chartdashboard');
+            if (!chartElement || !chartElement.__apexChart) return;
+
+            const chart = chartElement.__apexChart;
+            let months = [];
+            let revenueData = [];
+            let profitData = [];
+            let userData = [];
+
+            switch (period) {
+                case '1m':
+                    months = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+                    revenueData = [18000, 22000, 19500, 25000];
+                    profitData = [3200, 4200, 3600, 4800];
+                    userData = [1100, 1250, 1180, 1350];
+                    break;
+                case '3m':
+                    months = ['Oct', 'Nov', 'Dec'];
+                    revenueData = [78000, 82000, 89000];
+                    profitData = [14000, 16000, 18000];
+                    userData = [2400, 2580, 2750];
+                    break;
+                case '6m':
+                    months = ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    revenueData = [72000, 68000, 75000, 82000, 78000, 89000];
+                    profitData = [13000, 12000, 14000, 16000, 15000, 18000];
+                    userData = [1950, 2100, 2250, 2400, 2580, 2750];
+                    break;
+                default: // 12m
+                    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                    revenueData = [45000, 52000, 48000, 61000, 55000, 67000, 72000, 68000, 75000, 82000, 78000, 89000];
+                    profitData = revenueData.map(revenue => Math.round(revenue * (0.15 + Math.random() * 0.1)));
+                    userData = [1200, 1350, 1420, 1580, 1650, 1820, 1950, 2100, 2250, 2400, 2580, 2750];
+            }
+
+            chart.updateOptions({
+                xaxis: {
+                    categories: months
+                }
+            });
+
+            chart.updateSeries([{
+                    name: 'Revenue',
+                    data: revenueData
+                },
+                {
+                    name: 'Profit',
+                    data: profitData
+                },
+                {
+                    name: 'Users',
+                    data: userData
+                }
+            ]);
+        }
+
+        // Setup period buttons after a short delay
+        setTimeout(setupChartPeriodButtons, 500);
+
+        // Initialize donut chart
+        function initDonutChart() {
+            if (typeof ApexCharts === 'undefined') {
+                setTimeout(initDonutChart, 100);
+                return;
+            }
+
+            const donutElement = document.getElementById('donut-chart');
+            if (!donutElement) return;
+
+            const completedTasks = 2847;
+            const totalTasks = 6324;
+            const remainingTasks = totalTasks - completedTasks;
+            const percentage = Math.round((completedTasks / totalTasks) * 100);
+
+            const donutOptions = {
+                series: [completedTasks, remainingTasks],
+                chart: {
+                    type: 'donut',
+                    height: 200,
+                    width: 200,
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                colors: ['#10b981', '#374151'],
+                labels: ['Completed', 'Remaining'],
+                dataLabels: {
+                    enabled: false
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '70%',
+                            labels: {
+                                show: false
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    show: false
+                },
+                tooltip: {
+                    theme: 'dark',
+                    y: {
+                        formatter: function(val) {
+                            return val.toLocaleString() + ' tasks';
+                        }
+                    }
+                },
+                stroke: {
+                    show: false
+                }
+            };
+
+            try {
+                const donutChart = new ApexCharts(donutElement, donutOptions);
+                donutChart.render();
+                console.log('Donut chart rendered successfully');
+            } catch (error) {
+                console.error('Error creating donut chart:', error);
+            }
+        }
+
+        // Initialize donut chart
+        initDonutChart();
+
+        // Initialize fitty for responsive text sizing
+        document.addEventListener('DOMContentLoaded', function() {
+            // This will scale all .stat-number elements to fit their container
+            fitty('.stat-number', {
+                minSize: 30, // minimum font size (px)
+                maxSize: 50 // maximum font size (px)
+            });
+
+            // ===== REAL-TIME MONITORING ANIMATIONS =====
+
+            // User Activity Feed
+            const activityFeed = document.getElementById('user-activity-feed');
+            const userActivities = [{
+                    icon: 'login',
+                    color: 'success',
+                    text: 'User logged in from Chrome',
+                    location: 'New York, USA'
+                },
+                {
+                    icon: 'shopping_cart',
+                    color: 'primary',
+                    text: 'Product added to cart',
+                    location: 'London, UK'
+                },
+                {
+                    icon: 'visibility',
+                    color: 'info',
+                    text: 'Page view: /products/electronics',
+                    location: 'Tokyo, Japan'
+                },
+                {
+                    icon: 'favorite',
+                    color: 'danger',
+                    text: 'Item added to wishlist',
+                    location: 'Paris, France'
+                },
+                {
+                    icon: 'share',
+                    color: 'warning',
+                    text: 'Content shared on social media',
+                    location: 'Sydney, Australia'
+                },
+                {
+                    icon: 'search',
+                    color: 'primary',
+                    text: 'Search query: "wireless headphones"',
+                    location: 'Berlin, Germany'
+                },
+                {
+                    icon: 'download',
+                    color: 'success',
+                    text: 'Report downloaded',
+                    location: 'Toronto, Canada'
+                },
+                {
+                    icon: 'exit_to_app',
+                    color: 'secondary',
+                    text: 'User logged out',
+                    location: 'Mumbai, India'
+                },
+                {
+                    icon: 'email',
+                    color: 'info',
+                    text: 'Newsletter subscription',
+                    location: 'Singapore'
+                },
+                {
+                    icon: 'payments',
+                    color: 'success',
+                    text: 'Payment completed: $127',
+                    location: 'Amsterdam, Netherlands'
+                }
+            ];
+
+            function addActivityItem() {
+                if (!activityFeed) return;
+
+                const activity = userActivities[Math.floor(Math.random() * userActivities.length)];
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit'
+                });
+
+                const activityHTML = `
+                    <div class="activity-item mb-3 pb-3 border-bottom border-secondary border-opacity-25">
+                        <div class="d-flex align-items-start">
+                            <div class="activity-icon me-3">
+                                <div class="bg-${activity.color} bg-opacity-10 p-2 rounded-circle">
+                                    <i class="material-symbols-rounded text-${activity.color}" style="font-size: 20px;">${activity.icon}</i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <p class="mb-1">${activity.text}</p>
+                                <div class="d-flex align-items-center text-muted small">
+                                    <i class="material-symbols-rounded me-1" style="font-size: 12px;">schedule</i>
+                                    <span class="me-3">${timeStr}</span>
+                                    <i class="material-symbols-rounded me-1" style="font-size: 12px;">location_on</i>
+                                    <span>${activity.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                activityFeed.insertAdjacentHTML('afterbegin', activityHTML);
+
+                // Keep only last 15 items
+                const items = activityFeed.querySelectorAll('.activity-item');
+                if (items.length > 15) {
+                    items[items.length - 1].remove();
+                }
+            }
+
+            // Add initial activities
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => addActivityItem(), i * 200);
+            }
+
+            // Add new activity every 5 seconds
+            setInterval(addActivityItem, 5000);
+
+            // Animate Traffic Source Numbers
+            function animateTrafficSources() {
+                const organicEl = document.getElementById('organic-visitors');
+                const directEl = document.getElementById('direct-visitors');
+                const socialEl = document.getElementById('social-visitors');
+                const referralEl = document.getElementById('referral-visitors');
+
+                if (organicEl) {
+                    const variation = Math.floor(Math.random() * 20) - 10;
+                    const currentVal = parseInt(organicEl.textContent.replace(/,/g, ''));
+                    organicEl.textContent = (currentVal + variation).toLocaleString();
+                }
+                if (directEl) {
+                    const variation = Math.floor(Math.random() * 15) - 7;
+                    const currentVal = parseInt(directEl.textContent.replace(/,/g, ''));
+                    directEl.textContent = (currentVal + variation).toLocaleString();
+                }
+                if (socialEl) {
+                    const variation = Math.floor(Math.random() * 12) - 6;
+                    const currentVal = parseInt(socialEl.textContent.replace(/,/g, ''));
+                    socialEl.textContent = (currentVal + variation).toLocaleString();
+                }
+                if (referralEl) {
+                    const variation = Math.floor(Math.random() * 8) - 4;
+                    const currentVal = parseInt(referralEl.textContent.replace(/,/g, ''));
+                    referralEl.textContent = (currentVal + variation).toLocaleString();
+                }
+
+                // Update total sessions
+                const totalEl = document.getElementById('total-sessions');
+                if (totalEl && organicEl && directEl && socialEl && referralEl) {
+                    const total =
+                        parseInt(organicEl.textContent.replace(/,/g, '')) +
+                        parseInt(directEl.textContent.replace(/,/g, '')) +
+                        parseInt(socialEl.textContent.replace(/,/g, '')) +
+                        parseInt(referralEl.textContent.replace(/,/g, ''));
+                    totalEl.textContent = total.toLocaleString();
+                }
+            }
+
+            // Update traffic sources every 3 seconds
+            setInterval(animateTrafficSources, 3000);
+
+            // Animate Engagement Metrics
+            function animateEngagementMetrics() {
+                const pageviewsEl = document.getElementById('realtime-pageviews');
+                const usersEl = document.getElementById('realtime-users');
+                const bounceEl = document.getElementById('realtime-bounce');
+                const conversionEl = document.getElementById('realtime-conversion');
+
+                if (pageviewsEl) {
+                    const variation = Math.floor(Math.random() * 100) - 50;
+                    const currentVal = parseInt(pageviewsEl.textContent.replace(/,/g, ''));
+                    pageviewsEl.textContent = (currentVal + variation).toLocaleString();
+                }
+                if (usersEl) {
+                    const variation = Math.floor(Math.random() * 30) - 15;
+                    const currentVal = parseInt(usersEl.textContent.replace(/,/g, ''));
+                    usersEl.textContent = (currentVal + variation).toLocaleString();
+                }
+                if (bounceEl) {
+                    const variation = (Math.random() * 2) - 1;
+                    const currentVal = parseFloat(bounceEl.textContent);
+                    bounceEl.textContent = Math.max(15, Math.min(35, currentVal + variation)).toFixed(1) + '%';
+                }
+                if (conversionEl) {
+                    const variation = (Math.random() * 0.4) - 0.2;
+                    const currentVal = parseFloat(conversionEl.textContent);
+                    conversionEl.textContent = Math.max(5, Math.min(12, currentVal + variation)).toFixed(1) + '%';
+                }
+            }
+
+            // Update engagement metrics every 4 seconds
+            setInterval(animateEngagementMetrics, 4000);
+
+            // Pulse animation for progress bars
+            function pulseProgressBars() {
+                const progressBars = [
+                    'organic-progress', 'direct-progress', 'social-progress', 'referral-progress',
+                    'pageviews-progress', 'users-progress', 'bounce-progress', 'conversion-progress'
+                ];
+
+                progressBars.forEach(id => {
+                    const bar = document.getElementById(id);
+                    if (bar) {
+                        const currentWidth = parseInt(bar.style.width);
+                        const variation = Math.floor(Math.random() * 4) - 2;
+                        const newWidth = Math.max(10, Math.min(100, currentWidth + variation));
+                        bar.style.width = newWidth + '%';
+                    }
+                });
+            }
+
+            // Update progress bars every 6 seconds
+            setInterval(pulseProgressBars, 6000);
+        });
+    </script>
+    <!-- end page-specific scripts -->
+    <!-- start additional utilities -->
+    <script>
+    // Store menu preference
+                    sessionStorage.setItem('menu_type', 'vertical');
+        
+        // Menu toggle links work normally - middleware handles cookie setting and page reload
+
+        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
+        function fixCosmicWaveOverflow() {
+            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
+            cosmicWaves.forEach(svg => {
+                // Only fix the sizing, don't change the viewBox
+                svg.style.width = '100%';
+                svg.style.height = '100%';
+                svg.style.maxWidth = '100%';
+                svg.style.overflow = 'hidden';
+            });
+        }
+
+        // Run immediately and also after a delay to catch dynamically loaded waves
+        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
+        setTimeout(fixCosmicWaveOverflow, 100);
+        setTimeout(fixCosmicWaveOverflow, 500);
+        setTimeout(fixCosmicWaveOverflow, 1000);
+
+        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
+        if (typeof MutationObserver !== 'undefined') {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
+                                        'cosmic-wave')) {
+                                    setTimeout(fixCosmicWaveOverflow, 50);
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        // Sidebar hover functionality for collapsed state
+        function initSidebarHover() {
+            const sidebar = document.querySelector('.sidebar-wrapper');
+            const body = document.body;
+
+            if (!sidebar) return;
+
+            // Only apply hover behavior when sidebar is toggled (collapsed)
+            function handleSidebarHover() {
+                if (body.classList.contains('toggled')) {
+                    sidebar.addEventListener('mouseenter', function() {
+                        body.classList.add('sidebar-hovered');
+                    });
+
+                    sidebar.addEventListener('mouseleave', function() {
+                        body.classList.remove('sidebar-hovered');
+                    });
+                }
+            }
+
+            // Initialize on page load
+            handleSidebarHover();
+
+            // Re-initialize when toggle state changes
+            const toggleButton = document.querySelector('.btn-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    // Wait for the toggle animation to complete
+                    setTimeout(handleSidebarHover, 300);
+                });
+            }
+        }
+
+        // Initialize sidebar hover when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSidebarHover);
+        } else {
+            initSidebarHover();
+        }
+    </script>
+    <!-- end additional utilities -->
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+    // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+                console.log('Material Symbols font loaded');
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        // The font is usually cached after first page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+
+        // Watch for dynamically added icons (e.g., from AJAX content)
+        const iconObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if the node itself is an icon
+                        if (node.classList && (node.classList.contains(
+                                'material-symbols-rounded') || node.classList.contains(
+                                'material-icons'))) {
+                            node.classList.add('material-symbols-rounded--loaded');
+                        }
+                        // Check for icons within the added node
+                        if (node.querySelectorAll) {
+                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
+                                .forEach(function(icon) {
+                                    icon.classList.add('material-symbols-rounded--loaded');
+                                });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Start observing the document body for changes
+        iconObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/basic.js"></script>
+    <script src="./js/freebie.js"></script>
+<!-- Upgrade to Pro Modal -->
+<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-dark">
+        <h5 class="modal-title" id="upgradeModalLabel">
+          <i class="material-symbols-rounded me-2" style="vertical-align: middle;">star</i>
+          Upgrade to UltraViolet Pro
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center py-4">
+          <i class="material-symbols-rounded text-primary mb-3" style="font-size: 64px;">workspace_premium</i>
+          <h4 class="mb-3">Unlock All Features</h4>
+          <p class="mb-4">Get access to the full UltraViolet Pro with 80+ pages, horizontal menu layouts, advanced apps, and much more!</p>
+          <ul class="text-start mb-4">
+            <li>Horizontal & Vertical menu layouts</li>
+            <li>80+ admin pages and templates</li>
+            <li>Advanced apps (Email, Chat, Calendar, etc.)</li>
+            <li>Laravel Livewire edition included</li>
+            <li>Premium support and updates</li>
+          </ul>
+          <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg w-100" target="_blank">
+            <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
+            Purchase on ThemeForest
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

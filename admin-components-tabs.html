@@ -1,0 +1,2500 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<!-- start head -->
+
+<head>
+    <!-- start meta tags & title -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <title>Tabs | UltraViolet</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end meta tags & title -->
+    <!-- start plugins -->
+    <!-- The main CDN being used -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Vector Map -->
+    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
+    <!-- Scrollbar Plugin -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
+    <!-- ApexCharts CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.css">
+    <!-- Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Grid JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- BProgress Loading Indicator -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
+    <!-- Form Enhancement CSS -->
+    <!-- TinyMCE CSS is included in the editor itself -->
+    <!-- Choices.js -->
+    <link href="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/styles/choices.min.css" rel="stylesheet">
+    <!-- Flatpickr -->
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
+    <!-- BS5 Lightbox - Image Modal Gallery -->
+    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- end plugins -->
+    <!-- start vite CSS & JS -->
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
+    <style>
+    /* Reserve space for icons before font loads */
+        .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        /* Hide icon text content until font loads */
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        /* Ensure icons are visible when loaded */
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        /* Fix navbar icon alignment specifically */
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- end vite CSS & JS -->
+</head>
+<!-- Theme Initialization (runs before page render to prevent flash) -->
+<script>
+    (function() {
+                // Check localStorage for theme preference (default: dark)
+                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            })();
+</script>
+</head>
+<!-- end head -->
+
+<body class="space-grotesk-300 vertical-menu " dir="ltr">
+    <!-- Background animation container -->
+    <div id="admin-background">
+    </div>
+    <!-- start page action bar -->
+    <header class="ultraviolet-action-bar ">
+        <nav class="navbar navbar-expand align-items-center gap-4 ">
+            <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
+            </div>
+            <!-- SEARCH BAR -->
+            <div class="search-bar flex-grow-1">
+                <div class="position-relative">
+                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                    <div class="search-popup">
+                        <div class="card rounded-4 overflow-hidden">
+                            <div class="card-header d-lg-none">
+                                <div class="position-relative">
+                                    <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
+                                </div>
+                            </div>
+                            <div class="card-body search-content">
+                                <div class="row g-3">
+                                    <!-- Left Column: Recently Visited -->
+                                    <div class="col-md-6">
+                                        <p class="search-title fw-bold mb-3 text-uppercase text-info">Recently Visited</p>
+                                        <div class="search-list d-flex flex-column gap-2"> <a href="admin-dashboard.html" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-primary">dashboard</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Dashboard</h6>
+                                                <p class="mb-0 small text-muted">Main admin dashboard</p>
+                                            </div>
+                                            <div class="text-muted small">2m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-success">table_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Data Tables</h6>
+                                                <p class="mb-0 small text-muted">Grid components</p>
+                                            </div>
+                                            <div class="text-muted small">15m</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-info">bar_chart</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Analytics</h6>
+                                                <p class="mb-0 small text-muted">Charts & statistics</p>
+                                            </div>
+                                            <div class="text-muted small">1h</div>
+                                        </a>
+                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
+                                            <div class="list-icon">
+                                                <i class="material-symbols-rounded fs-4 text-warning">settings</i>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h6 class="mb-0 search-list-title">Settings</h6>
+                                                <p class="mb-0 small text-muted">Configuration</p>
+                                            </div>
+                                            <div class="text-muted small">3h</div>
+                                        </a>
+                                        </div>
+                                    </div>
+                                    <!-- Right Column: Quick Access -->
+                                    <div class="col-md-6 border-start-md">
+                                        <p class="search-title fw-semibold mb-3 text-uppercase text-info">Quick Access</p>
+                                        <div class="row g-2">
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-danger"
+                                                        style="font-size: 2.5rem;">description</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Form Wizard</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-purple"
+                                                        style="font-size: 2.5rem;">calendar_month</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Calendar</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-cyan"
+                                                        style="font-size: 2.5rem;">email</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Email</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-teal"
+                                                        style="font-size: 2.5rem;">group</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Users</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-warning"
+                                                        style="font-size: 2.5rem;">shopping_cart</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Orders</h6>
+                                            </a>
+                                            </div>
+                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
+                                                <div class="quick-access-icon mb-2">
+                                                    <i class="material-symbols-rounded text-success"
+                                                        style="font-size: 2.5rem;">inventory</i>
+                                                </div>
+                                                <h6 class="mb-0 small">Products</h6>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SEARCH BAR -->
+            <ul class="navbar-nav gap-1 nav-right-links align-items-center">
+                <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
+                </li>
+                <!-- Fixed Header Toggle (only visible in horizontal mode) -->
+                <!-- Menu Type Toggle (vert / horiz) -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    </a>
+                </li>
+                <!-- Apps -->
+                <li class="nav-item dropdown"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
+                        <div class="border rounded-4 overflow-hidden p-relative z-5">
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-email.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-envelope-fill icon-xl" style="color: #ea4335;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Email Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-chat.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-dots-fill icon-xl" style="color: #00aff0;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Chat Box</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Calendar</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Taskboard</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-invoice.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-receipt icon-xl" style="color: #f59e0b;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Invoice</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-maps.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-map-fill icon-xl" style="color: #06b6d4;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Maps</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0 border-bottom">
+                                <div class="col border-end"> <a href="admin-apps-editor.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-file-text-fill icon-xl" style="color: #6366f1;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Text Editor</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="admin-apps-ai-agent.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-robot icon-xl" style="color: #ec4899;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">AI Agent</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="admin-apps-micro-blog.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-chat-left-text-fill icon-xl" style="color: #14b8a6;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Micro Blog</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                            <div class="row row-cols-3 g-0">
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-youtube icon-xl" style="color: #ff0000;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">YouTube</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col border-end"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-facebook icon-xl" style="color: #1877f2;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Facebook</p>
+                                    </div>
+                                </a>
+                                </div>
+                                <div class="col"> <a href="javascript:;" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                    <div class="app-icon">
+                                        <i class="bi bi-instagram icon-xl" style="color: #e4405f;"></i>
+                                    </div>
+                                    <div class="app-name">
+                                        <p class="mb-0">Instagram</p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <!--end row-->
+                        </div>
+                    </div>
+                </li>
+                <!-- Settings Toggle Button -->
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:;" id="admin-settings-toggle" title="Settings" data-bs-toggle="tooltip" data-bs-title="Settings"> <i class="material-symbols-rounded">settings</i>
+                    </a>
+                </li>
+                <!-- Notifications -->
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
+                        class="material-symbols-rounded">notifications</i>
+                    <span class="badge-notify">5</span>
+                </a>
+                    <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
+                        <div class="px-2 pb-1 d-flex align-items-center justify-content-between border-bottom">
+                            <h5 class="notiy-title mb-0">Notifications</h5>
+                            <!-- notifications options menu -->
+                            <div class="dropdown">
+                                <button class="btn btn-info btn-xs dropdown-toggle dropdown-no-caret p-relative z-2" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="material-symbols-rounded">more_vert</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-option dropdown-menu-end shadow">
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">inventory_2</i>Archive All</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">done_all</i>Mark all as read</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">mic_off</i>Disable Notifications</a>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">grade</i>What's new ?</a>
+                                    </div>
+                                    <div>
+                                        <hr class="dropdown-divider">
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded fs-6">leaderboard</i>Reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end options menu -->
+                        </div>
+                        <div class="notify-list" data-simplebar="true">
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">System Update Available</h5>
+                                        <p class="mb-0 notify-desc">Version 2.4.1 is ready to install with new
+                                            features.</p>
+                                        <p class="mb-0 notify-time">2 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-success text-dark">
+                                        <span>AB</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">New User Registration</h5>
+                                        <p class="mb-0 notify-desc">Alex Brown from Canada has joined the platform.</p>
+                                        <p class="mb-0 notify-time">15 minutes ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Backup Completed</h5>
+                                        <p class="mb-0 notify-desc">Daily backup has been successfully completed.</p>
+                                        <p class="mb-0 notify-time">1 hour ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Security Alert</h5>
+                                        <p class="mb-0 notify-desc">Unusual login activity detected from new location.
+                                        </p>
+                                        <p class="mb-0 notify-time">3 hours ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="">
+                                        <img src="images/assets/profile-image.png"
+                                            class="rounded-circle" width="45" height="45" alt="">
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Monthly Report Ready</h5>
+                                        <p class="mb-0 notify-desc">Your analytics report for September is now
+                                            available.</p>
+                                        <p class="mb-0 notify-time">Yesterday</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                            <div> <a class="dropdown-item py-2" href="javascript:;">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div
+                                        class="user-wrapper bg-warning text-white">
+                                        <span>MJ</span>
+                                    </div>
+                                    <div class="">
+                                        <h5 class="notify-title">Server Maintenance</h5>
+                                        <p class="mb-0 notify-desc">Scheduled maintenance will begin at 2:00 AM EST.
+                                        </p>
+                                        <p class="mb-0 notify-time">2 days ago</p>
+                                    </div>
+                                    <div class="notify-close position-absolute end-0 me-3">
+                                        <i class="material-symbols-rounded fs-6">close</i>
+                                    </div>
+                                </div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- User Dropdown -->
+                <li class="nav-item dropdown"> <a href=".html" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                            width="45" height="45" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
+                            <div class="text-center">
+                                <img src="images/assets/profile-image.png"
+                                    class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
+                                <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
+                            </div>
+                        </a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">person_outline</i>Profile</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">local_bar</i>Setting</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">dashboard</i>Dashboard</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">account_balance</i>Earning</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">cloud_download</i>Downloads</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="login.html"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Admin Settings Menu (slides down from top) -->
+    <div id="admin-settings-menu" class="admin-settings-menu">
+        <div class="admin-settings-panel">
+            <div class="mb-3">
+                <label for="admin-background-select" class="form-label">Background Animation</label>
+                <select class="form-select form-select-sm" id="admin-background-select">
+                    <option value="none">None (Off)</option>
+                    <option value="wave-lines">Wave Lines</option>
+                    <option value="node-lines">Node Lines</option>
+                    <option value="circles">Circles</option>
+                    <option value="space">Starfield</option>
+                    <option value="hud">HUD Lines</option>
+                </select>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
+                <label class="form-check-label" for="admin-rtl-switch">RTL / LTR</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
+                <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
+            </div>
+            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+        </div>
+    </div>
+    <!-- end page action bar -->
+    <!-- HUI VERTICAL MENU -->
+    <aside class="sidebar-wrapper" id="sidebarWrapper" data-simplebar="true">
+        <!-- start sidebar header -->
+        <div class="sidebar-header">
+            <div class="logo-icon">
+                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+            </div>
+            <div class="logo-name flex-grow-1">
+                <h5 class="mb-0">
+                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                </h5>
+            </div>
+            <div class="sidebar-close d-xl-none">
+                <a href="javascript:;" class="sidebar-close-btn" aria-label="Close"> <i class="material-symbols-rounded">close</i>
+                </a>
+            </div>
+        </div>
+        <!-- end sidebar header -->
+        <!-- start sidebar navigation -->
+        <div class="sidebar-nav">
+            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
+                            aria-expanded="" aria-controls="collapse_dashboards"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                            </div>
+                                                    <div class="menu-title">Dashboards</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_dashboards">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Freebie Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Freebie Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Analytics">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Analytics
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
+                            aria-expanded="" aria-controls="collapse_templates"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                            </div>
+                                                    <div class="menu-title">Templates</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_templates">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Calendar">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Calendar
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Taskboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Taskboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
+                            aria-expanded="" aria-controls="collapse_ui_elements"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                            </div>
+                                                    <div class="menu-title">UI Elements</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_ui_elements">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Alerts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Alerts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Buttons">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Buttons
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Grid & Flexbox">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Grid & Flexbox
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
+                            aria-expanded="" aria-controls="collapse_components"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                            </div>
+                                                    <div class="menu-title">Components</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_components">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Toasts">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Toasts
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Timeline">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Timeline
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Carousel">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Carousel
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link active"
+                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Tabs">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Tabs
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Progress">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Progress
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Modals">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Modals
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Popovers & Tooltips">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Popovers & Tooltips
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Source Code">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Source Code
+                                        </a>
+                                    </li>
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="HUD Elements">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    HUD Elements
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
+                            aria-expanded="" aria-controls="collapse_jobs"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                            </div>
+                                                    <div class="menu-title">Jobs</div>
+                            <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
+                        </a>
+                        <div class="collapse  rounded" id="collapse_jobs">
+                            <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Job Dashboard">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Job Dashboard
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="admin-nav-item">
+                        <div class="menu-label">Upgrade</div>
+                    </li>
+                    <li class="admin-nav-item px-0 mt-2">
+                        <a class="admin-nav-link bg-success text-dark"
+                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
+                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
+                                                        <div class="parent-icon">
+                                <i class="material-symbols-rounded">shopping_cart</i>
+                            </div>
+                                                    <div class="menu-title">Purchase PRO Version</div>
+                        </a>
+                    </li>
+</ul>
+        </div>
+        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3" />
+        <!-- end sidebar navigation -->
+    </aside>
+    <!-- END HUI VERTICAL MENU -->
+    <!-- start main wrapper -->
+    <main class="ultraviolet-main-wrapper">
+        <div class="ultraviolet-content container-fluid">
+            <!-- start breadcrumb -->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center dashboard-margin position-relative z-100">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb-chevron">
+                        <li class="breadcrumb-item">
+                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#"> <span class="material-symbols-rounded">folder</span>
+                                Components</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <a href="#"> <span class="material-symbols-rounded">dashboard</span>
+                                Tabs</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="ms-auto">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">Settings</button>
+                        <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item" href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <div class="dropdown-divider">
+                            </div> <a class="dropdown-item" href="javascript:;">Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end breadcrumb -->
+            <!-- start page content -->
+            <!-- Basic Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Basic Tabs</h5>
+                            <p class="text-muted mb-0">Standard Bootstrap tabs with simple navigation</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="basicTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"> <span class="material-symbols-rounded me-2">home</span>Home</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"> <span class="material-symbols-rounded me-2">person</span>Profile</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"> <span class="material-symbols-rounded me-2">contact_mail</span>Contact</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="basicTabsContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="p-4">
+                                        <h4>Welcome Home</h4>
+                                        <p>This is the home tab content. Here you can display your main dashboard information, recent activities, or any other primary content for your users.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="d-flex align-items-center justify-content-center bg-info text-white rounded p-3"> <span class="material-symbols-rounded me-2">dashboard</span>
+                                                    <span>Dashboard</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="d-flex align-items-center justify-content-center bg-success text-bg-success rounded p-3"> <span class="material-symbols-rounded me-2">analytics</span>
+                                                    <span>Analytics</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="d-flex align-items-center justify-content-center bg-warning text-white rounded p-3"> <span class="material-symbols-rounded me-2">settings</span>
+                                                    <span>Settings</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="p-4">
+                                        <h4>User Profile</h4>
+                                        <p>Manage your profile information, preferences, and account settings in this tab.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="80" height="80" alt="Profile">
+                                                        <h5>John Doe</h5>
+                                                        <p class="text-muted">Software Developer</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Profile Stats</h6>
+                                                        <div class="d-flex justify-content-between mb-2"> <span>Projects</span>
+                                                            <span class="badge bg-primary">12</span>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between mb-2"> <span>Tasks</span>
+                                                            <span class="badge bg-success">8</span>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between"> <span>Completed</span>
+                                                            <span class="badge bg-info">24</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <div class="p-4">
+                                        <h4>Contact Information</h4>
+                                        <p>Get in touch with us or manage your contact preferences.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="text-center p-3"> <span class="material-symbols-rounded text-primary" style="font-size: 3rem;">email</span>
+                                                    <h6 class="mt-2">Email</h6>
+                                                    <p class="text-muted">contact@example.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="text-center p-3"> <span class="material-symbols-rounded text-success" style="font-size: 3rem;">phone</span>
+                                                    <h6 class="mt-2">Phone</h6>
+                                                    <p class="text-muted">+1 (555) 123-4567</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="text-center p-3"> <span class="material-symbols-rounded text-warning" style="font-size: 3rem;">location_on</span>
+                                                    <h6 class="mt-2">Address</h6>
+                                                    <p class="text-muted">123 Main St, City</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pills Navigation -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Pills Navigation</h5>
+                            <p class="text-muted mb-0">Rounded pill-style tabs for a modern look</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-pills mb-3" id="pillsTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill" data-bs-target="#pills-dashboard" type="button" role="tab" aria-controls="pills-dashboard" aria-selected="true"> <span class="material-symbols-rounded me-2">dashboard</span>Dashboard</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-projects-tab" data-bs-toggle="pill" data-bs-target="#pills-projects" type="button" role="tab" aria-controls="pills-projects" aria-selected="false"> <span class="material-symbols-rounded me-2">work</span>Projects</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-team-tab" data-bs-toggle="pill" data-bs-target="#pills-team" type="button" role="tab" aria-controls="pills-team" aria-selected="false"> <span class="material-symbols-rounded me-2">group</span>Team</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pills-reports-tab" data-bs-toggle="pill" data-bs-target="#pills-reports" type="button" role="tab" aria-controls="pills-reports" aria-selected="false"> <span class="material-symbols-rounded me-2">assessment</span>Reports</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pillsTabContent">
+                                <div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel" aria-labelledby="pills-dashboard-tab">
+                                    <div class="p-4">
+                                        <h4>Dashboard Overview</h4>
+                                        <p>Your main dashboard with key metrics and recent activities.</p>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card bg-primary text-bg-primary">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded" style="font-size: 2rem;">trending_up</span>
+                                                        <h5 class="mt-2">Revenue</h5>
+                                                        <h3>$12,345</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-success text-bg-success">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded" style="font-size: 2rem;">people</span>
+                                                        <h5 class="mt-2">Users</h5>
+                                                        <h3>1,234</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-warning text-white">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded" style="font-size: 2rem;">shopping_cart</span>
+                                                        <h5 class="mt-2">Orders</h5>
+                                                        <h3>567</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card bg-info text-white">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded" style="font-size: 2rem;">visibility</span>
+                                                        <h5 class="mt-2">Views</h5>
+                                                        <h3>8,901</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-projects" role="tabpanel" aria-labelledby="pills-projects-tab">
+                                    <div class="p-4">
+                                        <h4>Active Projects</h4>
+                                        <p>Manage and track your ongoing projects.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="images/assets/code-preview.png" class="rounded me-3" width="60" height="60" alt="Project">
+                                                            <div>
+                                                                <h6 class="mb-1">Website Redesign</h6>
+                                                                <p class="text-muted mb-0">UI/UX Design Project</p>
+                                                                <div class="progress mt-2" style="height: 6px;">
+                                                                    <div class="progress-bar bg-success" style="width: 75%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="images/assets/mobile-preview.png" class="rounded me-3" width="60" height="60" alt="Project">
+                                                            <div>
+                                                                <h6 class="mb-1">Mobile App</h6>
+                                                                <p class="text-muted mb-0">iOS & Android Development</p>
+                                                                <div class="progress mt-2" style="height: 6px;">
+                                                                    <div class="progress-bar bg-warning" style="width: 45%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-team-tab">
+                                    <div class="p-4">
+                                        <h4>Team Members</h4>
+                                        <p>Meet your amazing team members.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body">
+                                                        <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="80" height="80" alt="Team Member">
+                                                        <h6>Sarah Johnson</h6>
+                                                        <p class="text-muted">Lead Designer</p>
+                                                        <div class="d-flex justify-content-center"> <span class="material-symbols-rounded text-primary me-2">email</span>
+                                                            <span class="material-symbols-rounded text-info">phone</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body">
+                                                        <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="80" height="80" alt="Team Member">
+                                                        <h6>Mike Chen</h6>
+                                                        <p class="text-muted">Frontend Developer</p>
+                                                        <div class="d-flex justify-content-center"> <span class="material-symbols-rounded text-primary me-2">email</span>
+                                                            <span class="material-symbols-rounded text-info">phone</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body">
+                                                        <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="80" height="80" alt="Team Member">
+                                                        <h6>Emily Davis</h6>
+                                                        <p class="text-muted">Backend Developer</p>
+                                                        <div class="d-flex justify-content-center"> <span class="material-symbols-rounded text-primary me-2">email</span>
+                                                            <span class="material-symbols-rounded text-info">phone</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-reports" role="tabpanel" aria-labelledby="pills-reports-tab">
+                                    <div class="p-4">
+                                        <h4>Analytics Reports</h4>
+                                        <p>View detailed analytics and performance reports.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Monthly Performance</h6>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>Website Traffic</span>
+                                                            <span class="badge bg-success">+12%</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>Conversion Rate</span>
+                                                            <span class="badge bg-info">+8%</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between"> <span>User Engagement</span>
+                                                            <span class="badge bg-warning">+5%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Top Pages</h6>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>/dashboard</span>
+                                                            <span class="text-muted">2,345 views</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>/products</span>
+                                                            <span class="text-muted">1,876 views</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between"> <span>/about</span>
+                                                            <span class="text-muted">1,234 views</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Vertical Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Vertical Tabs</h5>
+                            <p class="text-muted mb-0">Tabs arranged vertically for better space utilization</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-3 col-lg-2">
+                                    <div class="nav flex-column nav-pills nav-pills-vertical" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"> <span class="material-symbols-rounded">home</span>
+                                            <span>Home</span>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"> <span class="material-symbols-rounded">person</span>
+                                            <span>Profile</span>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"> <span class="material-symbols-rounded">message</span>
+                                            <span>Messages</span>
+                                        </button>
+                                        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"> <span class="material-symbols-rounded">settings</span>
+                                            <span>Settings</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-9 col-lg-10">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            <h4>Welcome to Your Dashboard</h4>
+                                            <p>This is the main dashboard area with vertical navigation. Perfect for admin panels and complex applications.</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="d-flex align-items-center justify-content-center bg-primary text-bg-primary rounded p-4">
+                                                        <div class="text-center"> <span class="material-symbols-rounded" style="font-size: 3rem;">dashboard</span>
+                                                            <h5 class="mt-2">Main Dashboard</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="d-flex align-items-center justify-content-center bg-success text-bg-success rounded p-4">
+                                                        <div class="text-center"> <span class="material-symbols-rounded" style="font-size: 3rem;">analytics</span>
+                                                            <h5 class="mt-2">Analytics</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                            <h4>User Profile Management</h4>
+                                            <p>Manage your personal information and account settings.</p>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="card text-center">
+                                                        <div class="card-body">
+                                                            <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="100" height="100" alt="Profile">
+                                                            <h5>John Doe</h5>
+                                                            <p class="text-muted">Administrator</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6>Profile Information</h6>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">First Name</label>
+                                                                        <input type="text" class="form-control" value="John">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label">Last Name</label>
+                                                                        <input type="text" class="form-control" value="Doe">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label">Email</label>
+                                                                <input type="email" class="form-control" value="john.doe@example.com">
+                                                            </div>
+                                                            <button class="btn btn-primary">Update Profile</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                            <h4>Messages & Notifications</h4>
+                                            <p>Stay updated with your latest messages and notifications.</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6>Recent Messages</h6>
+                                                            <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-primary me-3">email</span>
+                                                                <div>
+                                                                    <h6 class="mb-1">New Project Assignment</h6>
+                                                                    <p class="text-muted mb-0">You've been assigned to a new project</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-success me-3">check_circle</span>
+                                                                <div>
+                                                                    <h6 class="mb-1">Task Completed</h6>
+                                                                    <p class="text-muted mb-0">Your task has been marked as complete</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center"> <span class="material-symbols-rounded text-warning me-3">warning</span>
+                                                                <div>
+                                                                    <h6 class="mb-1">System Update</h6>
+                                                                    <p class="text-muted mb-0">Scheduled maintenance tonight</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6>Quick Actions</h6>
+                                                            <div class="d-grid gap-2">
+                                                                <button class="btn btn-outline-primary"> <span class="material-symbols-rounded me-2">send</span>Send Message</button>
+                                                                <button class="btn btn-outline-success"> <span class="material-symbols-rounded me-2">add</span>New Task</button>
+                                                                <button class="btn btn-outline-info"> <span class="material-symbols-rounded me-2">schedule</span>Schedule Meeting</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                            <h4>Application Settings</h4>
+                                            <p>Configure your application preferences and system settings.</p>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6>General Settings</h6>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="notifications" checked>
+                                                                <label class="form-check-label" for="notifications">Email Notifications</label>
+                                                            </div>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="darkMode">
+                                                                <label class="form-check-label" for="darkMode">Dark Mode</label>
+                                                            </div>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="autoSave" checked>
+                                                                <label class="form-check-label" for="autoSave">Auto Save</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6>Privacy Settings</h6>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="profilePublic" checked>
+                                                                <label class="form-check-label" for="profilePublic">Public Profile</label>
+                                                            </div>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="showEmail">
+                                                                <label class="form-check-label" for="showEmail">Show Email</label>
+                                                            </div>
+                                                            <div class="form-check form-switch mb-3">
+                                                                <input class="form-check-input" type="checkbox" id="showActivity" checked>
+                                                                <label class="form-check-label" for="showActivity">Show Activity</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Justified Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Justified Tabs</h5>
+                            <p class="text-muted mb-0">Tabs that fill the full width of their container</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-tabs nav-justified" id="justifiedTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true"> <span class="material-symbols-rounded me-2">overview</span>Overview</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="analytics-tab" data-bs-toggle="tab" data-bs-target="#analytics" type="button" role="tab" aria-controls="analytics" aria-selected="false"> <span class="material-symbols-rounded me-2">analytics</span>Analytics</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reports-tab" data-bs-toggle="tab" data-bs-target="#reports" type="button" role="tab" aria-controls="reports" aria-selected="false"> <span class="material-symbols-rounded me-2">assessment</span>Reports</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="export-tab" data-bs-toggle="tab" data-bs-target="#export" type="button" role="tab" aria-controls="export" aria-selected="false"> <span class="material-symbols-rounded me-2">download</span>Export</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="justifiedTabsContent">
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                    <div class="p-4">
+                                        <h4>Business Overview</h4>
+                                        <p>Get a comprehensive view of your business performance and key metrics.</p>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-primary text-bg-primary rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">trending_up</span>
+                                                    </div>
+                                                    <h5>Revenue</h5>
+                                                    <h3 class="text-primary">$45,678</h3> <small class="text-success">+12.5%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-success text-bg-success rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">people</span>
+                                                    </div>
+                                                    <h5>Customers</h5>
+                                                    <h3 class="text-success">2,456</h3> <small class="text-success">+8.2%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-warning text-white rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">shopping_cart</span>
+                                                    </div>
+                                                    <h5>Orders</h5>
+                                                    <h3 class="text-warning">1,234</h3> <small class="text-success">+15.3%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-info text-white rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">visibility</span>
+                                                    </div>
+                                                    <h5>Page Views</h5>
+                                                    <h3 class="text-info">45,678</h3> <small class="text-success">+22.1%</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="analytics" role="tabpanel" aria-labelledby="analytics-tab">
+                                    <div class="p-4">
+                                        <h4>Detailed Analytics</h4>
+                                        <p>Deep dive into your analytics data with interactive charts and insights.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Traffic Sources</h6>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Direct</span>
+                                                            <span class="badge bg-primary">45%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-primary" style="width: 45%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Search</span>
+                                                            <span class="badge bg-success">30%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-success" style="width: 30%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Social</span>
+                                                            <span class="badge bg-info">15%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-info" style="width: 15%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center"> <span>Referral</span>
+                                                            <span class="badge bg-warning">10%</span>
+                                                        </div>
+                                                        <div class="progress" style="height: 8px;">
+                                                            <div class="progress-bar bg-warning" style="width: 10%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Device Breakdown</h6>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-primary me-3">computer</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Desktop</span>
+                                                                    <span>65%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-primary" style="width: 65%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-success me-3">phone_android</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Mobile</span>
+                                                                    <span>25%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-success" style="width: 25%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center"> <span class="material-symbols-rounded text-info me-3">tablet</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Tablet</span>
+                                                                    <span>10%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-info" style="width: 10%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab">
+                                    <div class="p-4">
+                                        <h4>Custom Reports</h4>
+                                        <p>Generate and view detailed reports for your business insights.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-primary" style="font-size: 3rem;">assessment</span>
+                                                        <h5 class="mt-3">Sales Report</h5>
+                                                        <p class="text-muted">Monthly sales performance</p>
+                                                        <button class="btn btn-primary">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-success" style="font-size: 3rem;">people</span>
+                                                        <h5 class="mt-3">User Report</h5>
+                                                        <p class="text-muted">User activity and engagement</p>
+                                                        <button class="btn btn-success">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-warning" style="font-size: 3rem;">inventory</span>
+                                                        <h5 class="mt-3">Inventory Report</h5>
+                                                        <p class="text-muted">Stock levels and movements</p>
+                                                        <button class="btn btn-warning">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="export" role="tabpanel" aria-labelledby="export-tab">
+                                    <div class="p-4">
+                                        <h4>Data Export</h4>
+                                        <p>Export your data in various formats for external analysis.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Export Options</h6>
+                                                        <div class="d-grid gap-2">
+                                                            <button class="btn btn-outline-primary"> <span class="material-symbols-rounded me-2">table_chart</span>Export to Excel</button>
+                                                            <button class="btn btn-outline-success"> <span class="material-symbols-rounded me-2">description</span>Export to PDF</button>
+                                                            <button class="btn btn-outline-info"> <span class="material-symbols-rounded me-2">code</span>Export to CSV</button>
+                                                            <button class="btn btn-outline-warning"> <span class="material-symbols-rounded me-2">cloud_download</span>Export to JSON</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Export History</h6>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>Sales Report - Jan 2024</span>
+                                                            <small class="text-muted">2 days ago</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between mb-2"> <span>User Data - Dec 2023</span>
+                                                            <small class="text-muted">1 week ago</small>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-between"> <span>Analytics - Nov 2023</span>
+                                                            <small class="text-muted">2 weeks ago</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Underline Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Underline Tabs</h5>
+                            <p class="text-muted mb-0">Modern tabs with underline indicators for clean design</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-underline" id="underlineTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="overview-underline-tab" data-bs-toggle="tab" data-bs-target="#overview-underline" type="button" role="tab" aria-controls="overview-underline" aria-selected="true"> <span class="material-symbols-rounded me-2">overview</span>Overview</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="analytics-underline-tab" data-bs-toggle="tab" data-bs-target="#analytics-underline" type="button" role="tab" aria-controls="analytics-underline" aria-selected="false"> <span class="material-symbols-rounded me-2">analytics</span>Analytics</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reports-underline-tab" data-bs-toggle="tab" data-bs-target="#reports-underline" type="button" role="tab" aria-controls="reports-underline" aria-selected="false"> <span class="material-symbols-rounded me-2">assessment</span>Reports</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="settings-underline-tab" data-bs-toggle="tab" data-bs-target="#settings-underline" type="button" role="tab" aria-controls="settings-underline" aria-selected="false"> <span class="material-symbols-rounded me-2">settings</span>Settings</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="underlineTabsContent">
+                                <div class="tab-pane fade show active" id="overview-underline" role="tabpanel" aria-labelledby="overview-underline-tab">
+                                    <div class="p-4">
+                                        <h4>Business Overview</h4>
+                                        <p>Get a comprehensive view of your business performance and key metrics.</p>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-primary text-bg-primary rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">trending_up</span>
+                                                    </div>
+                                                    <h5>Revenue</h5>
+                                                    <h3 class="text-primary">$45,678</h3> <small class="text-success">+12.5%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-success text-bg-success rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">people</span>
+                                                    </div>
+                                                    <h5>Customers</h5>
+                                                    <h3 class="text-success">2,456</h3> <small class="text-success">+8.2%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-warning text-white rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">shopping_cart</span>
+                                                    </div>
+                                                    <h5>Orders</h5>
+                                                    <h3 class="text-warning">1,234</h3> <small class="text-success">+15.3%</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="text-center p-3">
+                                                    <div class="d-flex align-items-center justify-content-center bg-info text-white rounded-circle mx-auto mb-3" style="width: 60px; height: 60px;"> <span class="material-symbols-rounded">visibility</span>
+                                                    </div>
+                                                    <h5>Page Views</h5>
+                                                    <h3 class="text-info">45,678</h3> <small class="text-success">+22.1%</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="analytics-underline" role="tabpanel" aria-labelledby="analytics-underline-tab">
+                                    <div class="p-4">
+                                        <h4>Detailed Analytics</h4>
+                                        <p>Deep dive into your analytics data with interactive charts and insights.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Traffic Sources</h6>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Direct</span>
+                                                            <span class="badge bg-primary">45%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-primary" style="width: 45%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Search</span>
+                                                            <span class="badge bg-success">30%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-success" style="width: 30%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center mb-2"> <span>Social</span>
+                                                            <span class="badge bg-info">15%</span>
+                                                        </div>
+                                                        <div class="progress mb-3" style="height: 8px;">
+                                                            <div class="progress-bar bg-info" style="width: 15%">
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center"> <span>Referral</span>
+                                                            <span class="badge bg-warning">10%</span>
+                                                        </div>
+                                                        <div class="progress" style="height: 8px;">
+                                                            <div class="progress-bar bg-warning" style="width: 10%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Device Breakdown</h6>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-primary me-3">computer</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Desktop</span>
+                                                                    <span>65%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-primary" style="width: 65%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-success me-3">phone_android</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Mobile</span>
+                                                                    <span>25%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-success" style="width: 25%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center"> <span class="material-symbols-rounded text-info me-3">tablet</span>
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex justify-content-between"> <span>Tablet</span>
+                                                                    <span>10%</span>
+                                                                </div>
+                                                                <div class="progress" style="height: 6px;">
+                                                                    <div class="progress-bar bg-info" style="width: 10%">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="reports-underline" role="tabpanel" aria-labelledby="reports-underline-tab">
+                                    <div class="p-4">
+                                        <h4>Custom Reports</h4>
+                                        <p>Generate and view detailed reports for your business insights.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-primary" style="font-size: 3rem;">assessment</span>
+                                                        <h5 class="mt-3">Sales Report</h5>
+                                                        <p class="text-muted">Monthly sales performance</p>
+                                                        <button class="btn btn-primary">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-success" style="font-size: 3rem;">people</span>
+                                                        <h5 class="mt-3">User Report</h5>
+                                                        <p class="text-muted">User activity and engagement</p>
+                                                        <button class="btn btn-success">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card">
+                                                    <div class="card-body text-center"> <span class="material-symbols-rounded text-warning" style="font-size: 3rem;">inventory</span>
+                                                        <h5 class="mt-3">Inventory Report</h5>
+                                                        <p class="text-muted">Stock levels and movements</p>
+                                                        <button class="btn btn-warning">Generate</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="settings-underline" role="tabpanel" aria-labelledby="settings-underline-tab">
+                                    <div class="p-4">
+                                        <h4>Application Settings</h4>
+                                        <p>Configure your application preferences and system settings.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>General Settings</h6>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="notifications-underline" checked>
+                                                            <label class="form-check-label" for="notifications-underline">Email Notifications</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="darkMode-underline">
+                                                            <label class="form-check-label" for="darkMode-underline">Dark Mode</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="autoSave-underline" checked>
+                                                            <label class="form-check-label" for="autoSave-underline">Auto Save</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Privacy Settings</h6>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="profilePublic-underline" checked>
+                                                            <label class="form-check-label" for="profilePublic-underline">Public Profile</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="showEmail-underline">
+                                                            <label class="form-check-label" for="showEmail-underline">Show Email</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="showActivity-underline" checked>
+                                                            <label class="form-check-label" for="showActivity-underline">Show Activity</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Icon Only Tabs -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Icon Only Tabs</h5>
+                            <p class="text-muted mb-0">Compact tabs using only icons for space-efficient navigation</p>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="iconTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-icon-tab" data-bs-toggle="tab" data-bs-target="#home-icon" type="button" role="tab" aria-controls="home-icon" aria-selected="true" title="Home"> <span class="material-symbols-rounded">home</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="search-icon-tab" data-bs-toggle="tab" data-bs-target="#search-icon" type="button" role="tab" aria-controls="search-icon" aria-selected="false" title="Search"> <span class="material-symbols-rounded">search</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="favorite-icon-tab" data-bs-toggle="tab" data-bs-target="#favorite-icon" type="button" role="tab" aria-controls="favorite-icon" aria-selected="false" title="Favorites"> <span class="material-symbols-rounded">favorite</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="notifications-icon-tab" data-bs-toggle="tab" data-bs-target="#notifications-icon" type="button" role="tab" aria-controls="notifications-icon" aria-selected="false" title="Notifications"> <span class="material-symbols-rounded">notifications</span>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">3</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="account-icon-tab" data-bs-toggle="tab" data-bs-target="#account-icon" type="button" role="tab" aria-controls="account-icon" aria-selected="false" title="Account"> <span class="material-symbols-rounded">account_circle</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="iconTabsContent">
+                                <div class="tab-pane fade show active" id="home-icon" role="tabpanel" aria-labelledby="home-icon-tab">
+                                    <div class="p-4">
+                                        <h4>Home Dashboard</h4>
+                                        <p>Welcome to your personalized home dashboard with quick access to all features.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body"> <span class="material-symbols-rounded text-primary" style="font-size: 3rem;">dashboard</span>
+                                                        <h5 class="mt-3">Dashboard</h5>
+                                                        <p class="text-muted">Main control panel</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body"> <span class="material-symbols-rounded text-success" style="font-size: 3rem;">analytics</span>
+                                                        <h5 class="mt-3">Analytics</h5>
+                                                        <p class="text-muted">Performance metrics</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body"> <span class="material-symbols-rounded text-warning" style="font-size: 3rem;">settings</span>
+                                                        <h5 class="mt-3">Settings</h5>
+                                                        <p class="text-muted">Configuration options</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="search-icon" role="tabpanel" aria-labelledby="search-icon-tab">
+                                    <div class="p-4">
+                                        <h4>Search & Discovery</h4>
+                                        <p>Find what you're looking for with our powerful search capabilities.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Quick Search</h6>
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" placeholder="Search...">
+                                                            <button class="btn btn-primary" type="button"> <span class="material-symbols-rounded">search</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="d-flex flex-wrap gap-2"> <span class="badge bg-light text-dark">Recent: Project Alpha</span>
+                                                            <span class="badge bg-light text-dark">Recent: User Report</span>
+                                                            <span class="badge bg-light text-dark">Recent: Settings</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Search Filters</h6>
+                                                        <div class="d-grid gap-2">
+                                                            <button class="btn btn-outline-primary"> <span class="material-symbols-rounded me-2">folder</span>Documents</button>
+                                                            <button class="btn btn-outline-success"> <span class="material-symbols-rounded me-2">image</span>Images</button>
+                                                            <button class="btn btn-outline-info"> <span class="material-symbols-rounded me-2">video_library</span>Videos</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="favorite-icon" role="tabpanel" aria-labelledby="favorite-icon-tab">
+                                    <div class="p-4">
+                                        <h4>Favorites & Bookmarks</h4>
+                                        <p>Access your saved items and frequently used resources.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Recent Favorites</h6>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-primary me-3">bookmark</span>
+                                                            <div>
+                                                                <h6 class="mb-1">Project Dashboard</h6>
+                                                                <p class="text-muted mb-0">Main project overview</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-success me-3">bookmark</span>
+                                                            <div>
+                                                                <h6 class="mb-1">Analytics Report</h6>
+                                                                <p class="text-muted mb-0">Monthly performance data</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center"> <span class="material-symbols-rounded text-warning me-3">bookmark</span>
+                                                            <div>
+                                                                <h6 class="mb-1">User Management</h6>
+                                                                <p class="text-muted mb-0">Team member controls</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Quick Actions</h6>
+                                                        <div class="d-grid gap-2">
+                                                            <button class="btn btn-outline-primary"> <span class="material-symbols-rounded me-2">add</span>Add to Favorites</button>
+                                                            <button class="btn btn-outline-success"> <span class="material-symbols-rounded me-2">bookmark_add</span>Create Bookmark</button>
+                                                            <button class="btn btn-outline-info"> <span class="material-symbols-rounded me-2">share</span>Share Collection</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="notifications-icon" role="tabpanel" aria-labelledby="notifications-icon-tab">
+                                    <div class="p-4">
+                                        <h4>Notifications Center</h4>
+                                        <p>Stay updated with your latest notifications and alerts.</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Recent Notifications</h6>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-primary me-3">info</span>
+                                                            <div>
+                                                                <h6 class="mb-1">System Update Available</h6>
+                                                                <p class="text-muted mb-0">New features and improvements</p> <small class="text-muted">2 hours ago</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center mb-3"> <span class="material-symbols-rounded text-success me-3">check_circle</span>
+                                                            <div>
+                                                                <h6 class="mb-1">Task Completed</h6>
+                                                                <p class="text-muted mb-0">Project milestone reached</p> <small class="text-muted">4 hours ago</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center"> <span class="material-symbols-rounded text-warning me-3">warning</span>
+                                                            <div>
+                                                                <h6 class="mb-1">Storage Warning</h6>
+                                                                <p class="text-muted mb-0">85% of storage used</p> <small class="text-muted">1 day ago</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Notification Settings</h6>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="email-notifications" checked>
+                                                            <label class="form-check-label" for="email-notifications">Email Notifications</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="push-notifications" checked>
+                                                            <label class="form-check-label" for="push-notifications">Push Notifications</label>
+                                                        </div>
+                                                        <div class="form-check form-switch mb-3">
+                                                            <input class="form-check-input" type="checkbox" id="sms-notifications">
+                                                            <label class="form-check-label" for="sms-notifications">SMS Notifications</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="account-icon" role="tabpanel" aria-labelledby="account-icon-tab">
+                                    <div class="p-4">
+                                        <h4>Account Management</h4>
+                                        <p>Manage your account settings and profile information.</p>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="card text-center">
+                                                    <div class="card-body">
+                                                        <img src="images/assets/profile-image.png" class="rounded-circle mb-3" width="80" height="80" alt="Profile">
+                                                        <h5>John Doe</h5>
+                                                        <p class="text-muted">Administrator</p>
+                                                        <button class="btn btn-primary btn-sm">Edit Profile</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h6>Account Information</h6>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">First Name</label>
+                                                                    <input type="text" class="form-control" value="John">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label">Last Name</label>
+                                                                    <input type="text" class="form-control" value="Doe">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Email</label>
+                                                            <input type="email" class="form-control" value="john.doe@example.com">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">Phone</label>
+                                                            <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                                                        </div>
+                                                        <button class="btn btn-primary">Update Account</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end page content -->
+        </div>
+    </main>
+    <!-- end main wrapper -->
+    <!-- start overlay -->
+    <div class="overlay btn-toggle">
+    </div>
+    <!-- end overlay -->
+    <!-- start footer -->
+    <footer class="page-footer bg-secondary bg-opacity-25">
+        <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
+    </footer>
+    <!-- end footer -->
+    <!-- start CDN scripts -->
+    <!-- start core javascript libraries -->
+    <!-- Bootstrap 5.3.5 Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- Anime.js 3.2.1 from CDN for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- BProgress Loading Indicator -->
+    <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <!-- end core javascript libraries -->
+    <!-- start chart & visualization libraries -->
+    <!-- ApexCharts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest/dist/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
+    </script>
+    <!-- JSVector Maps Core Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+    <!-- end chart & visualization libraries -->
+    <!-- start UI component libraries -->
+    <!-- Grid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <!-- FullCalendar JS -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.13/index.global.min.js'></script>
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Simplebar scrollbars -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.3.2/dist/simplebar.min.js"></script>
+    <!-- modal lightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+    <!-- Masonry Layout -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+    </script>
+    <!-- Quill JS -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <!-- CosmicWave Component -->
+    <script src="https://cdn.jsdelivr.net/npm/@huement/cosmicwave/dist/cosmicwave.min.js"></script>
+    <!-- fit text -->
+    <script src="https://cdn.jsdelivr.net/npm/fitty@2.3.6/dist/fitty.min.js"></script>
+    <!-- Form Enhancement Libraries -->
+    <!-- TinyMCE -->
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.2/tinymce.min.js"></script>
+    <!-- Choices.js -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@10.1.0/public/assets/scripts/choices.min.js"></script>
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+    <!-- Cleave.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- end UI component libraries -->
+    <!-- end CDN scripts -->
+    <!-- Jquery Free JSON Table (local asset) -->
+    <script src="./js/JsonTable.js"></script>
+    <!-- start custom application scripts -->
+    <!-- end custom application scripts -->
+    <!-- start site-wide javascript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+
+            const viewportDebugger = document.getElementById('viewport-debugger');
+            if (viewportDebugger) {
+                viewportDebugger.addEventListener('click', function() {
+                    this.remove();
+                });
+            }
+
+            // BProgress Configuration
+            const {
+                BProgress
+            } = BProgressJS;
+            BProgress.configure({
+                color: '#FF3300', // RED
+                height: '6px',
+                position: 'top',
+                showSpinner: false,
+                trickleSpeed: 200,
+                minimum: 0.08
+            });
+
+            // Global BProgress functions for easy access
+            window.showProgress = () => {
+                BProgress.start();
+            };
+            window.hideProgress = () => BProgress.done();
+
+            window.setProgress = (percent) => {
+                BProgress.set(percent);
+            };
+
+            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
+            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
+                el.addEventListener('click', Lightbox.initialize);
+            });
+
+            // Auto-trigger BProgress on dropdown item clicks
+            document.addEventListener('click', function(e) {
+                // Check if clicked element is a dropdown item
+                const dropdownItem = e.target.closest('.dropdown-item');
+                if (dropdownItem) {
+                    // Skip if it's a divider or disabled
+                    if (dropdownItem.classList.contains('dropdown-divider') ||
+                        dropdownItem.classList.contains('disabled') ||
+                        dropdownItem.hasAttribute('disabled')) {
+                        return;
+                    }
+
+                    // Skip if it's a JavaScript link (no real action)
+                    const href = dropdownItem.getAttribute('href');
+                    if (href === 'javascript:;' || href === '#') {
+                        return;
+                    }
+
+                    // Skip if it's an admin navigation link (handled by page transition)
+                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
+                        return;
+                    }
+
+                    console.log('Dropdown item clicked, triggering BProgress');
+
+                    // Quick BProgress sequence
+                    BProgress.start();
+                    setTimeout(() => BProgress.set(30), 100);
+                    setTimeout(() => BProgress.set(60), 200);
+                    setTimeout(() => BProgress.set(90), 300);
+                    setTimeout(() => BProgress.done(), 400);
+                }
+            });
+
+            // BProgress on page navigation
+            // Intercept all admin navigation links
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[href]');
+                if (!link) return;
+
+                // Only handle admin links
+                const href = link.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
+                    return;
+                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
+
+                console.log("Admin navigation detected, starting BProgress");
+
+                // Start BProgress for navigation
+                BProgress.start();
+
+                // Let the navigation happen naturally
+            });
+
+            // Page load - BProgress only
+            window.addEventListener('load', function() {
+                // Start BProgress for page load
+                BProgress.start();
+                setTimeout(() => BProgress.set(50), 100);
+                setTimeout(() => BProgress.set(80), 200);
+                setTimeout(() => BProgress.set(100), 300);
+
+                // Complete BProgress
+                setTimeout(() => {
+                    BProgress.done();
+                }, 400);
+            });
+        });
+    </script>
+    <!-- end site-wide javascript -->
+    <!-- start page-specific scripts -->
+    <!-- end page-specific scripts -->
+    <!-- start additional utilities -->
+    <script>
+    // Store menu preference
+                    sessionStorage.setItem('menu_type', 'vertical');
+        
+        // Menu toggle links work normally - middleware handles cookie setting and page reload
+
+        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
+        function fixCosmicWaveOverflow() {
+            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
+            cosmicWaves.forEach(svg => {
+                // Only fix the sizing, don't change the viewBox
+                svg.style.width = '100%';
+                svg.style.height = '100%';
+                svg.style.maxWidth = '100%';
+                svg.style.overflow = 'hidden';
+            });
+        }
+
+        // Run immediately and also after a delay to catch dynamically loaded waves
+        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
+        setTimeout(fixCosmicWaveOverflow, 100);
+        setTimeout(fixCosmicWaveOverflow, 500);
+        setTimeout(fixCosmicWaveOverflow, 1000);
+
+        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
+        if (typeof MutationObserver !== 'undefined') {
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
+                                        'cosmic-wave')) {
+                                    setTimeout(fixCosmicWaveOverflow, 50);
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
+
+        // Sidebar hover functionality for collapsed state
+        function initSidebarHover() {
+            const sidebar = document.querySelector('.sidebar-wrapper');
+            const body = document.body;
+
+            if (!sidebar) return;
+
+            // Only apply hover behavior when sidebar is toggled (collapsed)
+            function handleSidebarHover() {
+                if (body.classList.contains('toggled')) {
+                    sidebar.addEventListener('mouseenter', function() {
+                        body.classList.add('sidebar-hovered');
+                    });
+
+                    sidebar.addEventListener('mouseleave', function() {
+                        body.classList.remove('sidebar-hovered');
+                    });
+                }
+            }
+
+            // Initialize on page load
+            handleSidebarHover();
+
+            // Re-initialize when toggle state changes
+            const toggleButton = document.querySelector('.btn-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    // Wait for the toggle animation to complete
+                    setTimeout(handleSidebarHover, 300);
+                });
+            }
+        }
+
+        // Initialize sidebar hover when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSidebarHover);
+        } else {
+            initSidebarHover();
+        }
+    </script>
+    <!-- end additional utilities -->
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+    // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+                console.log('Material Symbols font loaded');
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        // The font is usually cached after first page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+
+        // Watch for dynamically added icons (e.g., from AJAX content)
+        const iconObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if the node itself is an icon
+                        if (node.classList && (node.classList.contains(
+                                'material-symbols-rounded') || node.classList.contains(
+                                'material-icons'))) {
+                            node.classList.add('material-symbols-rounded--loaded');
+                        }
+                        // Check for icons within the added node
+                        if (node.querySelectorAll) {
+                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
+                                .forEach(function(icon) {
+                                    icon.classList.add('material-symbols-rounded--loaded');
+                                });
+                        }
+                    }
+                });
+            });
+        });
+
+        // Start observing the document body for changes
+        iconObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/basic.js"></script>
+    <script src="./js/freebie.js"></script>
+<!-- Upgrade to Pro Modal -->
+<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-dark">
+        <h5 class="modal-title" id="upgradeModalLabel">
+          <i class="material-symbols-rounded me-2" style="vertical-align: middle;">star</i>
+          Upgrade to UltraViolet Pro
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center py-4">
+          <i class="material-symbols-rounded text-primary mb-3" style="font-size: 64px;">workspace_premium</i>
+          <h4 class="mb-3">Unlock All Features</h4>
+          <p class="mb-4">Get access to the full UltraViolet Pro with 80+ pages, horizontal menu layouts, advanced apps, and much more!</p>
+          <ul class="text-start mb-4">
+            <li>Horizontal & Vertical menu layouts</li>
+            <li>80+ admin pages and templates</li>
+            <li>Advanced apps (Email, Chat, Calendar, etc.)</li>
+            <li>Laravel Livewire edition included</li>
+            <li>Premium support and updates</li>
+          </ul>
+          <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg w-100" target="_blank">
+            <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
+            Purchase on ThemeForest
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

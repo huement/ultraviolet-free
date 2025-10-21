@@ -1,0 +1,61 @@
+{
+  "_admin-background-animations-UxYMBCRN.js": {
+    "file": "assets/admin-background-animations-UxYMBCRN.js",
+    "name": "admin-background-animations"
+  },
+  "resources/js/admin.js": {
+    "file": "assets/admin.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations-UxYMBCRN.js"
+    ]
+  },
+  "resources/js/admin.ts": {
+    "file": "assets/admin2.js",
+    "name": "admin",
+    "src": "resources/js/admin.ts",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations-UxYMBCRN.js"
+    ]
+  },
+  "resources/js/basic.js": {
+    "file": "assets/basic-Bfyj2g8X.js",
+    "name": "basic",
+    "src": "resources/js/basic.js",
+    "isEntry": true
+  },
+  "resources/js/docs.js": {
+    "file": "assets/docs-CE4bxjS0.js",
+    "name": "docs",
+    "src": "resources/js/docs.js",
+    "isEntry": true
+  },
+  "resources/sass/admin-horizontal-dark.scss": {
+    "file": "assets/admin-horizontal-dark-D9JYhd0x.css",
+    "src": "resources/sass/admin-horizontal-dark.scss",
+    "isEntry": true
+  },
+  "resources/sass/admin-vertical-dark.scss": {
+    "file": "assets/admin-vertical-dark-EXbBeQIX.css",
+    "src": "resources/sass/admin-vertical-dark.scss",
+    "isEntry": true
+  },
+  "resources/sass/bootstrap-5.3.5-plus.scss": {
+    "file": "assets/bootstrap-5.3-B0XtHuNF.css",
+    "src": "resources/sass/bootstrap-5.3.5-plus.scss",
+    "isEntry": true
+  },
+  "resources/sass/docs.scss": {
+    "file": "assets/docs-Cd4RcUlE.css",
+    "src": "resources/sass/docs.scss",
+    "isEntry": true
+  },
+  "resources/sass/huement-sites.scss": {
+    "file": "assets/huement-sites-BTnUPNE0.css",
+    "src": "resources/sass/huement-sites.scss",
+    "isEntry": true
+  }
+}
