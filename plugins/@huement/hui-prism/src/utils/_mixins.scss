@@ -1,0 +1,409 @@
+// =============================================================================
+// Utility Mixins
+// =============================================================================
+// Modern Sass mixins for common patterns and advanced features.
+
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:meta';
+@use 'functions' as func;
+
+// =============================================================================
+// Animation Mixins
+// =============================================================================
+
+/// Create smooth transitions
+/// @param {List} $properties - Properties to animate
+/// @param {Number} $duration - Animation duration
+/// @param {String} $timing - Timing function
+/// @param {Number} $delay - Animation delay
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease, $delay: 0s) {
+  $transition-list: (
+  );
+
+@each $property in $properties {
+  $transition-list: append($transition-list, #{$property} #{$duration} #{$timing} #{$delay}, comma);
+}
+
+transition: $transition-list;
+}
+
+/// Create keyframe animation
+/// @param {String} $name - Animation name
+/// @param {Map} $keyframes - Keyframe definitions
+@mixin keyframes($name, $keyframes) {
+  @keyframes #{$name} {
+    @each $percentage, $properties in $keyframes {
+      #{$percentage} {
+        @each $property, $value in $properties {
+          #{$property}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+/// Apply animation with modern properties
+/// @param {String} $name - Animation name
+/// @param {Number} $duration - Animation duration
+/// @param {String} $timing - Timing function
+/// @param {Number} $delay - Animation delay
+/// @param {Number} $iteration-count - Number of iterations
+/// @param {String} $direction - Animation direction
+/// @param {String} $fill-mode - Animation fill mode
+@mixin animation($name,
+  $duration: 1s,
+  $timing: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: both) {
+  animation: $name $duration $timing $delay $iteration-count $direction $fill-mode;
+}
+
+/// Fade in animation
+/// @param {Number} $duration - Animation duration
+/// @param {Number} $delay - Animation delay
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  @include keyframes(fade-in, (0%: (opacity: 0, transform: translateY(20px)),
+      100%: (opacity: 1, transform: translateY(0))));
+
+  @include animation(fade-in, $duration, ease-out, $delay);
+}
+
+/// Slide in from direction
+/// @param {String} $direction - Direction ('left', 'right', 'up', 'down')
+/// @param {Number} $duration - Animation duration
+/// @param {Number} $delay - Animation delay
+@mixin slide-in($direction: 'left', $duration: 0.5s, $delay: 0s) {
+  $transform: (
+  );
+
+@if $direction =='left' {
+  $transform: translateX(-100%);
+}
+
+@else if $direction =='right' {
+  $transform: translateX(100%);
+}
+
+@else if $direction =='up' {
+  $transform: translateY(-100%);
+}
+
+@else if $direction =='down' {
+  $transform: translateY(100%);
+}
+
+@include keyframes(slide-in-#{$direction}, (0%: (opacity: 0, transform: $transform),
+    100%: (opacity: 1, transform: translate(0, 0))));
+
+@include animation(slide-in-#{$direction}, $duration, ease-out, $delay);
+}
+
+/// Pulse animation
+/// @param {Number} $duration - Animation duration
+/// @param {Number} $scale - Scale factor
+@mixin pulse($duration: 1s, $scale: 1.05) {
+  @include keyframes(pulse, (0%: (transform: scale(1)),
+      50%: (transform: scale($scale)),
+      100%: (transform: scale(1))));
+
+  @include animation(pulse, $duration, ease-in-out, 0s, infinite);
+}
+
+// =============================================================================
+// Layout Mixins
+// =============================================================================
+
+/// Flexbox center
+/// @param {String} $direction - Flex direction
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Flexbox space between
+/// @param {String} $direction - Flex direction
+@mixin flex-between($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/// Grid center
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+/// Responsive grid
+/// @param {Number} $min-width - Minimum column width
+/// @param {Number} $gap - Grid gap
+@mixin responsive-grid($min-width: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+/// Aspect ratio container
+/// @param {Number} $ratio - Aspect ratio (width/height)
+@mixin aspect-ratio($ratio: 16/9) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: math.div(1, $ratio) * 100%;
+  }
+
+  >* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// =============================================================================
+// Typography Mixins
+// =============================================================================
+
+/// Fluid typography
+/// @param {Number} $min-size - Minimum font size
+/// @param {Number} $max-size - Maximum font size
+/// @param {Number} $min-width - Minimum viewport width
+/// @param {Number} $max-width - Maximum viewport width
+@mixin fluid-type($min-size, $max-size, $min-width: 320px, $max-width: 1200px) {
+  font-size: $min-size;
+
+  @media (min-width: $min-width) {
+    font-size: calc(#{$min-size} + #{math.div($max-size - $min-size, $max-width - $min-width)} * (100vw - #{$min-width}));
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+/// Text truncation
+/// @param {Number} $lines - Number of lines
+@mixin text-truncate($lines: 1) {
+  @if $lines ==1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/// Text selection styling
+/// @param {Color} $color - Selection color
+/// @param {Color} $background - Selection background
+@mixin text-selection($color: inherit, $background: rgba(0, 123, 255, 0.3)) {
+  &::selection {
+    color: $color;
+    background: $background;
+  }
+
+  &::-moz-selection {
+    color: $color;
+    background: $background;
+  }
+}
+
+// =============================================================================
+// Visual Effects Mixins
+// =============================================================================
+
+/// Box shadow with multiple layers
+/// @param {List} $shadows - List of shadow definitions
+@mixin multi-shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+/// Modern glassmorphism effect
+/// @param {Color} $background - Background color
+/// @param {Number} $opacity - Background opacity
+/// @param {Number} $blur - Blur amount
+/// @param {Number} $border-opacity - Border opacity
+@mixin glassmorphism($background: white, $opacity: 0.1, $blur: 10px, $border-opacity: 0.2) {
+  background: color.adjust($background, $alpha: -$opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid color.adjust($background, $alpha: -$border-opacity);
+  border-radius: 0.5rem;
+}
+
+/// Gradient text
+/// @param {List} $colors - Gradient colors
+/// @param {String} $direction - Gradient direction
+@mixin gradient-text($colors, $direction: to right) {
+  background: linear-gradient($direction, $colors);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/// Hover lift effect
+/// @param {Number} $lift - Lift amount
+/// @param {Number} $duration - Transition duration
+@mixin hover-lift($lift: 5px, $duration: 0.3s) {
+  @include transition(transform box-shadow, $duration);
+
+  &:hover {
+    transform: translateY(-$lift);
+    box-shadow: 0 $lift 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// =============================================================================
+// Responsive Mixins
+// =============================================================================
+
+/// Mobile-first media query
+/// @param {Number} $breakpoint - Breakpoint value
+@mixin mobile-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+/// Desktop-first media query
+/// @param {Number} $breakpoint - Breakpoint value
+@mixin desktop-down($breakpoint) {
+  @media (max-width: $breakpoint - 1px) {
+    @content;
+  }
+}
+
+/// Between breakpoints
+/// @param {Number} $min - Minimum breakpoint
+/// @param {Number} $max - Maximum breakpoint
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}
+
+/// High DPI display
+@mixin high-dpi {
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// =============================================================================
+// Accessibility Mixins
+// =============================================================================
+
+/// Screen reader only content
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/// Focus visible styling
+/// @param {String} $outline - Outline style
+@mixin focus-visible($outline: 2px solid #007bff) {
+  &:focus-visible {
+    outline: $outline;
+    outline-offset: 2px;
+  }
+}
+
+/// Reduced motion support
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// =============================================================================
+// Code-specific Mixins
+// =============================================================================
+
+/// Code block styling
+/// @param {Color} $background - Background color
+/// @param {Color} $text - Text color
+/// @param {Number} $border-radius - Border radius
+@mixin code-block($background: #f8f9fa, $text: #333, $border-radius: 0.375rem) {
+  background: $background;
+  color: $text;
+  border-radius: $border-radius;
+  padding: 1rem;
+  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  overflow-x: auto;
+
+  // Modern scrollbar
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: color.adjust($background, $lightness: -5%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: color.adjust($background, $lightness: -15%);
+    border-radius: 3px;
+
+    &:hover {
+      background: color.adjust($background, $lightness: -25%);
+    }
+  }
+}
+
+/// Syntax highlighting base
+@mixin syntax-highlighting {
+
+  // Token base styles
+  .token {
+    @include transition(color, 0.2s);
+
+    // Comment styling
+    &.comment {
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    // Keyword styling
+    &.keyword {
+      font-weight: 600;
+    }
+
+    // String styling
+    &.string {
+      font-weight: 500;
+    }
+
+    // Number styling
+    &.number {
+      font-weight: 500;
+    }
+  }
+}

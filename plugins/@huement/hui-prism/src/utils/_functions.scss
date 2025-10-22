@@ -1,0 +1,268 @@
+// =============================================================================
+// Utility Functions
+// =============================================================================
+// Modern Sass utility functions for theme customization and calculations.
+
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:meta';
+
+// =============================================================================
+// Math Functions
+// =============================================================================
+
+/// Convert pixels to rem units
+/// @param {Number} $pixels - Pixel value
+/// @param {Number} $base-font-size - Base font size (default: 16px)
+/// @return {Number} Rem value
+@function px-to-rem($pixels, $base-font-size: 16px) {
+  @return math.div($pixels, $base-font-size) * 1rem;
+}
+
+/// Convert rem to pixels
+/// @param {Number} $rems - Rem value
+/// @param {Number} $base-font-size - Base font size (default: 16px)
+/// @return {Number} Pixel value
+@function rem-to-px($rems, $base-font-size: 16px) {
+  @return $rems * $base-font-size;
+}
+
+/// Calculate golden ratio
+/// @param {Number} $base - Base value
+/// @return {Number} Golden ratio value
+@function golden-ratio($base) {
+  @return $base * 1.618;
+}
+
+/// Calculate modular scale
+/// @param {Number} $base - Base value
+/// @param {Number} $ratio - Scale ratio
+/// @param {Number} $steps - Number of steps
+/// @return {Number} Scaled value
+@function modular-scale($base, $ratio: 1.25, $steps: 1) {
+  @return $base * math.pow($ratio, $steps);
+}
+
+/// Clamp a value between min and max
+/// @param {Number} $value - Value to clamp
+/// @param {Number} $min - Minimum value
+/// @param {Number} $max - Maximum value
+/// @return {Number} Clamped value
+@function clamp-value($value, $min, $max) {
+  @return math.max($min, math.min($max, $value));
+}
+
+// =============================================================================
+// Color Functions
+// =============================================================================
+
+/// Create a color palette with multiple shades
+/// @param {Color} $base-color - Base color
+/// @param {Number} $steps - Number of steps
+/// @param {Number} $lightness-step - Lightness step size
+/// @return {List} Color palette
+@function create-shade-palette($base-color, $steps: 5, $lightness-step: 10%) {
+  $palette: (
+  );
+$base-lightness: color.lightness($base-color);
+
+@for $i from 0 through ($steps - 1) {
+  $lightness: $base-lightness + (($i - math.div($steps - 1, 2)) * $lightness-step);
+  $lightness: clamp-value($lightness, 0%, 100%);
+  $palette: append($palette, color.adjust($base-color, $lightness: $lightness));
+}
+
+@return $palette;
+}
+
+/// Get contrast ratio between two colors
+/// @param {Color} $color1 - First color
+/// @param {Color} $color2 - Second color
+/// @return {Number} Contrast ratio
+@function contrast-ratio($color1, $color2) {
+  $l1: color.lightness($color1);
+  $l2: color.lightness($color2);
+
+  $lighter: math.max($l1, $l2);
+  $darker: math.min($l1, $l2);
+
+  @return math.div($lighter + 5, $darker + 5);
+}
+
+/// Check if color meets WCAG contrast requirements
+/// @param {Color} $foreground - Foreground color
+/// @param {Color} $background - Background color
+/// @param {String} $level - WCAG level ('AA' or 'AAA')
+/// @return {Boolean} Whether contrast meets requirements
+@function meets-contrast-requirements($foreground, $background, $level: 'AA') {
+  $ratio: contrast-ratio($foreground, $background);
+  $required-ratio: if($level =='AAA', 7, 4.5);
+
+  @return $ratio >=$required-ratio;
+}
+
+/// Get accessible color variant
+/// @param {Color} $color - Base color
+/// @param {Color} $background - Background color
+/// @param {String} $level - WCAG level
+/// @return {Color} Accessible color variant
+@function get-accessible-color($color, $background, $level: 'AA') {
+  @if meets-contrast-requirements($color, $background, $level) {
+    @return $color;
+  }
+
+  // Try to adjust lightness to meet requirements
+  $lightness: color.lightness($color);
+  $background-lightness: color.lightness($background);
+
+  $target-lightness: if($background-lightness > 50%,
+      $background-lightness - 30%,
+      $background-lightness + 30%);
+
+  @return color.adjust($color, $lightness: $target-lightness);
+}
+
+// =============================================================================
+// String Functions
+// =============================================================================
+
+/// Convert string to kebab-case
+/// @param {String} $string - String to convert
+/// @return {String} Kebab-case string
+@function to-kebab-case($string) {
+  $string: to-lower-case($string);
+  $string: str-replace($string, ' ', '-');
+  $string: str-replace($string, '_', '-');
+  @return $string;
+}
+
+/// Replace substring in string
+/// @param {String} $string - Original string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace - Replacement string
+/// @return {String} Modified string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// List Functions
+// =============================================================================
+
+/// Remove duplicates from a list
+/// @param {List} $list - List to deduplicate
+/// @return {List} Deduplicated list
+@function unique($list) {
+  $unique-list: (
+  );
+
+@each $item in $list {
+  @if not index($unique-list, $item) {
+    $unique-list: append($unique-list, $item);
+  }
+}
+
+@return $unique-list;
+}
+
+/// Get the last item from a list
+/// @param {List} $list - List
+/// @return {*} Last item
+@function last($list) {
+  @return nth($list, length($list));
+}
+
+/// Get the first item from a list
+/// @param {List} $list - List
+/// @return {*} First item
+@function first($list) {
+  @return nth($list, 1);
+}
+
+// =============================================================================
+// Map Functions
+// =============================================================================
+
+/// Deep merge two maps
+/// @param {Map} $map1 - First map
+/// @param {Map} $map2 - Second map
+/// @return {Map} Merged map
+@function deep-merge($map1, $map2) {
+  $result: $map1;
+
+  @each $key, $value in $map2 {
+    @if type-of($value)=='map' and type-of(map.get($result, $key))=='map' {
+      $result: map.merge($result, ($key: deep-merge(map.get($result, $key), $value)));
+    }
+
+    @else {
+      $result: map.merge($result, ($key: $value));
+    }
+  }
+
+  @return $result;
+}
+
+/// Get nested map value
+/// @param {Map} $map - Map
+/// @param {List} $keys - List of keys
+/// @return {*} Nested value
+@function map-get-nested($map, $keys...) {
+  $value: $map;
+
+  @each $key in $keys {
+    $value: map.get($value, $key);
+
+    @if $value ==null {
+      @return null;
+    }
+  }
+
+  @return $value;
+}
+
+// =============================================================================
+// Type Functions
+// =============================================================================
+
+/// Check if value is a number
+/// @param {*} $value - Value to check
+/// @return {Boolean} Whether value is a number
+@function is-number($value) {
+  @return type-of($value)=='number';
+}
+
+/// Check if value is a string
+/// @param {*} $value - Value to check
+/// @return {Boolean} Whether value is a string
+@function is-string($value) {
+  @return type-of($value)=='string';
+}
+
+/// Check if value is a color
+/// @param {*} $value - Value to check
+/// @return {Boolean} Whether value is a color
+@function is-color($value) {
+  @return type-of($value)=='color';
+}
+
+/// Check if value is a map
+/// @param {*} $value - Value to check
+/// @return {Boolean} Whether value is a map
+@function is-map($value) {
+  @return type-of($value)=='map';
+}
+
+/// Check if value is a list
+/// @param {*} $value - Value to check
+/// @return {Boolean} Whether value is a list
+@function is-list($value) {
+  @return type-of($value)=='list';
+}

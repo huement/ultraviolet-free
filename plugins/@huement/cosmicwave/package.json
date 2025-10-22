@@ -1,0 +1,41 @@
+{
+  "name": "@huement/cosmicwave",
+  "version": "0.5.2",
+  "type": "module",
+  "description": "Lightweight, dependency-free SVG wave templates that dynamically generate themselves on render.",
+  "main": "dist/cosmicwave.js",
+  "module": "dist/cosmicwave.js",
+  "types": "dist/cosmicwave.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "definitionFile": "tsc src/cosmicwave.js --declaration --allowJs --emitDeclarationOnly --outDir src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huement/CosmicWave.git"
+  },
+  "keywords": [
+    "javascript",
+    "svg",
+    "html",
+    "waves",
+    "wave",
+    "generative",
+    "templates-html"
+  ],
+  "author": "Derek Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huement/CosmicWave/issues"
+  },
+  "homepage": "https://CosmicWave.huement.com/",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^3.29.4",
+    "rollup-plugin-dts": "^6.1.1"
+  }
+}

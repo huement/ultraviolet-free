@@ -1,0 +1,59 @@
+{
+  "name": "@huement/hui-prism",
+  "codeName": "mojo",
+  "author": "Derek Scott <derek@huement.com>",
+  "homepage": "https://github.com/huement/hui-prism",
+  "private": false,
+  "version": "1.0.0",
+  "description": "A modern Prism.js theme builder with base16 color support",
+  "main": "dist/theme.css",
+  "files": [
+    "dist/",
+    "src/",
+    "sass.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huement/hui-prism.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huement/hui-prism/issues"
+  },
+  "scripts": {
+    "build": "npm run build:dev && npm run build:prod",
+    "build:dev": "sass theme.scss dist/theme.css --style=expanded --source-map --source-map-urls=relative --verbose",
+    "build:prod": "sass theme.scss dist/theme.min.css --style=compressed --no-source-map --verbose",
+    "build:watch": "sass theme.scss dist/theme.css --watch --style=expanded --source-map --source-map-urls=relative",
+    "build:all": "npm run clean && npm run build:dev && npm run build:prod && npm run build:themes",
+    "build:themes": "npm run build:dark && npm run build:light && npm run build:monokai",
+    "build:dark": "sass theme.scss dist/theme-dark.css --style=expanded --source-map --source-map-urls=relative --verbose",
+    "build:light": "sass theme.scss dist/theme-light.css --style=expanded --source-map --source-map-urls=relative --verbose",
+    "build:monokai": "sass theme.scss dist/theme-monokai.css --style=expanded --source-map --source-map-urls=relative --verbose",
+    "watch": "npm run build:watch",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "postbuild": "npm run build:info",
+    "build:info": "node -e \"console.log('\\n🎨 Hui Prism Theme built successfully!\\n📁 Output: dist/\\n📄 Files: theme.css, theme.min.css\\n\\n🚀 Usage:\\n  <link rel=\\\"stylesheet\\\" href=\\\"dist/theme.css\\\">\\n\\n📖 Documentation: https://github.com/huement/hui-prism\\n')\"",
+    "docs": "npm run build:dev && npm run docs:serve",
+    "docs:serve": "python3 -m http.server 8080",
+    "docs:open": "npm run docs && open http://localhost:8080",
+    "docs:update": "npm run build && cp -r dist docs/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prism",
+    "syntax-highlighting",
+    "base16",
+    "theme",
+    "sass",
+    "css"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.93.2",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
