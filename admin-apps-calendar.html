@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="voROPFYhUTeUrxSNYx3Z2fDHHAvTwhJ56xTfOx8W">
+    <meta name="csrf-token" content="66fer3BX1CDwekxsn3RxoiooptyoFA5G50N47btL">
     <title>Calendar | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -589,7 +589,7 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                <li class="nav-item dropdown"> <a href="javascript:void(0);" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
                         <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
@@ -671,6 +671,14 @@
                         </a>
                         <div class="collapse  rounded" id="collapse_dashboards">
                             <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Outrun HUD">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Outrun HUD
+                                        </a>
+                                    </li>
                                     <li class="admin-nav-item">
                                         <a class="admin-nav-link "
                                             href="admin-analytics.html" data-bs-tooltip="tooltip"
@@ -904,7 +912,7 @@
             <!-- end breadcrumb -->
             <!-- start page content -->
             <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-12 mb-3 mb-xl-0">
+                <div class="col-xl-3 col-lg-4 col-md-12 mb-3 mb-xl-0 d-none d-md-block">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-grid gap-2 mb-3">
@@ -1079,8 +1087,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-8 col-md-12">
+                <div class="col-xl-9 col-lg-8 col-md-12 col-12">
                     <div class="card">
+                        <!-- Mobile Header with Menu Button -->
+                        <div class="d-md-none p-3 border-bottom">
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="offcanvas" data-bs-target="#calendarSidebarOffcanvas"> <i class="material-symbols-rounded me-1">menu</i>
+                                    Calendar Menu</button>
+                                <button class="btn btn-primary btn-sm" id="newEventBtnMobile"> <i class="material-symbols-rounded me-1">add_circle</i>
+                                    New Event</button>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div id="calendar">
                             </div>
@@ -1133,6 +1150,115 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Calendar Sidebar Offcanvas -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="calendarSidebarOffcanvas" aria-labelledby="calendarSidebarOffcanvasLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="calendarSidebarOffcanvasLabel"> <i class="material-symbols-rounded me-2">calendar_month</i>
+                        Calendar Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="d-grid gap-2 mb-3">
+                        <button id="newEventBtnOffcanvas" class="btn btn-primary font-16"> <i class="material-symbols-rounded me-1">add_circle</i>
+                            Create New Event</button>
+                    </div>
+                    <div id="external-events" class="mt-4">
+                        <p class="text-muted">Drag and drop your event or click in the calendar</p>
+                        <div class="external-event fc-event bg-success p-2 mb-2 rounded" data-class="bg-success" draggable="true"> <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>New Event Planning</div>
+                        <div class="external-event fc-event bg-info p-2 mb-2 rounded" data-class="bg-info" draggable="true"> <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Meeting</div>
+                        <div class="external-event fc-event bg-warning p-2 mb-2 rounded" data-class="bg-warning" draggable="true"> <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Generating Reports</div>
+                        <div class="external-event fc-event bg-danger p-2 mb-2 rounded" data-class="bg-danger" draggable="true"> <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Create New theme</div>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-3">Upcoming Events</h6>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item px-2 border-0 py-2 event-list-item">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3">
+                                        <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded" style="width: 40px; height: 40px;"> <span class="material-symbols-rounded">groups</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-0">Daily Standup</h6> <small class="text-muted d-block">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">schedule</span>
+                                            9:00 AM - 9:15 AM
+                                        </small>
+                                                <small class="text-muted">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">person</span>
+                                            8 attendees
+                                        </small>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#eventModal"> <span class="material-symbols-rounded" style="font-size: 14px;">visibility</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item px-2 border-0 py-2 event-list-item">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3">
+                                        <div class="d-flex align-items-center justify-content-center bg-success text-dark rounded" style="width: 40px; height: 40px;"> <span class="material-symbols-rounded">star</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-0">Client Presentation</h6> <small class="text-muted d-block">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">schedule</span>
+                                            2:00 PM - 3:30 PM
+                                        </small>
+                                                <small class="text-muted">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">location_on</span>
+                                            Conference Room B
+                                        </small>
+                                            </div>
+                                            <button class="btn btn-success btn-sm"> <span class="material-symbols-rounded" style="font-size: 14px;">videocam</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-item px-2 border-0 py-2 event-list-item">
+                                <div class="d-flex align-items-start">
+                                    <div class="me-3">
+                                        <div class="d-flex align-items-center justify-content-center bg-warning text-dark rounded" style="width: 40px; height: 40px;"> <span class="material-symbols-rounded">code</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-0">Code Review</h6> <small class="text-muted d-block">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">schedule</span>
+                                            4:00 PM - 5:00 PM
+                                        </small>
+                                                <small class="text-muted">
+                                            <span class="material-symbols-rounded me-1"
+                                                style="font-size: 12px;">task</span>
+                                            PR #247: Auth System
+                                        </small>
+                                            </div>
+                                            <button class="btn btn-outline-warning btn-sm"> <span class="material-symbols-rounded" style="font-size: 14px;">link</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-outline-primary btn-sm"> <span class="material-symbols-rounded me-1 icon-sm">visibility</span>
+                                View All Events</button>
                         </div>
                     </div>
                 </div>
@@ -1737,15 +1863,24 @@
             let currentEvent = null;
             let currentEventInfo = null;
 
-            // "New Event" button
-            document.getElementById('newEventBtn').addEventListener('click', function() {
+            // "New Event" button functionality
+            function showNewEventModal() {
                 currentEvent = null;
                 currentEventInfo = null;
                 eventForm.reset();
                 document.getElementById('modal-title').textContent = 'Add Event';
                 btnDeleteEvent.style.display = 'none';
                 eventModal.show();
-            });
+            }
+
+            // Handle all new event buttons
+            const newEventBtn = document.getElementById('newEventBtn');
+            const newEventBtnMobile = document.getElementById('newEventBtnMobile');
+            const newEventBtnOffcanvas = document.getElementById('newEventBtnOffcanvas');
+
+            if (newEventBtn) newEventBtn.addEventListener('click', showNewEventModal);
+            if (newEventBtnMobile) newEventBtnMobile.addEventListener('click', showNewEventModal);
+            if (newEventBtnOffcanvas) newEventBtnOffcanvas.addEventListener('click', showNewEventModal);
 
             // Form submit handler
             eventForm.addEventListener('submit', function(e) {

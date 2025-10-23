@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="voROPFYhUTeUrxSNYx3Z2fDHHAvTwhJ56xTfOx8W">
+    <meta name="csrf-token" content="66fer3BX1CDwekxsn3RxoiooptyoFA5G50N47btL">
     <title>Dashboard | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -457,6 +457,256 @@
         .map-card .card-footer .text-success {
             color: #00ff00 !important;
         }
+
+        /* Floating animation for map particles */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.6;
+            }
+
+            25% {
+                transform: translateY(-10px) translateX(5px);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-5px) translateX(-5px);
+                opacity: 0.8;
+            }
+
+            75% {
+                transform: translateY(-15px) translateX(3px);
+                opacity: 0.9;
+            }
+        }
+
+        /* Dash animation for map lines */
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -10;
+            }
+        }
+
+        /* TODO Widget Styles */
+        .todo-widget {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todo-widget .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todo-widget .tab-content {
+            flex: 1;
+        }
+
+        .nav-tabs-hud .nav-link {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.75rem 1rem;
+            border-radius: 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs-hud .nav-link:hover {
+            color: rgba(0, 255, 255, 0.9);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .nav-tabs-hud .nav-link.active {
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.1);
+            border-bottom: 2px solid #00ffff;
+        }
+
+        .nav-tabs-hud .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .todo-list {
+            padding: 0.5rem;
+            /* Height will be set dynamically by JavaScript */
+        }
+
+        .todo-widget .card-body {
+            padding: 0;
+        }
+
+        .todo-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .todo-item:hover {
+            background: rgba(0, 255, 255, 0.05);
+            border-color: rgba(0, 255, 255, 0.3);
+            transform: translateX(4px);
+        }
+
+        .todo-item.completed {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            opacity: 0.8;
+        }
+
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .todo-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #00ffff, #ff00ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .todo-item:hover::before {
+            opacity: 1;
+        }
+
+        .todo-item.completed::before {
+            background: #10b981;
+            opacity: 1;
+        }
+
+        .todo-content {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .todo-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 4px;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .todo-checkbox:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+        }
+
+        .todo-checkbox.checked {
+            background: #10b981;
+            border-color: #10b981;
+        }
+
+        .todo-checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .todo-text {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .todo-actions {
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .todo-item:hover .todo-actions {
+            opacity: 1;
+        }
+
+        .todo-action-btn {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .todo-action-btn:hover {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff6b6b;
+            transform: scale(1.1);
+        }
+
+        .form-control-hud {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px 0 0 8px;
+        }
+
+        .form-control-hud:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #00ffff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .form-control-hud::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-group .btn-cyber {
+            border-radius: 0 8px 8px 0;
+            border-left: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
     </style>
     <!-- end vite CSS & JS -->
 </head>
@@ -743,6 +993,256 @@
     
             .map-card .card-footer .text-success {
                 color: #00ff00 !important;
+            }
+    
+            /* Floating animation for map particles */
+            @keyframes float {
+    
+                0%,
+                100% {
+                    transform: translateY(0px) translateX(0px);
+                    opacity: 0.6;
+                }
+    
+                25% {
+                    transform: translateY(-10px) translateX(5px);
+                    opacity: 1;
+                }
+    
+                50% {
+                    transform: translateY(-5px) translateX(-5px);
+                    opacity: 0.8;
+                }
+    
+                75% {
+                    transform: translateY(-15px) translateX(3px);
+                    opacity: 0.9;
+                }
+            }
+    
+            /* Dash animation for map lines */
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: -10;
+                }
+            }
+    
+            /* TODO Widget Styles */
+            .todo-widget {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .todo-widget .card-body {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            .todo-widget .tab-content {
+                flex: 1;
+            }
+    
+            .nav-tabs-hud .nav-link {
+                background: transparent;
+                border: none;
+                color: rgba(255, 255, 255, 0.7);
+                padding: 0.75rem 1rem;
+                border-radius: 0;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+    
+            .nav-tabs-hud .nav-link:hover {
+                color: rgba(0, 255, 255, 0.9);
+                background: rgba(0, 255, 255, 0.05);
+            }
+    
+            .nav-tabs-hud .nav-link.active {
+                color: #00ffff;
+                background: rgba(0, 255, 255, 0.1);
+                border-bottom: 2px solid #00ffff;
+            }
+    
+            .nav-tabs-hud .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #00ffff, #ff00ff);
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            }
+    
+            .todo-list {
+                padding: 0.5rem;
+                /* Height will be set dynamically by JavaScript */
+            }
+    
+            .todo-widget .card-body {
+                padding: 0;
+            }
+    
+            .todo-item {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(0, 255, 255, 0.1);
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+                padding: 0.75rem;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .todo-item:hover {
+                background: rgba(0, 255, 255, 0.05);
+                border-color: rgba(0, 255, 255, 0.3);
+                transform: translateX(4px);
+            }
+    
+            .todo-item.completed {
+                background: rgba(16, 185, 129, 0.1);
+                border-color: rgba(16, 185, 129, 0.3);
+                opacity: 0.8;
+            }
+    
+            .todo-item.completed .todo-text {
+                text-decoration: line-through;
+                color: rgba(255, 255, 255, 0.5);
+            }
+    
+            .todo-item::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: linear-gradient(180deg, #00ffff, #ff00ff);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+    
+            .todo-item:hover::before {
+                opacity: 1;
+            }
+    
+            .todo-item.completed::before {
+                background: #10b981;
+                opacity: 1;
+            }
+    
+            .todo-content {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+            }
+    
+            .todo-checkbox {
+                width: 18px;
+                height: 18px;
+                border: 2px solid rgba(0, 255, 255, 0.5);
+                border-radius: 4px;
+                background: transparent;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.3s ease;
+            }
+    
+            .todo-checkbox:hover {
+                border-color: #00ffff;
+                box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+            }
+    
+            .todo-checkbox.checked {
+                background: #10b981;
+                border-color: #10b981;
+            }
+    
+            .todo-checkbox.checked::after {
+                content: '✓';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 12px;
+                font-weight: bold;
+            }
+    
+            .todo-text {
+                flex: 1;
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+    
+            .todo-actions {
+                display: flex;
+                gap: 0.5rem;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+    
+            .todo-item:hover .todo-actions {
+                opacity: 1;
+            }
+    
+            .todo-action-btn {
+                width: 28px;
+                height: 28px;
+                border: none;
+                background: rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.7);
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .todo-action-btn:hover {
+                background: rgba(255, 0, 0, 0.2);
+                color: #ff6b6b;
+                transform: scale(1.1);
+            }
+    
+            .form-control-hud {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(0, 255, 255, 0.2);
+                color: rgba(255, 255, 255, 0.9);
+                border-radius: 8px 0 0 8px;
+            }
+    
+            .form-control-hud:focus {
+                background: rgba(255, 255, 255, 0.08);
+                border-color: #00ffff;
+                box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
+                color: rgba(255, 255, 255, 0.95);
+            }
+    
+            .form-control-hud::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+    
+            .input-group .btn-cyber {
+                border-radius: 0 8px 8px 0;
+                border-left: none;
+            }
+    
+            .empty-state {
+                text-align: center;
+                padding: 2rem;
+                color: rgba(255, 255, 255, 0.5);
+            }
+    
+            .empty-state i {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                opacity: 0.3;
             }
 </style>
 <!-- Theme Initialization (runs before page render to prevent flash) -->
@@ -1159,7 +1659,7 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                <li class="nav-item dropdown"> <a href="javascript:void(0);" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
                         <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
@@ -1241,6 +1741,14 @@
                         </a>
                         <div class="collapse show rounded" id="collapse_dashboards">
                             <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link active"
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Outrun HUD">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Outrun HUD
+                                        </a>
+                                    </li>
                                     <li class="admin-nav-item">
                                         <a class="admin-nav-link "
                                             href="admin-analytics.html" data-bs-tooltip="tooltip"
@@ -1616,7 +2124,7 @@
                             </div>
                             <h6 class="mb-0 mt-0 d-flex align-items-center">Free Features</h6>
                         </div>
-                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                        <div class="card-body pt-2 pb-1">
                             <div class="row">
                                 <div class="col-6">
                                     <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">10</p> <span class="badge bg-success rounded-pill fs-6">Pages</span>
@@ -1637,7 +2145,7 @@
                         <div class="card-header rounded-top-4">
                             <h6 class="mb-0 mt-0 d-flex align-items-center">HUD Elements</h6>
                         </div>
-                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                        <div class="card-body pt-2 pb-1">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">100%</div>
@@ -1695,7 +2203,7 @@
                         <div class="card-header rounded-top-4">
                             <h6 class="mb-0 d-flex align-items-center">Upgrade Potential</h6>
                         </div>
-                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                        <div class="card-body pt-2 pb-1">
                             <div class="row">
                                 <div class="col-6">
                                     <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">80+</p> <span class="badge bg-warning rounded-pill fs-6">Pro Pages</span>
@@ -1713,7 +2221,7 @@
             </div>
             <!-- USA MAP WIDGET -->
             <div class="row g-3 g-lg-4 mb-4">
-                <div class="col-12">
+                <div class="col-xl-7 col-md-6">
                     <div class="hud-card map-card">
                         <div class="card-header rounded-top-4">
                             <div class="d-flex justify-content-between align-items-center">
@@ -1756,62 +2264,64 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- FEATURE COMPARISON & STATS -->
-            <div class="row g-3 g-lg-4 mb-4">
-                <!-- Comparison Table -->
-                <div class="col-12 col-lg-4">
-                </div>
-                <!-- What's in the Full Version -->
-                <div class="col-12 col-lg-5">
-                    <div class="hud-card dashboard-margin h-100">
+                <div class="col-xl-5 col-md-6">
+                    <div class="hud-card todo-widget">
                         <div class="card-header rounded-top-4">
-                            <h5 class="card-title mb-0 fs-6 fs-lg-5">What's in the Full Version?</h5>
+                            <!-- Tab Navigation -->
+                            <ul class="nav nav-tabs nav-tabs-hud" id="todoTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tasks" type="button" role="tab"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">list</i>
+                                        All <span class="badge bg-secondary ms-1" id="all-count">0</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-tasks" type="button" role="tab"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">pending</i>
+                                        Pending <span class="badge bg-warning ms-1" id="pending-count">0</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed-tasks" type="button" role="tab"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">check_circle</i>
+                                        Done <span class="badge bg-success ms-1" id="completed-count">0</span>
+                                    </button>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="card-body mb-0 pb-0">
-                            <div class="row g-2 g-lg-3 mb-3 mb-lg-4">
-                                <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
-                                        <h2 class="text-primary mb-1 mb-lg-2 fs-3 fs-lg-2">82</h2> <small class="d-block" style="font-size: 0.75rem;">Admin Pages</small>
+                        <div class="card-body p-1">
+                            <!-- Tab Content -->
+                            <div class="tab-content" id="todoTabContent">
+                                <!-- All Tasks Tab -->
+                                <div class="tab-pane fade show active" id="all-tasks" role="tabpanel">
+                                    <div class="todo-list" data-simplebar>
+                                        <div id="all-tasks-list" class="list-group list-group-flush">
+                                            <!-- Tasks will be dynamically added here -->
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
-                                        <h2 class="text-success mb-1 mb-lg-2 fs-3 fs-lg-2">9</h2> <small class="d-block" style="font-size: 0.75rem;">Full Apps</small>
+                                <!-- Pending Tasks Tab -->
+                                <div class="tab-pane fade" id="pending-tasks" role="tabpanel">
+                                    <div class="todo-list" data-simplebar>
+                                        <div id="pending-tasks-list" class="list-group list-group-flush">
+                                            <!-- Pending tasks will be dynamically added here -->
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
-                                        <h2 class="text-warning mb-1 mb-lg-2 fs-3 fs-lg-2">2</h2> <small class="d-block" style="font-size: 0.75rem;">Menu Layouts</small>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
-                                        <h2 class="text-info mb-1 mb-lg-2 fs-3 fs-lg-2">35</h2> <small class="d-block" style="font-size: 0.75rem;">Docs Pages</small>
+                                <!-- Completed Tasks Tab -->
+                                <div class="tab-pane fade" id="completed-tasks" role="tabpanel">
+                                    <div class="todo-list" data-simplebar>
+                                        <div id="completed-tasks-list" class="list-group list-group-flush">
+                                            <!-- Completed tasks will be dynamically added here -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled mb-3 mb-md-0">
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Email, Chat, Calendar apps</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Horizontal & Vertical menus</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Ecommerce & Crypto pages</li>
-                                    </ul>
+                        </div>
+                        <div class="card-footer bg-body-tertiary rounded-bottom-4">
+                            <div class="p-2 rounded-bottom-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-hud py-2 " id="newTaskInput" placeholder="Add new task..." maxlength="100">
+                                    <button class="btn btn-cyber" type="button" id="addTaskBtn"> <i class="material-symbols-rounded" style="font-size: 18px;">add</i>
+                                    </button>
                                 </div>
-                                <div class="col-md-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Laravel Livewire edition</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Premium support & updates</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Lifetime free updates</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="px-2 py-1 d-block p-relative w-100 mx-auto mt-4 mb-0">
-                                <a href="https://huement.com/ultraviolet" class="btn btn-primary w-100" target="_blank"> <i class="material-symbols-rounded me-2">shopping_cart</i>
-                                    <span class="d-none d-sm-inline">Purchase Full Version</span>
-                                    <span class="d-inline d-sm-none">Purchase PRO</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -1835,7 +2345,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body text-center py-4">
+                        <div class="card-body text-center pt-2 pb-0">
                             <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-primary text-white font-size-18">
                             <span class="material-symbols-rounded">percent</span>
                                 </span>
@@ -1844,13 +2354,15 @@
                             <h3 class="text-primary mb-1">50.0%</h3>
                             <div class="d-flex justify-content-center gap-3 mt-2">
                                 <div> <small class="text-muted d-block" style="font-size: 0.65rem;">GROSS</small>
-                                    <small class="text-success fw-bold">55%</small>
+                                    <p class="text-success fw-bold fs-4">55%</p>
                                 </div>
-                                <div class="vr">
+                                <div class="vr dark">
                                 </div>
                                 <div> <small class="text-muted d-block" style="font-size: 0.65rem;">NET</small>
-                                    <small class="text-primary fw-bold">50%</small>
+                                    <p class="text-primary fw-bold fs-4">50%</p>
                                 </div>
+                            </div>
+                            <div id="margin-chart" style="height:200px;">
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Industry avg: 45%</small>
@@ -1862,7 +2374,7 @@
                         <div class="card-header rounded-top-4">
                             <h5 class="card-title mb-0 fs-6 fs-lg-5">Free vs Full</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                             <div class="table-responsive">
                                 <table class="table table-sm table-hover">
                                     <thead>
@@ -1924,77 +2436,60 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <img src="images/uv/uv-circle.png" class="img-fluid mx-auto d-block p-relative pt-2 mb-n1 mt-1" style="max-height:150px" />
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="hud-card dashboard-margin">
+                <div class="col-xl-6 col-md-6">
+                    <div class="hud-card dashboard-margin h-100">
                         <div class="card-header rounded-top-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">Avg. Payment Time</h6>
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"> <i class="material-symbols-rounded" style="font-size: 16px;">more_vert</i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
-                                        style="font-size: 16px;">history</span>Payment History</a>
-                                        <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
-                                        style="font-size: 16px;">insights</span>Insights</a>
+                            <h5 class="card-title mb-0 fs-6 fs-lg-5">What's in the Full Version?</h5>
+                        </div>
+                        <div class="card-body mb-0 pb-0">
+                            <div class="row g-2 g-lg-3 mb-3 mb-lg-4">
+                                <div class="col-6 col-lg-3">
+                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                        <h2 class="text-primary mb-1 mb-lg-2 fs-3 fs-lg-2">82</h2> <small class="d-block" style="font-size: 0.75rem;">Admin Pages</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                        <h2 class="text-success mb-1 mb-lg-2 fs-3 fs-lg-2">9</h2> <small class="d-block" style="font-size: 0.75rem;">Full Apps</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                        <h2 class="text-warning mb-1 mb-lg-2 fs-3 fs-lg-2">2</h2> <small class="d-block" style="font-size: 0.75rem;">Menu Layouts</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-3">
+                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                        <h2 class="text-info mb-1 mb-lg-2 fs-3 fs-lg-2">35</h2> <small class="d-block" style="font-size: 0.75rem;">Docs Pages</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body text-center py-4">
-                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-warning text-white font-size-18">
-                            <span class="material-symbols-rounded">schedule</span>
-                                </span>
-                            </div>
-                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Collection Period</p>
-                            <h3 class="text-warning mb-1">28 days</h3>
-                            <div class="d-flex justify-content-center gap-3 mt-2">
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">FASTEST</small>
-                                    <small class="text-success fw-bold">14d</small>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled mb-3 mb-md-0">
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Email, Chat, Calendar apps</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Horizontal & Vertical menus</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Ecommerce & Crypto pages</li>
+                                    </ul>
                                 </div>
-                                <div class="vr">
-                                </div>
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">SLOWEST</small>
-                                    <small class="text-danger fw-bold">45d</small>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Laravel Livewire edition</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Premium support & updates</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Lifetime free updates</li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Target: 30 days</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="hud-card dashboard-margin">
-                        <div class="card-header rounded-top-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">Active Clients</h6>
-                                <div class="btn-group btn-group-sm" role="group">
-                                    <button type="button" class="btn btn-outline-info active" data-period="m">M</button>
-                                    <button type="button" class="btn btn-outline-info" data-period="y">Y</button>
-                                </div>
+                            <div class="px-2 py-1 d-block p-relative w-100 mx-auto mt-4 mb-0">
+                                <a href="https://huement.com/ultraviolet" class="btn btn-primary w-100" target="_blank"> <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    <span class="d-none d-sm-inline">Purchase Full Version</span>
+                                    <span class="d-inline d-sm-none">Purchase PRO</span>
+                                </a>
                             </div>
-                        </div>
-                        <div class="card-body text-center py-4">
-                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-info text-white font-size-18">
-                            <span class="material-symbols-rounded">group</span>
-                                </span>
-                            </div>
-                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Client Base</p>
-                            <h3 class="text-info mb-1">127</h3>
-                            <div class="d-flex justify-content-center gap-3 mt-2">
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">NEW</small>
-                                    <small class="text-success fw-bold">+12</small>
-                                </div>
-                                <div class="vr">
-                                </div>
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">CHURNED</small>
-                                    <small class="text-danger fw-bold">-3</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">+12 this month</small>
                         </div>
                     </div>
                 </div>
@@ -2453,112 +2948,498 @@
     </script>
     <!-- end site-wide javascript -->
     <!-- start page-specific scripts -->
+    <!-- Map Data Files -->
+    <script src="./js/vectormaps/jsvectormap.min.js"></script>
+    <script src="./js/vectormaps/us-merc-en.js"></script>
     <script>
     console.log('🎁 UltraViolet Free Version - Limited Feature Set');
         console.log('Check the sidebar menu to see included pages');
 
-        // USA Map functionality
+        // Live USA Map functionality
         let usaMap;
-        const mapData = {
-            'US-AL': 15000,
-            'US-AK': 20000,
-            'US-AZ': 25000,
-            'US-AR': 12000,
+        let mapData = {
             'US-CA': 45000,
-            'US-CO': 18000,
-            'US-CT': 16000,
-            'US-DE': 8000,
-            'US-FL': 35000,
-            'US-GA': 22000,
-            'US-HI': 10000,
-            'US-ID': 14000,
-            'US-IL': 28000,
-            'US-IN': 19000,
-            'US-IA': 15000,
-            'US-KS': 13000,
-            'US-KY': 16000,
-            'US-LA': 18000,
-            'US-ME': 12000,
-            'US-MD': 17000,
-            'US-MA': 20000,
-            'US-MI': 25000,
-            'US-MN': 19000,
-            'US-MS': 14000,
-            'US-MO': 18000,
-            'US-MT': 11000,
-            'US-NE': 12000,
-            'US-NV': 16000,
-            'US-NH': 13000,
-            'US-NJ': 22000,
-            'US-NM': 15000,
-            'US-NY': 40000,
-            'US-NC': 26000,
-            'US-ND': 9000,
-            'US-OH': 27000,
-            'US-OK': 16000,
-            'US-OR': 18000,
-            'US-PA': 25000,
-            'US-RI': 10000,
-            'US-SC': 17000,
-            'US-SD': 10000,
-            'US-TN': 20000,
-            'US-TX': 42000,
-            'US-UT': 15000,
-            'US-VT': 10000,
-            'US-VA': 23000,
-            'US-WA': 22000,
-            'US-WV': 12000,
-            'US-WI': 20000,
-            'US-WY': 8000
+            'US-TX': 38000,
+            'US-FL': 32000,
+            'US-NY': 28000,
+            'US-IL': 25000,
+            'US-PA': 22000,
+            'US-OH': 20000,
+            'US-GA': 18000,
+            'US-NC': 16000,
+            'US-MI': 14000,
+            'US-NJ': 12000,
+            'US-VA': 10000,
+            'US-WA': 9000,
+            'US-AZ': 8000,
+            'US-MA': 7000,
+            'US-TN': 6500,
+            'US-IN': 6000,
+            'US-MO': 5500,
+            'US-MD': 5000,
+            'US-WI': 4500,
+            'US-CO': 4000,
+            'US-MN': 3500,
+            'US-SC': 3000,
+            'US-AL': 2500,
+            'US-LA': 2000,
+            'US-KY': 1800,
+            'US-OR': 1600,
+            'US-OK': 1400,
+            'US-CT': 1200,
+            'US-UT': 1000,
+            'US-IA': 900,
+            'US-NV': 800,
+            'US-AR': 700,
+            'US-MS': 600,
+            'US-KS': 500,
+            'US-NM': 400,
+            'US-NE': 300,
+            'US-WV': 250,
+            'US-ID': 200,
+            'US-HI': 150,
+            'US-NH': 100,
+            'US-ME': 80,
+            'US-RI': 60,
+            'US-MT': 50,
+            'US-DE': 40,
+            'US-SD': 30,
+            'US-ND': 25,
+            'US-AK': 20,
+            'US-VT': 15,
+            'US-WY': 10
         };
 
         function initializeUSAMap() {
+            // Clear any existing map
             const mapContainer = document.getElementById('usa-live-map');
-            if (!mapContainer) return;
-
-            mapContainer.innerHTML = '';
-
-            if (typeof window.jsVectorMap === 'undefined') {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js';
-                script.onload = () => loadMapData();
-                document.head.appendChild(script);
-                return;
+            if (mapContainer) {
+                mapContainer.innerHTML = '';
             }
-            loadMapData();
-        }
 
-        function loadMapData() {
-            if (typeof window.jsVectorMapMaps === 'undefined' || !window.jsVectorMapMaps.us_merc_en) {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/us/us-merc-en.js';
-                script.onload = () => createMap();
-                document.head.appendChild(script);
-                return;
-            }
-            createMap();
-        }
-
-        function createMap() {
             usaMap = new jsVectorMap({
                 selector: '#usa-live-map',
                 map: 'us_merc_en',
+                title: 'Live USA Operations',
                 data: mapData,
                 colors: ['#d1e7dd', '#198754'],
                 hoverColor: '#198754',
                 backgroundColor: 'transparent',
                 showTooltip: true,
                 zoomButtons: false,
-                zoomOnScroll: false
+                zoomOnScroll: false,
+                markers: [{
+                        coords: [39.8283, -98.5795], // Kansas (center of US)
+                        name: 'Data Hub',
+                        style: {
+                            fill: '#00ffff',
+                            stroke: '#00ffff',
+                            strokeWidth: 2,
+                            r: 6
+                        }
+                    },
+                    {
+                        coords: [40.7128, -74.0060], // New York
+                        name: 'East Coast Hub',
+                        style: {
+                            fill: '#ff00ff',
+                            stroke: '#ff00ff',
+                            strokeWidth: 2,
+                            r: 5
+                        }
+                    },
+                    {
+                        coords: [34.0522, -118.2437], // Los Angeles
+                        name: 'West Coast Hub',
+                        style: {
+                            fill: '#ffff00',
+                            stroke: '#ffff00',
+                            strokeWidth: 2,
+                            r: 5
+                        }
+                    }
+                ]
+            });
+
+            // Add animated effects after map is created
+            setTimeout(() => {
+                addAnimatedEffects();
+                addAnimatedMovingLines();
+                addCrossConnections();
+                addFloatingParticles();
+            }, 500);
+        }
+
+        function addAnimatedEffects() {
+            if (!usaMap) return;
+
+            const svg = usaMap.container.querySelector('svg');
+            if (!svg) return;
+
+            // Add pulsing effect to markers
+            const markers = svg.querySelectorAll('circle[data-marker]');
+            markers.forEach((marker, index) => {
+                marker.style.animation = `pulse 2s ease-in-out infinite`;
+                marker.style.animationDelay = `${index * 0.5}s`;
             });
         }
 
+        // Helper function to get actual marker positions from the rendered SVG
+        function getMarkerPositions(svg) {
+            const markerPositions = {};
+
+            // Find all circle elements (markers) in the SVG
+            const circles = svg.querySelectorAll('circle');
+            console.log('Found', circles.length, 'circles in SVG');
+
+            // Collect all potential markers (larger circles)
+            const potentialMarkers = [];
+            circles.forEach((circle, index) => {
+                const cx = parseFloat(circle.getAttribute('cx'));
+                const cy = parseFloat(circle.getAttribute('cy'));
+                const r = parseFloat(circle.getAttribute('r'));
+
+                // Only consider larger circles (markers, not small decorative elements)
+                if (r >= 5) {
+                    potentialMarkers.push({
+                        cx,
+                        cy,
+                        r,
+                        index
+                    });
+                    console.log(`Marker ${index}: cx=${cx}, cy=${cy}, r=${r}`);
+                }
+            });
+
+            console.log('Found', potentialMarkers.length, 'potential markers');
+
+            // If we have markers, assign them to known positions
+            if (potentialMarkers.length >= 3) {
+                // Sort markers by position to assign them systematically
+                potentialMarkers.sort((a, b) => a.cx - b.cx); // Sort by x position
+
+                // Assign markers to known positions based on their order
+                const markerNames = ['Data Hub', 'East Coast Hub', 'West Coast Hub'];
+
+                potentialMarkers.forEach((marker, index) => {
+                    if (index < markerNames.length) {
+                        markerPositions[markerNames[index]] = {
+                            x: marker.cx,
+                            y: marker.cy
+                        };
+                        console.log(`Assigned ${markerNames[index]} to position (${marker.cx}, ${marker.cy})`);
+                    }
+                });
+            }
+
+            return markerPositions;
+        }
+
+        function addAnimatedMovingLines() {
+            if (!usaMap) return;
+
+            const svg = usaMap.container.querySelector('svg');
+            if (!svg) return;
+
+            // Get actual marker positions from the rendered SVG
+            const markerPositions = getMarkerPositions(svg);
+            console.log('addAnimatedMovingLines - markerPositions:', markerPositions);
+
+            // If we don't have enough markers, wait a bit and try again
+            if (Object.keys(markerPositions).length < 3) {
+                console.log('Not enough markers found, retrying in 500ms...');
+                setTimeout(() => addAnimatedMovingLines(), 500);
+                return;
+            }
+
+            // Define marker connections using actual marker coordinates
+            const markerConnections = [
+                // Primary network backbone - Central Hub connections
+                {
+                    from: 'Data Hub', // Kansas
+                    to: 'West Coast Hub', // Los Angeles
+                    color: '#00ffff',
+                    duration: 2000,
+                    label: 'Data Hub → West Coast'
+                },
+                {
+                    from: 'Data Hub', // Kansas
+                    to: 'East Coast Hub', // New York
+                    color: '#00ffff',
+                    duration: 1800,
+                    label: 'Data Hub → East Coast'
+                },
+                {
+                    from: 'East Coast Hub', // New York
+                    to: 'West Coast Hub', // Los Angeles
+                    color: '#00ffff',
+                    duration: 2200,
+                    label: 'East Coast → West Coast'
+                }
+            ];
+
+            // Convert marker connections to line paths using actual marker positions
+            const linePaths = markerConnections.map(connection => {
+                const fromPos = markerPositions[connection.from];
+                const toPos = markerPositions[connection.to];
+
+                if (!fromPos || !toPos) {
+                    console.log(`Missing positions for ${connection.from} or ${connection.to}`);
+                    return null;
+                }
+
+                return {
+                    x1: fromPos.x,
+                    y1: fromPos.y,
+                    x2: toPos.x,
+                    y2: toPos.y,
+                    color: connection.color,
+                    duration: connection.duration,
+                    label: connection.label
+                };
+            }).filter(path => path !== null);
+
+            console.log('Created', linePaths.length, 'line paths');
+
+            linePaths.forEach((path, index) => {
+                // Create the animated line element
+                const animatedLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                animatedLine.setAttribute('x1', path.x1);
+                animatedLine.setAttribute('y1', path.y1);
+                animatedLine.setAttribute('x2', path.x1); // Start at origin
+                animatedLine.setAttribute('y2', path.y1);
+                animatedLine.setAttribute('stroke', path.color);
+                animatedLine.setAttribute('stroke-width', '3');
+                animatedLine.setAttribute('opacity', '0.8');
+                animatedLine.setAttribute('stroke-dasharray', '8,4');
+                animatedLine.style.filter = 'drop-shadow(0 0 6px ' + path.color + ')';
+                animatedLine.style.strokeLinecap = 'round';
+
+                svg.appendChild(animatedLine);
+
+                // Animate the line extending from start to end
+                setTimeout(() => {
+                    animatedLine.setAttribute('x2', path.x2);
+                    animatedLine.setAttribute('y2', path.y2);
+                    animatedLine.style.transition = `all ${path.duration}ms ease-in-out`;
+                }, index * 500);
+
+                // Create a moving dot along the line
+                const movingDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                movingDot.setAttribute('cx', path.x1);
+                movingDot.setAttribute('cy', path.y1);
+                movingDot.setAttribute('r', '4');
+                movingDot.setAttribute('fill', path.color);
+                movingDot.setAttribute('opacity', '1');
+                movingDot.style.filter = 'drop-shadow(0 0 8px ' + path.color + ')';
+
+                svg.appendChild(movingDot);
+
+                // Animate the dot moving along the line
+                setTimeout(() => {
+                    movingDot.setAttribute('cx', path.x2);
+                    movingDot.setAttribute('cy', path.y2);
+                    movingDot.style.transition = `all ${path.duration}ms ease-in-out`;
+                }, index * 500);
+
+                // Reset and repeat the animation
+                setInterval(() => {
+                    // Reset line
+                    animatedLine.setAttribute('x2', path.x1);
+                    animatedLine.setAttribute('y2', path.y1);
+                    animatedLine.style.transition = 'none';
+
+                    // Reset dot
+                    movingDot.setAttribute('cx', path.x1);
+                    movingDot.setAttribute('cy', path.y1);
+                    movingDot.style.transition = 'none';
+
+                    // Restart animation after a brief delay
+                    setTimeout(() => {
+                        animatedLine.setAttribute('x2', path.x2);
+                        animatedLine.setAttribute('y2', path.y2);
+                        animatedLine.style.transition = `all ${path.duration}ms ease-in-out`;
+
+                        movingDot.setAttribute('cx', path.x2);
+                        movingDot.setAttribute('cy', path.y2);
+                        movingDot.style.transition = `all ${path.duration}ms ease-in-out`;
+                    }, 100);
+                }, path.duration + 2000 + index * 1000);
+            });
+        }
+
+        function addCrossConnections() {
+            if (!usaMap) return;
+
+            const svg = usaMap.container.querySelector('svg');
+            if (!svg) return;
+
+            // Get actual marker positions from the rendered SVG
+            const markerPositions = getMarkerPositions(svg);
+
+            // If we don't have enough markers, wait a bit and try again
+            if (Object.keys(markerPositions).length < 3) {
+                setTimeout(() => addCrossConnections(), 500);
+                return;
+            }
+
+            // Create cross-connections between major hubs using actual marker coordinates
+            const crossConnections = [{
+                from: 'East Coast Hub', // New York
+                to: 'West Coast Hub', // Los Angeles
+                color: '#ff00ff',
+                duration: 1500,
+                label: 'East Coast → West Coast'
+            }];
+
+            // Convert cross-connections to line paths using actual marker positions
+            const crossLinePaths = crossConnections.map(connection => {
+                const fromPos = markerPositions[connection.from];
+                const toPos = markerPositions[connection.to];
+
+                if (!fromPos || !toPos) return null;
+
+                return {
+                    x1: fromPos.x,
+                    y1: fromPos.y,
+                    x2: toPos.x,
+                    y2: toPos.y,
+                    color: connection.color,
+                    duration: connection.duration,
+                    label: connection.label
+                };
+            }).filter(path => path !== null);
+
+            crossLinePaths.forEach((path, index) => {
+                // Create the animated line element
+                const animatedLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                animatedLine.setAttribute('x1', path.x1);
+                animatedLine.setAttribute('y1', path.y1);
+                animatedLine.setAttribute('x2', path.x1); // Start at origin
+                animatedLine.setAttribute('y2', path.y1);
+                animatedLine.setAttribute('stroke', path.color);
+                animatedLine.setAttribute('stroke-width', '2');
+                animatedLine.setAttribute('opacity', '0.6');
+                animatedLine.setAttribute('stroke-dasharray', '5,3');
+                animatedLine.style.filter = 'drop-shadow(0 0 4px ' + path.color + ')';
+                animatedLine.style.strokeLinecap = 'round';
+
+                svg.appendChild(animatedLine);
+
+                // Animate the line extending from start to end
+                setTimeout(() => {
+                    animatedLine.setAttribute('x2', path.x2);
+                    animatedLine.setAttribute('y2', path.y2);
+                    animatedLine.style.transition = `all ${path.duration}ms ease-in-out`;
+                }, 2000 + index * 300); // Start after the main lines
+
+                // Create a moving dot along the line
+                const movingDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                movingDot.setAttribute('cx', path.x1);
+                movingDot.setAttribute('cy', path.y1);
+                movingDot.setAttribute('r', '3');
+                movingDot.setAttribute('fill', path.color);
+                movingDot.setAttribute('opacity', '0.9');
+                movingDot.style.filter = 'drop-shadow(0 0 6px ' + path.color + ')';
+
+                svg.appendChild(movingDot);
+
+                // Animate the dot moving along the line
+                setTimeout(() => {
+                    movingDot.setAttribute('cx', path.x2);
+                    movingDot.setAttribute('cy', path.y2);
+                    movingDot.style.transition = `all ${path.duration}ms ease-in-out`;
+                }, 2000 + index * 300);
+
+                // Reset and repeat the animation
+                setInterval(() => {
+                    // Reset line
+                    animatedLine.setAttribute('x2', path.x1);
+                    animatedLine.setAttribute('y2', path.y1);
+                    animatedLine.style.transition = 'none';
+
+                    // Reset dot
+                    movingDot.setAttribute('cx', path.x1);
+                    movingDot.setAttribute('cy', path.y1);
+                    movingDot.style.transition = 'none';
+
+                    // Restart animation after a brief delay
+                    setTimeout(() => {
+                        animatedLine.setAttribute('x2', path.x2);
+                        animatedLine.setAttribute('y2', path.y2);
+                        animatedLine.style.transition = `all ${path.duration}ms ease-in-out`;
+
+                        movingDot.setAttribute('cx', path.x2);
+                        movingDot.setAttribute('cy', path.y2);
+                        movingDot.style.transition = `all ${path.duration}ms ease-in-out`;
+                    }, 100);
+                }, path.duration + 3000 + index * 800);
+            });
+        }
+
+        function addFloatingParticles() {
+            if (!usaMap) return;
+
+            const svg = usaMap.container.querySelector('svg');
+            if (!svg) return;
+
+            // Get SVG dimensions to position particles within the map area
+            const svgRect = svg.getBoundingClientRect();
+            const mapWidth = svgRect.width || 400;
+            const mapHeight = svgRect.height || 300;
+
+            // Add floating particles positioned within the map bounds
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                particle.setAttribute('r', '2');
+                particle.setAttribute('fill', '#00ffff');
+                particle.setAttribute('opacity', '0.6');
+                particle.style.filter = 'drop-shadow(0 0 4px #00ffff)';
+                particle.style.animation = `float ${3 + Math.random() * 2}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 2}s`;
+
+                // Position particles within the map area (with some margin)
+                const margin = 30;
+                const x = Math.random() * (mapWidth - 2 * margin) + margin;
+                const y = Math.random() * (mapHeight - 2 * margin) + margin;
+                particle.setAttribute('cx', x);
+                particle.setAttribute('cy', y);
+
+                svg.appendChild(particle);
+            }
+
+            // Add some particles with different colors
+            for (let i = 0; i < 4; i++) {
+                const particle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                particle.setAttribute('r', '1.5');
+                particle.setAttribute('fill', '#ff00ff');
+                particle.setAttribute('opacity', '0.5');
+                particle.style.filter = 'drop-shadow(0 0 3px #ff00ff)';
+                particle.style.animation = `float ${4 + Math.random() * 2}s ease-in-out infinite`;
+                particle.style.animationDelay = `${Math.random() * 3}s`;
+
+                // Position particles within the map area
+                const margin = 40;
+                const x = Math.random() * (mapWidth - 2 * margin) + margin;
+                const y = Math.random() * (mapHeight - 2 * margin) + margin;
+                particle.setAttribute('cx', x);
+                particle.setAttribute('cy', y);
+
+                svg.appendChild(particle);
+            }
+        }
+
         function updateMapData() {
+            // Update map data with random changes
             Object.keys(mapData).forEach(state => {
                 const change = (Math.random() - 0.5) * 1000;
                 mapData[state] = Math.max(0, mapData[state] + change);
             });
-            if (usaMap) initializeUSAMap();
+
+            // Reinitialize map with new data
+            if (usaMap) {
+                initializeUSAMap();
+            }
             updateLiveMetrics();
         }
 
@@ -2751,6 +3632,65 @@
 
             var freebieChart3 = new ApexCharts(document.querySelector("#freebie-chart-3"), freebieOptions3);
             freebieChart3.render();
+
+            // Margin chart
+            var marginOptions = {
+                series: [{
+                    data: [45, 48, 52, 49, 55, 58, 54, 57, 60, 58, 62, 65, 63, 67, 70, 68, 72, 75, 73, 77, 80,
+                        78, 82, 85
+                    ]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 200,
+                    sparkline: {
+                        enabled: true
+                    },
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                colors: ['#3b82f6'],
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.1,
+                        stops: [0, 100]
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2
+                },
+                tooltip: {
+                    fixed: {
+                        enabled: false
+                    },
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function(seriesName) {
+                                return 'Margin %'
+                            }
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var marginChart = new ApexCharts(document.querySelector("#margin-chart"), marginOptions);
+            marginChart.render();
         }
 
         // Initialize everything on page load
@@ -2777,7 +3717,312 @@
 
             // Auto-update map data every 10 seconds
             setInterval(updateMapData, 10000);
+
+            // Initialize TODO Widget
+            initTodoWidget();
         });
+
+        // TODO Widget Functionality
+        let todoWidgetRetryCount = 0;
+        const maxTodoWidgetRetries = 50; // Maximum 5 seconds of retries
+
+        function initTodoWidget() {
+            // Check if TODO widget elements exist
+            const newTaskInput = document.getElementById('newTaskInput');
+            const addTaskBtn = document.getElementById('addTaskBtn');
+
+            if (!newTaskInput || !addTaskBtn) {
+                todoWidgetRetryCount++;
+                if (todoWidgetRetryCount < maxTodoWidgetRetries) {
+                    console.log(
+                        `TODO widget elements not found, retrying in 100ms... (${todoWidgetRetryCount}/${maxTodoWidgetRetries})`
+                    );
+                    setTimeout(initTodoWidget, 100);
+                    return;
+                } else {
+                    console.error(
+                        'TODO widget elements not found after maximum retries. Widget may not be present on this page.');
+                    return;
+                }
+            }
+
+            console.log('TODO widget elements found, initializing...');
+
+            // Dynamically set todo-list height based on available space
+            let heightRetryCount = 0;
+            const maxHeightRetries = 10;
+
+            function setTodoListHeight() {
+                const todoWidget = document.querySelector('.todo-widget');
+                const cardHeader = todoWidget.querySelector('.card-header');
+                const cardFooter = todoWidget.querySelector('.card-footer');
+                const cardBody = todoWidget.querySelector('.card-body');
+
+                if (!todoWidget || !cardHeader || !cardFooter || !cardBody) {
+                    console.log('TODO widget elements not found for height calculation');
+                    return;
+                }
+
+                const widgetHeight = todoWidget.offsetHeight;
+                const headerHeight = cardHeader.offsetHeight;
+                const footerHeight = cardFooter.offsetHeight;
+                const availableHeight = widgetHeight - headerHeight - footerHeight - 10;
+
+                // Get the USA map height for comparison - with validation
+                const usaMap = document.getElementById('usa-live-map');
+                let mapHeight = 0;
+                let mapValid = false;
+
+                if (usaMap && usaMap.offsetHeight > 0) {
+                    mapHeight = usaMap.offsetHeight;
+                    mapValid = true;
+                    console.log(`USA map found with height: ${mapHeight}px`);
+                } else {
+                    console.log('USA map not found or has zero height, will retry...');
+                }
+
+                // If map isn't ready and we haven't exceeded retries, try again
+                if (!mapValid && heightRetryCount < maxHeightRetries) {
+                    heightRetryCount++;
+                    console.log(
+                        `Map not ready, retrying height calculation in 200ms... (${heightRetryCount}/${maxHeightRetries})`
+                    );
+                    setTimeout(setTodoListHeight, 200);
+                    return;
+                }
+
+                const todoLists = document.querySelectorAll('.todo-list');
+                todoLists.forEach(list => {
+                    // Target height should match the SVG map height of 350px
+                    const targetHeight = 350;
+                    const calculatedHeight = Math.max(120, availableHeight);
+
+                    // Use the target height (350px) as the primary constraint
+                    let finalHeight;
+                    if (mapValid && mapHeight > 100) {
+                        // Use the smaller of: calculated height, map height, or target height
+                        finalHeight = Math.min(calculatedHeight, mapHeight, targetHeight);
+                        console.log(`Using map constraint: ${mapHeight}px, target: ${targetHeight}px`);
+                    } else {
+                        // Use the smaller of: calculated height or target height
+                        finalHeight = Math.min(calculatedHeight, targetHeight);
+                        console.log(`Using target height constraint: ${targetHeight}px`);
+                    }
+
+                    list.style.height = finalHeight + 'px';
+                });
+
+                console.log(
+                    `Final todo-list height: ${Math.min(Math.max(120, availableHeight), mapValid && mapHeight > 100 ? mapHeight : 350, 350)}px (widget: ${widgetHeight}px, header: ${headerHeight}px, footer: ${footerHeight}px, map: ${mapHeight}px, mapValid: ${mapValid}, target: 350px)`
+                );
+            }
+
+            // Set height after a short delay to ensure everything is rendered
+            setTimeout(setTodoListHeight, 100);
+
+            // Also set height when window resizes
+            window.addEventListener('resize', setTodoListHeight);
+
+            let tasks = JSON.parse(localStorage.getItem('freebie-todos')) || [];
+            let taskIdCounter = parseInt(localStorage.getItem('freebie-todo-counter')) || 1;
+
+            // Add some sample tasks if none exist
+            if (tasks.length === 0) {
+                tasks = [{
+                        id: 1,
+                        text: 'Review dashboard analytics',
+                        completed: false,
+                        createdAt: new Date().toISOString()
+                    },
+                    {
+                        id: 2,
+                        text: 'Update system documentation',
+                        completed: false,
+                        createdAt: new Date().toISOString()
+                    },
+                    {
+                        id: 3,
+                        text: 'Test new features',
+                        completed: true,
+                        createdAt: new Date().toISOString()
+                    },
+                    {
+                        id: 4,
+                        text: 'Deploy to staging',
+                        completed: false,
+                        createdAt: new Date().toISOString()
+                    }
+                ];
+                taskIdCounter = 5;
+                saveTasks();
+            }
+
+            // Event listeners
+            addTaskBtn.addEventListener('click', addTask);
+            newTaskInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+
+            // Tab change listeners
+            document.querySelectorAll('#todoTabs button[data-bs-toggle="tab"]').forEach(tab => {
+                tab.addEventListener('shown.bs.tab', function(e) {
+                    renderTasks();
+                });
+            });
+
+            function addTask() {
+                const text = newTaskInput.value.trim();
+                console.log('addTask called with text:', text);
+
+                if (text === '') {
+                    console.log('Empty text, not adding task');
+                    return;
+                }
+
+                const newTask = {
+                    id: taskIdCounter++,
+                    text: text,
+                    completed: false,
+                    createdAt: new Date().toISOString()
+                };
+
+                console.log('Adding new task:', newTask);
+                tasks.unshift(newTask);
+                newTaskInput.value = '';
+                saveTasks();
+                renderTasks();
+
+                // Show success animation
+                addTaskBtn.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    addTaskBtn.style.transform = 'scale(1)';
+                }, 200);
+            }
+
+            function toggleTask(id) {
+                const task = tasks.find(t => t.id === id);
+                if (task) {
+                    task.completed = !task.completed;
+                    saveTasks();
+                    renderTasks();
+                }
+            }
+
+            function deleteTask(id) {
+                tasks = tasks.filter(t => t.id !== id);
+                saveTasks();
+                renderTasks();
+            }
+
+
+            function saveTasks() {
+                localStorage.setItem('freebie-todos', JSON.stringify(tasks));
+                localStorage.setItem('freebie-todo-counter', taskIdCounter.toString());
+            }
+
+            let renderRetryCount = 0;
+            const maxRenderRetries = 20;
+
+            function renderTasks() {
+                const allTasksList = document.getElementById('all-tasks-list');
+                const pendingTasksList = document.getElementById('pending-tasks-list');
+                const completedTasksList = document.getElementById('completed-tasks-list');
+
+                // Check if all list elements exist
+                if (!allTasksList || !pendingTasksList || !completedTasksList) {
+                    renderRetryCount++;
+                    if (renderRetryCount < maxRenderRetries) {
+                        console.log(
+                            `Task list elements not found, retrying render in 100ms... (${renderRetryCount}/${maxRenderRetries})`
+                        );
+                        setTimeout(renderTasks, 100);
+                        return;
+                    } else {
+                        console.error('Task list elements not found after maximum retries.');
+                        return;
+                    }
+                }
+
+                console.log('Rendering tasks:', tasks.length, 'total tasks');
+
+                // Clear all lists
+                [allTasksList, pendingTasksList, completedTasksList].forEach(list => {
+                    if (list) list.innerHTML = '';
+                });
+
+                // Filter tasks
+                const pendingTasks = tasks.filter(t => !t.completed);
+                const completedTasks = tasks.filter(t => t.completed);
+
+                // Update counters
+                document.getElementById('all-count').textContent = tasks.length;
+                document.getElementById('pending-count').textContent = pendingTasks.length;
+                document.getElementById('completed-count').textContent = completedTasks.length;
+
+                // Render all tasks
+                if (tasks.length === 0) {
+                    allTasksList.innerHTML =
+                        '<div class="empty-state"><i class="material-symbols-rounded">task_alt</i><p>No tasks yet</p></div>';
+                } else {
+                    tasks.forEach(task => {
+                        allTasksList.appendChild(createTaskElement(task));
+                    });
+                }
+
+                // Render pending tasks
+                if (pendingTasks.length === 0) {
+                    pendingTasksList.innerHTML =
+                        '<div class="empty-state"><i class="material-symbols-rounded">pending</i><p>All caught up!</p></div>';
+                } else {
+                    pendingTasks.forEach(task => {
+                        pendingTasksList.appendChild(createTaskElement(task));
+                    });
+                }
+
+                // Render completed tasks
+                if (completedTasks.length === 0) {
+                    completedTasksList.innerHTML =
+                        '<div class="empty-state"><i class="material-symbols-rounded">check_circle</i><p>No completed tasks</p></div>';
+                } else {
+                    completedTasks.forEach(task => {
+                        completedTasksList.appendChild(createTaskElement(task));
+                    });
+                }
+            }
+
+            function createTaskElement(task) {
+                const taskElement = document.createElement('div');
+                taskElement.className = `todo-item ${task.completed ? 'completed' : ''}`;
+                taskElement.innerHTML = `
+                    <div class="todo-content">
+                        <div class="todo-checkbox ${task.completed ? 'checked' : ''}" onclick="toggleTask(${task.id})"></div>
+                        <div class="todo-text">${escapeHtml(task.text)}</div>
+                        <div class="todo-actions">
+                            <button class="todo-action-btn" onclick="deleteTask(${task.id})" title="Delete task">
+                                <i class="material-symbols-rounded" style="font-size: 16px;">delete</i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                return taskElement;
+            }
+
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Make functions globally available
+            window.toggleTask = toggleTask;
+            window.deleteTask = deleteTask;
+
+            // Initial render
+            console.log('Initializing TODO widget with', tasks.length, 'tasks');
+            renderTasks();
+        }
     </script>
     <!-- end page-specific scripts -->
     <!-- start additional utilities -->

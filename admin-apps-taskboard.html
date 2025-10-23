@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="voROPFYhUTeUrxSNYx3Z2fDHHAvTwhJ56xTfOx8W">
+    <meta name="csrf-token" content="66fer3BX1CDwekxsn3RxoiooptyoFA5G50N47btL">
     <title>Taskboard | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -589,7 +589,7 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                <li class="nav-item dropdown"> <a href="javascript:void(0);" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
                         <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
@@ -671,6 +671,14 @@
                         </a>
                         <div class="collapse  rounded" id="collapse_dashboards">
                             <ul class="nav nav-pills flex-column rounded">
+                                    <li class="admin-nav-item">
+                                        <a class="admin-nav-link "
+                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
+                                            data-bs-placement="right" title="Outrun HUD">
+                                                                                        <i class="material-symbols-rounded">arrow_right</i>
+                                                                                    Outrun HUD
+                                        </a>
+                                    </li>
                                     <li class="admin-nav-item">
                                         <a class="admin-nav-link "
                                             href="admin-analytics.html" data-bs-tooltip="tooltip"
@@ -906,8 +914,9 @@
             <!-- end breadcrumb -->
             <!-- start page content -->
             <h4 class="display-5 fw-bold mb-3 orbitron-bold uv-header text-center">Kanban Board</h4>
-            <div class="row g-1">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+            <!-- Desktop/Tablet: Normal grid layout -->
+            <div class="row g-1 d-none d-md-flex">
+                <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
@@ -1051,7 +1060,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+                <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
@@ -1104,7 +1113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+                <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
@@ -1164,7 +1173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 mb-lg-0">
+                <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-body">
                             <div class="dropdown float-end">
@@ -1259,6 +1268,277 @@
                             </div>
                             <div class="text-center d-grid">
                                 <a href="javascript: void(0);" class="btn btn-success addtask-btn" data-bs-toggle="modal" data-bs-target="#taskModal" data-status="completed"> <i class="material-symbols-rounded me-1">add</i> Add New</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile: Horizontal scroll layout -->
+            <div class="d-md-none">
+                <div class="kanban-mobile-scroll" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                    <div class="d-flex gap-3" style="min-width: max-content; padding: 0 1rem;">
+                        <div class="kanban-column" style="min-width: 280px; flex-shrink: 0;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dropdown float-end">
+                                        <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mb-4 text-warning">Upcoming</h4>
+                                    <div id="upcoming-tasks-mobile" class="task-board-column" data-status="upcoming">
+                                        <div class="card task-box mb-3">
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end ms-2"> <span class="badge rounded-pill bg-secondary font-size-12">Waiting</span>
+                                                </div>
+                                                <div>
+                                                    <h5><a href="javascript: void(0);">Topnav layout design</a>
+                                                    </h5>
+                                                    <p class="text-muted mb-4">14 Oct, 2019</p>
+                                                </div>
+                                                <div class="avatar-group float-start">
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <div class="avatar-xs">
+                                                        <span
+                                                            class="avatar-title rounded-circle bg-info text-white font-size-16">3+</span>
+                                                    </div>
+                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="font-size-15 mb-1">$ 145</h5>
+                                                    <p class="mb-0 text-muted">Budget</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card task-box mb-3">
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end ms-2"> <span class="badge rounded-pill bg-primary font-size-12">Approved</span>
+                                                </div>
+                                                <div>
+                                                    <h5><a href="javascript: void(0);">Create a New Landing UI</a>
+                                                    </h5>
+                                                    <p class="text-muted">15 Oct, 2019</p>
+                                                </div>
+                                                <ul class="ps-3 mb-4 text-muted">
+                                                    <li class="py-1">Separate existence is a myth.</li>
+                                                    <li class="py-1">For music, sport, etc</li>
+                                                </ul>
+                                                <div class="avatar-group float-start">
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Albert+R&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Chris+M&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="font-size-15 mb-1">$ 92</h5>
+                                                    <p class="mb-0 text-muted">Budget</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center d-grid">
+                                        <a href="javascript: void(0);" class="btn btn-warning addtask-btn" data-bs-toggle="modal" data-bs-target="#taskModal" data-status="upcoming"> <i class="material-symbols-rounded me-1">add</i> Add New</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column" style="min-width: 280px; flex-shrink: 0;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dropdown float-end">
+                                        <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mb-4 text-primary">In Progress</h4>
+                                    <div id="inprogress-tasks-mobile" class="task-board-column" data-status="inprogress">
+                                        <div class="card task-box mb-3">
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end ms-2"> <span class="badge rounded-pill bg-primary font-size-12">In Progress</span>
+                                                </div>
+                                                <div>
+                                                    <h5><a href="javascript: void(0);">Brand logo design</a>
+                                                    </h5>
+                                                    <p class="text-muted mb-4">12 Oct, 2019</p>
+                                                </div>
+                                                <div class="avatar-group float-start">
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="font-size-15 mb-1">$ 186</h5>
+                                                    <p class="mb-0 text-muted">Budget</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center d-grid">
+                                        <a href="javascript: void(0);" class="btn btn-primary addtask-btn" data-bs-toggle="modal" data-bs-target="#taskModal" data-status="inprogress"> <i class="material-symbols-rounded me-1">add</i> Add New</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column" style="min-width: 280px; flex-shrink: 0;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dropdown float-end">
+                                        <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mb-4 text-info">Review</h4>
+                                    <div id="review-tasks-mobile" class="task-board-column" data-status="review">
+                                        <div class="card task-box mb-3">
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end ms-2"> <span class="badge rounded-pill bg-warning font-size-12">Pending</span>
+                                                </div>
+                                                <div>
+                                                    <h5><a href="javascript: void(0);">Make a creating an Account Profile</a>
+                                                    </h5>
+                                                    <p class="text-muted mb-4">11 Oct, 2019</p>
+                                                </div>
+                                                <div class="avatar-group float-start">
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Albert+R&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Chris+M&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="font-size-15 mb-1">$ 67</h5>
+                                                    <p class="mb-0 text-muted">Budget</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center d-grid">
+                                        <a href="javascript: void(0);" class="btn btn-info addtask-btn" data-bs-toggle="modal" data-bs-target="#taskModal" data-status="review"> <i class="material-symbols-rounded me-1">add</i> Add New</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kanban-column" style="min-width: 280px; flex-shrink: 0;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dropdown float-end">
+                                        <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete</a>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mb-4 text-success">Completed</h4>
+                                    <div id="completed-tasks-mobile" class="task-board-column" data-status="completed">
+                                        <div class="card task-box mb-3">
+                                            <div class="card-body">
+                                                <div class="dropdown float-end">
+                                                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="#">Edit</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-end ms-2"> <span class="badge rounded-pill bg-success font-size-12">Complete</span>
+                                                </div>
+                                                <div>
+                                                    <h5><a href="javascript: void(0);">Multipurpose Landing</a>
+                                                    </h5>
+                                                    <p class="text-muted">09 Oct, 2019</p>
+                                                </div>
+                                                <div class="avatar-group float-start mb-4">
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Alex+W&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <img src="https://ui-avatars.com/api/?name=Chris+M&background=random"
+                                                        alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                                    </div>
+                                                    <div class="avatar-group-item"> <a href="javascript: void(0);" class="d-inline-block">
+                                                    <div class="avatar-xs">
+                                                        <span
+                                                            class="avatar-title rounded-circle bg-pink text-white font-size-16">5+</span>
+                                                    </div>
+                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h5 class="font-size-15 mb-1">$ 92</h5>
+                                                    <p class="mb-0 text-muted">Budget</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center d-grid">
+                                        <a href="javascript: void(0);" class="btn btn-success addtask-btn" data-bs-toggle="modal" data-bs-target="#taskModal" data-status="completed"> <i class="material-symbols-rounded me-1">add</i> Add New</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1577,7 +1857,7 @@
     <!-- start page-specific scripts -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-            // Select all the columns' body elements where tasks are held
+            // Select all the columns' body elements where tasks are held (both desktop and mobile)
             const columns = document.querySelectorAll('.task-board-column');
 
             // Initialize SortableJS for each column
@@ -1594,6 +1874,9 @@
                         console.log(`Task moved to column: ${toColumnId}`);
                         // Update the task status badge based on column
                         updateTaskStatus(taskEl, toColumnId);
+
+                        // Sync between desktop and mobile columns
+                        syncTaskBetweenColumns(taskEl, toColumnId);
                     }
                 });
             });
@@ -1607,7 +1890,15 @@
                         text: 'Waiting',
                         class: 'bg-secondary'
                     },
+                    'upcoming-tasks-mobile': {
+                        text: 'Waiting',
+                        class: 'bg-secondary'
+                    },
                     'inprogress-tasks': {
+                        text: 'In Progress',
+                        class: 'bg-primary'
+                    },
+                    'inprogress-tasks-mobile': {
                         text: 'In Progress',
                         class: 'bg-primary'
                     },
@@ -1615,7 +1906,15 @@
                         text: 'Pending',
                         class: 'bg-warning'
                     },
+                    'review-tasks-mobile': {
+                        text: 'Pending',
+                        class: 'bg-warning'
+                    },
                     'completed-tasks': {
+                        text: 'Complete',
+                        class: 'bg-success'
+                    },
+                    'completed-tasks-mobile': {
                         text: 'Complete',
                         class: 'bg-success'
                     }
@@ -1625,6 +1924,20 @@
                 if (status) {
                     badge.className = `badge rounded-pill ${status.class} font-size-12`;
                     badge.textContent = status.text;
+                }
+            }
+
+            // Sync task between desktop and mobile columns
+            function syncTaskBetweenColumns(taskEl, toColumnId) {
+                const isMobile = toColumnId.includes('-mobile');
+                const baseColumnId = toColumnId.replace('-mobile', '');
+                const targetColumnId = isMobile ? baseColumnId : baseColumnId + '-mobile';
+
+                const targetColumn = document.getElementById(targetColumnId);
+                if (targetColumn) {
+                    // Clone the task and add to the corresponding column
+                    const clonedTask = taskEl.cloneNode(true);
+                    targetColumn.appendChild(clonedTask);
                 }
             }
 
