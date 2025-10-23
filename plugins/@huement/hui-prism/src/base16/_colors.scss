@@ -1,0 +1,271 @@
+// =============================================================================
+// Base16 Color Schemes
+// =============================================================================
+// Modern Sass implementation of Base16 color schemes with support for
+// multiple themes and custom color overrides.
+
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:meta';
+
+
+// =============================================================================
+// Color Scheme Definitions
+// =============================================================================
+
+/// Default Base16 color scheme (HUI Theme)
+/// @type Map
+$default-scheme: (
+  'base00': #212121,
+  // Default Background
+  'base01': #3d3d3d,
+  // Lighter Background
+  'base02': #595959,
+  // Selection Background
+  'base03': #757575,
+  // Comments, Invisibles, Line Highlighting
+  'base04': #919191,
+  // Dark Foreground (Used for status bars)
+  'base05': #adadad,
+  // Default Foreground, Caret, Delimiters, Operators
+  'base06': #c9c9c9,
+  // Light Foreground (Not often used)
+  'base07': #e6e6e6,
+  // Lightest Foreground (Not often used)
+  'base08': #ff0054,
+  // Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+  'base09': #fd7e47,
+  // Integers, Boolean, Constants, XML Attributes, Markup Link Url
+  'base0a': #fbff12,
+  // Classes, Markup Bold, Search Text Background
+  'base0b': #3bfc43,
+  // Strings, Inherited Class, Markup Code, Diff Inserted
+  'base0c': #02e5ac,
+  // Support, Regular Expressions, Escape Characters, Markup Quotes
+  'base0d': #0fb4f0,
+  // Functions, Methods, Attribute IDs, Headings
+  'base0e': #1982c4,
+  // Keywords, Storage, Selector, Markup Italic, Diff Changed
+  'base0f': #9B47FA // Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+);
+
+/// Dark theme color scheme
+/// @type Map
+$dark-scheme: (
+  'base00': #1e1e1e,
+  'base01': #2d2d30,
+  'base02': #3e3e42,
+  'base03': #6a6a6a,
+  'base04': #cccccc,
+  'base05': #d4d4d4,
+  'base06': #e1e1e1,
+  'base07': #ffffff,
+  'base08': #f44747,
+  'base09': #ff8c00,
+  'base0a': #ffcc02,
+  'base0b': #4ec9b0,
+  'base0c': #4fc1ff,
+  'base0d': #569cd6,
+  'base0e': #c586c0,
+  'base0f': #d7ba7d
+);
+
+/// Light theme color scheme
+/// @type Map
+$light-scheme: (
+  'base00': #ffffff,
+  'base01': #f5f5f5,
+  'base02': #e8e8e8,
+  'base03': #a0a0a0,
+  'base04': #505050,
+  'base05': #303030,
+  'base06': #202020,
+  'base07': #101010,
+  'base08': #d73a49,
+  'base09': #e36209,
+  'base0a': #ffd33d,
+  'base0b': #28a745,
+  'base0c': #79b8ff,
+  'base0d': #0366d6,
+  'base0e': #6f42c1,
+  'base0f': #6a737d
+);
+
+/// Monokai-inspired color scheme
+/// @type Map
+$monokai-scheme: (
+  'base00': #272822,
+  'base01': #383830,
+  'base02': #49483e,
+  'base03': #75715e,
+  'base04': #a59f85,
+  'base05': #f8f8f2,
+  'base06': #f5f4f1,
+  'base07': #f9f8f5,
+  'base08': #f92672,
+  'base09': #fd971f,
+  'base0a': #f4bf75,
+  'base0b': #a6e22e,
+  'base0c': #a1efe4,
+  'base0d': #66d9ef,
+  'base0e': #ae81ff,
+  'base0f': #cc6633
+);
+
+/// Solarized Dark color scheme
+/// @type Map
+$solarized-dark-scheme: (
+  'base00': #002b36,
+  'base01': #073642,
+  'base02': #586e75,
+  'base03': #657b83,
+  'base04': #839496,
+  'base05': #93a1a1,
+  'base06': #eee8d5,
+  'base07': #fdf6e3,
+  'base08': #dc322f,
+  'base09': #cb4b16,
+  'base0a': #b58900,
+  'base0b': #859900,
+  'base0c': #2aa198,
+  'base0d': #268bd2,
+  'base0e': #6c71c4,
+  'base0f': #d33682
+);
+
+/// Solarized Light color scheme
+/// @type Map
+$solarized-light-scheme: (
+  'base00': #fdf6e3,
+  'base01': #eee8d5,
+  'base02': #93a1a1,
+  'base03': #839496,
+  'base04': #657b83,
+  'base05': #586e75,
+  'base06': #073642,
+  'base07': #002b36,
+  'base08': #dc322f,
+  'base09': #cb4b16,
+  'base0a': #b58900,
+  'base0b': #859900,
+  'base0c': #2aa198,
+  'base0d': #268bd2,
+  'base0e': #6c71c4,
+  'base0f': #d33682
+);
+
+// =============================================================================
+// Color Scheme Registry
+// =============================================================================
+
+/// Registry of all available color schemes
+/// @type Map
+$scheme-registry: (
+  'default': $default-scheme,
+  'dark': $dark-scheme,
+  'light': $light-scheme,
+  'monokai': $monokai-scheme,
+  'solarized-dark': $solarized-dark-scheme,
+  'solarized-light': $solarized-light-scheme
+);
+
+// =============================================================================
+// Color Utility Functions
+// =============================================================================
+
+/// Get a color scheme by name
+/// @param {String} $scheme-name - Name of the color scheme
+/// @return {Map} Color scheme map
+@function get-color-scheme($scheme-name: 'default') {
+  @if not map.has-key($scheme-registry, $scheme-name) {
+    @error "Color scheme '#{$scheme-name}' not found. Available schemes: #{map.keys($scheme-registry)}";
+  }
+
+  @return map.get($scheme-registry, $scheme-name);
+}
+
+/// Get a specific color from a scheme
+/// @param {String} $scheme-name - Name of the color scheme
+/// @param {String} $color-name - Name of the color (e.g., 'base00', 'base08')
+/// @return {Color} The color value
+@function get-color($scheme-name: 'default', $color-name: 'base00') {
+  $scheme: get-color-scheme($scheme-name);
+
+  @if not map.has-key($scheme, $color-name) {
+    @error "Color '#{$color-name}' not found in scheme '#{$scheme-name}'. Available colors: #{map.keys($scheme)}";
+  }
+
+  @return map.get($scheme, $color-name);
+}
+
+/// Create a color variant with opacity
+/// @param {Color} $color - Base color
+/// @param {Number} $opacity - Opacity value (0-1)
+/// @return {Color} Color with opacity
+@function color-with-opacity($color, $opacity: 1) {
+  @return color.change($color, $alpha: $opacity);
+}
+
+/// Create a lighter variant of a color
+/// @param {Color} $color - Base color
+/// @param {Number} $amount - Lightness amount (0-100)
+/// @return {Color} Lighter color
+@function lighten-color($color, $amount: 10%) {
+  @return color.adjust($color, $lightness: $amount);
+}
+
+/// Create a darker variant of a color
+/// @param {Color} $color - Base color
+/// @param {Number} $amount - Darkness amount (0-100)
+/// @return {Color} Darker color
+@function darken-color($color, $amount: 10%) {
+  @return color.adjust($color, $lightness: -$amount);
+}
+
+/// Get contrasting color (black or white) for a given background
+/// @param {Color} $color - Background color
+/// @return {Color} Contrasting color
+@function get-contrast-color($color) {
+  $lightness: color.lightness($color);
+  @return if($lightness > 50%, #000000, #ffffff);
+}
+
+/// Create a color palette from a base color
+/// @param {Color} $base-color - Base color
+/// @param {Number} $steps - Number of steps in the palette
+/// @return {List} List of colors
+@function create-palette($base-color, $steps: 5) {
+  $palette: (
+  );
+$step-size: 100% / ($steps - 1);
+
+@for $i from 0 through ($steps - 1) {
+  $lightness: $i * $step-size;
+  $palette: append($palette, color.adjust($base-color, $lightness: $lightness));
+}
+
+@return $palette;
+}
+
+// =============================================================================
+// Color Scheme Mixins
+// =============================================================================
+
+/// Apply a color scheme as CSS custom properties
+/// @param {String} $scheme-name - Name of the color scheme
+/// @param {String} $prefix - CSS custom property prefix
+@mixin apply-color-scheme($scheme-name: 'default', $prefix: '--base16') {
+  $scheme: get-color-scheme($scheme-name);
+
+  @each $name, $color in $scheme {
+    #{$prefix}-#{$name}: #{$color};
+  }
+}
+
+/// Create a theme variant with custom colors
+/// @param {Map} $base-scheme - Base color scheme
+/// @param {Map} $overrides - Color overrides
+/// @return {Map} Modified color scheme
+@function create-theme-variant($base-scheme, $overrides: ()) {
+  @return map.merge($base-scheme, $overrides);
+}

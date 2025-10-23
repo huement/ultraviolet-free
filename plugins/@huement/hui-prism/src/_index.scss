@@ -1,0 +1,125 @@
+// =============================================================================
+// Hui Prism Theme - Main Entry Point
+// =============================================================================
+// This is the main entry point for the Hui Prism theme.
+// It imports all necessary components and provides the main theme mixin.
+
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:math';
+
+// Import base16 color schemes
+@use 'base16/colors' as base16;
+
+// Import theme components
+@use 'themes/prism-theme' as prism;
+@use 'utils/functions' as functions;
+@use 'utils/mixins' as mixins;
+@use 'utils/variables' as vars;
+
+// =============================================================================
+// Theme Configuration
+// =============================================================================
+
+/// Default theme configuration
+/// @type Map
+$default-config: (
+  'color-scheme': 'default',
+  'font-family': ('Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace),
+  'font-size': 1rem,
+  'line-height': 1.5,
+  'tab-size': 4,
+  'padding': 1.2em,
+  'margin': 0.75em 0,
+  'inline-padding': 0.1em,
+  'border-radius': 0.3em,
+  'enable-animations': true,
+  'enable-transitions': true,
+  'custom-colors': (),
+  'custom-tokens': ()
+);
+
+// =============================================================================
+// Main Theme Mixin
+// =============================================================================
+
+/// Generate a complete Prism.js theme
+/// @param {Map} $config - Theme configuration map
+@mixin hui-prism-theme($config: ()) {
+  // Merge user config with defaults
+  $config: map.merge($default-config, $config);
+
+  // Extract configuration values
+  $color-scheme: map.get($config, 'color-scheme');
+  $font-family: map.get($config, 'font-family');
+  $font-size: map.get($config, 'font-size');
+  $line-height: map.get($config, 'line-height');
+  $tab-size: map.get($config, 'tab-size');
+  $padding: map.get($config, 'padding');
+  $margin: map.get($config, 'margin');
+  $inline-padding: map.get($config, 'inline-padding');
+  $border-radius: map.get($config, 'border-radius');
+  $enable-animations: map.get($config, 'enable-animations');
+  $enable-transitions: map.get($config, 'enable-transitions');
+  $custom-colors: map.get($config, 'custom-colors');
+  $custom-tokens: map.get($config, 'custom-tokens');
+
+  // Get color scheme
+  $colors: base16.get-color-scheme($color-scheme);
+  $colors: map.merge($colors, $custom-colors);
+
+  // Include base styles
+  @include prism.base-styles($font-family: $font-family,
+    $font-size: $font-size,
+    $line-height: $line-height,
+    $tab-size: $tab-size,
+    $padding: $padding,
+    $margin: $margin,
+    $inline-padding: $inline-padding,
+    $border-radius: $border-radius,
+    $colors: $colors );
+
+  // Include token styles
+  @include prism.token-styles($colors, $custom-tokens);
+
+  // Include animations if enabled
+  @if $enable-animations {
+    // Animation styles are included in the token styles
+  }
+
+  // Include transitions if enabled
+  @if $enable-transitions {
+    // Transition styles are included in the token styles
+  }
+
+  // Include responsive styles
+  @include prism.responsive-token-styles;
+}
+
+// =============================================================================
+// Utility Mixins
+// =============================================================================
+
+/// Generate theme with custom color scheme
+/// @param {String} $scheme - Color scheme name
+/// @param {Map} $config - Additional configuration
+@mixin hui-prism-theme-with-scheme($scheme, $config: ()) {
+  $config: map.merge($config, ('color-scheme': $scheme));
+  @include hui-prism-theme($config);
+}
+
+/// Generate theme with custom colors
+/// @param {Map} $colors - Custom color map
+/// @param {Map} $config - Additional configuration
+@mixin hui-prism-theme-with-colors($colors, $config: ()) {
+  $config: map.merge($config, ('custom-colors': $colors));
+  @include hui-prism-theme($config);
+}
+
+// =============================================================================
+// Default Theme Export
+// =============================================================================
+
+// Export the default theme
+@include hui-prism-theme();
