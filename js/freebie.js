@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.animationFrame = null
       this.isRunning = false
       this.currentAnimation = 'space'
-      
+
       // Configuration matching the original
       this.config = {
         space: {
@@ -414,16 +414,16 @@ document.addEventListener('DOMContentLoaded', function () {
       this.canvas.style.left = '0'
       this.canvas.style.width = '100%'
       this.canvas.style.height = '100%'
-      this.canvas.style.zIndex = '1'
+      this.canvas.style.zIndex = '-1'
       this.canvas.style.pointerEvents = 'none'
       container.appendChild(this.canvas)
 
       this.ctx = this.canvas.getContext('2d')
-      
+
       // Set running flag BEFORE setting up stars and animating
       this.isRunning = true
       this.currentAnimation = 'space'
-      
+
       this.setupStars()
       this.animateStars()
 
@@ -497,17 +497,41 @@ document.addEventListener('DOMContentLoaded', function () {
         cancelAnimationFrame(this.animationFrame)
         this.animationFrame = null
       }
+
+      // Clear the canvas and container to restore content visibility
+      if (this.canvas) {
+        this.canvas.remove()
+        this.canvas = null
+        this.ctx = null
+      }
+
+      // Clear the background container
+      const container = document.getElementById('admin-background')
+      if (container) {
+        container.innerHTML = ''
+      }
     }
   }
 
   // Background animation controls (freebie version - starfield only)
   const backgroundSelect = document.getElementById('admin-background-select')
   const backgroundContainer = document.getElementById('admin-background')
-  
+
+  // Ensure the background container is properly positioned
+  if (backgroundContainer) {
+    backgroundContainer.style.position = 'fixed'
+    backgroundContainer.style.top = '0'
+    backgroundContainer.style.left = '0'
+    backgroundContainer.style.width = '100%'
+    backgroundContainer.style.height = '100%'
+    backgroundContainer.style.zIndex = '-1'
+    backgroundContainer.style.pointerEvents = 'none'
+  }
+
   if (backgroundSelect && backgroundContainer) {
     // Use separate localStorage key for freebie to avoid conflicts with pro version
     const freebieAnimationKey = 'freebie-background-animation'
-    
+
     // Set initial value - always start with 'none' for freebie
     const savedAnimation = localStorage.getItem(freebieAnimationKey) || 'none'
     backgroundSelect.value = savedAnimation
@@ -527,19 +551,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add change listener
     backgroundSelect.addEventListener('change', (e) => {
       const animationType = e.target.value
-      
+
       // For freebie, only allow 'none' and 'space' (starfield)
       if (animationType === 'none' || animationType === 'space') {
         // Valid freebie option - save and apply
         localStorage.setItem(freebieAnimationKey, animationType)
-        console.log(`Freebie background animation switched to: ${animationType}`)
-        
+        console.log(
+          `Freebie background animation switched to: ${animationType}`
+        )
+
         if (animationType === 'space') {
           document.body.style.backgroundColor = 'transparent'
           starfield.init('admin-background')
         } else {
           starfield.stop()
-          document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+          document.body.style.backgroundColor =
+            starfield.getCSSVar('--bs-body-bg')
         }
       } else {
         // Invalid option - show upgrade modal and always revert to "none"
@@ -548,7 +575,8 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundSelect.value = 'none'
         localStorage.setItem(freebieAnimationKey, 'none')
         starfield.stop()
-        document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+        document.body.style.backgroundColor =
+          starfield.getCSSVar('--bs-body-bg')
         console.log('Reverted to "none" for invalid selection')
       }
     })
