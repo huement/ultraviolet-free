@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="66fer3BX1CDwekxsn3RxoiooptyoFA5G50N47btL">
+    <meta name="csrf-token" content="WJvNXlpD3NZeYGsYhLLd3lobR5TPw8QqGBA3pb9X">
     <title>Dashboard | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -174,39 +174,14 @@
         }
     </style>
     <style>
-    /* Exciting HUD animations and effects */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+    .fade-in {
+            animation: fadeIn 0.5s ease-in;
         }
 
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-            }
-
-            50% {
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
-            }
-
-            100% {
-                box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-            }
-        }
-
-        @keyframes slideInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-10px);
             }
 
             to {
@@ -215,330 +190,126 @@
             }
         }
 
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Enhanced HUD card styling */
-        .hud-card {
-            animation: slideInUp 0.6s ease-out;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
-        }
-
-        .hud-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        /* Command center enhancements */
-        .command-center-content {
-            animation: fadeInScale 0.8s ease-out;
-        }
-
-        .hCard {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-        }
-
-        /* Upgrade button special effects */
-        [data-bs-target="#upgradeModal"] {
-            position: relative;
-            overflow: hidden;
-        }
-
-        [data-bs-target="#upgradeModal"]:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        [data-bs-target="#upgradeModal"]:hover:before {
-            left: 100%;
-        }
-
-        /* Chart containers with glow */
-        #freebie-chart-1,
-        #freebie-chart-2,
-        #freebie-chart-3 {
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Enhanced stat numbers */
-        .stat-number {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        /* Weather widget enhancement */
-        .weather-stat {
-            font-size: 2rem;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-        }
-
-        /* Mobile-specific responsive adjustments */
-        @media (max-width: 575.98px) {
-            .hud-card {
-                padding: 1rem !important;
-            }
-
-            .hud-card .card-header {
-                padding: 0.75rem 1rem !important;
-            }
-
-            .hud-card .card-body {
-                padding: 1rem !important;
-            }
-
-            .hud-card .card-footer {
-                padding: 0.75rem 1rem !important;
-            }
-
-            .command-center-content .hCard {
-                padding: 1rem !important;
-            }
-
-            .card-value {
-                font-size: 1.5rem !important;
-            }
-
-            .data-label {
-                font-size: 0.65rem !important;
-            }
-
-            .data-number {
-                font-size: 0.85rem !important;
-            }
-
-            .card-chart {
-                height: 80px !important;
-                margin-top: 0.5rem !important;
-            }
-
-            /* Smaller icon sizes on mobile */
-            .btn .material-symbols-rounded {
-                font-size: 20px !important;
-            }
-
-            /* Reduce padding on action buttons */
-            .btn-cyber-compact {
-                padding: 0.375rem 0.75rem !important;
-                font-size: 0.875rem !important;
-            }
-
-            /* Table responsiveness */
-            .table-sm td,
-            .table-sm th {
-                padding: 0.5rem 0.25rem !important;
-                font-size: 0.75rem !important;
-            }
-
-            /* Modal adjustments */
-            .modal-body {
-                padding: 1rem !important;
-            }
-
-            .modal-body .py-4 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .display-5 {
-                font-size: 2rem;
-            }
-
-            .dashboard-margin {
-                margin-bottom: 0 !important;
-            }
-
-            /* Ensure cards have proper spacing */
-            .hud-card {
-                margin-bottom: 1rem;
-            }
-        }
-
-        /* Medium screens */
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            .col-md-3 h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Staggered animation delays for cards */
-        .hud-card:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .hud-card:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .hud-card:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .hud-card:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .hud-card:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-
-        .hud-card:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        /* Pulse dot for live status */
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
+        .pulse-icon {
             animation: pulse 2s infinite;
         }
 
-        /* Map card styling */
-        .map-card {
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
-        }
-
-        .map-card:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
-        }
-
-        .vector-map {
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .pulse-badge {
-            animation: pulse 2s infinite;
-        }
-
-        /* Map metrics styling */
-        .map-card .card-footer .text-cyan {
-            color: #00ffff !important;
-        }
-
-        .map-card .card-footer .text-magenta {
-            color: #ff00ff !important;
-        }
-
-        .map-card .card-footer .text-warning {
-            color: #ffff00 !important;
-        }
-
-        .map-card .card-footer .text-success {
-            color: #00ff00 !important;
-        }
-
-        /* Floating animation for map particles */
-        @keyframes float {
+        @keyframes pulse {
 
             0%,
             100% {
-                transform: translateY(0px) translateX(0px);
-                opacity: 0.6;
-            }
-
-            25% {
-                transform: translateY(-10px) translateX(5px);
                 opacity: 1;
             }
 
             50% {
-                transform: translateY(-5px) translateX(-5px);
-                opacity: 0.8;
-            }
-
-            75% {
-                transform: translateY(-15px) translateX(3px);
-                opacity: 0.9;
+                opacity: 0.5;
             }
         }
 
-        /* Dash animation for map lines */
-        @keyframes dash {
-            to {
-                stroke-dashoffset: -10;
-            }
-        }
-
-        /* TODO Widget Styles */
-        .todo-widget {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .todo-widget .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .todo-widget .tab-content {
-            flex: 1;
-        }
-
-        .nav-tabs-hud .nav-link {
-            background: transparent;
-            border: none;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.75rem 1rem;
-            border-radius: 0;
-            position: relative;
+        .activity-timeline .activity-item {
             transition: all 0.3s ease;
         }
 
-        .nav-tabs-hud .nav-link:hover {
-            color: rgba(0, 255, 255, 0.9);
+        .activity-timeline .activity-item:hover {
             background: rgba(0, 255, 255, 0.05);
+            border-radius: 4px;
+            padding: 4px;
         }
 
-        .nav-tabs-hud .nav-link.active {
-            color: #00ffff;
-            background: rgba(0, 255, 255, 0.1);
-            border-bottom: 2px solid #00ffff;
+        .live-indicator i {
+            opacity: 0.6;
+            filter: drop-shadow(0 0 10px currentColor);
         }
 
-        .nav-tabs-hud .nav-link.active::after {
+        /* Performance Monitor Widget Styles */
+        .performance-monitor-widget .performance-metrics {
+            padding: 0;
+        }
+
+        .performance-monitor-widget .metric-row {
+            position: relative;
+        }
+
+        .performance-monitor-widget .metric-label {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .performance-monitor-widget .metric-value {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .performance-bar {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .performance-fill {
+            height: 100%;
+            transition: width 0.6s ease-in-out;
+            border-radius: 6px;
+            position: relative;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        .performance-fill::after {
             content: '';
             position: absolute;
-            bottom: -2px;
+            top: 0;
             left: 0;
             right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #00ffff, #ff00ff);
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+            border-radius: 6px 6px 0 0;
         }
 
+        /* Gradient backgrounds with glow effects */
+        .bg-gradient-cyan {
+            background: linear-gradient(90deg, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 1) 100%);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .bg-gradient-magenta {
+            background: linear-gradient(90deg, rgba(255, 0, 255, 0.8) 0%, rgba(255, 0, 255, 1) 100%);
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.5), inset 0 0 10px rgba(255, 0, 255, 0.3);
+        }
+
+        .bg-gradient-success {
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.8) 0%, rgba(16, 185, 129, 1) 100%);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5), inset 0 0 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .bg-gradient-warning {
+            background: linear-gradient(90deg, rgba(255, 193, 7, 0.8) 0%, rgba(255, 193, 7, 1) 100%);
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.5), inset 0 0 10px rgba(255, 193, 7, 0.3);
+        }
+
+        /* Animated pulse effect for high values */
+        @keyframes barPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+            }
+        }
+
+        .performance-fill[style*="width: 8"],
+        .performance-fill[style*="width: 9"] {
+            animation: barPulse 2s ease-in-out infinite;
+        }
+
+        /* TODO Widget Styles */
         .todo-list {
             padding: 0.5rem;
             /* Height will be set dynamically by JavaScript */
@@ -552,49 +323,15 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(0, 255, 255, 0.1);
             border-radius: 8px;
-            margin-bottom: 0.5rem;
             padding: 0.75rem;
+            margin-bottom: 0.5rem;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .todo-item:hover {
-            background: rgba(0, 255, 255, 0.05);
-            border-color: rgba(0, 255, 255, 0.3);
-            transform: translateX(4px);
-        }
-
-        .todo-item.completed {
-            background: rgba(16, 185, 129, 0.1);
-            border-color: rgba(16, 185, 129, 0.3);
-            opacity: 0.8;
-        }
-
-        .todo-item.completed .todo-text {
-            text-decoration: line-through;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .todo-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #00ffff, #ff00ff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .todo-item:hover::before {
-            opacity: 1;
-        }
-
-        .todo-item.completed::before {
-            background: #10b981;
-            opacity: 1;
+        /* Light mode overrides for todo items */
+        [data-bs-theme="light"] .todo-item {
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .todo-content {
@@ -603,25 +340,66 @@
             gap: 0.75rem;
         }
 
+        .todo-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 255, 255, 0.2);
+            transform: translateX(2px);
+        }
+
+        /* Light mode hover */
+        [data-bs-theme="light"] .todo-item:hover {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .todo-item.completed {
+            opacity: 0.6;
+            background: rgba(0, 180, 0, 0.25);
+            border-color: rgba(0, 180, 0, 0.6);
+        }
+
+        /* Light mode completed */
+        [data-bs-theme="light"] .todo-item.completed {
+            background: rgba(0, 100, 0, 0.3);
+            border-color: rgba(0, 100, 0, 0.7);
+        }
+
         .todo-checkbox {
             width: 18px;
             height: 18px;
             border: 2px solid rgba(0, 255, 255, 0.5);
             border-radius: 4px;
-            background: transparent;
             cursor: pointer;
-            position: relative;
             transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        /* Light mode checkbox */
+        [data-bs-theme="light"] .todo-checkbox {
+            border: 2px solid rgba(0, 0, 0, 0.3);
         }
 
         .todo-checkbox:hover {
-            border-color: #00ffff;
+            border-color: rgba(0, 255, 255, 0.8);
             box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
         }
 
+        /* Light mode checkbox hover */
+        [data-bs-theme="light"] .todo-checkbox:hover {
+            border-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
         .todo-checkbox.checked {
-            background: #10b981;
-            border-color: #10b981;
+            background: rgba(0, 255, 255, 0.8);
+            border-color: rgba(0, 255, 255, 1);
+        }
+
+        /* Light mode checked checkbox */
+        [data-bs-theme="light"] .todo-checkbox.checked {
+            background: rgba(0, 0, 0, 0.8);
+            border-color: rgba(0, 0, 0, 1);
         }
 
         .todo-checkbox.checked::after {
@@ -630,16 +408,36 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: white;
+            color: #000;
             font-size: 12px;
             font-weight: bold;
         }
 
+        /* Light mode checked checkbox text */
+        [data-bs-theme="light"] .todo-checkbox.checked::after {
+            color: #fff;
+        }
+
         .todo-text {
             flex: 1;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--body-color);
             font-size: 0.9rem;
             line-height: 1.4;
+        }
+
+        /* Light mode todo text */
+        [data-bs-theme="light"] .todo-text {
+            color: #000 !important;
+        }
+
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        /* Light mode completed todo text */
+        [data-bs-theme="light"] .todo-item.completed .todo-text {
+            color: #333 !important;
         }
 
         .todo-actions {
@@ -654,96 +452,112 @@
         }
 
         .todo-action-btn {
-            width: 28px;
-            height: 28px;
+            background: none;
             border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            border-radius: 4px;
+            color: rgba(255, 0, 0, 0.6);
             cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .todo-action-btn:hover {
-            background: rgba(255, 0, 0, 0.2);
-            color: #ff6b6b;
-            transform: scale(1.1);
+            color: rgba(255, 0, 0, 1);
+            background: rgba(255, 0, 0, 0.1);
         }
 
         .form-control-hud {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(0, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px 0 0 8px;
+            color: var(--body-color);
+            border-radius: 8px;
+        }
+
+        /* Light mode form control */
+        [data-bs-theme="light"] .form-control-hud {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.2);
         }
 
         .form-control-hud:focus {
             background: rgba(255, 255, 255, 0.08);
-            border-color: #00ffff;
-            box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
-            color: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.1);
+            color: var(--body-color);
+        }
+
+        /* Light mode form control focus */
+        [data-bs-theme="light"] .form-control-hud:focus {
+            background: rgba(0, 0, 0, 0.08);
+            border-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
         }
 
         .form-control-hud::placeholder {
             color: rgba(255, 255, 255, 0.5);
         }
 
+        /* Light mode placeholder */
+        [data-bs-theme="light"] .form-control-hud::placeholder {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
         .input-group .btn-cyber {
-            border-radius: 0 8px 8px 0;
-            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
 
         .empty-state {
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem;
             color: rgba(255, 255, 255, 0.5);
         }
 
+        /* Light mode empty state */
+        [data-bs-theme="light"] .empty-state {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
         .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.3;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.5;
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Welcome Info Alignment */
+        .welcome-features {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .welcome-features li {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .welcome-features .material-symbols-rounded {
+            flex-shrink: 0;
+            margin-right: 0.75rem;
         }
     </style>
     <!-- end vite CSS & JS -->
 </head>
 <style>
-    /* Exciting HUD animations and effects */
-            @keyframes pulse {
-                0% {
-                    transform: scale(1);
-                }
-    
-                50% {
-                    transform: scale(1.05);
-                }
-    
-                100% {
-                    transform: scale(1);
-                }
+    .fade-in {
+                animation: fadeIn 0.5s ease-in;
             }
     
-            @keyframes glow {
-                0% {
-                    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-                }
-    
-                50% {
-                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
-                }
-    
-                100% {
-                    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-                }
-            }
-    
-            @keyframes slideInUp {
+            @keyframes fadeIn {
                 from {
                     opacity: 0;
-                    transform: translateY(30px);
+                    transform: translateY(-10px);
                 }
     
                 to {
@@ -752,330 +566,126 @@
                 }
             }
     
-            @keyframes fadeInScale {
-                from {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-    
-                to {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-    
-            /* Enhanced HUD card styling */
-            .hud-card {
-                animation: slideInUp 0.6s ease-out;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(59, 130, 246, 0.2);
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
-            }
-    
-            .hud-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(59, 130, 246, 0.3);
-                border-color: rgba(59, 130, 246, 0.4);
-            }
-    
-            /* Command center enhancements */
-            .command-center-content {
-                animation: fadeInScale 0.8s ease-out;
-            }
-    
-            .hCard {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-                border: 1px solid rgba(0, 255, 255, 0.3);
-                box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-            }
-    
-            /* Upgrade button special effects */
-            [data-bs-target="#upgradeModal"] {
-                position: relative;
-                overflow: hidden;
-            }
-    
-            [data-bs-target="#upgradeModal"]:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-                transition: left 0.5s;
-            }
-    
-            [data-bs-target="#upgradeModal"]:hover:before {
-                left: 100%;
-            }
-    
-            /* Chart containers with glow */
-            #freebie-chart-1,
-            #freebie-chart-2,
-            #freebie-chart-3 {
-                border-radius: 8px;
-                background: rgba(0, 0, 0, 0.1);
-            }
-    
-            /* Enhanced stat numbers */
-            .stat-number {
-                background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                font-weight: 700;
-            }
-    
-            /* Weather widget enhancement */
-            .weather-stat {
-                font-size: 2rem;
-                font-weight: 700;
-                text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-            }
-    
-            /* Mobile-specific responsive adjustments */
-            @media (max-width: 575.98px) {
-                .hud-card {
-                    padding: 1rem !important;
-                }
-    
-                .hud-card .card-header {
-                    padding: 0.75rem 1rem !important;
-                }
-    
-                .hud-card .card-body {
-                    padding: 1rem !important;
-                }
-    
-                .hud-card .card-footer {
-                    padding: 0.75rem 1rem !important;
-                }
-    
-                .command-center-content .hCard {
-                    padding: 1rem !important;
-                }
-    
-                .card-value {
-                    font-size: 1.5rem !important;
-                }
-    
-                .data-label {
-                    font-size: 0.65rem !important;
-                }
-    
-                .data-number {
-                    font-size: 0.85rem !important;
-                }
-    
-                .card-chart {
-                    height: 80px !important;
-                    margin-top: 0.5rem !important;
-                }
-    
-                /* Smaller icon sizes on mobile */
-                .btn .material-symbols-rounded {
-                    font-size: 20px !important;
-                }
-    
-                /* Reduce padding on action buttons */
-                .btn-cyber-compact {
-                    padding: 0.375rem 0.75rem !important;
-                    font-size: 0.875rem !important;
-                }
-    
-                /* Table responsiveness */
-                .table-sm td,
-                .table-sm th {
-                    padding: 0.5rem 0.25rem !important;
-                    font-size: 0.75rem !important;
-                }
-    
-                /* Modal adjustments */
-                .modal-body {
-                    padding: 1rem !important;
-                }
-    
-                .modal-body .py-4 {
-                    padding-top: 1.5rem !important;
-                    padding-bottom: 1.5rem !important;
-                }
-            }
-    
-            @media (max-width: 767.98px) {
-                .display-5 {
-                    font-size: 2rem;
-                }
-    
-                .dashboard-margin {
-                    margin-bottom: 0 !important;
-                }
-    
-                /* Ensure cards have proper spacing */
-                .hud-card {
-                    margin-bottom: 1rem;
-                }
-            }
-    
-            /* Medium screens */
-            @media (min-width: 768px) and (max-width: 991.98px) {
-                .col-md-3 h2 {
-                    font-size: 1.5rem;
-                }
-            }
-    
-            /* Staggered animation delays for cards */
-            .hud-card:nth-child(1) {
-                animation-delay: 0.1s;
-            }
-    
-            .hud-card:nth-child(2) {
-                animation-delay: 0.2s;
-            }
-    
-            .hud-card:nth-child(3) {
-                animation-delay: 0.3s;
-            }
-    
-            .hud-card:nth-child(4) {
-                animation-delay: 0.4s;
-            }
-    
-            .hud-card:nth-child(5) {
-                animation-delay: 0.5s;
-            }
-    
-            .hud-card:nth-child(6) {
-                animation-delay: 0.6s;
-            }
-    
-            /* Pulse dot for live status */
-            .pulse-dot {
-                width: 8px;
-                height: 8px;
-                background-color: #10b981;
-                border-radius: 50%;
+            .pulse-icon {
                 animation: pulse 2s infinite;
             }
     
-            /* Map card styling */
-            .map-card {
-                border: 1px solid rgba(59, 130, 246, 0.3);
-                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
-            }
-    
-            .map-card:hover {
-                border-color: rgba(59, 130, 246, 0.5);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
-            }
-    
-            .vector-map {
-                border-radius: 8px;
-                overflow: hidden;
-            }
-    
-            .pulse-badge {
-                animation: pulse 2s infinite;
-            }
-    
-            /* Map metrics styling */
-            .map-card .card-footer .text-cyan {
-                color: #00ffff !important;
-            }
-    
-            .map-card .card-footer .text-magenta {
-                color: #ff00ff !important;
-            }
-    
-            .map-card .card-footer .text-warning {
-                color: #ffff00 !important;
-            }
-    
-            .map-card .card-footer .text-success {
-                color: #00ff00 !important;
-            }
-    
-            /* Floating animation for map particles */
-            @keyframes float {
+            @keyframes pulse {
     
                 0%,
                 100% {
-                    transform: translateY(0px) translateX(0px);
-                    opacity: 0.6;
-                }
-    
-                25% {
-                    transform: translateY(-10px) translateX(5px);
                     opacity: 1;
                 }
     
                 50% {
-                    transform: translateY(-5px) translateX(-5px);
-                    opacity: 0.8;
-                }
-    
-                75% {
-                    transform: translateY(-15px) translateX(3px);
-                    opacity: 0.9;
+                    opacity: 0.5;
                 }
             }
     
-            /* Dash animation for map lines */
-            @keyframes dash {
-                to {
-                    stroke-dashoffset: -10;
-                }
-            }
-    
-            /* TODO Widget Styles */
-            .todo-widget {
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-            }
-    
-            .todo-widget .card-body {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
-    
-            .todo-widget .tab-content {
-                flex: 1;
-            }
-    
-            .nav-tabs-hud .nav-link {
-                background: transparent;
-                border: none;
-                color: rgba(255, 255, 255, 0.7);
-                padding: 0.75rem 1rem;
-                border-radius: 0;
-                position: relative;
+            .activity-timeline .activity-item {
                 transition: all 0.3s ease;
             }
     
-            .nav-tabs-hud .nav-link:hover {
-                color: rgba(0, 255, 255, 0.9);
+            .activity-timeline .activity-item:hover {
                 background: rgba(0, 255, 255, 0.05);
+                border-radius: 4px;
+                padding: 4px;
             }
     
-            .nav-tabs-hud .nav-link.active {
-                color: #00ffff;
-                background: rgba(0, 255, 255, 0.1);
-                border-bottom: 2px solid #00ffff;
+            .live-indicator i {
+                opacity: 0.6;
+                filter: drop-shadow(0 0 10px currentColor);
             }
     
-            .nav-tabs-hud .nav-link.active::after {
+            /* Performance Monitor Widget Styles */
+            .performance-monitor-widget .performance-metrics {
+                padding: 0;
+            }
+    
+            .performance-monitor-widget .metric-row {
+                position: relative;
+            }
+    
+            .performance-monitor-widget .metric-label {
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+    
+            .performance-monitor-widget .metric-value {
+                font-weight: 700;
+                font-size: 0.95rem;
+            }
+    
+            .performance-bar {
+                width: 100%;
+                height: 12px;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 6px;
+                overflow: hidden;
+                position: relative;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+    
+            .performance-fill {
+                height: 100%;
+                transition: width 0.6s ease-in-out;
+                border-radius: 6px;
+                position: relative;
+                box-shadow: 0 0 10px currentColor;
+            }
+    
+            .performance-fill::after {
                 content: '';
                 position: absolute;
-                bottom: -2px;
+                top: 0;
                 left: 0;
                 right: 0;
-                height: 2px;
-                background: linear-gradient(90deg, #00ffff, #ff00ff);
-                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+                height: 50%;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+                border-radius: 6px 6px 0 0;
             }
     
+            /* Gradient backgrounds with glow effects */
+            .bg-gradient-cyan {
+                background: linear-gradient(90deg, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 1) 100%);
+                box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.3);
+            }
+    
+            .bg-gradient-magenta {
+                background: linear-gradient(90deg, rgba(255, 0, 255, 0.8) 0%, rgba(255, 0, 255, 1) 100%);
+                box-shadow: 0 0 15px rgba(255, 0, 255, 0.5), inset 0 0 10px rgba(255, 0, 255, 0.3);
+            }
+    
+            .bg-gradient-success {
+                background: linear-gradient(90deg, rgba(16, 185, 129, 0.8) 0%, rgba(16, 185, 129, 1) 100%);
+                box-shadow: 0 0 15px rgba(16, 185, 129, 0.5), inset 0 0 10px rgba(16, 185, 129, 0.3);
+            }
+    
+            .bg-gradient-warning {
+                background: linear-gradient(90deg, rgba(255, 193, 7, 0.8) 0%, rgba(255, 193, 7, 1) 100%);
+                box-shadow: 0 0 15px rgba(255, 193, 7, 0.5), inset 0 0 10px rgba(255, 193, 7, 0.3);
+            }
+    
+            /* Animated pulse effect for high values */
+            @keyframes barPulse {
+    
+                0%,
+                100% {
+                    opacity: 1;
+                }
+    
+                50% {
+                    opacity: 0.85;
+                }
+            }
+    
+            .performance-fill[style*="width: 8"],
+            .performance-fill[style*="width: 9"] {
+                animation: barPulse 2s ease-in-out infinite;
+            }
+    
+            /* TODO Widget Styles */
             .todo-list {
                 padding: 0.5rem;
                 /* Height will be set dynamically by JavaScript */
@@ -1089,49 +699,15 @@
                 background: rgba(255, 255, 255, 0.03);
                 border: 1px solid rgba(0, 255, 255, 0.1);
                 border-radius: 8px;
-                margin-bottom: 0.5rem;
                 padding: 0.75rem;
+                margin-bottom: 0.5rem;
                 transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
             }
     
-            .todo-item:hover {
-                background: rgba(0, 255, 255, 0.05);
-                border-color: rgba(0, 255, 255, 0.3);
-                transform: translateX(4px);
-            }
-    
-            .todo-item.completed {
-                background: rgba(16, 185, 129, 0.1);
-                border-color: rgba(16, 185, 129, 0.3);
-                opacity: 0.8;
-            }
-    
-            .todo-item.completed .todo-text {
-                text-decoration: line-through;
-                color: rgba(255, 255, 255, 0.5);
-            }
-    
-            .todo-item::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 3px;
-                background: linear-gradient(180deg, #00ffff, #ff00ff);
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-    
-            .todo-item:hover::before {
-                opacity: 1;
-            }
-    
-            .todo-item.completed::before {
-                background: #10b981;
-                opacity: 1;
+            /* Light mode overrides for todo items */
+            [data-bs-theme="light"] .todo-item {
+                background: rgba(0, 0, 0, 0.03);
+                border: 1px solid rgba(0, 0, 0, 0.1);
             }
     
             .todo-content {
@@ -1140,25 +716,66 @@
                 gap: 0.75rem;
             }
     
+            .todo-item:hover {
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(0, 255, 255, 0.2);
+                transform: translateX(2px);
+            }
+    
+            /* Light mode hover */
+            [data-bs-theme="light"] .todo-item:hover {
+                background: rgba(0, 0, 0, 0.05);
+                border-color: rgba(0, 0, 0, 0.2);
+            }
+    
+            .todo-item.completed {
+                opacity: 0.6;
+                background: rgba(0, 180, 0, 0.25);
+                border-color: rgba(0, 180, 0, 0.6);
+            }
+    
+            /* Light mode completed */
+            [data-bs-theme="light"] .todo-item.completed {
+                background: rgba(0, 100, 0, 0.3);
+                border-color: rgba(0, 100, 0, 0.7);
+            }
+    
             .todo-checkbox {
                 width: 18px;
                 height: 18px;
                 border: 2px solid rgba(0, 255, 255, 0.5);
                 border-radius: 4px;
-                background: transparent;
                 cursor: pointer;
-                position: relative;
                 transition: all 0.3s ease;
+                position: relative;
+                flex-shrink: 0;
+            }
+    
+            /* Light mode checkbox */
+            [data-bs-theme="light"] .todo-checkbox {
+                border: 2px solid rgba(0, 0, 0, 0.3);
             }
     
             .todo-checkbox:hover {
-                border-color: #00ffff;
+                border-color: rgba(0, 255, 255, 0.8);
                 box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
             }
     
+            /* Light mode checkbox hover */
+            [data-bs-theme="light"] .todo-checkbox:hover {
+                border-color: rgba(0, 0, 0, 0.6);
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            }
+    
             .todo-checkbox.checked {
-                background: #10b981;
-                border-color: #10b981;
+                background: rgba(0, 255, 255, 0.8);
+                border-color: rgba(0, 255, 255, 1);
+            }
+    
+            /* Light mode checked checkbox */
+            [data-bs-theme="light"] .todo-checkbox.checked {
+                background: rgba(0, 0, 0, 0.8);
+                border-color: rgba(0, 0, 0, 1);
             }
     
             .todo-checkbox.checked::after {
@@ -1167,16 +784,36 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                color: white;
+                color: #000;
                 font-size: 12px;
                 font-weight: bold;
             }
     
+            /* Light mode checked checkbox text */
+            [data-bs-theme="light"] .todo-checkbox.checked::after {
+                color: #fff;
+            }
+    
             .todo-text {
                 flex: 1;
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--body-color);
                 font-size: 0.9rem;
                 line-height: 1.4;
+            }
+    
+            /* Light mode todo text */
+            [data-bs-theme="light"] .todo-text {
+                color: #000 !important;
+            }
+    
+            .todo-item.completed .todo-text {
+                text-decoration: line-through;
+                opacity: 0.7;
+            }
+    
+            /* Light mode completed todo text */
+            [data-bs-theme="light"] .todo-item.completed .todo-text {
+                color: #333 !important;
             }
     
             .todo-actions {
@@ -1191,58 +828,99 @@
             }
     
             .todo-action-btn {
-                width: 28px;
-                height: 28px;
+                background: none;
                 border: none;
-                background: rgba(255, 255, 255, 0.1);
-                color: rgba(255, 255, 255, 0.7);
-                border-radius: 4px;
+                color: rgba(255, 0, 0, 0.6);
                 cursor: pointer;
+                padding: 0.25rem;
+                border-radius: 4px;
                 transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
     
             .todo-action-btn:hover {
-                background: rgba(255, 0, 0, 0.2);
-                color: #ff6b6b;
-                transform: scale(1.1);
+                color: rgba(255, 0, 0, 1);
+                background: rgba(255, 0, 0, 0.1);
             }
     
             .form-control-hud {
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(0, 255, 255, 0.2);
-                color: rgba(255, 255, 255, 0.9);
-                border-radius: 8px 0 0 8px;
+                color: var(--body-color);
+                border-radius: 8px;
+            }
+    
+            /* Light mode form control */
+            [data-bs-theme="light"] .form-control-hud {
+                background: rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0.2);
             }
     
             .form-control-hud:focus {
                 background: rgba(255, 255, 255, 0.08);
-                border-color: #00ffff;
-                box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
-                color: rgba(255, 255, 255, 0.95);
+                border-color: rgba(0, 255, 255, 0.5);
+                box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.1);
+                color: var(--body-color);
+            }
+    
+            /* Light mode form control focus */
+            [data-bs-theme="light"] .form-control-hud:focus {
+                background: rgba(0, 0, 0, 0.08);
+                border-color: rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
             }
     
             .form-control-hud::placeholder {
                 color: rgba(255, 255, 255, 0.5);
             }
     
+            /* Light mode placeholder */
+            [data-bs-theme="light"] .form-control-hud::placeholder {
+                color: rgba(0, 0, 0, 0.5);
+            }
+    
             .input-group .btn-cyber {
-                border-radius: 0 8px 8px 0;
-                border-left: none;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
             }
     
             .empty-state {
                 text-align: center;
-                padding: 2rem;
+                padding: 2rem 1rem;
                 color: rgba(255, 255, 255, 0.5);
             }
     
+            /* Light mode empty state */
+            [data-bs-theme="light"] .empty-state {
+                color: rgba(0, 0, 0, 0.5);
+            }
+    
             .empty-state i {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-                opacity: 0.3;
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+                opacity: 0.5;
+            }
+    
+            .empty-state p {
+                margin: 0;
+                font-size: 0.9rem;
+            }
+    
+            /* Welcome Info Alignment */
+            .welcome-features {
+                text-align: center;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+    
+            .welcome-features li {
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+    
+            .welcome-features .material-symbols-rounded {
+                flex-shrink: 0;
+                margin-right: 0.75rem;
             }
 </style>
 <!-- Theme Initialization (runs before page render to prevent flash) -->
@@ -2448,22 +2126,22 @@
                         <div class="card-body mb-0 pb-0">
                             <div class="row g-2 g-lg-3 mb-3 mb-lg-4">
                                 <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                    <div class="text-center p-2 p-lg-3 bg-glass rounded-4">
                                         <h2 class="text-primary mb-1 mb-lg-2 fs-3 fs-lg-2">82</h2> <small class="d-block" style="font-size: 0.75rem;">Admin Pages</small>
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                    <div class="text-center p-2 p-lg-3 bg-glass rounded-4">
                                         <h2 class="text-success mb-1 mb-lg-2 fs-3 fs-lg-2">9</h2> <small class="d-block" style="font-size: 0.75rem;">Full Apps</small>
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                    <div class="text-center p-2 p-lg-3 bg-glass rounded-4">
                                         <h2 class="text-warning mb-1 mb-lg-2 fs-3 fs-lg-2">2</h2> <small class="d-block" style="font-size: 0.75rem;">Menu Layouts</small>
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3">
-                                    <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
+                                    <div class="text-center p-2 p-lg-3 bg-glass rounded-4">
                                         <h2 class="text-info mb-1 mb-lg-2 fs-3 fs-lg-2">35</h2> <small class="d-block" style="font-size: 0.75rem;">Docs Pages</small>
                                     </div>
                                 </div>
@@ -4023,6 +3701,11 @@
             console.log('Initializing TODO widget with', tasks.length, 'tasks');
             renderTasks();
         }
+
+        // Initialize TODO widget when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initTodoWidget, 200);
+        });
     </script>
     <!-- end page-specific scripts -->
     <!-- start additional utilities -->
