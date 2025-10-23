@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="8MUBmRCXZgW7Jqig9IjcdnuE0A55RXQO6MFKto8r">
+    <meta name="csrf-token" content="voROPFYhUTeUrxSNYx3Z2fDHHAvTwhJ56xTfOx8W">
     <title>Dashboard | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -420,6 +420,43 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
+
+        /* Map card styling */
+        .map-card {
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+        }
+
+        .map-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .vector-map {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pulse-badge {
+            animation: pulse 2s infinite;
+        }
+
+        /* Map metrics styling */
+        .map-card .card-footer .text-cyan {
+            color: #00ffff !important;
+        }
+
+        .map-card .card-footer .text-magenta {
+            color: #ff00ff !important;
+        }
+
+        .map-card .card-footer .text-warning {
+            color: #ffff00 !important;
+        }
+
+        .map-card .card-footer .text-success {
+            color: #00ff00 !important;
+        }
     </style>
     <!-- end vite CSS & JS -->
 </head>
@@ -669,6 +706,43 @@
                 background-color: #10b981;
                 border-radius: 50%;
                 animation: pulse 2s infinite;
+            }
+    
+            /* Map card styling */
+            .map-card {
+                border: 1px solid rgba(59, 130, 246, 0.3);
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+            }
+    
+            .map-card:hover {
+                border-color: rgba(59, 130, 246, 0.5);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+    
+            .vector-map {
+                border-radius: 8px;
+                overflow: hidden;
+            }
+    
+            .pulse-badge {
+                animation: pulse 2s infinite;
+            }
+    
+            /* Map metrics styling */
+            .map-card .card-footer .text-cyan {
+                color: #00ffff !important;
+            }
+    
+            .map-card .card-footer .text-magenta {
+                color: #ff00ff !important;
+            }
+    
+            .map-card .card-footer .text-warning {
+                color: #ffff00 !important;
+            }
+    
+            .map-card .card-footer .text-success {
+                color: #00ff00 !important;
             }
 </style>
 <!-- Theme Initialization (runs before page render to prevent flash) -->
@@ -1525,7 +1599,7 @@
             <!-- LIVE ANALYTICS WIDGETS -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-3 g-lg-4 mb-4">
                 <div class="col d-flex">
-                    <div class="hud-card w-100 card-component dashboard-margin">
+                    <div class="hud-card w-100 live-card dashboard-margin">
                         <div class="card-header rounded-top-4">
                             <div class="card-action float-end">
                                 <div class="btn-group">
@@ -1545,7 +1619,7 @@
                         <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
                             <div class="row">
                                 <div class="col-6">
-                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">5</p> <span class="badge bg-success rounded-pill fs-6">Components</span>
+                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">10</p> <span class="badge bg-success rounded-pill fs-6">Pages</span>
                                     <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="UI components included in free version"><i
                                     class="material-symbols-rounded text-primary"
                                     style="font-size: 1rem;">question_mark</i></span>
@@ -1617,7 +1691,7 @@
                     </div>
                 </div>
                 <div class="col d-flex">
-                    <div class="hud-card w-100 card-component dashboard-margin">
+                    <div class="hud-card live-card w-100 dashboard-margin">
                         <div class="card-header rounded-top-4">
                             <h6 class="mb-0 d-flex align-items-center">Upgrade Potential</h6>
                         </div>
@@ -1637,81 +1711,59 @@
                     </div>
                 </div>
             </div>
-            <!-- FEATURE COMPARISON & STATS -->
+            <!-- USA MAP WIDGET -->
             <div class="row g-3 g-lg-4 mb-4">
-                <!-- Comparison Table -->
-                <div class="col-12 col-lg-4">
-                    <div class="hud-card dashboard-margin h-100">
+                <div class="col-12">
+                    <div class="hud-card map-card">
                         <div class="card-header rounded-top-4">
-                            <h5 class="card-title mb-0 fs-6 fs-lg-5">Free vs Full</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">Live USA Operations</h5>
+                                <div class="d-flex align-items-center gap-2"> <span class="badge bg-success pulse-badge">
+                                <i class="material-symbols-rounded" style="font-size: 14px;">bolt</i> Live
+                            </span>
+                                    <button class="btn btn-outline-primary btn-sm" id="refreshMapData"> <i class="material-symbols-rounded" style="font-size: 16px;">refresh</i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-sm table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Feature</th>
-                                            <th class="text-center">Free</th>
-                                            <th class="text-center">Full</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><small>Dashboards</small>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-success badge-sm">1</span>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-primary badge-sm">5</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><small>Total Pages</small>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-success badge-sm">~5</span>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-primary badge-sm">80+</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><small>Applications</small>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><small>Menu Layouts</small>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-success badge-sm">1</span>
-                                            </td>
-                                            <td class="text-center"><span class="badge bg-primary badge-sm">2</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><small>Livewire</small>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><small>Support</small>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
-                                            </td>
-                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="card-body" style="padding: 1.5rem;">
+                            <div id="usa-live-map" class="vector-map" style="height: 350px;">
+                            </div>
+                        </div>
+                        <div class="card-footer rounded-bottom-4">
+                            <div class="row g-3 pb-2 pt-1">
+                                <div class="col-6 col-md-3">
+                                    <div class="text-center">
+                                        <h6 class="mb-1 text-cyan" id="activeLocations">50</h6> <small class="text-muted">Active States</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="text-center">
+                                        <h6 class="mb-1 text-magenta" id="totalRevenue">1.2M</h6> <small class="text-muted">Total Score</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="text-center">
+                                        <h6 class="mb-1 text-warning" id="activeUsers">5</h6> <small class="text-muted">Elite States</small>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="text-center">
+                                        <h6 class="mb-1 text-success" id="responseTime">24K</h6> <small class="text-muted">Avg Performance</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- FEATURE COMPARISON & STATS -->
+            <div class="row g-3 g-lg-4 mb-4">
+                <!-- Comparison Table -->
+                <div class="col-12 col-lg-4">
+                </div>
                 <!-- What's in the Full Version -->
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-5">
                     <div class="hud-card dashboard-margin h-100">
                         <div class="card-header rounded-top-4">
                             <h5 class="card-title mb-0 fs-6 fs-lg-5">What's in the Full Version?</h5>
@@ -1806,35 +1858,72 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6">
-                    <div class="hud-card dashboard-margin">
+                    <div class="hud-card dashboard-margin h-100">
                         <div class="card-header rounded-top-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="mb-0">ROI</h6>
-                                <div class="btn-group btn-group-sm" role="group">
-                                    <button type="button" class="btn btn-outline-success active" data-period="q">M</button>
-                                    <button type="button" class="btn btn-outline-success" data-period="y">Y</button>
-                                </div>
-                            </div>
+                            <h5 class="card-title mb-0 fs-6 fs-lg-5">Free vs Full</h5>
                         </div>
-                        <div class="card-body text-center py-4">
-                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-success text-white font-size-18">
-                            <span class="material-symbols-rounded">trending_up</span>
-                                </span>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th class="text-center">Free</th>
+                                            <th class="text-center">Full</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><small>Dashboards</small>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-success badge-sm">1</span>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-primary badge-sm">5</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>Total Pages</small>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-success badge-sm">~5</span>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-primary badge-sm">80+</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>Applications</small>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>Menu Layouts</small>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-success badge-sm">1</span>
+                                            </td>
+                                            <td class="text-center"><span class="badge bg-primary badge-sm">2</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>Livewire</small>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>Support</small>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-danger" style="font-size: 16px;">close</i>
+                                            </td>
+                                            <td class="text-center"><i class="material-symbols-rounded text-success" style="font-size: 16px;">check</i>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Return on Investment</p>
-                            <h3 class="text-success mb-1">24.5%</h3>
-                            <div class="d-flex justify-content-center gap-3 mt-2">
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">INVESTED</small>
-                                    <small class="text-white fw-bold">$2.8M</small>
-                                </div>
-                                <div class="vr">
-                                </div>
-                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">RETURNS</small>
-                                    <small class="text-success fw-bold">$3.5M</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Last 12 months</small>
                         </div>
                     </div>
                 </div>
@@ -2368,6 +2457,128 @@
     console.log('🎁 UltraViolet Free Version - Limited Feature Set');
         console.log('Check the sidebar menu to see included pages');
 
+        // USA Map functionality
+        let usaMap;
+        const mapData = {
+            'US-AL': 15000,
+            'US-AK': 20000,
+            'US-AZ': 25000,
+            'US-AR': 12000,
+            'US-CA': 45000,
+            'US-CO': 18000,
+            'US-CT': 16000,
+            'US-DE': 8000,
+            'US-FL': 35000,
+            'US-GA': 22000,
+            'US-HI': 10000,
+            'US-ID': 14000,
+            'US-IL': 28000,
+            'US-IN': 19000,
+            'US-IA': 15000,
+            'US-KS': 13000,
+            'US-KY': 16000,
+            'US-LA': 18000,
+            'US-ME': 12000,
+            'US-MD': 17000,
+            'US-MA': 20000,
+            'US-MI': 25000,
+            'US-MN': 19000,
+            'US-MS': 14000,
+            'US-MO': 18000,
+            'US-MT': 11000,
+            'US-NE': 12000,
+            'US-NV': 16000,
+            'US-NH': 13000,
+            'US-NJ': 22000,
+            'US-NM': 15000,
+            'US-NY': 40000,
+            'US-NC': 26000,
+            'US-ND': 9000,
+            'US-OH': 27000,
+            'US-OK': 16000,
+            'US-OR': 18000,
+            'US-PA': 25000,
+            'US-RI': 10000,
+            'US-SC': 17000,
+            'US-SD': 10000,
+            'US-TN': 20000,
+            'US-TX': 42000,
+            'US-UT': 15000,
+            'US-VT': 10000,
+            'US-VA': 23000,
+            'US-WA': 22000,
+            'US-WV': 12000,
+            'US-WI': 20000,
+            'US-WY': 8000
+        };
+
+        function initializeUSAMap() {
+            const mapContainer = document.getElementById('usa-live-map');
+            if (!mapContainer) return;
+
+            mapContainer.innerHTML = '';
+
+            if (typeof window.jsVectorMap === 'undefined') {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js';
+                script.onload = () => loadMapData();
+                document.head.appendChild(script);
+                return;
+            }
+            loadMapData();
+        }
+
+        function loadMapData() {
+            if (typeof window.jsVectorMapMaps === 'undefined' || !window.jsVectorMapMaps.us_merc_en) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/us/us-merc-en.js';
+                script.onload = () => createMap();
+                document.head.appendChild(script);
+                return;
+            }
+            createMap();
+        }
+
+        function createMap() {
+            usaMap = new jsVectorMap({
+                selector: '#usa-live-map',
+                map: 'us_merc_en',
+                data: mapData,
+                colors: ['#d1e7dd', '#198754'],
+                hoverColor: '#198754',
+                backgroundColor: 'transparent',
+                showTooltip: true,
+                zoomButtons: false,
+                zoomOnScroll: false
+            });
+        }
+
+        function updateMapData() {
+            Object.keys(mapData).forEach(state => {
+                const change = (Math.random() - 0.5) * 1000;
+                mapData[state] = Math.max(0, mapData[state] + change);
+            });
+            if (usaMap) initializeUSAMap();
+            updateLiveMetrics();
+        }
+
+        function updateLiveMetrics() {
+            const totalScore = Object.values(mapData).reduce((sum, val) => sum + val, 0);
+            const activeLocations = Object.values(mapData).filter(val => val > 0).length;
+            const eliteStates = Math.floor(Math.random() * 8) + 3;
+            const avgPerformance = Math.floor(Math.random() * 10000) + 20000;
+
+            const activeLocationsEl = document.getElementById('activeLocations');
+            const totalRevenueEl = document.getElementById('totalRevenue');
+            const activeUsersEl = document.getElementById('activeUsers');
+            const responseTimeEl = document.getElementById('responseTime');
+
+            if (activeLocationsEl) activeLocationsEl.textContent = activeLocations;
+            if (totalRevenueEl) totalRevenueEl.textContent = (totalScore / 1000000).toFixed(1) + 'M';
+            if (activeUsersEl) activeUsersEl.textContent = eliteStates;
+            if (responseTimeEl) responseTimeEl.textContent = (avgPerformance / 1000).toFixed(0) + 'K';
+        }
+
         // Initialize ApexCharts for the new analytics widgets
         function initFreebieCharts() {
             // First chart - Free Features
@@ -2542,192 +2753,30 @@
             freebieChart3.render();
         }
 
-        // Animated Chart Bars - Network Traffic
-        function updateCharts() {
-            document.querySelectorAll(".chart-bar").forEach((bar) => {
-                const baseHeight = parseFloat(bar.style.getPropertyValue("--height"));
-                const randomVariation = Math.random() * 10 - 5;
-                const newHeight = Math.max(5, Math.min(100, baseHeight + randomVariation));
-                bar.style.height = `${newHeight}%`;
-            });
-        }
-
-        // Update Network Traffic Values
-        function updateNetworkTraffic() {
-            const totalEl = document.getElementById('total-traffic');
-            const inboundEl = document.getElementById('inbound-traffic');
-            const outboundEl = document.getElementById('outbound-traffic');
-
-            if (totalEl && inboundEl && outboundEl) {
-                // Get current values
-                let total = parseFloat(totalEl.textContent);
-                let inbound = parseFloat(inboundEl.textContent);
-                let outbound = parseFloat(outboundEl.textContent);
-
-                // Add random variation
-                const totalVariation = (Math.random() * 0.1 - 0.05); // ±0.05 TB/s
-                const inboundVariation = (Math.random() * 20 - 10); // ±10 GB/s
-                const outboundVariation = (Math.random() * 20 - 10); // ±10 GB/s
-
-                // Update values with bounds
-                total = Math.max(1.0, Math.min(2.0, total + totalVariation));
-                inbound = Math.max(500, Math.min(800, inbound + inboundVariation));
-                outbound = Math.max(600, Math.min(900, outbound + outboundVariation));
-
-                // Update DOM with formatted values
-                totalEl.textContent = total.toFixed(2);
-                inboundEl.textContent = inbound.toFixed(1);
-                outboundEl.textContent = outbound.toFixed(1);
-            }
-        }
-
-        // Add some exciting HUD animations
-        function addHudAnimations() {
-            // Add pulsing effect to upgrade buttons
-            document.querySelectorAll('[data-bs-target="#upgradeModal"]').forEach(btn => {
-                btn.style.animation = 'pulse 2s infinite';
-            });
-
-            // Add glow effect to HUD cards
-            document.querySelectorAll('.hud-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-2px)';
-                    this.style.boxShadow =
-                        '0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.3)';
-                    this.style.transition = 'all 0.3s ease';
-                });
-
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = '';
-                });
-            });
-
-            // Add typing effect to the main title
-            const title = document.querySelector('.uv-header');
-            if (title) {
-                const text = title.textContent;
-                title.textContent = '';
-                let i = 0;
-                const typeWriter = () => {
-                    if (i < text.length) {
-                        title.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 100);
-                    }
-                };
-                setTimeout(typeWriter, 1000);
-            }
-        }
-
-        // HUD Mode toggle function
-        function toggleHudMode() {
-            const body = document.body;
-            const isHudMode = body.classList.contains('hud-mode');
-
-            if (isHudMode) {
-                body.classList.remove('hud-mode');
-                localStorage.setItem('hudMode', 'false');
-                showNotification('HUD Mode Disabled', 'Standard mode activated', 'info');
-            } else {
-                body.classList.add('hud-mode');
-                localStorage.setItem('hudMode', 'true');
-                showNotification('HUD Mode Enabled', 'Futuristic interface activated', 'success');
-            }
-        }
-
-        // Background mode change function
-        function changeBackgroundMode() {
-            const backgrounds = ['default', 'animated', 'cosmic', 'neon'];
-            const currentBg = localStorage.getItem('backgroundMode') || 'default';
-            const currentIndex = backgrounds.indexOf(currentBg);
-            const nextIndex = (currentIndex + 1) % backgrounds.length;
-            const nextBg = backgrounds[nextIndex];
-
-            localStorage.setItem('backgroundMode', nextBg);
-
-            // Apply background change
-            document.body.className = document.body.className.replace(/bg-\w+/g, '');
-            document.body.classList.add(`bg-${nextBg}`);
-
-            showNotification('Background Changed', `Switched to ${nextBg} mode`, 'info');
-        }
-
-        // Notification system for HUD interactions
-        function showNotification(title, message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
-            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
-            notification.innerHTML = `
-                <strong>${title}</strong> ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `;
-
-            document.body.appendChild(notification);
-
-            // Auto remove after 3 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.remove();
-                }
-            }, 3000);
-        }
-
-        // Initialize HUD mode from localStorage
-        function initializeHudMode() {
-            const hudMode = localStorage.getItem('hudMode');
-            const backgroundMode = localStorage.getItem('backgroundMode') || 'default';
-
-            if (hudMode === 'true') {
-                document.body.classList.add('hud-mode');
-            }
-
-            if (backgroundMode !== 'default') {
-                document.body.classList.add(`bg-${backgroundMode}`);
-            }
-        }
-
         // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial heights for network traffic bars
-            document.querySelectorAll(".chart-bar").forEach((bar) => {
-                const height = bar.style.getPropertyValue("--height");
-                bar.style.height = height;
-            });
-
-            // Initialize HUD mode and background
-            initializeHudMode();
-
             // Initialize charts
             initFreebieCharts();
 
-            // Add HUD animations
-            addHudAnimations();
-
-            // Update charts and network traffic every 3 seconds for live animation
-            setInterval(() => {
-                updateCharts();
-                updateNetworkTraffic();
-            }, 3000);
-
-            // Add some excitement with random HUD effects
-            setInterval(() => {
-                // Randomly highlight different cards
-                const cards = document.querySelectorAll('.hud-card, .card-component');
-                const randomCard = cards[Math.floor(Math.random() * cards.length)];
-                if (randomCard) {
-                    randomCard.style.boxShadow = '0 0 30px rgba(59, 130, 246, 0.5)';
-                    setTimeout(() => {
-                        randomCard.style.boxShadow = '';
-                    }, 1000);
-                }
-            }, 5000);
-
-            // Show welcome notification
+            // Initialize USA Map
             setTimeout(() => {
-                showNotification('Welcome to UltraViolet Free!',
-                    'Explore the HUD interface and upgrade for more features', 'info');
-            }, 2000);
+                initializeUSAMap();
+            }, 500);
+
+            // Set up map refresh button
+            const refreshBtn = document.getElementById('refreshMapData');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    updateMapData();
+                    this.style.transform = 'rotate(360deg)';
+                    setTimeout(() => {
+                        this.style.transform = 'rotate(0deg)';
+                    }, 500);
+                });
+            }
+
+            // Auto-update map data every 10 seconds
+            setInterval(updateMapData, 10000);
         });
     </script>
     <!-- end page-specific scripts -->
