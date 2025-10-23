@@ -207,17 +207,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  // Intercept search functionality
-  const searchInputs = document.querySelectorAll(
-    '.search-input, [data-search], input[type="search"]'
-  )
-  searchInputs.forEach((input) => {
-    input.addEventListener('focus', function (e) {
-      e.preventDefault()
-      this.blur()
-      showProFeatureModal('Advanced Search')
-    })
-  })
+  // Search functionality (freebie version - basic functionality without anime.js)
+  setupMainSearchBar()
 
   // NOTE: Menu links are now dynamically filtered by FreebieMenuService
   // Only pages that exist are shown in the menu, so no need to intercept clicks
@@ -374,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.animationFrame = null
       this.isRunning = false
       this.currentAnimation = 'space'
-      
+
       // Configuration matching the original
       this.config = {
         space: {
@@ -414,16 +405,16 @@ document.addEventListener('DOMContentLoaded', function () {
       this.canvas.style.left = '0'
       this.canvas.style.width = '100%'
       this.canvas.style.height = '100%'
-      this.canvas.style.zIndex = '1'
+      this.canvas.style.zIndex = '-1'
       this.canvas.style.pointerEvents = 'none'
       container.appendChild(this.canvas)
 
       this.ctx = this.canvas.getContext('2d')
-      
+
       // Set running flag BEFORE setting up stars and animating
       this.isRunning = true
       this.currentAnimation = 'space'
-      
+
       this.setupStars()
       this.animateStars()
 
@@ -497,17 +488,41 @@ document.addEventListener('DOMContentLoaded', function () {
         cancelAnimationFrame(this.animationFrame)
         this.animationFrame = null
       }
+
+      // Clear the canvas and container to restore content visibility
+      if (this.canvas) {
+        this.canvas.remove()
+        this.canvas = null
+        this.ctx = null
+      }
+
+      // Clear the background container
+      const container = document.getElementById('admin-background')
+      if (container) {
+        container.innerHTML = ''
+      }
     }
   }
 
   // Background animation controls (freebie version - starfield only)
   const backgroundSelect = document.getElementById('admin-background-select')
   const backgroundContainer = document.getElementById('admin-background')
-  
+
+  // Ensure the background container is properly positioned
+  if (backgroundContainer) {
+    backgroundContainer.style.position = 'fixed'
+    backgroundContainer.style.top = '0'
+    backgroundContainer.style.left = '0'
+    backgroundContainer.style.width = '100%'
+    backgroundContainer.style.height = '100%'
+    backgroundContainer.style.zIndex = '-1'
+    backgroundContainer.style.pointerEvents = 'none'
+  }
+
   if (backgroundSelect && backgroundContainer) {
     // Use separate localStorage key for freebie to avoid conflicts with pro version
     const freebieAnimationKey = 'freebie-background-animation'
-    
+
     // Set initial value - always start with 'none' for freebie
     const savedAnimation = localStorage.getItem(freebieAnimationKey) || 'none'
     backgroundSelect.value = savedAnimation
@@ -527,19 +542,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add change listener
     backgroundSelect.addEventListener('change', (e) => {
       const animationType = e.target.value
-      
+
       // For freebie, only allow 'none' and 'space' (starfield)
       if (animationType === 'none' || animationType === 'space') {
         // Valid freebie option - save and apply
         localStorage.setItem(freebieAnimationKey, animationType)
-        console.log(`Freebie background animation switched to: ${animationType}`)
-        
+        console.log(
+          `Freebie background animation switched to: ${animationType}`
+        )
+
         if (animationType === 'space') {
           document.body.style.backgroundColor = 'transparent'
           starfield.init('admin-background')
         } else {
           starfield.stop()
-          document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+          document.body.style.backgroundColor =
+            starfield.getCSSVar('--bs-body-bg')
         }
       } else {
         // Invalid option - show upgrade modal and always revert to "none"
@@ -548,7 +566,8 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundSelect.value = 'none'
         localStorage.setItem(freebieAnimationKey, 'none')
         starfield.stop()
-        document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+        document.body.style.backgroundColor =
+          starfield.getCSSVar('--bs-body-bg')
         console.log('Reverted to "none" for invalid selection')
       }
     })
@@ -575,6 +594,212 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Check initial scroll position
   handleScroll()
+
+  // Search functionality (freebie version - basic functionality without anime.js)
+  function setupMainSearchBar() {
+    /* search control */
+
+    // Search functionality with CSS transitions (no anime.js needed)
+    const searchControl = document.querySelector('.search-control')
+    const searchPopup = document.querySelector('.search-popup')
+    const searchClose = document.querySelector('.search-close')
+    const mobileSearchBtn = document.querySelector('.mobile-search-btn')
+    const mobileSearchClose = document.querySelector('.mobile-search-close')
+
+    // Set initial state
+    if (searchPopup) {
+      searchPopup.style.opacity = '0'
+      searchPopup.style.transform = 'translateY(-20px)'
+      searchPopup.style.display = 'none'
+      searchPopup.style.pointerEvents = 'none'
+      searchPopup.style.transition = 'opacity 0.3s ease, transform 0.3s ease'
+    }
+
+    // Hide close button initially
+    if (searchClose) {
+      searchClose.style.display = 'none'
+    }
+
+    // Function to toggle close button visibility based on input text
+    const toggleCloseButton = () => {
+      if (!searchControl || !searchClose) return
+
+      if (searchControl.value.trim().length > 0) {
+        searchClose.style.display = 'block'
+      } else {
+        searchClose.style.display = 'none'
+      }
+    }
+
+    // Function to open search popup
+    const openSearchPopup = () => {
+      if (!searchPopup) return
+
+      searchPopup.style.display = 'block'
+      searchPopup.style.pointerEvents = 'auto'
+
+      // Use requestAnimationFrame to ensure display change is applied before transition
+      requestAnimationFrame(() => {
+        searchPopup.style.opacity = '1'
+        searchPopup.style.transform = 'translateY(0)'
+      })
+    }
+
+    // Function to close search popup
+    const closeSearchPopup = () => {
+      if (!searchPopup) return
+
+      searchPopup.style.opacity = '0'
+      searchPopup.style.transform = 'translateY(-20px)'
+
+      // Hide after transition completes
+      setTimeout(() => {
+        searchPopup.style.display = 'none'
+        searchPopup.style.pointerEvents = 'none'
+      }, 300)
+    }
+
+    // Desktop search control
+    if (searchControl && searchPopup) {
+      console.log('search active')
+      searchControl.addEventListener('click', openSearchPopup)
+
+      // Show/hide close button as user types
+      searchControl.addEventListener('input', toggleCloseButton)
+
+      // Show/hide close button on focus
+      searchControl.addEventListener('focus', toggleCloseButton)
+    }
+
+    // Close button - clear input text
+    if (searchClose && searchControl) {
+      searchClose.addEventListener('click', (e) => {
+        e.stopPropagation() // Prevent triggering search popup
+        searchControl.value = '' // Clear the input
+        searchClose.style.display = 'none' // Hide the close button
+        searchControl.focus() // Keep focus on input
+      })
+    }
+
+    // Mobile search button
+    if (mobileSearchBtn && searchPopup) {
+      mobileSearchBtn.addEventListener('click', openSearchPopup)
+    }
+
+    // Mobile close button
+    if (mobileSearchClose && searchPopup) {
+      mobileSearchClose.addEventListener('click', closeSearchPopup)
+    }
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (searchPopup && searchPopup.style.display === 'block') {
+        const isClickInsideSearch = searchPopup.contains(e.target)
+        const isSearchControl =
+          searchControl && searchControl.contains(e.target)
+        const isMobileSearchBtn =
+          mobileSearchBtn && mobileSearchBtn.contains(e.target)
+
+        if (!isClickInsideSearch && !isSearchControl && !isMobileSearchBtn) {
+          closeSearchPopup()
+        }
+      }
+    })
+
+    // Canvas Scanner Animation (simplified version without anime.js)
+    const canvas = document.getElementById('hud-scanner-canvas')
+    if (canvas) {
+      const ctx = canvas.getContext('2d')
+      let scanY = 0
+      let scanDir = 1
+      let canvasWidth = 0
+      let canvasHeight = 0
+
+      function resizeCanvas() {
+        const container = canvas.parentElement
+        canvasWidth = container.clientWidth
+        canvasHeight = container.clientHeight
+        canvas.width = canvasWidth
+        canvas.height = canvasHeight
+      }
+
+      function drawScanner() {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight)
+
+        // Create gradient for the scan line
+        const gradient = ctx.createLinearGradient(0, scanY - 20, 0, scanY + 20)
+        gradient.addColorStop(0, 'rgba(0, 190, 255, 0)')
+        gradient.addColorStop(0.5, 'rgba(0, 190, 255, 0.7)')
+        gradient.addColorStop(1, 'rgba(0, 190, 255, 0)')
+
+        // Draw the line
+        ctx.fillStyle = gradient
+        ctx.fillRect(0, scanY - 20, canvasWidth, 40)
+
+        // Draw faint horizontal grid lines
+        ctx.strokeStyle = 'rgba(0, 190, 255, 0.05)'
+        ctx.lineWidth = 1
+        for (let y = 0; y < canvasHeight; y += 20) {
+          ctx.beginPath()
+          ctx.moveTo(0, y)
+          ctx.lineTo(canvasWidth, y)
+          ctx.stroke()
+        }
+
+        // Move scan line
+        scanY += scanDir * (canvasHeight / 200) // Adjust speed
+
+        // Reverse direction
+        if (scanY > canvasHeight) {
+          scanY = canvasHeight
+          scanDir = -1
+        } else if (scanY < 0) {
+          scanY = 0
+          scanDir = 1
+        }
+
+        requestAnimationFrame(drawScanner)
+      }
+
+      // Initial setup
+      resizeCanvas()
+      window.addEventListener('resize', resizeCanvas)
+      drawScanner()
+    } else {
+      console.warn('Canvas element #hud-scanner-canvas not found.')
+    }
+
+    // Command Palette Filter
+    const searchInput = document.getElementById('hud-search')
+    const commandList = document.getElementById('command-list')
+
+    if (searchInput && commandList) {
+      const listItems = commandList.getElementsByTagName('li')
+
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase()
+
+        for (let item of listItems) {
+          const commandName =
+            item.querySelector('.command-name')?.textContent.toLowerCase() || ''
+          const commandDesc =
+            item.querySelector('.command-desc')?.textContent.toLowerCase() || ''
+
+          if (
+            commandName.includes(searchTerm) ||
+            commandDesc.includes(searchTerm)
+          ) {
+            item.style.display = 'flex'
+          } else {
+            item.style.display = 'none'
+          }
+        }
+      })
+    } else {
+      console.warn('Search input or command list element not found.')
+    }
+  }
 
   console.log('UltraViolet Freebie initialized')
 })
