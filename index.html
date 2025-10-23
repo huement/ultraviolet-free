@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="HIqBI9ig9hbVEOx9w83VfBNFPPcE1Yrfh8789gNb">
+    <meta name="csrf-token" content="Ew1pLnS905KAmhBMnGJZ6jlHAnpiXYnXMMToyjD8">
     <title>Freebie | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -168,8 +168,94 @@
             vertical-align: middle !important;
         }
     </style>
+    <style>
+    @keyframes logoPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .logo-container {
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-main {
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover .logo-main {
+            filter: drop-shadow(0 6px 12px rgba(138, 43, 226, 0.4)) !important;
+        }
+    </style>
     <!-- end vite CSS & JS -->
 </head>
+<style>
+    @keyframes logoPulse {
+                0% {
+                    transform: scale(1);
+                    opacity: 0.3;
+                }
+    
+                100% {
+                    transform: scale(1.1);
+                    opacity: 0.6;
+                }
+            }
+    
+            @keyframes gradientShift {
+                0% {
+                    background-position: 0% 50%;
+                }
+    
+                50% {
+                    background-position: 100% 50%;
+                }
+    
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+    
+            .logo-container {
+                transition: transform 0.3s ease;
+            }
+    
+            .logo-container:hover {
+                transform: scale(1.05);
+            }
+    
+            .logo-main {
+                transition: all 0.3s ease;
+            }
+    
+            .logo-container:hover .logo-main {
+                filter: drop-shadow(0 6px 12px rgba(138, 43, 226, 0.4)) !important;
+            }
+</style>
 </head>
 
 <body class="font-sans antialiased basic-layout ">
@@ -180,8 +266,8 @@
                     <div class="site-logo"> <a class="navbar-brand" href="index.html">
                             <img class="logo-icon me-2" src="images/uv/UV.png" width="45"
                                 alt="logo">
-                            <span class="logo-text"><img src="images/uv/ultra-white.png" class="img-fluid"
-                                alt="UltraViolet Logo Text" width="170" height="17"></span>
+                            <span class="logo-text"><img src="images/uv/ultra-white.png"
+                                    class="img-fluid" alt="UltraViolet Logo Text" width="170" height="17"></span>
                         </a>
                     </div>
                 </div>
@@ -203,7 +289,7 @@
                             <a href="https://linkedin.com/company/huement" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Connect on LinkedIn"> <i class="material-symbols-rounded">link</i>
                             </a>
                         </li>
-                    </ul> <a href="admin-dashboard.html" class="btn btn-primary d-none text-dark d-lg-flex">ULTRAVIOLET</a>
+                    </ul> <a href="freebie-dashboard.html" class="btn btn-primary d-none text-dark d-lg-flex">ULTRAVIOLET</a>
                 </div>
             </div>
         </div>
@@ -222,7 +308,7 @@
                     <h1 class="display-3 fw-bold text-dark mb-3 mt-4">Welcome to <span class="text-white">UltraViolet</span> FREE</h1>
                     <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Experience the power of UltraViolet with this free edition. Get a taste of modern Bootstrap 5 admin dashboard design with production-ready HTML templates. Perfect for small projects and learning.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="admin-dashboard.html" class="btn btn-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">dashboard</i>
+                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="btn btn-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">dashboard</i>
                             Explore Free Dashboard</a>
                         <a href="#upgrade-section" class="btn btn-outline-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">star</i>
                             Upgrade to PRO</a>
@@ -807,12 +893,19 @@
         <div class="theme-bg-shapes-left" style="z-index: 0; pointer-events: none;">
         </div>
         <div class="container py-4" style="position: relative; z-index: 10;">
+            <div class="mb-4">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <div class="logo-container position-relative">
+                        <img src="images/uv/double-logo-white.png" alt="UltraViolet" class="logo-main" height="250" />
+                    </div>
+                </div>
+            </div>
             <h2 class="display-5 fw-bold text-dark mb-3">Ready to <span class="text-white">Upgrade</span>?</h2>
-            <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Join hundreds of developers using UltraViolet PRO to build stunning admin interfaces. Get both HTML and Laravel editions, 80+ pages, complete apps, and lifetime updates.</p>
+            <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Join us and start using UltraViolet PRO to build stunning admin interfaces. Get both HTML and Laravel editions, 80+ pages, complete apps, and ongoing updates for the next year.</p>
             <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
                 <a class="btn btn-dark btn-lg px-5" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-2">shopping_cart</i>
                     Purchase PRO Version</a>
-                <a class="btn btn-outline-dark btn-lg px-5" href="admin-dashboard.html"> <i class="material-symbols-rounded me-2">dashboard</i>
+                <a class="btn btn-outline-dark btn-lg px-5" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-2">dashboard</i>
                     Explore FREE Dashboard</a>
             </div>
             <div class="row justify-content-center mt-5">
@@ -1107,6 +1200,32 @@
                 
                 // Toggle body class
                 document.body.classList.toggle('fixed-top-header');
+              }
+            });
+          }
+          
+          // Initialize settings menu toggle
+          const settingsToggle = document.getElementById('admin-settings-toggle');
+          const settingsMenu = document.getElementById('admin-settings-menu');
+          let isSettingsMenuOpen = false;
+          
+          if (settingsToggle && settingsMenu) {
+            settingsToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              isSettingsMenuOpen = !isSettingsMenuOpen;
+              
+              if (isSettingsMenuOpen) {
+                settingsMenu.classList.add('show');
+              } else {
+                settingsMenu.classList.remove('show');
+              }
+            });
+            
+            // Close settings menu when clicking outside
+            document.addEventListener('click', (e) => {
+              if (isSettingsMenuOpen && !settingsMenu.contains(e.target) && !settingsToggle.contains(e.target)) {
+                isSettingsMenuOpen = false;
+                settingsMenu.classList.remove('show');
               }
             });
           }

@@ -59,6 +59,23 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+  // Close sidebar when clicking close button
+  const sidebarClose = document.querySelector('.sidebar-close')
+  if (sidebarClose) {
+    sidebarClose.addEventListener('click', function (e) {
+      e.preventDefault()
+      document.body.classList.remove('toggled', 'sidebar-hovered')
+      if (sidebar) {
+        sidebar.classList.remove('mobile-open')
+      }
+      if (overlay) {
+        overlay.style.opacity = '0'
+        overlay.style.visibility = 'hidden'
+        setTimeout(() => (overlay.style.display = 'none'), 300)
+      }
+    })
+  }
+
   // Initialize Bootstrap components
   if (typeof bootstrap !== 'undefined') {
     // Popovers
@@ -104,6 +121,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Pro Feature Modal - Show upgrade prompt
   function showProFeatureModal(featureName) {
+    // Hide the admin settings menu if it's open
+    const settingsMenu = document.getElementById('admin-settings-menu')
+    if (settingsMenu && settingsMenu.classList.contains('show')) {
+      settingsMenu.classList.remove('show')
+      // Reset the settings menu state
+      if (window.isSettingsMenuOpen !== undefined) {
+        window.isSettingsMenuOpen = false
+      }
+    }
+
     const modalHtml = `
       <div class="modal fade" id="proFeatureModal" tabindex="-1" aria-labelledby="proFeatureModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -225,6 +252,329 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   }
+
+  // Initialize settings menu toggle
+  const settingsToggle = document.getElementById('admin-settings-toggle')
+  const settingsMenu = document.getElementById('admin-settings-menu')
+  let isSettingsMenuOpen = false
+
+  if (settingsToggle && settingsMenu) {
+    settingsToggle.addEventListener('click', (e) => {
+      e.preventDefault()
+      isSettingsMenuOpen = !isSettingsMenuOpen
+
+      if (isSettingsMenuOpen) {
+        settingsMenu.classList.add('show')
+      } else {
+        settingsMenu.classList.remove('show')
+      }
+    })
+
+    // Close settings menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (
+        isSettingsMenuOpen &&
+        !settingsMenu.contains(e.target) &&
+        !settingsToggle.contains(e.target)
+      ) {
+        isSettingsMenuOpen = false
+        settingsMenu.classList.remove('show')
+      }
+    })
+  }
+
+  // Dark/Light Mode Toggle
+  const darkModeToggle = document.getElementById('admin-dark-mode-switch')
+  if (darkModeToggle) {
+    // Apply dark or light mode
+    const applyMode = (isDark) => {
+      const theme = isDark ? 'dark' : 'light'
+      const htmlEl = document.documentElement
+
+      // Add transition class before theme change for smooth animation
+      htmlEl.classList.add('theme-transitioning')
+
+      // Set Bootstrap data-bs-theme attribute
+      htmlEl.setAttribute('data-bs-theme', theme)
+
+      // Save preference to localStorage
+      localStorage.setItem('theme-preference', theme)
+
+      // Log the theme change
+      console.log(`Theme switched to: ${theme}`)
+
+      // Remove transition class after animation completes
+      setTimeout(() => {
+        htmlEl.classList.remove('theme-transitioning')
+      }, 300)
+
+      // Dispatch custom event for other scripts to listen to
+      window.dispatchEvent(
+        new CustomEvent('themeChanged', {
+          detail: { theme, isDark }
+        })
+      )
+    }
+
+    // Get current theme from HTML attribute (already set by inline script in <head>)
+    const currentTheme =
+      document.documentElement.getAttribute('data-bs-theme') || 'dark'
+    const isDark = currentTheme === 'dark'
+
+    // Set initial toggle state to match current theme
+    darkModeToggle.checked = isDark
+
+    // Listen for toggle changes
+    darkModeToggle.addEventListener('change', (e) => {
+      applyMode(e.target.checked)
+    })
+
+    // Listen for system theme changes (if user hasn't set a preference)
+    if (window.matchMedia) {
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', (e) => {
+          // Only auto-switch if user hasn't manually set a preference
+          if (!localStorage.getItem('theme-preference')) {
+            const isDark = e.matches
+            darkModeToggle.checked = isDark
+            applyMode(isDark)
+            console.log(
+              'System theme changed, auto-switching to:',
+              isDark ? 'dark' : 'light'
+            )
+          }
+        })
+    }
+
+    console.log('Theme system initialized:', {
+      currentTheme,
+      isDark,
+      toggleFound: true
+    })
+  }
+
+  // Handle RTL toggle switch
+  const rtlSwitch = document.getElementById('admin-rtl-switch')
+  if (rtlSwitch) {
+    rtlSwitch.addEventListener('change', (e) => {
+      const isRTL = e.target.checked
+      const url = new URL(window.location.href)
+      url.searchParams.set('text', isRTL ? 'rtl' : 'ltr')
+      window.location.href = url.toString()
+    })
+  }
+
+  // Exact copy of the original starfield animation for freebie
+  class FreebieStarfield {
+    constructor() {
+      this.canvas = null
+      this.ctx = null
+      this.animationData = { stars: [] }
+      this.animationFrame = null
+      this.isRunning = false
+      this.currentAnimation = 'space'
+      
+      // Configuration matching the original
+      this.config = {
+        space: {
+          count: 800,
+          starColor: '', // Will be set by getCSSVar
+          speed: 1.5
+        }
+      }
+    }
+
+    // Get CSS variable value from the document (exact copy from original)
+    getCSSVar(varName) {
+      return (
+        getComputedStyle(document.documentElement)
+          .getPropertyValue(varName)
+          .trim() || 'rgba(0, 255, 255, 0.8)'
+      )
+    }
+
+    init(containerId = 'admin-background') {
+      this.stop() // Stop any existing animation
+
+      const container = document.getElementById(containerId)
+      if (!container) {
+        console.error(`Container #${containerId} not found`)
+        return false
+      }
+
+      // Clear container
+      container.innerHTML = ''
+
+      // Create canvas (exact copy from original)
+      this.canvas = document.createElement('canvas')
+      this.canvas.id = 'background-canvas'
+      this.canvas.style.position = 'fixed'
+      this.canvas.style.top = '0'
+      this.canvas.style.left = '0'
+      this.canvas.style.width = '100%'
+      this.canvas.style.height = '100%'
+      this.canvas.style.zIndex = '1'
+      this.canvas.style.pointerEvents = 'none'
+      container.appendChild(this.canvas)
+
+      this.ctx = this.canvas.getContext('2d')
+      
+      // Set running flag BEFORE setting up stars and animating
+      this.isRunning = true
+      this.currentAnimation = 'space'
+      
+      this.setupStars()
+      this.animateStars()
+
+      // Handle resize
+      window.addEventListener('resize', () => this.setupStars())
+
+      return true
+    }
+
+    // Exact copy of setupStars from original
+    setupStars() {
+      this.canvas.width = window.innerWidth
+      this.canvas.height = window.innerHeight
+      this.animationData.stars = []
+
+      const cfg = this.config.space
+      for (let i = 0; i < cfg.count; i++) {
+        this.animationData.stars.push({
+          x: (Math.random() - 0.5) * this.canvas.width,
+          y: (Math.random() - 0.5) * this.canvas.height,
+          z: Math.random() * this.canvas.width
+        })
+      }
+    }
+
+    // Exact copy of animateStars from original
+    animateStars() {
+      if (!this.isRunning || this.currentAnimation !== 'space') return
+
+      const centerX = this.canvas.width / 2
+      const centerY = this.canvas.height / 2
+      const cfg = this.config.space
+
+      // Clear canvas with background (use theme-aware body background)
+      this.ctx.fillStyle = this.getCSSVar('--bs-body-bg')
+      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+
+      for (const star of this.animationData.stars) {
+        star.z -= cfg.speed
+
+        if (star.z <= 0) {
+          star.x = (Math.random() - 0.5) * this.canvas.width
+          star.y = (Math.random() - 0.5) * this.canvas.height
+          star.z = this.canvas.width
+        }
+
+        // 3D perspective projection
+        const sx = (star.x / star.z) * centerX + centerX
+        const sy = (star.y / star.z) * centerY + centerY
+        const radius = Math.max(0, (1 - star.z / this.canvas.width) * 2)
+
+        if (
+          sx > 0 &&
+          sx < this.canvas.width &&
+          sy > 0 &&
+          sy < this.canvas.height
+        ) {
+          this.ctx.beginPath()
+          this.ctx.arc(sx, sy, radius, 0, Math.PI * 2)
+          this.ctx.fillStyle = this.getCSSVar('--hud-primary')
+          this.ctx.fill()
+        }
+      }
+
+      this.animationFrame = requestAnimationFrame(() => this.animateStars())
+    }
+
+    stop() {
+      this.isRunning = false
+      if (this.animationFrame) {
+        cancelAnimationFrame(this.animationFrame)
+        this.animationFrame = null
+      }
+    }
+  }
+
+  // Background animation controls (freebie version - starfield only)
+  const backgroundSelect = document.getElementById('admin-background-select')
+  const backgroundContainer = document.getElementById('admin-background')
+  
+  if (backgroundSelect && backgroundContainer) {
+    // Use separate localStorage key for freebie to avoid conflicts with pro version
+    const freebieAnimationKey = 'freebie-background-animation'
+    
+    // Set initial value - always start with 'none' for freebie
+    const savedAnimation = localStorage.getItem(freebieAnimationKey) || 'none'
+    backgroundSelect.value = savedAnimation
+
+    // Initialize starfield
+    const starfield = new FreebieStarfield()
+
+    // Apply initial animation (matching original logic)
+    if (savedAnimation === 'space') {
+      document.body.style.backgroundColor = 'transparent'
+      starfield.init('admin-background')
+    } else {
+      starfield.stop()
+      document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+    }
+
+    // Add change listener
+    backgroundSelect.addEventListener('change', (e) => {
+      const animationType = e.target.value
+      
+      // For freebie, only allow 'none' and 'space' (starfield)
+      if (animationType === 'none' || animationType === 'space') {
+        // Valid freebie option - save and apply
+        localStorage.setItem(freebieAnimationKey, animationType)
+        console.log(`Freebie background animation switched to: ${animationType}`)
+        
+        if (animationType === 'space') {
+          document.body.style.backgroundColor = 'transparent'
+          starfield.init('admin-background')
+        } else {
+          starfield.stop()
+          document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+        }
+      } else {
+        // Invalid option - show upgrade modal and always revert to "none"
+        showProFeatureModal('Advanced Background Animations')
+        // Always revert to "none" for invalid selections
+        backgroundSelect.value = 'none'
+        localStorage.setItem(freebieAnimationKey, 'none')
+        starfield.stop()
+        document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+        console.log('Reverted to "none" for invalid selection')
+      }
+    })
+  }
+
+  // Add scroll listener to apply "page-scrolled" class
+  let isScrolled = false
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+    if (scrollTop > 10 && !isScrolled) {
+      // Scrolled down - add class
+      document.body.classList.add('page-scrolled')
+      isScrolled = true
+    } else if (scrollTop <= 10 && isScrolled) {
+      // Back to top - remove class
+      document.body.classList.remove('page-scrolled')
+      isScrolled = false
+    }
+  }
+
+  // Add scroll listener
+  window.addEventListener('scroll', handleScroll, { passive: true })
+
+  // Check initial scroll position
+  handleScroll()
 
   console.log('UltraViolet Freebie initialized')
 })
