@@ -345,15 +345,44 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
-  // Handle RTL toggle switch
+  // Handle RTL toggle switch (static export compatible)
   const rtlSwitch = document.getElementById('admin-rtl-switch')
   if (rtlSwitch) {
+    // Check for RTL preference in localStorage or URL parameter
+    const urlParams = new URLSearchParams(window.location.search)
+    const urlRTL = urlParams.get('text') === 'rtl'
+    const savedRTL = localStorage.getItem('rtl-preference') === 'true'
+    const isRTL = urlRTL || savedRTL
+
+    // Set initial state
+    rtlSwitch.checked = isRTL
+    applyRTL(isRTL)
+
     rtlSwitch.addEventListener('change', (e) => {
       const isRTL = e.target.checked
-      const url = new URL(window.location.href)
-      url.searchParams.set('text', isRTL ? 'rtl' : 'ltr')
-      window.location.href = url.toString()
+      applyRTL(isRTL)
+      localStorage.setItem('rtl-preference', isRTL.toString())
     })
+  }
+
+  // Function to apply RTL/LTR styling
+  function applyRTL(isRTL) {
+    const html = document.documentElement
+    const body = document.body
+
+    if (isRTL) {
+      html.setAttribute('dir', 'rtl')
+      html.setAttribute('lang', 'ar')
+      body.classList.add('rtl')
+      body.classList.remove('ltr')
+    } else {
+      html.setAttribute('dir', 'ltr')
+      html.setAttribute('lang', 'en')
+      body.classList.add('ltr')
+      body.classList.remove('rtl')
+    }
+
+    console.log(`RTL mode ${isRTL ? 'enabled' : 'disabled'}`)
   }
 
   // Exact copy of the original starfield animation for freebie
@@ -797,7 +826,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       })
     } else {
-      console.warn('Search input or command list element not found.')
+      // This is normal for freebie version - command palette is a pro feature
+      console.log(
+        'Command palette not found - this is normal for freebie version'
+      )
     }
   }
 
