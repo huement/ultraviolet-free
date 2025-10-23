@@ -6,8 +6,8 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="KQ4JctkesWYuALEGNwbAzXS4nFmdDwM09uVXGvEk">
-    <title>Freebie Dashboard | UltraViolet Pro</title>
+    <meta name="csrf-token" content="8MUBmRCXZgW7Jqig9IjcdnuE0A55RXQO6MFKto8r">
+    <title>Dashboard | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,7 +174,130 @@
         }
     </style>
     <style>
-    /* Mobile-specific responsive adjustments */
+    /* Exciting HUD animations and effects */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+            }
+
+            100% {
+                box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Enhanced HUD card styling */
+        .hud-card {
+            animation: slideInUp 0.6s ease-out;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+        }
+
+        .hud-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        /* Command center enhancements */
+        .command-center-content {
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .hCard {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Upgrade button special effects */
+        [data-bs-target="#upgradeModal"] {
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-bs-target="#upgradeModal"]:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        [data-bs-target="#upgradeModal"]:hover:before {
+            left: 100%;
+        }
+
+        /* Chart containers with glow */
+        #freebie-chart-1,
+        #freebie-chart-2,
+        #freebie-chart-3 {
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced stat numbers */
+        .stat-number {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Weather widget enhancement */
+        .weather-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Mobile-specific responsive adjustments */
         @media (max-width: 575.98px) {
             .hud-card {
                 padding: 1rem !important;
@@ -263,11 +386,168 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* Staggered animation delays for cards */
+        .hud-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .hud-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .hud-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .hud-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .hud-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .hud-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        /* Pulse dot for live status */
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
     </style>
     <!-- end vite CSS & JS -->
 </head>
 <style>
-    /* Mobile-specific responsive adjustments */
+    /* Exciting HUD animations and effects */
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+    
+                50% {
+                    transform: scale(1.05);
+                }
+    
+                100% {
+                    transform: scale(1);
+                }
+            }
+    
+            @keyframes glow {
+                0% {
+                    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+                }
+    
+                50% {
+                    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+                }
+    
+                100% {
+                    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+                }
+            }
+    
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+    
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            @keyframes fadeInScale {
+                from {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+    
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+    
+            /* Enhanced HUD card styling */
+            .hud-card {
+                animation: slideInUp 0.6s ease-out;
+                transition: all 0.3s ease;
+                border: 1px solid rgba(59, 130, 246, 0.2);
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+            }
+    
+            .hud-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(59, 130, 246, 0.3);
+                border-color: rgba(59, 130, 246, 0.4);
+            }
+    
+            /* Command center enhancements */
+            .command-center-content {
+                animation: fadeInScale 0.8s ease-out;
+            }
+    
+            .hCard {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+                border: 1px solid rgba(0, 255, 255, 0.3);
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            }
+    
+            /* Upgrade button special effects */
+            [data-bs-target="#upgradeModal"] {
+                position: relative;
+                overflow: hidden;
+            }
+    
+            [data-bs-target="#upgradeModal"]:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.5s;
+            }
+    
+            [data-bs-target="#upgradeModal"]:hover:before {
+                left: 100%;
+            }
+    
+            /* Chart containers with glow */
+            #freebie-chart-1,
+            #freebie-chart-2,
+            #freebie-chart-3 {
+                border-radius: 8px;
+                background: rgba(0, 0, 0, 0.1);
+            }
+    
+            /* Enhanced stat numbers */
+            .stat-number {
+                background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 700;
+            }
+    
+            /* Weather widget enhancement */
+            .weather-stat {
+                font-size: 2rem;
+                font-weight: 700;
+                text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            }
+    
+            /* Mobile-specific responsive adjustments */
             @media (max-width: 575.98px) {
                 .hud-card {
                     padding: 1rem !important;
@@ -356,6 +636,40 @@
                     font-size: 1.5rem;
                 }
             }
+    
+            /* Staggered animation delays for cards */
+            .hud-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+    
+            .hud-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+    
+            .hud-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+    
+            .hud-card:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+    
+            .hud-card:nth-child(5) {
+                animation-delay: 0.5s;
+            }
+    
+            .hud-card:nth-child(6) {
+                animation-delay: 0.6s;
+            }
+    
+            /* Pulse dot for live status */
+            .pulse-dot {
+                width: 8px;
+                height: 8px;
+                background-color: #10b981;
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }
 </style>
 <!-- Theme Initialization (runs before page render to prevent flash) -->
 <script>
@@ -380,116 +694,102 @@
             <!-- SEARCH BAR -->
             <div class="search-bar flex-grow-1">
                 <div class="position-relative">
-                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
                     <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
                     <div class="search-popup">
-                        <div class="card rounded-4 overflow-hidden">
-                            <div class="card-header d-lg-none">
-                                <div class="position-relative">
-                                    <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search pages, components, or features..."> <span class="material-symbols-rounded position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                                </div>
-                            </div>
-                            <div class="card-body search-content">
-                                <div class="row g-3">
-                                    <!-- Left Column: Recently Visited -->
-                                    <div class="col-md-6">
-                                        <p class="search-title fw-bold mb-3 text-uppercase text-info">Recently Visited</p>
-                                        <div class="search-list d-flex flex-column gap-2"> <a href="admin-dashboard.html" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
-                                            <div class="list-icon">
-                                                <i class="material-symbols-rounded fs-4 text-primary">dashboard</i>
+                        <!-- This is the component -->
+                        <div class="hud-search-container">
+                            <!-- 1. THE "LIVE" ELEMENT: Canvas for animations -->
+                            <canvas id="hud-scanner-canvas">
+                            </canvas>
+                            <!-- 2. THE CONTENT: Sits on top of the canvas -->
+                            <div class="hud-content">
+                                <div class="row g-4">
+                                    <!-- Left Column: "Quick Access" reimagined as "Live Status" -->
+                                    <div class="col-lg-5">
+                                        <h3 class="hud-title">System Status</h3>
+                                        <div class="status-grid">
+                                            <!-- Status Item 1 -->
+                                            <div class="status-item">
+                                                <div class="status-label"> <i class="material-symbols-rounded">memory</i>
+                                                    <span>CPU Load</span>
+                                                </div>
+                                                <div class="status-value">32<small>%</small>
+                                                </div>
+                                                <div class="status-bar">
+                                                    <div class="status-bar-inner" style="width: 32%;">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-0 search-list-title">Dashboard</h6>
-                                                <p class="mb-0 small text-muted">Main admin dashboard</p>
+                                            <!-- Status Item 2 -->
+                                            <div class="status-item">
+                                                <div class="status-label"> <i class="material-symbols-rounded">storage</i>
+                                                    <span>DB Queries</span>
+                                                </div>
+                                                <div class="status-value">128<small>/s</small>
+                                                </div>
+                                                <div class="status-bar">
+                                                    <div class="status-bar-inner" style="width: 60%;">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="text-muted small">2m</div>
-                                        </a>
-                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
-                                            <div class="list-icon">
-                                                <i class="material-symbols-rounded fs-4 text-success">table_chart</i>
+                                            <!-- Status Item 3 -->
+                                            <div class="status-item">
+                                                <div class="status-label"> <i class="material-symbols-rounded">memory</i>
+                                                    <span>Memory</span>
+                                                </div>
+                                                <div class="status-value">4.5<small>GB</small>
+                                                </div>
+                                                <div class="status-bar">
+                                                    <div class="status-bar-inner" style="width: 45%;">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-0 search-list-title">Data Tables</h6>
-                                                <p class="mb-0 small text-muted">Grid components</p>
+                                            <!-- Status Item 4 -->
+                                            <div class="status-item">
+                                                <div class="status-label"> <i class="material-symbols-rounded">warning</i>
+                                                    <span>Errors</span>
+                                                </div>
+                                                <div class="status-value">12<small>/hr</small>
+                                                </div>
+                                                <div class="status-bar">
+                                                    <!-- Using Bootstrap's built-in color class here -->
+                                                    <div class="status-bar-inner bg-danger" style="width: 10%; box-shadow: 0 0 8px rgba(220, 53, 69, 0.7);">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="text-muted small">15m</div>
-                                        </a>
-                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
-                                            <div class="list-icon">
-                                                <i class="material-symbols-rounded fs-4 text-info">bar_chart</i>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-0 search-list-title">Analytics</h6>
-                                                <p class="mb-0 small text-muted">Charts & statistics</p>
-                                            </div>
-                                            <div class="text-muted small">1h</div>
-                                        </a>
-                                            <a href="javascript:;" class="search-list-item d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-secondary">
-                                            <div class="list-icon">
-                                                <i class="material-symbols-rounded fs-4 text-warning">settings</i>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="mb-0 search-list-title">Settings</h6>
-                                                <p class="mb-0 small text-muted">Configuration</p>
-                                            </div>
-                                            <div class="text-muted small">3h</div>
-                                        </a>
                                         </div>
                                     </div>
-                                    <!-- Right Column: Quick Access -->
-                                    <div class="col-md-6 border-start-md">
-                                        <p class="search-title fw-semibold mb-3 text-uppercase text-info">Quick Access</p>
-                                        <div class="row g-2">
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-danger"
-                                                        style="font-size: 2.5rem;">description</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Form Wizard</h6>
-                                            </a>
-                                            </div>
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-purple"
-                                                        style="font-size: 2.5rem;">calendar_month</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Calendar</h6>
-                                            </a>
-                                            </div>
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-cyan"
-                                                        style="font-size: 2.5rem;">email</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Email</h6>
-                                            </a>
-                                            </div>
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-teal"
-                                                        style="font-size: 2.5rem;">group</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Users</h6>
-                                            </a>
-                                            </div>
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-warning"
-                                                        style="font-size: 2.5rem;">shopping_cart</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Orders</h6>
-                                            </a>
-                                            </div>
-                                            <div class="col-6"> <a href="javascript:;" class="quick-access-card text-center p-3 rounded-3 d-block">
-                                                <div class="quick-access-icon mb-2">
-                                                    <i class="material-symbols-rounded text-success"
-                                                        style="font-size: 2.5rem;">inventory</i>
-                                                </div>
-                                                <h6 class="mb-0 small">Products</h6>
-                                            </a>
-                                            </div>
-                                        </div>
+                                    <!-- Right Column: Command Palette -->
+                                    <div class="col-lg-7">
+                                        <h3 class="hud-title">Command Palette</h3>
+                                        <ul class="command-list" id="command-list">
+                                            <!-- Items will be filtered by JS -->
+                                            <li class="command-list-item"> <span class="command-name">run:diagnostics</span>
+                                                <span class="command-desc">Run all system checks</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">db:connect</span>
+                                                <span class="command-desc">Connect to primary DB</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">db:backup</span>
+                                                <span class="command-desc">Initiate database backup</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">cache:clear</span>
+                                                <span class="command-desc">Clear application cache</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">logs:tail</span>
+                                                <span class="command-desc">View real-time error logs</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">users:list</span>
+                                                <span class="command-desc">Show all active users</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">deploy:prod</span>
+                                                <span class="command-desc">Deploy to production</span>
+                                            </li>
+                                            <li class="command-list-item"> <span class="command-name">server:restart</span>
+                                                <span class="command-desc">Restart web server</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -512,7 +812,7 @@
                     <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
                         <div class="border rounded-4 overflow-hidden p-relative z-5">
                             <div class="row row-cols-3 g-0 border-bottom">
-                                <div class="col border-end"> <a href="admin-apps-email.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-envelope-fill icon-xl" style="color: #ea4335;"></i>
                                     </div>
@@ -521,7 +821,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col border-end"> <a href="admin-apps-chat.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-chat-dots-fill icon-xl" style="color: #00aff0;"></i>
                                     </div>
@@ -551,7 +851,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col border-end"> <a href="admin-apps-invoice.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-receipt icon-xl" style="color: #f59e0b;"></i>
                                     </div>
@@ -560,7 +860,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col"> <a href="admin-apps-maps.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-map-fill icon-xl" style="color: #06b6d4;"></i>
                                     </div>
@@ -572,7 +872,7 @@
                             </div>
                             <!--end row-->
                             <div class="row row-cols-3 g-0 border-bottom">
-                                <div class="col border-end"> <a href="admin-apps-editor.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-file-text-fill icon-xl" style="color: #6366f1;"></i>
                                     </div>
@@ -581,7 +881,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col border-end"> <a href="admin-apps-ai-agent.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-robot icon-xl" style="color: #ec4899;"></i>
                                     </div>
@@ -590,7 +890,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col"> <a href="admin-apps-micro-blog.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-chat-left-text-fill icon-xl" style="color: #14b8a6;"></i>
                                     </div>
@@ -785,7 +1085,7 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href=".html" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                <li class="nav-item dropdown"> <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
                         <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
@@ -803,7 +1103,7 @@
                         <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">account_balance</i>Earning</a>
                         <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"> <i class="material-symbols-rounded">cloud_download</i>Downloads</a>
                         <hr class="dropdown-divider">
-                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="login.html"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
+                        <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded">power_settings_new</i>Login</a>
                     </div>
                 </li>
             </ul>
@@ -858,23 +1158,15 @@
         <div class="sidebar-nav">
             <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
                         <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
-                            aria-expanded="" aria-controls="collapse_dashboards"
+                            aria-expanded="show" aria-controls="collapse_dashboards"
                             data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
                                                         <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
                             </div>
                                                     <div class="menu-title">Dashboards</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_dashboards">
+                        <div class="collapse show rounded" id="collapse_dashboards">
                             <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link active"
-                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Freebie Dashboard">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Freebie Dashboard
-                                        </a>
-                                    </li>
                                     <li class="admin-nav-item">
                                         <a class="admin-nav-link "
                                             href="admin-analytics.html" data-bs-tooltip="tooltip"
@@ -1085,7 +1377,7 @@
     <main class="ultraviolet-main-wrapper">
         <div class="ultraviolet-content container-fluid">
             <!-- start breadcrumb -->
-            <div class="page-breadcrumb d-none d-sm-flex align-items-center dashboard-margin position-relative z-100">
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center position-relative z-100 mb-2 mb-lg-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb-chevron">
                         <li class="breadcrumb-item">
@@ -1100,7 +1392,7 @@
                 </nav>
                 <div class="ms-auto">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-cyber dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Quick Actions</button>
+                        <button type="button" class="btn btn-cyber btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Quick Actions</button>
                         <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
                             <li><a class="dropdown-item" href="admin-ui-alerts.html"><i
                         class="material-symbols-rounded me-2" style="font-size: 16px;">notifications</i>View Alerts</a>
@@ -1171,7 +1463,17 @@
                             <button class="btn btn-cyber btn-cyber-compact flex-fill flex-sm-grow-0" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"> <i class="material-symbols-rounded me-1">bolt</i><span class="d-none d-sm-inline">Quick
                             Actions</span><span class="d-inline d-sm-none">Actions</span>
                             </button>
-                            <button class="btn btn-cyber btn-cyber-compact flex-fill flex-sm-grow-0" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-1">star</i>Upgrade</button>
+                            <button class="btn btn-cyber btn-cyber-compact flex-fill flex-sm-grow-0" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-1">star</i><span class="d-none d-sm-inline">Upgrade to
+                            Pro</span><span class="d-inline d-sm-none">Upgrade</span>
+                            </button>
+                        </div>
+                        <!-- Live Status Indicator -->
+                        <div class="mt-3 d-flex justify-content-center align-items-center">
+                            <div class="d-flex align-items-center">
+                                <div class="pulse-dot me-2">
+                                </div> <small class="text-muted">Live Demo • <span class="text-success">9 Components Available</span> •
+                            <span class="text-warning">80+ Pro Features</span></small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1204,13 +1506,13 @@
                                     </a>
                                 </div>
                                 <div class="col-6 col-md-4 col-xl-4">
-                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="btn btn-soft-secondary bol w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">star</i>
-                                        <small class="text-center">Upgrade</small>
+                                    <a href="admin-ui-popovers.html" class="btn btn-outline-primary w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">help</i>
+                                        <small class="text-center">Popovers</small>
                                     </a>
                                 </div>
                                 <div class="col-6 col-md-4 col-xl-4">
-                                    <a href="https://huement.com/ultraviolet" target="_blank" class="btn btn-outline-success w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">shopping_cart</i>
-                                        <small class="text-center">Purchase</small>
+                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="btn btn-soft-secondary bol w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">star</i>
+                                        <small class="text-center">Upgrade</small>
                                     </a>
                                 </div>
                             </div>
@@ -1220,38 +1522,118 @@
                     </div>
                 </div>
             </div>
-            <!-- STATS ROW -->
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 g-lg-4 mb-4">
-                <div class="col">
-                    <div class="hud-card dashboard-margin">
-                        <div class="d-flex align-items-center mb-2"> <i class="material-symbols-rounded text-cyan me-2" style="font-size: 2rem; font-size: clamp(1.75rem, 4vw, 2.5rem); filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));">dashboard</i>
-                            <h6 class="orbitron mb-0 fs-6">Dashboard</h6>
+            <!-- LIVE ANALYTICS WIDGETS -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 g-3 g-lg-4 mb-4">
+                <div class="col d-flex">
+                    <div class="hud-card w-100 card-component dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="card-action float-end">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-info btn-xs dropdown-toggle" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">all_inclusive</i>All Features</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">star</i>Premium Features</a>
+                                        <a class="dropdown-item" href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">upgrade</i>Upgrade Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">Free Features</h6>
                         </div>
-                        <p class="mb-0 small text-muted">Main dashboard page included</p> <span class="badge bg-success rounded-pill mt-2">Included</span>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">5</p> <span class="badge bg-success rounded-pill fs-6">Components</span>
+                                    <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="UI components included in free version"><i
+                                    class="material-symbols-rounded text-primary"
+                                    style="font-size: 1rem;">question_mark</i></span>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="freebie-chart-1" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="hud-card dashboard-margin">
-                        <div class="d-flex align-items-center mb-2"> <i class="material-symbols-rounded text-warning me-2" style="font-size: 2rem; font-size: clamp(1.75rem, 4vw, 2.5rem); filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.7));">notifications</i>
-                            <h6 class="orbitron mb-0 fs-6">Alerts</h6>
+                <div class="col d-flex">
+                    <div class="hud-card w-100 dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">HUD Elements</h6>
                         </div>
-                        <p class="mb-0 small text-muted">Bootstrap 5 alert components</p> <span class="badge bg-success rounded-pill mt-2">Included</span>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">100%</div>
+                                    <div class="d-block p-relative w-100"> <span class="badge bg-success rounded-pill fs-6">Included</span>
+                                        <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Full HUD interface system"><i class="material-symbols-rounded text-primary"
+                                        style="font-size: 1rem;">question_mark</i></span>
+                                    </div>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="freebie-chart-2" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="hud-card dashboard-margin">
-                        <div class="d-flex align-items-center mb-2"> <i class="material-symbols-rounded text-magenta me-2" style="font-size: 2rem; font-size: clamp(1.75rem, 4vw, 2.5rem); filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.7));">smart_button</i>
-                            <h6 class="orbitron mb-0 fs-6">Buttons</h6>
+                <!-- WEATHER WIDGET -->
+                <div class="col d-flex">
+                    <div class="hud-card w-100 dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="card-action float-end">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary btn-xs dropdown-toggle" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;" data-bs-toggle="modal" data-bs-target="#freebieModal"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">info</i> Free Features</a>
+                                        <a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">menu</i> Quick Actions</a>
+                                        <a class="dropdown-item" href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal"><i class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">star</i> Upgrade</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-0 mt-0 d-flex align-items-center">System Status</h6>
                         </div>
-                        <p class="mb-0 small text-muted">Button styles & variants</p> <span class="badge bg-success rounded-pill mt-2">Included</span>
+                        <div class="card-body pt-2 pb-1">
+                            <div class="row g-2 align-items-center justify-content-center h-100">
+                                <div class="col-4 text-center"> <i class="material-symbols-rounded text-success" style="font-size: 3rem;">check_circle</i>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <h6 class="mb-1 fs-6">UltraViolet</h6>
+                                    <div class="text-success fw-bold small">Active</div>
+                                    <div class="text-muted" style="font-size: 0.7rem;">FREE VERSION</div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="weather-stat text-primary mb-0">5/5</div>
+                                    <div class="small text-muted">Components</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="hud-card dashboard-margin">
-                        <div class="d-flex align-items-center mb-2"> <i class="material-symbols-rounded text-success me-2" style="font-size: 2rem; font-size: clamp(1.75rem, 4vw, 2.5rem); filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.7));">grid_view</i>
-                            <h6 class="orbitron mb-0 fs-6">Grid & Modals</h6>
+                <div class="col d-flex">
+                    <div class="hud-card w-100 card-component dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <h6 class="mb-0 d-flex align-items-center">Upgrade Potential</h6>
                         </div>
-                        <p class="mb-0 small text-muted">Layout system & dialogs</p> <span class="badge bg-success rounded-pill mt-2">Included</span>
+                        <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">80+</p> <span class="badge bg-warning rounded-pill fs-6">Pro Pages</span>
+                                    <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Available in full version"><i class="material-symbols-rounded text-primary"
+                                    style="font-size: 1rem;">question_mark</i></span>
+                                </div>
+                                <div class="col-6 ps-0">
+                                    <div id="freebie-chart-3" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1334,7 +1716,7 @@
                         <div class="card-header rounded-top-4">
                             <h5 class="card-title mb-0 fs-6 fs-lg-5">What's in the Full Version?</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body mb-0 pb-0">
                             <div class="row g-2 g-lg-3 mb-3 mb-lg-4">
                                 <div class="col-6 col-lg-3">
                                     <div class="text-center p-2 p-lg-3 bg-dark bg-opacity-50 rounded-4">
@@ -1360,25 +1742,170 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <ul class="list-unstyled mb-3 mb-md-0">
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Email, Chat, Calendar apps</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Horizontal & Vertical menus</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Ecommerce & Crypto pages</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Email, Chat, Calendar apps</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Horizontal & Vertical menus</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Ecommerce & Crypto pages</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="list-unstyled mb-0">
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Laravel Livewire edition</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Premium support & updates</li>
-                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 18px;">check_circle</i>Lifetime free updates</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Laravel Livewire edition</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Premium support & updates</li>
+                                        <li class="mb-2 small"><i class="material-symbols-rounded me-2 text-cyan" style="font-size: 24px;">check_circle</i>Lifetime free updates</li>
                                     </ul>
                                 </div>
                             </div>
+                            <div class="px-2 py-1 d-block p-relative w-100 mx-auto mt-4 mb-0">
+                                <a href="https://huement.com/ultraviolet" class="btn btn-primary w-100" target="_blank"> <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    <span class="d-none d-sm-inline">Purchase Full Version</span>
+                                    <span class="d-inline d-sm-none">Purchase PRO</span>
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-footer bg-card-footer rounded-bottom-4">
-                            <a href="https://huement.com/ultraviolet" class="btn btn-primary w-100" target="_blank"> <i class="material-symbols-rounded me-2">shopping_cart</i>
-                                <span class="d-none d-sm-inline">Purchase Full Version</span>
-                                <span class="d-inline d-sm-none">Purchase PRO</span>
-                            </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Financial Metrics -->
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="hud-card dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">Profit Margin</h6>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"> <i class="material-symbols-rounded" style="font-size: 16px;">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">analytics</span>View Analytics</a>
+                                        <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">compare</span>Compare</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-primary text-white font-size-18">
+                            <span class="material-symbols-rounded">percent</span>
+                                </span>
+                            </div>
+                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Current Margin</p>
+                            <h3 class="text-primary mb-1">50.0%</h3>
+                            <div class="d-flex justify-content-center gap-3 mt-2">
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">GROSS</small>
+                                    <small class="text-success fw-bold">55%</small>
+                                </div>
+                                <div class="vr">
+                                </div>
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">NET</small>
+                                    <small class="text-primary fw-bold">50%</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Industry avg: 45%</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="hud-card dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">ROI</h6>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button type="button" class="btn btn-outline-success active" data-period="q">M</button>
+                                    <button type="button" class="btn btn-outline-success" data-period="y">Y</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-success text-white font-size-18">
+                            <span class="material-symbols-rounded">trending_up</span>
+                                </span>
+                            </div>
+                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Return on Investment</p>
+                            <h3 class="text-success mb-1">24.5%</h3>
+                            <div class="d-flex justify-content-center gap-3 mt-2">
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">INVESTED</small>
+                                    <small class="text-white fw-bold">$2.8M</small>
+                                </div>
+                                <div class="vr">
+                                </div>
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">RETURNS</small>
+                                    <small class="text-success fw-bold">$3.5M</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Last 12 months</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="hud-card dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">Avg. Payment Time</h6>
+                                <div class="dropdown">
+                                    <button class="btn btn-sm btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"> <i class="material-symbols-rounded" style="font-size: 16px;">more_vert</i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end border shadow shadow-lg"> <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">history</span>Payment History</a>
+                                        <a class="dropdown-item" href="javascript:;"><span class="material-symbols-rounded me-2"
+                                        style="font-size: 16px;">insights</span>Insights</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-warning text-white font-size-18">
+                            <span class="material-symbols-rounded">schedule</span>
+                                </span>
+                            </div>
+                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Collection Period</p>
+                            <h3 class="text-warning mb-1">28 days</h3>
+                            <div class="d-flex justify-content-center gap-3 mt-2">
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">FASTEST</small>
+                                    <small class="text-success fw-bold">14d</small>
+                                </div>
+                                <div class="vr">
+                                </div>
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">SLOWEST</small>
+                                    <small class="text-danger fw-bold">45d</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">Target: 30 days</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="hud-card dashboard-margin">
+                        <div class="card-header rounded-top-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6 class="mb-0">Active Clients</h6>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button type="button" class="btn btn-outline-info active" data-period="m">M</button>
+                                    <button type="button" class="btn btn-outline-info" data-period="y">Y</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-center py-4">
+                            <div class="avatar-sm mx-auto mb-3"> <span class="avatar-title rounded-circle bg-info text-white font-size-18">
+                            <span class="material-symbols-rounded">group</span>
+                                </span>
+                            </div>
+                            <p class="text-muted text-uppercase small mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Client Base</p>
+                            <h3 class="text-info mb-1">127</h3>
+                            <div class="d-flex justify-content-center gap-3 mt-2">
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">NEW</small>
+                                    <small class="text-success fw-bold">+12</small>
+                                </div>
+                                <div class="vr">
+                                </div>
+                                <div> <small class="text-muted d-block" style="font-size: 0.65rem;">CHURNED</small>
+                                    <small class="text-danger fw-bold">-3</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent border-top border-dark text-center pt-1 pb-1"> <small class="text-info text-uppercase">+12 this month</small>
                         </div>
                     </div>
                 </div>
@@ -1574,23 +2101,54 @@
                     </svg>
                 </div>
                 <div class="offcanvas-body">
-                    <div class="menu-header orbitron">Navigation</div>
+                    <div class="menu-header orbitron">🎯 Free Components</div>
                     <div class="list-group list-group-flush">
                         <a href="admin-ui-alerts.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">notifications</span>
-                            Alerts</a>
+                            <span>Alerts</span>
+                            <span class="badge bg-success ms-auto">Free</span>
+                        </a>
                         <a href="admin-ui-buttons.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">smart_button</span>
-                            Buttons</a>
+                            <span>Buttons</span>
+                            <span class="badge bg-success ms-auto">Free</span>
+                        </a>
                         <a href="admin-ui-modals.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">window</span>
-                            Modals</a>
+                            <span>Modals</span>
+                            <span class="badge bg-success ms-auto">Free</span>
+                        </a>
                         <a href="admin-ui-grid.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">grid_view</span>
-                            Grid System</a>
+                            <span>Grid System</span>
+                            <span class="badge bg-success ms-auto">Free</span>
+                        </a>
+                        <a href="admin-ui-popovers.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">help</span>
+                            <span>Popovers</span>
+                            <span class="badge bg-success ms-auto">Free</span>
+                        </a>
                     </div>
-                    <div class="menu-header orbitron">Upgrade</div>
+                    <div class="menu-header orbitron">🚀 HUD Features</div>
+                    <div class="list-group list-group-flush">
+                        <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#freebieModal" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">info</span>
+                            <span>Feature Overview</span>
+                            <span class="badge bg-info ms-auto">HUD</span>
+                        </a>
+                        <a href="javascript:;" class="list-group-item list-group-item-action" onclick="changeBackgroundMode()"> <span class="material-symbols-rounded">wallpaper</span>
+                            <span>Change Background</span>
+                            <span class="badge bg-info ms-auto">HUD</span>
+                        </a>
+                        <a href="javascript:;" class="list-group-item list-group-item-action" onclick="toggleHudMode()"> <span class="material-symbols-rounded">visibility</span>
+                            <span>Toggle HUD Mode</span>
+                            <span class="badge bg-info ms-auto">HUD</span>
+                        </a>
+                    </div>
+                    <div class="menu-header orbitron">⭐ Upgrade</div>
                     <div class="list-group list-group-flush">
                         <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">star</span>
-                            Upgrade to Full</a>
+                            <span>Upgrade to Pro</span>
+                            <span class="badge bg-warning ms-auto">80+ Pages</span>
+                        </a>
                         <a href="https://huement.com/ultraviolet" target="_blank" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">shopping_cart</span>
-                            Purchase Now</a>
+                            <span>Purchase Now</span>
+                            <span class="badge bg-primary ms-auto">ThemeForest</span>
+                        </a>
                     </div>
                     <div class="hud-divider-bottom" aria-hidden="true">
                         <svg viewBox="0 0 503.7 42.4" preserveAspectRatio="none">
@@ -1634,7 +2192,7 @@
     <!-- end overlay -->
     <!-- start footer -->
     <footer class="page-footer bg-secondary bg-opacity-25">
-        <p class="mb-0 text-dark">UltraViolet Pro | Copyright © 2025 Huement.com. All right reserved.</p>
+        <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
     </footer>
     <!-- end footer -->
     <!-- start CDN scripts -->
@@ -1810,6 +2368,180 @@
     console.log('🎁 UltraViolet Free Version - Limited Feature Set');
         console.log('Check the sidebar menu to see included pages');
 
+        // Initialize ApexCharts for the new analytics widgets
+        function initFreebieCharts() {
+            // First chart - Free Features
+            var freebieOptions1 = {
+                series: [{
+                    data: [5, 4, 6, 3, 7, 4, 5, 3, 6, 4, 5, 6]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    sparkline: {
+                        enabled: true
+                    },
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                colors: ['#10b981'],
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.1,
+                        stops: [0, 100]
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2
+                },
+                tooltip: {
+                    fixed: {
+                        enabled: false
+                    },
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function(seriesName) {
+                                return 'Features'
+                            }
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var freebieChart1 = new ApexCharts(document.querySelector("#freebie-chart-1"), freebieOptions1);
+            freebieChart1.render();
+
+            // Second chart - HUD Elements
+            var freebieOptions2 = {
+                series: [{
+                    data: [100, 95, 98, 100, 97, 100, 99, 100, 98, 100, 99, 100]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    sparkline: {
+                        enabled: true
+                    },
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                colors: ['#3b82f6'],
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.1,
+                        stops: [0, 100]
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2
+                },
+                tooltip: {
+                    fixed: {
+                        enabled: false
+                    },
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function(seriesName) {
+                                return 'HUD Status'
+                            }
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var freebieChart2 = new ApexCharts(document.querySelector("#freebie-chart-2"), freebieOptions2);
+            freebieChart2.render();
+
+            // Third chart - Upgrade Potential
+            var freebieOptions3 = {
+                series: [{
+                    data: [80, 82, 85, 88, 90, 92, 95, 98, 100, 102, 105, 110]
+                }],
+                chart: {
+                    type: 'area',
+                    height: 100,
+                    sparkline: {
+                        enabled: true
+                    },
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 800
+                    }
+                },
+                colors: ['#f59e0b'],
+                fill: {
+                    type: 'gradient',
+                    gradient: {
+                        shadeIntensity: 1,
+                        opacityFrom: 0.7,
+                        opacityTo: 0.1,
+                        stops: [0, 100]
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    width: 2
+                },
+                tooltip: {
+                    fixed: {
+                        enabled: false
+                    },
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function(seriesName) {
+                                return 'Pro Features'
+                            }
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                markers: {
+                    show: false
+                }
+            };
+
+            var freebieChart3 = new ApexCharts(document.querySelector("#freebie-chart-3"), freebieOptions3);
+            freebieChart3.render();
+        }
+
         // Animated Chart Bars - Network Traffic
         function updateCharts() {
             document.querySelectorAll(".chart-bar").forEach((bar) => {
@@ -1849,18 +2581,152 @@
             }
         }
 
-        // Initialize chart bars on page load
+        // Add some exciting HUD animations
+        function addHudAnimations() {
+            // Add pulsing effect to upgrade buttons
+            document.querySelectorAll('[data-bs-target="#upgradeModal"]').forEach(btn => {
+                btn.style.animation = 'pulse 2s infinite';
+            });
+
+            // Add glow effect to HUD cards
+            document.querySelectorAll('.hud-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow =
+                        '0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(59, 130, 246, 0.3)';
+                    this.style.transition = 'all 0.3s ease';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '';
+                });
+            });
+
+            // Add typing effect to the main title
+            const title = document.querySelector('.uv-header');
+            if (title) {
+                const text = title.textContent;
+                title.textContent = '';
+                let i = 0;
+                const typeWriter = () => {
+                    if (i < text.length) {
+                        title.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 100);
+                    }
+                };
+                setTimeout(typeWriter, 1000);
+            }
+        }
+
+        // HUD Mode toggle function
+        function toggleHudMode() {
+            const body = document.body;
+            const isHudMode = body.classList.contains('hud-mode');
+
+            if (isHudMode) {
+                body.classList.remove('hud-mode');
+                localStorage.setItem('hudMode', 'false');
+                showNotification('HUD Mode Disabled', 'Standard mode activated', 'info');
+            } else {
+                body.classList.add('hud-mode');
+                localStorage.setItem('hudMode', 'true');
+                showNotification('HUD Mode Enabled', 'Futuristic interface activated', 'success');
+            }
+        }
+
+        // Background mode change function
+        function changeBackgroundMode() {
+            const backgrounds = ['default', 'animated', 'cosmic', 'neon'];
+            const currentBg = localStorage.getItem('backgroundMode') || 'default';
+            const currentIndex = backgrounds.indexOf(currentBg);
+            const nextIndex = (currentIndex + 1) % backgrounds.length;
+            const nextBg = backgrounds[nextIndex];
+
+            localStorage.setItem('backgroundMode', nextBg);
+
+            // Apply background change
+            document.body.className = document.body.className.replace(/bg-\w+/g, '');
+            document.body.classList.add(`bg-${nextBg}`);
+
+            showNotification('Background Changed', `Switched to ${nextBg} mode`, 'info');
+        }
+
+        // Notification system for HUD interactions
+        function showNotification(title, message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+            notification.innerHTML = `
+                <strong>${title}</strong> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+
+            document.body.appendChild(notification);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 3000);
+        }
+
+        // Initialize HUD mode from localStorage
+        function initializeHudMode() {
+            const hudMode = localStorage.getItem('hudMode');
+            const backgroundMode = localStorage.getItem('backgroundMode') || 'default';
+
+            if (hudMode === 'true') {
+                document.body.classList.add('hud-mode');
+            }
+
+            if (backgroundMode !== 'default') {
+                document.body.classList.add(`bg-${backgroundMode}`);
+            }
+        }
+
+        // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', function() {
-            // Set initial heights
+            // Set initial heights for network traffic bars
             document.querySelectorAll(".chart-bar").forEach((bar) => {
                 const height = bar.style.getPropertyValue("--height");
                 bar.style.height = height;
             });
 
-            // Update charts and network traffic every 2 seconds for live animation
+            // Initialize HUD mode and background
+            initializeHudMode();
+
+            // Initialize charts
+            initFreebieCharts();
+
+            // Add HUD animations
+            addHudAnimations();
+
+            // Update charts and network traffic every 3 seconds for live animation
             setInterval(() => {
                 updateCharts();
                 updateNetworkTraffic();
+            }, 3000);
+
+            // Add some excitement with random HUD effects
+            setInterval(() => {
+                // Randomly highlight different cards
+                const cards = document.querySelectorAll('.hud-card, .card-component');
+                const randomCard = cards[Math.floor(Math.random() * cards.length)];
+                if (randomCard) {
+                    randomCard.style.boxShadow = '0 0 30px rgba(59, 130, 246, 0.5)';
+                    setTimeout(() => {
+                        randomCard.style.boxShadow = '';
+                    }, 1000);
+                }
+            }, 5000);
+
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification('Welcome to UltraViolet Free!',
+                    'Explore the HUD interface and upgrade for more features', 'info');
             }, 2000);
         });
     </script>
