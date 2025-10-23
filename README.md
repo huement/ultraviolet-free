@@ -28,7 +28,7 @@
 </div>
 
 <div align="center">
-  <img src="images/promo/hud-menu.png" alt="HUD Menu" width="100%">
+  <img src="images/promo/outrun-hud.png" alt="HUD Menu" width="100%">
   <p><em>HUD-Style Interface - Futuristic heads-up display elements</em></p>
 </div>
 
