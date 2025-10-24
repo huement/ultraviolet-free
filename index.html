@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="MEclbsF232NqYhwk498oA8rR6Uz0ALXYJqM7UtKK">
+    <meta name="csrf-token" content="vviDBSvVo3h6f6KXZmjwmO6bar9218ZkHAgnDt5P">
     <title>Freebie | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -1228,6 +1228,283 @@
                 settingsMenu.classList.remove('show');
               }
             });
+          }
+          
+          // Handle RTL toggle switch (enhanced with client-side styling)
+          const rtlSwitch = document.getElementById('admin-rtl-switch');
+          if (rtlSwitch) {
+            // Check for RTL preference in URL parameter or localStorage
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlRTL = urlParams.get('text') === 'rtl';
+            const urlLTR = urlParams.get('text') === 'ltr';
+            const savedRTL = localStorage.getItem('rtl-preference') === 'true';
+            
+            // Prioritize URL parameter over localStorage
+            let isRTL;
+            if (urlRTL || urlLTR) {
+              isRTL = urlRTL;
+            } else {
+              isRTL = savedRTL;
+            }
+    
+            // Set initial state
+            rtlSwitch.checked = isRTL;
+            applyRTL(isRTL);
+    
+            // Save preference to localStorage if it came from URL
+            if (urlRTL) {
+              localStorage.setItem('rtl-preference', 'true');
+            } else if (urlParams.get('text') === 'ltr') {
+              localStorage.setItem('rtl-preference', 'false');
+            }
+    
+            rtlSwitch.addEventListener('change', (e) => {
+              const isRTL = e.target.checked;
+              // Reload page with URL parameter
+              const url = new URL(window.location.href);
+              url.searchParams.set('text', isRTL ? 'rtl' : 'ltr');
+              window.location.href = url.toString();
+            });
+          }
+    
+          // Function to apply RTL/LTR styling (enhanced for live version)
+          function applyRTL(isRTL) {
+            const html = document.documentElement;
+            const body = document.body;
+    
+            if (isRTL) {
+              html.setAttribute('dir', 'rtl');
+              html.setAttribute('lang', 'ar');
+              body.classList.add('rtl');
+              body.classList.remove('ltr');
+              
+              // Add inline RTL styles to make text direction visible
+              addRTLStyles();
+            } else {
+              html.setAttribute('dir', 'ltr');
+              html.setAttribute('lang', 'en');
+              body.classList.add('ltr');
+              body.classList.remove('rtl');
+              
+              // Remove RTL styles
+              removeRTLStyles();
+            }
+    
+            console.log(`RTL mode ${isRTL ? 'enabled' : 'disabled'}`, {
+              htmlDir: html.getAttribute('dir'),
+              bodyClasses: body.className,
+              htmlLang: html.getAttribute('lang')
+            });
+          }
+    
+          // Add RTL styles to make text direction visible
+          function addRTLStyles() {
+            // Remove existing RTL styles first
+            removeRTLStyles();
+            
+            const style = document.createElement('style');
+            style.id = 'rtl-styles';
+            style.textContent = `
+              [dir="rtl"] {
+                direction: rtl !important;
+                text-align: right !important;
+              }
+              
+              [dir="rtl"] .card,
+              [dir="rtl"] .card-body,
+              [dir="rtl"] .card-header,
+              [dir="rtl"] .card-footer,
+              [dir="rtl"] .navbar,
+              [dir="rtl"] .navbar-nav,
+              [dir="rtl"] .nav-link,
+              [dir="rtl"] .dropdown-menu,
+              [dir="rtl"] .btn,
+              [dir="rtl"] .form-control,
+              [dir="rtl"] .form-label,
+              [dir="rtl"] .table,
+              [dir="rtl"] .table th,
+              [dir="rtl"] .table td,
+              [dir="rtl"] .breadcrumb,
+              [dir="rtl"] .breadcrumb-item,
+              [dir="rtl"] .list-group,
+              [dir="rtl"] .list-group-item,
+              [dir="rtl"] .modal-content,
+              [dir="rtl"] .modal-header,
+              [dir="rtl"] .modal-body,
+              [dir="rtl"] .modal-footer,
+              [dir="rtl"] .alert,
+              [dir="rtl"] .badge,
+              [dir="rtl"] .progress,
+              [dir="rtl"] .sidebar-wrapper,
+              [dir="rtl"] .ultraviolet-action-bar,
+              [dir="rtl"] .ultraviolet-content,
+              [dir="rtl"] .page-breadcrumb,
+              [dir="rtl"] .row,
+              [dir="rtl"] .col,
+              [dir="rtl"] .col-md-6,
+              [dir="rtl"] .col-lg-4,
+              [dir="rtl"] .col-xl-4,
+              [dir="rtl"] .d-flex,
+              [dir="rtl"] .justify-content-between,
+              [dir="rtl"] .text-start,
+              [dir="rtl"] .text-end,
+              [dir="rtl"] .ms-auto,
+              [dir="rtl"] .me-auto,
+              [dir="rtl"] .float-start,
+              [dir="rtl"] .float-end,
+              [dir="rtl"] .nav-pills,
+              [dir="rtl"] .nav-link,
+              [dir="rtl"] .form-select,
+              [dir="rtl"] .form-label,
+              [dir="rtl"] .offcanvas,
+              [dir="rtl"] .offcanvas-header,
+              [dir="rtl"] .offcanvas-body {
+                direction: rtl !important;
+                text-align: right !important;
+              }
+              
+              /* Flip Bootstrap spacing classes for RTL */
+              [dir="rtl"] .ms-auto {
+                margin-left: auto !important;
+                margin-right: 0 !important;
+              }
+              
+              [dir="rtl"] .me-auto {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+              }
+              
+              [dir="rtl"] .text-start {
+                text-align: right !important;
+              }
+              
+              [dir="rtl"] .text-end {
+                text-align: left !important;
+              }
+              
+              [dir="rtl"] .float-start {
+                float: right !important;
+              }
+              
+              [dir="rtl"] .float-end {
+                float: left !important;
+              }
+              
+              /* Fix main content area padding for RTL */
+              [dir="rtl"] .ultraviolet-main-wrapper,
+              [dir="rtl"] .ultraviolet-content,
+              [dir="rtl"] .page-content,
+              [dir="rtl"] .main-content,
+              [dir="rtl"] .content-wrapper,
+              [dir="rtl"] .page-wrapper {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+              }
+              
+              /* Fix sidebar positioning for RTL */
+              [dir="rtl"] .sidebar-wrapper {
+                right: 0 !important;
+                left: auto !important;
+              }
+              
+              /* Fix main content when sidebar is present */
+              [dir="rtl"] body:not(.toggled) .ultraviolet-main-wrapper,
+              [dir="rtl"] body:not(.toggled) .ultraviolet-content {
+                margin-left: 0 !important;
+                margin-right: 280px !important;
+              }
+              
+              /* Fix main content when sidebar is toggled/collapsed */
+              [dir="rtl"] body.toggled .ultraviolet-main-wrapper,
+              [dir="rtl"] body.toggled .ultraviolet-content {
+                margin-left: 0 !important;
+                margin-right: 80px !important;
+              }
+              
+              /* Fix page action bar layout for RTL - reverse the flex order */
+              [dir="rtl"] .page-actions {
+                direction: rtl !important;
+                flex-direction: row-reverse !important;
+              }
+              
+              /* Keep breadcrumb on the right side in RTL */
+              [dir="rtl"] .page-breadcrumb {
+                direction: rtl !important;
+                text-align: right !important;
+                margin-left: auto !important;
+                margin-right: 0 !important;
+              }
+              
+              /* Keep action buttons on the left side in RTL */
+              [dir="rtl"] .page-actions .dropdown,
+              [dir="rtl"] .page-actions .btn,
+              [dir="rtl"] .page-actions .form-control,
+              [dir="rtl"] .page-actions .input-group {
+                direction: rtl !important;
+                text-align: right !important;
+                margin-left: 0 !important;
+                margin-right: auto !important;
+              }
+              
+              /* Fix page actions container positioning for RTL */
+              [dir="rtl"] .ms-auto {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+              }
+              
+              /* Specifically fix the page actions wrapper */
+              [dir="rtl"] .page-actions,
+              [dir="rtl"] .page-actions.ms-auto {
+                margin-left: 0 !important;
+                margin-right: auto !important;
+              }
+              
+              /* Fix dropdown positioning for RTL */
+              [dir="rtl"] .dropdown-menu {
+                right: 0 !important;
+                left: auto !important;
+                text-align: right !important;
+              }
+              
+              [dir="rtl"] .dropdown-menu-end {
+                right: auto !important;
+                left: 0 !important;
+              }
+              
+              /* Fix user dropdown in action bar for RTL */
+              [dir="rtl"] .ultraviolet-action-bar .dropdown-menu,
+              [dir="rtl"] .navbar .dropdown-menu {
+                right: auto !important;
+                left: 0 !important;
+                transform: translateX(0) !important;
+              }
+              
+              /* Fix dropdown positioning for navbar items */
+              [dir="rtl"] .navbar-nav .dropdown-menu {
+                right: auto !important;
+                left: 0 !important;
+              }
+              
+              /* Fix button groups and form controls in action bar */
+              [dir="rtl"] .btn-group,
+              [dir="rtl"] .input-group,
+              [dir="rtl"] .form-control,
+              [dir="rtl"] .btn {
+                direction: rtl !important;
+                text-align: right !important;
+              }
+            `;
+            document.head.appendChild(style);
+          }
+    
+          // Remove RTL styles
+          function removeRTLStyles() {
+            const existingStyle = document.getElementById('rtl-styles');
+            if (existingStyle) {
+              existingStyle.remove();
+            }
           }
         });
     </script>
