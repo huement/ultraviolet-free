@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
             setTimeout(() => {
               overlay.style.opacity = '1'
               overlay.style.visibility = 'visible'
+              // FIX: Expand active menu items when mobile menu opens
+              expandActiveMenuItems()
             }, 10)
           } else {
             overlay.style.opacity = '0'
@@ -37,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (document.body.classList.contains('toggled')) {
           sidebar.addEventListener('mouseenter', function () {
             document.body.classList.add('sidebar-hovered')
+            // FIX: Auto-expand active menu items on hover
+            expandActiveMenuItems()
           })
           sidebar.addEventListener('mouseleave', function () {
             document.body.classList.remove('sidebar-hovered')
@@ -50,6 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (overlay) {
     overlay.addEventListener('click', function () {
       document.body.classList.remove('toggled', 'sidebar-hovered')
+      // Remove active class from toggle button
+      if (toggleBtn) {
+        toggleBtn.classList.remove('active')
+      }
       if (sidebar) {
         sidebar.classList.remove('mobile-open')
         overlay.style.opacity = '0'
@@ -65,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
     sidebarClose.addEventListener('click', function (e) {
       e.preventDefault()
       document.body.classList.remove('toggled', 'sidebar-hovered')
+      // Remove active class from toggle button
+      if (toggleBtn) {
+        toggleBtn.classList.remove('active')
+      }
       if (sidebar) {
         sidebar.classList.remove('mobile-open')
       }
@@ -72,6 +84,127 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.style.opacity = '0'
         overlay.style.visibility = 'hidden'
         setTimeout(() => (overlay.style.display = 'none'), 300)
+      }
+    })
+  }
+
+  // Command list item click handlers
+  const commandListItems = document.querySelectorAll('.command-list-item')
+  commandListItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      // Close the search popup
+      if (typeof closeSearchPopup === 'function') {
+        closeSearchPopup()
+      }
+
+      // Get the command name for the modal
+      const commandName =
+        item.querySelector('.command-name')?.textContent || 'Unknown Command'
+
+      // Open the demo HUD modal
+      openDemoHUDModal(commandName)
+    })
+  })
+
+  // Function to open demo HUD modal
+  function openDemoHUDModal(commandName) {
+    // Get the existing modal from the template
+    const demoModal = document.getElementById('demoCommandModal')
+
+    if (demoModal) {
+      // Update the command name in the modal
+      const commandDisplay = demoModal.querySelector('#demoCommandName')
+      if (commandDisplay) {
+        commandDisplay.textContent = commandName
+      }
+
+      // Show the modal using Bootstrap
+      if (typeof bootstrap !== 'undefined') {
+        const modal = new bootstrap.Modal(demoModal)
+        modal.show()
+      }
+    }
+  }
+
+  // Function to update background when theme changes
+  function updateBackgroundForTheme() {
+    const backgroundSelect = document.getElementById('admin-background-select')
+    const currentAnimation = backgroundSelect ? backgroundSelect.value : 'none'
+
+    if (currentAnimation === 'space') {
+      // For space animation, keep background transparent
+      document.body.style.backgroundColor = 'transparent'
+    } else {
+      // For no animation, use theme-aware background
+      document.body.style.backgroundColor = ''
+      // Let CSS handle the background via --bs-body-bg variable
+    }
+  }
+
+  // Mobile search functions
+  function openMobileSearch() {
+    const mobileOverlay = document.getElementById('mobile-search-overlay')
+    const mobileInput = document.getElementById('mobile-search-main-input')
+
+    if (mobileOverlay) {
+      mobileOverlay.classList.add('show')
+      // Focus the main search input after the animation
+      setTimeout(() => {
+        if (mobileInput) {
+          mobileInput.focus()
+        }
+      }, 300)
+    }
+  }
+
+  function closeMobileSearch() {
+    const mobileOverlay = document.getElementById('mobile-search-overlay')
+    const mobileInput = document.getElementById('mobile-search-main-input')
+
+    if (mobileOverlay) {
+      mobileOverlay.classList.remove('show')
+      // Clear the input
+      if (mobileInput) {
+        mobileInput.value = ''
+      }
+    }
+  }
+
+  // FIX: Expand active menu items when hovering over toggled sidebar
+  function expandActiveMenuItems() {
+    // Find all active menu items
+    const activeItems = document.querySelectorAll('.hui-admin-menu .active')
+
+    activeItems.forEach((activeItem) => {
+      // Find the parent menu item that contains this active item
+      let parentMenuItem = activeItem.closest('li')
+
+      // Walk up the tree to find the top-level menu item
+      while (
+        parentMenuItem &&
+        !parentMenuItem.closest('.hui-admin-menu > li')
+      ) {
+        parentMenuItem = parentMenuItem.parentElement?.closest('li')
+      }
+
+      if (parentMenuItem) {
+        // Find the collapse element and expand it
+        const collapseElement = parentMenuItem.querySelector('.collapse')
+        if (collapseElement && !collapseElement.classList.contains('show')) {
+          // Use Bootstrap's collapse functionality to expand
+          const bsCollapse = new bootstrap.Collapse(collapseElement, {
+            show: true
+          })
+        }
+
+        // Also ensure the parent link has the mm-active class
+        const parentLink = parentMenuItem.querySelector('a')
+        if (parentLink) {
+          parentMenuItem.classList.add('mm-active')
+          parentLink.setAttribute('aria-expanded', 'true')
+        }
       }
     })
   }
@@ -305,6 +438,9 @@ document.addEventListener('DOMContentLoaded', function () {
           detail: { theme, isDark }
         })
       )
+
+      // Update background when theme changes
+      updateBackgroundForTheme()
     }
 
     // Get current theme from HTML attribute (already set by inline script in <head>)
@@ -815,7 +951,8 @@ document.addEventListener('DOMContentLoaded', function () {
       starfield.init('admin-background')
     } else {
       starfield.stop()
-      document.body.style.backgroundColor = starfield.getCSSVar('--bs-body-bg')
+      // Don't set hardcoded background - let CSS handle it
+      document.body.style.backgroundColor = ''
     }
 
     // Add change listener
@@ -835,8 +972,8 @@ document.addEventListener('DOMContentLoaded', function () {
           starfield.init('admin-background')
         } else {
           starfield.stop()
-          document.body.style.backgroundColor =
-            starfield.getCSSVar('--bs-body-bg')
+          // Don't set hardcoded background - let CSS handle it
+          document.body.style.backgroundColor = ''
         }
       } else {
         // Invalid option - show upgrade modal and always revert to "none"
@@ -845,12 +982,83 @@ document.addEventListener('DOMContentLoaded', function () {
         backgroundSelect.value = 'none'
         localStorage.setItem(freebieAnimationKey, 'none')
         starfield.stop()
-        document.body.style.backgroundColor =
-          starfield.getCSSVar('--bs-body-bg')
+        // Don't set hardcoded background - let CSS handle it
+        document.body.style.backgroundColor = ''
         console.log('Reverted to "none" for invalid selection')
       }
     })
   }
+
+  // Listen for theme changes from other sources (like admin.js)
+  window.addEventListener('themeChanged', (event) => {
+    console.log('Theme changed event received:', event.detail)
+    updateBackgroundForTheme()
+  })
+
+  // Mobile search event listeners
+  const mobileSearchClose = document.getElementById('mobile-search-close')
+  if (mobileSearchClose) {
+    mobileSearchClose.addEventListener('click', closeMobileSearch)
+  }
+
+  // Close mobile search on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const mobileOverlay = document.getElementById('mobile-search-overlay')
+      if (mobileOverlay && mobileOverlay.classList.contains('show')) {
+        closeMobileSearch()
+      }
+    }
+  })
+
+  // Close mobile search when clicking outside (on the overlay background)
+  const mobileOverlay = document.getElementById('mobile-search-overlay')
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', (e) => {
+      // Only close if clicking on the overlay itself, not its children
+      if (e.target === mobileOverlay) {
+        closeMobileSearch()
+      }
+    })
+  }
+
+  // Mobile search form submission
+  const mobileSearchForm = document.getElementById('mobile-search-form')
+  if (mobileSearchForm) {
+    mobileSearchForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      const searchInput = document.getElementById('mobile-search-main-input')
+      const searchTerm = searchInput ? searchInput.value.trim() : ''
+
+      if (searchTerm) {
+        // Close the mobile search
+        closeMobileSearch()
+
+        // For now, just show a demo modal with the search term
+        // In a real app, you'd perform the actual search here
+        openDemoHUDModal(`Search: ${searchTerm}`)
+      }
+    })
+  }
+
+  // Mobile command item click handlers
+  const mobileCommandItems = document.querySelectorAll('.mobile-command-item')
+  mobileCommandItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      // Close the mobile search
+      closeMobileSearch()
+
+      // Get the command name for the modal
+      const commandName =
+        item.querySelector('.command-name')?.textContent || 'Unknown Command'
+
+      // Open the demo HUD modal
+      openDemoHUDModal(commandName)
+    })
+  })
 
   // Add scroll listener to apply "page-scrolled" class
   let isScrolled = false
@@ -890,6 +1098,7 @@ document.addEventListener('DOMContentLoaded', function () {
       searchPopup.style.opacity = '0'
       searchPopup.style.transform = 'translateY(-20px)'
       searchPopup.style.display = 'none'
+      searchPopup.style.visibility = 'hidden'
       searchPopup.style.pointerEvents = 'none'
       searchPopup.style.transition = 'opacity 0.3s ease, transform 0.3s ease'
     }
@@ -914,7 +1123,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const openSearchPopup = () => {
       if (!searchPopup) return
 
+      // Remove d-none class to show the popup
+      searchPopup.classList.remove('d-none')
       searchPopup.style.display = 'block'
+      searchPopup.style.visibility = 'visible'
       searchPopup.style.pointerEvents = 'auto'
 
       // Use requestAnimationFrame to ensure display change is applied before transition
@@ -933,7 +1145,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Hide after transition completes
       setTimeout(() => {
+        // Add d-none class back to hide the popup
+        searchPopup.classList.add('d-none')
         searchPopup.style.display = 'none'
+        searchPopup.style.visibility = 'hidden'
         searchPopup.style.pointerEvents = 'none'
       }, 300)
     }
@@ -960,9 +1175,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
     }
 
-    // Mobile search button
-    if (mobileSearchBtn && searchPopup) {
-      mobileSearchBtn.addEventListener('click', openSearchPopup)
+    // Mobile search button - use mobile overlay instead of desktop popup
+    if (mobileSearchBtn) {
+      mobileSearchBtn.addEventListener('click', openMobileSearch)
     }
 
     // Mobile close button

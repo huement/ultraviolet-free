@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="vviDBSvVo3h6f6KXZmjwmO6bar9218ZkHAgnDt5P">
+    <meta name="csrf-token" content="a3STlmEMl2y85y8bW52HvOQqF5dA54WggnQ6VV5l">
     <title>Source Code | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -107,6 +107,10 @@
     <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
     <!-- BS5 Lightbox - Image Modal Gallery -->
     <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <!-- xterm.js Terminal CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
     <!-- end plugins -->
     <!-- start vite CSS & JS -->
     <link rel="stylesheet" href="./assets/bootstrap.css">
@@ -192,116 +196,121 @@
     </div>
     <!-- start page action bar -->
     <header class="ultraviolet-action-bar ">
-        <nav class="navbar navbar-expand align-items-center gap-4 ">
-            <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
-            </div>
-            <!-- SEARCH BAR -->
-            <div class="search-bar flex-grow-1">
-                <div class="position-relative">
-                    <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
-                    <span class="material-symbols-rounded position-absolute me-3 translate-middle-y end-0 top-50 search-close">close</span>
-                    <div class="search-popup">
-                        <!-- This is the component -->
-                        <div class="hud-search-container">
-                            <!-- 1. THE "LIVE" ELEMENT: Canvas for animations -->
-                            <canvas id="hud-scanner-canvas">
-                            </canvas>
-                            <!-- 2. THE CONTENT: Sits on top of the canvas -->
-                            <div class="hud-content">
-                                <div class="row g-4">
-                                    <!-- Left Column: "Quick Access" reimagined as "Live Status" -->
-                                    <div class="col-lg-5">
-                                        <h3 class="hud-title">System Status</h3>
-                                        <div class="status-grid">
-                                            <!-- Status Item 1 -->
-                                            <div class="status-item">
-                                                <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                    <span>CPU Load</span>
-                                                </div>
-                                                <div class="status-value">32<small>%</small>
-                                                </div>
-                                                <div class="status-bar">
-                                                    <div class="status-bar-inner" style="width: 32%;">
+        <nav class="navbar navbar-expand align-items-center gap-4 justify-content-between">
+            <!-- LEFT SIDE: Toggle Button + Search Bar -->
+            <div class="d-flex align-items-center gap-4 flex-grow-1">
+                <div class="btn-toggle"> <a href="javascript:;" title="Toggle Sidebar" data-toast-trigger="menu-toggle" data-toast-simple data-toast-type="info"><i class="material-symbols-rounded">menu</i></a>
+                </div>
+                <!-- SEARCH BAR -->
+                <div class="search-bar d-lg-block d-none flex-grow-1">
+                    <div class="position-relative">
+                        <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                        <span class="material-symbols-rounded position-absolute d-lg-block d-none me-3 translate-middle-y end-0 top-50 search-close">close</span>
+                        <div class="search-popup d-none">
+                            <!-- This is the component -->
+                            <div class="hud-search-container">
+                                <!-- 1. THE "LIVE" ELEMENT: Canvas for animations -->
+                                <canvas id="hud-scanner-canvas">
+                                </canvas>
+                                <!-- 2. THE CONTENT: Sits on top of the canvas -->
+                                <div class="hud-content">
+                                    <div class="row g-4">
+                                        <!-- Left Column: "Quick Access" reimagined as "Live Status" -->
+                                        <div class="col-xxl-5 col-xl-12">
+                                            <h3 class="hud-title">System Status</h3>
+                                            <div class="status-grid">
+                                                <!-- Status Item 1 -->
+                                                <div class="status-item">
+                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
+                                                        <span>CPU Load</span>
+                                                    </div>
+                                                    <div class="status-value">32<small>%</small>
+                                                    </div>
+                                                    <div class="status-bar">
+                                                        <div class="status-bar-inner" style="width: 32%;">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- Status Item 2 -->
-                                            <div class="status-item">
-                                                <div class="status-label"> <i class="material-symbols-rounded">storage</i>
-                                                    <span>DB Queries</span>
-                                                </div>
-                                                <div class="status-value">128<small>/s</small>
-                                                </div>
-                                                <div class="status-bar">
-                                                    <div class="status-bar-inner" style="width: 60%;">
+                                                <!-- Status Item 2 -->
+                                                <div class="status-item">
+                                                    <div class="status-label"> <i class="material-symbols-rounded">storage</i>
+                                                        <span>DB Queries</span>
+                                                    </div>
+                                                    <div class="status-value">128<small>/s</small>
+                                                    </div>
+                                                    <div class="status-bar">
+                                                        <div class="status-bar-inner" style="width: 60%;">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- Status Item 3 -->
-                                            <div class="status-item">
-                                                <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                    <span>Memory</span>
-                                                </div>
-                                                <div class="status-value">4.5<small>GB</small>
-                                                </div>
-                                                <div class="status-bar">
-                                                    <div class="status-bar-inner" style="width: 45%;">
+                                                <!-- Status Item 3 -->
+                                                <div class="status-item">
+                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
+                                                        <span>Memory</span>
+                                                    </div>
+                                                    <div class="status-value">4.5<small>GB</small>
+                                                    </div>
+                                                    <div class="status-bar">
+                                                        <div class="status-bar-inner" style="width: 45%;">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <!-- Status Item 4 -->
-                                            <div class="status-item">
-                                                <div class="status-label"> <i class="material-symbols-rounded">warning</i>
-                                                    <span>Errors</span>
-                                                </div>
-                                                <div class="status-value">12<small>/hr</small>
-                                                </div>
-                                                <div class="status-bar">
-                                                    <!-- Using Bootstrap's built-in color class here -->
-                                                    <div class="status-bar-inner bg-danger" style="width: 10%; box-shadow: 0 0 8px rgba(220, 53, 69, 0.7);">
+                                                <!-- Status Item 4 -->
+                                                <div class="status-item">
+                                                    <div class="status-label"> <i class="material-symbols-rounded">warning</i>
+                                                        <span>Errors</span>
+                                                    </div>
+                                                    <div class="status-value">12<small>/hr</small>
+                                                    </div>
+                                                    <div class="status-bar">
+                                                        <!-- Using Bootstrap's built-in color class here -->
+                                                        <div class="status-bar-inner bg-danger" style="width: 10%; box-shadow: 0 0 8px rgba(220, 53, 69, 0.7);">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Right Column: Command Palette -->
-                                    <div class="col-lg-7">
-                                        <h3 class="hud-title">Command Palette</h3>
-                                        <ul class="command-list" id="command-list">
-                                            <!-- Items will be filtered by JS -->
-                                            <li class="command-list-item"> <span class="command-name">run:diagnostics</span>
-                                                <span class="command-desc">Run all system checks</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">db:connect</span>
-                                                <span class="command-desc">Connect to primary DB</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">db:backup</span>
-                                                <span class="command-desc">Initiate database backup</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">cache:clear</span>
-                                                <span class="command-desc">Clear application cache</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">logs:tail</span>
-                                                <span class="command-desc">View real-time error logs</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">users:list</span>
-                                                <span class="command-desc">Show all active users</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">deploy:prod</span>
-                                                <span class="command-desc">Deploy to production</span>
-                                            </li>
-                                            <li class="command-list-item"> <span class="command-name">server:restart</span>
-                                                <span class="command-desc">Restart web server</span>
-                                            </li>
-                                        </ul>
+                                        <!-- Right Column: Command Palette -->
+                                        <div class="col-xxl-7 col-xl-12">
+                                            <h3 class="hud-title">Command Palette</h3>
+                                            <ul class="command-list" id="command-list">
+                                                <!-- Items will be filtered by JS -->
+                                                <li class="command-list-item"> <span class="command-name">run:diagnostics</span>
+                                                    <span class="command-desc">Run all system checks</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">db:connect</span>
+                                                    <span class="command-desc">Connect to primary DB</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">db:backup</span>
+                                                    <span class="command-desc">Initiate database backup</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">cache:clear</span>
+                                                    <span class="command-desc">Clear application cache</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">logs:tail</span>
+                                                    <span class="command-desc">View real-time error logs</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">users:list</span>
+                                                    <span class="command-desc">Show all active users</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">deploy:prod</span>
+                                                    <span class="command-desc">Deploy to production</span>
+                                                </li>
+                                                <li class="command-list-item"> <span class="command-name">server:restart</span>
+                                                    <span class="command-desc">Restart web server</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- END SEARCH BAR -->
             </div>
-            <!-- END SEARCH BAR -->
+            <!-- END LEFT SIDE -->
+            <!-- RIGHT SIDE: Nav Items -->
             <ul class="navbar-nav gap-1 nav-right-links align-items-center">
                 <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
                 </li>
@@ -312,7 +321,7 @@
                     </a>
                 </li>
                 <!-- Apps -->
-                <li class="nav-item dropdown"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
+                <li class="nav-item dropdown d-none d-lg-flex"> <a title="Apps Menu" data-bs-toggle="dropdown" data-bs-title="Apps Menu" class="nav-link dropdown-toggle dropdown-no-caret" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">apps</i></a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-apps shadow-lg p-1">
                         <div class="border rounded-4 overflow-hidden p-relative z-5">
                             <div class="row row-cols-3 g-0 border-bottom">
@@ -613,6 +622,48 @@
             </ul>
         </nav>
     </header>
+    <!-- Mobile Search Overlay -->
+    <div id="mobile-search-overlay" class="mobile-search-overlay d-lg-none">
+        <div class="mobile-search-container">
+            <div class="mobile-search-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Search</h5>
+                    <button class="btn mobile-search-close" id="mobile-search-close"> <span class="material-symbols-rounded">close</span>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-search-results">
+                <!-- Search Input Section -->
+                <div class="mobile-search-input-section mb-4">
+                    <form class="mobile-search-form" id="mobile-search-form">
+                        <div class="input-group">
+                            <input type="text" class="form-control mobile-search-main-input" placeholder="Search pages, components, or features..." id="mobile-search-main-input">
+                            <button class="btn btn-primary" type="submit"> <span class="material-symbols-rounded">search</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Quick Commands Section -->
+                <div class="mobile-search-suggestions">
+                    <h6 class="text-muted mb-3">Quick Commands</h6>
+                    <div class="mobile-command-list">
+                        <div class="mobile-command-item" data-command="run:diagnostics"> <span class="command-name">run:diagnostics</span>
+                            <span class="command-desc">Run all system checks</span>
+                        </div>
+                        <div class="mobile-command-item" data-command="db:connect"> <span class="command-name">db:connect</span>
+                            <span class="command-desc">Connect to primary DB</span>
+                        </div>
+                        <div class="mobile-command-item" data-command="cache:clear"> <span class="command-name">cache:clear</span>
+                            <span class="command-desc">Clear application cache</span>
+                        </div>
+                        <div class="mobile-command-item" data-command="users:list"> <span class="command-name">users:list</span>
+                            <span class="command-desc">Show all active users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Admin Settings Menu (slides down from top) -->
     <div id="admin-settings-menu" class="admin-settings-menu">
         <div class="admin-settings-panel">
@@ -881,7 +932,7 @@
                     </li>
 </ul>
         </div>
-        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3" />
+        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3 d-md-block d-none" />
         <!-- end sidebar navigation -->
     </aside>
     <!-- END HUI VERTICAL MENU -->
@@ -889,39 +940,45 @@
     <main class="ultraviolet-main-wrapper">
         <div class="ultraviolet-content container-fluid">
             <!-- start breadcrumb -->
-            <div class="page-breadcrumb d-none d-sm-flex align-items-center position-relative z-100 mb-2 mb-lg-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb-chevron">
-                        <li class="breadcrumb-item">
-                            <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
-                                Home</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="#"> <span class="material-symbols-rounded">folder</span>
-                                Components</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <a href="#"> <span class="material-symbols-rounded">dashboard</span>
-                                Source code</a>
-                        </li>
-                    </ol>
-                </nav>
-                <div class="ms-auto">
-                    <div class="d-flex align-items-center gap-2">
-                        <button class="btn btn-outline-primary btn-sm" onclick="copyAllCode()"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">content_copy</i>
-                            Copy All</button>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle btn-flat" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">settings</i>
-                                Options</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:;" onclick="toggleLineNumbers()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">format_list_numbered</i>
-                                    Toggle Line Numbers</a>
-                                <a class="dropdown-item" href="javascript:;" onclick="toggleWordWrap()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">wrap_text</i>
-                                    Toggle Word Wrap</a>
-                                <div class="dropdown-divider">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="page-breadcrumb d-none d-sm-flex align-items-center position-relative z-100 mb-2 mb-lg-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb-chevron">
+                                <li class="breadcrumb-item">
+                                    <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                        Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#"> <span class="material-symbols-rounded">folder</span>
+                                        Components</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    <a href="#"> <span class="material-symbols-rounded">dashboard</span>
+                                        Source code</a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-start justify-content-md-end">
+                    <div class="dashboard-margin">
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="btn btn-outline-primary btn-sm" onclick="copyAllCode()"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">content_copy</i>
+                                Copy All</button>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle btn-flat" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">settings</i>
+                                    Options</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="javascript:;" onclick="toggleLineNumbers()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">format_list_numbered</i>
+                                        Toggle Line Numbers</a>
+                                    <a class="dropdown-item" href="javascript:;" onclick="toggleWordWrap()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">wrap_text</i>
+                                        Toggle Word Wrap</a>
+                                    <div class="dropdown-divider">
+                                    </div>
+                                    <a class="dropdown-item" href="javascript:;" onclick="exportCode()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">download</i>
+                                        Export Code</a>
                                 </div>
-                                <a class="dropdown-item" href="javascript:;" onclick="exportCode()"> <i class="material-symbols-rounded me-2" style="font-size: 16px;">download</i>
-                                    Export Code</a>
                             </div>
                         </div>
                     </div>
@@ -1262,6 +1319,57 @@ class UserController extends Controller
         <p class="mb-0 text-dark">UltraViolet | Copyright © 2025 Huement.com. All right reserved.</p>
     </footer>
     <!-- end footer -->
+    <!-- Demo Command HUD Modal -->
+    <div class="modal fade modal-hud" id="demoCommandModal" tabindex="-1" aria-labelledby="demoCommandModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="hud-header-svg-container" aria-hidden="true">
+                        <svg viewBox="0 0 802.6 51.7" preserveAspectRatio="none">
+                            <g>
+                                <g>
+                                    <polygon class="hud-svg-fill" points="536.4 33 498.4 33 474.7 8.9 512.7 8.9 536.4 33" />
+                                    <g>
+                                        <polygon class="hud-svg-fill" points="591.8 33 568.1 8.9 530 8.9 553.7 33 591.8 33" />
+                                        <polygon class="hud-svg-fill" points="647.1 33 623.4 8.9 585.3 8.9 609 33 647.1 33" />
+                                        <polygon class="hud-svg-fill" points="702.4 33 678.7 8.9 640.6 8.9 664.3 33 702.4 33" />
+                                        <polygon class="hud-svg-fill" points="781.2 30.3 731.2 30.3 709 8.1 707.4 9.7 730.3 32.6 780.3 32.6 797.2 49.4 401.8 49.4 400.8 49.4 5.5 49.4 22.4 32.6 72.4 32.6 95.2 9.7 93.6 8.1 71.4 30.3 21.4 30.3 0 51.7 400.8 51.7 401.8 51.7 802.6 51.7 781.2 30.3" />
+                                        <polygon class="hud-svg-fill" points="36.7 41.1 314.2 41.1 329.1 26.2 399.8 26.2 402.8 26.2 473.5 26.2 488.4 41.1 766 41.1 766 39.9 488.9 39.9 474 25 402.8 25 399.8 25 328.7 25 313.7 39.9 36.7 39.9 36.7 41.1" />
+                                        <polygon class="hud-svg-fill" points="248.9 33 272.6 8.9 234.6 8.9 210.9 33 248.9 33" />
+                                        <polygon class="hud-svg-fill" points="193.6 33 217.3 8.9 179.3 8.9 155.6 33 193.6 33" />
+                                        <polygon class="hud-svg-fill" points="162 8.9 123.9 8.9 100.2 33 138.3 33 162 8.9" />
+                                    </g>
+                                </g>
+                                <polygon class="hud-svg-fill" points="745.7 26.8 720.1 1.1 82.1 1.1 56.9 26.4 56.1 25.6 81.7 0 720.6 0 746.6 26 745.7 26.8" />
+                            </g>
+                        </svg>
+                    </div>
+                    <h5 class="modal-title orbitron" id="demoCommandModalLabel">Command Executed</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <div class="modal-body text-center py-5">
+                    <div class="mb-4"> <i class="material-symbols-rounded text-cyber" style="font-size: 4rem;">terminal</i>
+                    </div>
+                    <h4 class="text-white mb-3" id="demoCommandName">Command Name</h4>
+                    <p class="text-muted mb-0">This is a demo command execution. In a real application, this would execute the actual command.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="hud-footer-svg-container" aria-hidden="true">
+                        <svg viewBox="0 0 934.6 62.7" preserveAspectRatio="none">
+                            <g>
+                                <path class="hud-svg-fill" d="M635.1,46.9H615.4L596,66.3H542.2v1.3h52.5l-5.3,5.3H382.2l-5.3-5.3h52.6V66.3H375.6L356.2,46.9H336.5L324.3,34.7H127.4V36H323.8l10.9,10.9H292.6v2.6h44.7l18.1,18.1h17.9l7.8,7.8H590.5l7.8-7.8h17.9l18.1-18.1H679V46.9H636.9L647.8,36H844.2V34.7H647.3ZM356,66.3,339.1,49.5h16.1L372,66.3Zm259.7,0H599.6l16.9-16.8h16Z" transform="translate(-18.5 -12.8)" />
+                                <polygon class="hud-svg-fill" points="647.9 0.4 635.8 12.5 922.7 12.3 934.6 0.4 647.9 0.4" />
+                                <polygon class="hud-svg-fill" points="418.7 36.7 436.1 54.2 466.6 54.2 468.1 54.2 498.5 54.2 516 36.7 574.6 36.7 611.4 0 573.5 0 562.3 11.2 468.1 11.2 466.6 11.2 372.4 11.2 361.2 0 323.3 0 360 36.7 418.7 36.7" />
+                                <polygon class="hud-svg-fill" points="286.7 0.4 0 0.4 11.9 12.3 298.8 12.5 286.7 0.4" />
+                            </g>
+                        </svg>
+                    </div>
+                    <button type="button" class="btn btn-cyber" data-bs-dismiss="modal"> <i class="material-symbols-rounded me-2">close</i>Close Terminal</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- start CDN scripts -->
     <!-- start core javascript libraries -->
     <!-- Bootstrap 5.3.5 Javascript Library -->
@@ -1314,6 +1422,10 @@ class UserController extends Controller
     <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
     <!-- Cleave.js -->
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <!-- xterm.js Terminal -->
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.7.0/lib/xterm-addon-fit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
     <!-- end UI component libraries -->
     <!-- end CDN scripts -->
     <!-- Jquery Free JSON Table (local asset) -->
@@ -1715,7 +1827,7 @@ class UserController extends Controller
     </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/basic.js"></script>
-    <script src="./js/freebie.js?v=ed0126a8"></script>
+    <script src="./js/freebie.js?v=76ed1217"></script>
 <!-- Upgrade to Pro Modal -->
 <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
