@@ -3,6 +3,12 @@
     "file": "assets/admin-background-animations-UxYMBCRN.js",
     "name": "admin-background-animations"
   },
+  "resources/js/admin-static.js": {
+    "file": "assets/admin-static-4OhMhqXa.js",
+    "name": "admin-static",
+    "src": "resources/js/admin-static.js",
+    "isEntry": true
+  },
   "resources/js/admin.js": {
     "file": "assets/admin.js",
     "name": "admin",
@@ -27,6 +33,12 @@
     "src": "resources/js/basic.js",
     "isEntry": true
   },
+  "resources/js/docs-theme.js": {
+    "file": "assets/docs-theme-DTjvs2QC.js",
+    "name": "docs-theme",
+    "src": "resources/js/docs-theme.js",
+    "isEntry": true
+  },
   "resources/js/docs.js": {
     "file": "assets/docs-CE4bxjS0.js",
     "name": "docs",
@@ -34,17 +46,17 @@
     "isEntry": true
   },
   "resources/sass/admin-horizontal-dark.scss": {
-    "file": "assets/admin-horizontal-dark-mY7SOrwq.css",
+    "file": "assets/admin-horizontal-dark-Dilbw_H6.css",
     "src": "resources/sass/admin-horizontal-dark.scss",
     "isEntry": true
   },
   "resources/sass/admin-vertical-dark.scss": {
-    "file": "assets/admin-vertical-dark-MM45uWfh.css",
+    "file": "assets/admin-vertical-dark-3Y3xCmor.css",
     "src": "resources/sass/admin-vertical-dark.scss",
     "isEntry": true
   },
   "resources/sass/bootstrap-5.3.5-plus.scss": {
-    "file": "assets/bootstrap-5.3-BIiN9V54.css",
+    "file": "assets/bootstrap-5.3-BffxyIgH.css",
     "src": "resources/sass/bootstrap-5.3.5-plus.scss",
     "isEntry": true
   },

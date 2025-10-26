@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="VfnqB2WA2mQYl75u5aKYcZdlhpylGiELH0eaQVZl">
-    <title>Timeline | UltraViolet</title>
+    <title>Blank | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,50 +177,8 @@
             vertical-align: middle !important;
         }
     </style>
-    <style>
-    .avatar-initials {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
-
-        /* Alternating timeline - NO ARROWS */
-        .timeline-alternating .timeline-panel:before,
-        .timeline-alternating .timeline-panel:after {
-            display: none !important;
-        }
-    </style>
     <!-- end vite CSS & JS -->
 </head>
-<style>
-    .avatar-initials {
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(255, 255, 255, 0.2);
-                color: white;
-                font-weight: 600;
-                font-size: 0.75rem;
-                text-transform: uppercase;
-            }
-    
-            /* Alternating timeline - NO ARROWS */
-            .timeline-alternating .timeline-panel:before,
-            .timeline-alternating .timeline-panel:after {
-                display: none !important;
-            }
-</style>
 <!-- Theme Initialization (runs before page render to prevent flash) -->
 <script>
     (function() {
@@ -853,14 +811,14 @@
                     </li>
                     <li class="admin-nav-item">
                         <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
-                            aria-expanded="show" aria-controls="collapse_components"
+                            aria-expanded="" aria-controls="collapse_components"
                             data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
                                                         <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
                             </div>
                                                     <div class="menu-title">Components</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse show rounded" id="collapse_components">
+                        <div class="collapse  rounded" id="collapse_components">
                             <ul class="nav nav-pills flex-column rounded">
                                     <li class="admin-nav-item">
                                         <a class="admin-nav-link "
@@ -871,7 +829,7 @@
                                         </a>
                                     </li>
                                     <li class="admin-nav-item">
-                                        <a class="admin-nav-link active"
+                                        <a class="admin-nav-link "
                                             href="admin-components-timeline.html" data-bs-tooltip="tooltip"
                                             data-bs-placement="right" title="Timeline">
                                                                                         <i class="material-symbols-rounded">arrow_right</i>
@@ -991,13 +949,9 @@
                                     <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
                                         Home</a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="#"> <span class="material-symbols-rounded">folder</span>
-                                        Components</a>
-                                </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     <a href="#"> <span class="material-symbols-rounded">dashboard</span>
-                                        Timeline</a>
+                                        Blank</a>
                                 </li>
                             </ol>
                         </nav>
@@ -1005,556 +959,100 @@
                 </div>
                 <div class="col-md-6 d-flex justify-content-start justify-content-md-end">
                     <div class="dashboard-margin">
+                        <div class="d-flex align-items-center gap-2">
+                            <a href="admin-dashboard.html" class="btn btn-primary btn-sm"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">dashboard</i>
+                                Back to Dashboard</a>
+                            <a href="../docs/docs-getting-started.html" class="btn btn-outline-secondary btn-sm"> <i class="material-symbols-rounded me-1" style="font-size: 16px;">menu_book</i>
+                                Documentation</a>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- end breadcrumb -->
             <!-- start page content -->
-            <!-- Horizontal Timeline -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Horizontal Timeline</h5>
-                            <p class="text-muted mb-0">Display chronological events in a left-to-right flow with equal-sized cards</p>
-                        </div>
-                        <div class="card-body">
-                            <div style="display:inline-block;width:100%;overflow-x:auto;overflow-y:hidden;">
-                                <ul class="timeline timeline-horizontal pt-0" style="min-width:max-content;">
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge primary"><i class="material-symbols-rounded">rocket_launch</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Project Started</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 2
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Initial project setup and planning phase completed successfully.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge success"><i class="material-symbols-rounded">palette</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Design Approved</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 4
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Client approved the initial design mockups and wireframes.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge info"><i class="material-symbols-rounded">code</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Development Started</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 6
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Frontend development phase has begun with core components.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge warning"><i class="material-symbols-rounded">visibility</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Code Review</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 8
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Code review process initiated for quality assurance.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge danger"><i class="material-symbols-rounded">build</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Bug Fixes</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 10
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Critical bugs identified and fixes implemented.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <div class="timeline-badge secondary"><i class="material-symbols-rounded">cloud_upload</i>
-                                        </div>
-                                        <div class="timeline-panel">
-                                            <div class="timeline-heading">
-                                                <h4 class="timeline-title">Deployment</h4>
-                                                <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 12
-                                                hours ago</small>
-                                                </p>
-                                            </div>
-                                            <div class="timeline-body">
-                                                <p>Application successfully deployed to production environment.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+            <div class="blank-template">
+                <!-- Welcome Section -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="hud-card text-center">
+                            <div class="card-header rounded-top-4">
+                                <h1 class="card-title mb-0 orbitron-bold uv-header"> <i class="material-symbols-rounded me-2" style="font-size: 2rem;">dashboard</i>
+                                    Blank Template</h1>
                             </div>
-                            <div class="mt-4">
-                                <h5>Usage</h5>
-                                <p class="text-muted">Add <code>.timeline-horizontal</code> alongside <code>.timeline</code> for horizontal layout with flexbox equal-width cards.</p> <pre><code class="language-html">&lt;ul class="timeline timeline-horizontal"&gt;
-    &lt;li class="timeline-item"&gt;
-        &lt;div class="timeline-badge primary"&gt;
-            &lt;i class="material-symbols-rounded"&gt;rocket_launch&lt;/i&gt;
-        &lt;/div&gt;
-        &lt;div class="timeline-panel"&gt;
-            &lt;div class="timeline-heading"&gt;
-                &lt;h4 class="timeline-title"&gt;Project Started&lt;/h4&gt;
-                &lt;p&gt;&lt;small&gt;2 hours ago&lt;/small&gt;&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="timeline-body"&gt;
-                &lt;p&gt;Project setup completed.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                            <div class="card-body">
+                                <p class="lead text-muted mb-4">This is a blank template perfect for starting your custom dashboard. Available in both vertical and horizontal layouts.</p>
+                                <div class="alert alert-info border-0">
+                                    <div class="d-flex align-items-center"> <i class="material-symbols-rounded me-2" style="font-size: 1.5rem;">info</i>
+                                        <div> <strong>Ready to build!</strong> This template includes all the necessary layout structure, navigation, and styling. Start adding your content below.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Vertical Timeline - Alternating -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Vertical Timeline - Alternating</h5>
-                            <p class="text-muted mb-0">Center-aligned timeline with alternating left and right panels</p>
-                        </div>
-                        <div class="card-body">
-                            <ul class="timeline timeline-alternating">
-                                <li class="timeline-item">
-                                    <div class="timeline-badge primary"><i class="material-symbols-rounded">settings</i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">System Initialization</h4>
-                                            <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 1 hour
-                                            ago</small>
-                                            </p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>System initialization completed successfully. All services are running properly and ready for operation.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-item">
-                                    <div class="timeline-badge success"><i class="material-symbols-rounded">storage</i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Database Migration</h4>
-                                            <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 2 hours
-                                            ago</small>
-                                            </p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Database migration completed successfully. All tables and indexes have been updated.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-item">
-                                    <div class="timeline-badge info"><i class="material-symbols-rounded">cached</i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Cache Cleared</h4>
-                                            <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 3
-                                            hours ago</small>
-                                            </p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Application cache cleared successfully. Performance optimizations applied and new cache structure implemented.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="timeline-item">
-                                    <div class="timeline-badge warning"><i class="material-symbols-rounded">security</i>
-                                    </div>
-                                    <div class="timeline-panel">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Security Update</h4>
-                                            <p><small class="text-muted"><i class="material-symbols-rounded">access_time</i> 4
-                                            hours ago</small>
-                                            </p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Security patches applied successfully. All vulnerabilities have been addressed and system is secure.</p>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="mt-4">
-                                <h5>Usage</h5>
-                                <p class="text-muted">Use <code>.timeline</code> class for alternating panels. Apply color classes to badges: <code>.primary</code>, <code>.success</code>, <code>.info</code>, <code>.warning</code>, <code>.danger</code>.</p> <pre><code class="language-html">&lt;ul class="timeline"&gt;
-    &lt;li class="timeline-item"&gt;
-        &lt;div class="timeline-badge primary"&gt;
-            &lt;i class="material-symbols-rounded"&gt;settings&lt;/i&gt;
-        &lt;/div&gt;
-        &lt;div class="timeline-panel"&gt;
-            &lt;div class="timeline-heading"&gt;
-                &lt;h4 class="timeline-title"&gt;System Initialization&lt;/h4&gt;
-                &lt;p&gt;&lt;small&gt;1 hour ago&lt;/small&gt;&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="timeline-body"&gt;
-                &lt;p&gt;System initialized successfully.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                <!-- Content Area - Ready for your widgets -->
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="hud-card">
+                            <div class="card-header rounded-top-4">
+                                <h5 class="card-title mb-0"> <i class="material-symbols-rounded me-2">widgets</i>
+                                    Your Content Goes Here</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center py-5"> <i class="material-symbols-rounded text-muted" style="font-size: 4rem; opacity: 0.3;">add_box</i>
+                                    <h4 class="text-muted mt-3">Start Building Your Dashboard</h4>
+                                    <p class="text-muted">Add your widgets, charts, tables, and other components here.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Modern Timeline -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Modern Timeline</h5>
-                            <p class="text-muted mb-0">Clean, minimal timeline with circular icons and connecting lines - perfect for order tracking</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="timeline-modern">
-                                        <!-- Timeline Item 1 -->
-                                        <div class="timeline-item-modern mb-4">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-success">
-                                                        <img src="/images/assets/people/glitch.png" alt="User" class="rounded-circle" width="32" height="32">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Order Delivered</h6>
-                                                    <p class="text-sm text-muted mb-1">Package successfully delivered to customer</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                December 22, 2024 at 4:54 PM
-                                            </small>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-line-modern">
-                                            </div>
-                                        </div>
-                                        <!-- Timeline Item 2 -->
-                                        <div class="timeline-item-modern mb-4">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-info">
-                                                        <img src="/images/assets/people/holo.png" alt="User" class="rounded-circle" width="32" height="32">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Out for Delivery</h6>
-                                                    <p class="text-sm text-muted mb-1">Package is on the way</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                December 22, 2024 at 8:10 AM
-                                            </small>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-line-modern">
-                                            </div>
-                                        </div>
-                                        <!-- Timeline Item 3 -->
-                                        <div class="timeline-item-modern mb-4">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-primary">
-                                                        <img src="/images/assets/people/metal.png" alt="User" class="rounded-circle" width="32" height="32">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Order Processed</h6>
-                                                    <p class="text-sm text-muted mb-1">Order confirmed and ready</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                December 22, 2024 at 7:21 AM
-                                            </small>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-line-modern">
-                                            </div>
-                                        </div>
-                                        <!-- Timeline Item 4 -->
-                                        <div class="timeline-item-modern">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-secondary">
-                                                        <div class="avatar-initials">JD</div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Order Placed</h6>
-                                                    <p class="text-sm text-muted mb-1">Order received successfully</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                December 22, 2024 at 7:20 AM
-                                            </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="timeline-modern">
-                                        <!-- Different icons and colors -->
-                                        <div class="timeline-item-modern mb-4">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-warning">
-                                                        <img src="/images/assets/people/neo.png" alt="User" class="rounded-circle" width="32" height="32">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Project Milestone</h6>
-                                                    <p class="text-sm text-muted mb-1">Major milestone achieved</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                2 hours ago
-                                            </small>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-line-modern">
-                                            </div>
-                                        </div>
-                                        <div class="timeline-item-modern mb-4">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-danger">
-                                                        <img src="/images/assets/people/sentinel.png" alt="User" class="rounded-circle" width="32" height="32">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Issue Detected</h6>
-                                                    <p class="text-sm text-muted mb-1">System reported an error</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                4 hours ago
-                                            </small>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-line-modern">
-                                            </div>
-                                        </div>
-                                        <div class="timeline-item-modern">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0">
-                                                    <div class="timeline-icon-modern bg-success">
-                                                        <div class="avatar-initials">SM</div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 ms-3">
-                                                    <h6 class="mb-1">Issue Resolved</h6>
-                                                    <p class="text-sm text-muted mb-1">All systems operational</p> <small class="text-muted">
-                                                <i class="material-symbols-rounded"
-                                                    style="font-size: 14px; vertical-align: middle;">schedule</i>
-                                                5 hours ago
-                                            </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <!-- Example Row Structure -->
+                <div class="row g-4 mt-2">
+                    <div class="col-lg-6">
+                        <div class="hud-card">
+                            <div class="card-header rounded-top-4">
+                                <h6 class="card-title mb-0">Example Widget 1</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center py-4"> <i class="material-symbols-rounded text-primary" style="font-size: 2rem;">analytics</i>
+                                    <p class="text-muted mt-2 mb-0">Replace with your content</p>
                                 </div>
                             </div>
-                            <div class="mt-4">
-                                <h5>Usage</h5>
-                                <p class="text-muted">Use <code>.timeline-modern</code> class for a clean, minimal timeline with circular icons. Great for order tracking, process flows, and activity feeds.</p> <pre><code class="language-html">&lt;div class="timeline-modern"&gt;
-    &lt;div class="timeline-item-modern mb-4"&gt;
-        &lt;div class="d-flex"&gt;
-            &lt;div class="flex-shrink-0"&gt;
-                &lt;div class="timeline-icon-modern bg-success"&gt;
-                    &lt;i class="material-symbols-rounded"&gt;check_circle&lt;/i&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="flex-grow-1 ms-3"&gt;
-                &lt;h6 class="mb-1"&gt;Event Title&lt;/h6&gt;
-                &lt;p class="text-sm text-muted mb-1"&gt;Event description&lt;/p&gt;
-                &lt;small class="text-muted"&gt;Timestamp&lt;/small&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="timeline-line-modern"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hud-card">
+                            <div class="card-header rounded-top-4">
+                                <h6 class="card-title mb-0">Example Widget 2</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-center py-4"> <i class="material-symbols-rounded text-success" style="font-size: 2rem;">trending_up</i>
+                                    <p class="text-muted mt-2 mb-0">Replace with your content</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Vertical Timeline - One-Sided -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Vertical Timeline - One-Sided</h5>
-                            <p class="text-muted mb-0">Compact single-column timeline for sidebars and smaller spaces</p>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <ul class="timeline timeline-one-side">
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge primary"><i class="material-symbols-rounded">power_settings_new</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">System Initialization</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 1 hour ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>System initialization completed successfully.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge success"><i class="material-symbols-rounded">storage</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">Database Migration</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 2 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Database migration completed successfully.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge info"><i class="material-symbols-rounded">cached</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">Cache Cleared</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 3 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Application cache cleared successfully.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge warning"><i class="material-symbols-rounded">security</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">Security Update</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 4 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Security patches applied successfully.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <ul class="timeline timeline-one-side">
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge danger"><i class="material-symbols-rounded">error</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">Error Detected</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 5 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Critical error detected in authentication service.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge info"><i class="material-symbols-rounded">build</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">Hotfix Applied</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 6 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Emergency hotfix deployed to production.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-badge success"><i class="material-symbols-rounded">check_circle</i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4 class="timeline-title">System Restored</h4>
-                                                    <p><small class="text-muted"><i
-                                                        class="material-symbols-rounded">access_time</i> 7 hours
-                                                    ago</small>
-                                                    </p>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>All systems operational and running normally.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                <!-- Layout Information -->
+                <div class="row g-4 mt-2">
+                    <div class="col-12">
+                        <div class="hud-card">
+                            <div class="card-header rounded-top-4">
+                                <h6 class="card-title mb-0"> <i class="material-symbols-rounded me-2">info</i>
+                                    Template Information</h6>
                             </div>
-                            <div class="mt-4">
-                                <h5>Usage</h5>
-                                <p class="text-muted">Combine <code>.timeline</code> with <code>.timeline-one-side</code> for compact single-column layout.</p> <pre><code class="language-html">&lt;ul class="timeline timeline-one-side"&gt;
-    &lt;li class="timeline-item"&gt;
-        &lt;div class="timeline-badge primary"&gt;
-            &lt;i class="material-symbols-rounded"&gt;power_settings_new&lt;/i&gt;
-        &lt;/div&gt;
-        &lt;div class="timeline-panel"&gt;
-            &lt;div class="timeline-heading"&gt;
-                &lt;h4 class="timeline-title"&gt;System Init&lt;/h4&gt;
-                &lt;p&gt;&lt;small&gt;1 hour ago&lt;/small&gt;&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class="timeline-body"&gt;
-                &lt;p&gt;System initialized.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Layout Type</h6>
+                                        <p class="text-muted mb-0">This template automatically adapts to the current layout mode (vertical or horizontal navigation).</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-success">Export Ready</h6>
+                                        <p class="text-muted mb-0">This template will be exported as <code>admin-blank.html</code> in both vertical and horizontal exports.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

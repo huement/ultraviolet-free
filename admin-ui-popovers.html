@@ -6,7 +6,7 @@
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="HGVnqWsl4PO0qITqrjMnn4cr8lLmkVoDAllIFZ68">
+    <meta name="csrf-token" content="VfnqB2WA2mQYl75u5aKYcZdlhpylGiELH0eaQVZl">
     <title>Popovers &amp; Tooltips | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -95,7 +95,7 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
     <!-- Grid JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
-    <!-- Prism.js for code highlighting (theme loaded dynamically by admin.js) -->
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static-4OhMhqXa.js) -->
     <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
     <!-- BProgress Loading Indicator -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
@@ -1010,8 +1010,10 @@
                     <div class="row mb-4">
                         <div class="col-12">
                             <h3 class="h4 mb-3">Tooltips on Different Elements</h3>
-                            <div class="d-flex flex-wrap gap-3 align-items-center"> <a href="#" class="text-primary" data-bs-toggle="tooltip" title="This is a link tooltip">Link with tooltip</a>
-                                <span class="badge bg-info" data-bs-toggle="tooltip" title="This is a badge tooltip">Badge with tooltip</span>
+                            <div class="d-flex flex-wrap gap-3 align-items-center"> <a href="#" class="text-primary" data-bs-toggle="tooltip" title="This is a link tooltip">Link
+                        with tooltip</a>
+                                <span class="badge bg-info" data-bs-toggle="tooltip" title="This is a badge tooltip">Badge with
+                        tooltip</span>
                                 <i class="material-symbols-rounded text-warning" data-bs-toggle="tooltip" title="This is an icon tooltip">help</i>
                                 <div class="bg-light border rounded p-2 d-inline-block" data-bs-toggle="tooltip" title="This is a div tooltip">Div with tooltip</div>
                             </div>
@@ -1084,21 +1086,152 @@
             </div>
             <script>
     // Initialize tooltips and popovers
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize all tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
     
-        // Initialize all popovers
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl);
+            // Initialize all popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
         });
-    });
             </script>
-            <!-- end page content -->
+            <!-- Source Code Examples -->
+            <div class="row dashboard-margin">
+                <div class="col-12">
+                    <div class="d-flex align-items-center dashboard-margin bg-glass py-2 rounded-2">
+                        <div class="border-start border-3 border-success card-section-divider">
+                        </div>
+                        <div class="flex-grow-1">
+                            <h3 class="mb-1">📋 Source Code Examples</h3>
+                            <p class="text-muted mb-0">HTML markup for tooltips and popovers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-body-tertiary">
+                            <h5 class="mb-0">Basic Tooltips</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Simple tooltips with data attributes:</p> <pre><code class="language-html">&lt;!-- Tooltip on Top --&gt;
+&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="tooltip" 
+        data-bs-placement="top" 
+        title="Tooltip on top"&gt;
+    Tooltip on top
+&lt;/button&gt;
+
+&lt;!-- Tooltip on Bottom --&gt;
+&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="tooltip" 
+        data-bs-placement="bottom" 
+        title="Tooltip on bottom"&gt;
+    Tooltip on bottom
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-body-tertiary">
+                            <h5 class="mb-0">Basic Popovers</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Simple popovers with data attributes:</p> <pre><code class="language-html">&lt;!-- Basic Popover --&gt;
+&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-placement="top" 
+        data-bs-content="Popover content here"&gt;
+    Click for popover
+&lt;/button&gt;
+
+&lt;!-- Popover with Title --&gt;
+&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-placement="top" 
+        data-bs-title="Popover Title" 
+        data-bs-content="This is the popover content"&gt;
+    Popover with Title
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-body-tertiary">
+                            <h5 class="mb-0">Popover with HTML Content</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Popovers that support HTML formatting:</p> <pre><code class="language-html">&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-html="true" 
+        data-bs-placement="top" 
+        data-bs-title="&lt;strong&gt;HTML Popover&lt;/strong&gt;" 
+        data-bs-content="&lt;em&gt;This popover&lt;/em&gt; contains &lt;u&gt;HTML&lt;/u&gt; content with &lt;b&gt;formatting&lt;/b&gt;."&gt;
+    HTML Popover
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-body-tertiary">
+                            <h5 class="mb-0">Dismissible Popovers</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Popovers that can be dismissed by clicking outside:</p> <pre><code class="language-html">&lt;button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        data-bs-trigger="focus" 
+        data-bs-placement="top" 
+        data-bs-title="Dismissible" 
+        data-bs-content="Click outside to dismiss"&gt;
+    Dismissible Popover
+&lt;/button&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header bg-body-tertiary">
+                            <h5 class="mb-0">JavaScript Initialization</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Initialize tooltips and popovers with JavaScript:</p> <pre><code class="language-javascript">// Initialize all tooltips
+var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+});
+
+// Initialize all popovers
+var popoverTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="popover"]')
+);
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl);
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page content -->
         </div>
     </main>
     <!-- end main wrapper -->
