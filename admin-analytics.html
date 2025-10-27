@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-<!-- start head -->
+<html lang="en" data-bs-theme="dark" <!-- start head -->
 
 <head>
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="PSFsVb4cyHNAjKcEnkzSsjP5J8B1yiAwyWnztQxV">
+    <meta name="csrf-token" content="J4gc7pBYcQ4S04kaXdvRsLbDpr3rRUdKaKP0eYPu">
     <title>Analytics | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -182,9 +181,19 @@
 <!-- Theme Initialization (runs before page render to prevent flash) -->
 <script>
     (function() {
-                // Check localStorage for theme preference (default: dark)
+                // Check URL parameter first, then localStorage, then default to dark
+                const urlParams = new URLSearchParams(window.location.search);
+                const themeParam = urlParams.get('theme');
                 const savedTheme = localStorage.getItem('theme-preference') || 'dark';
-                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+                const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
+                    savedTheme;
+    
+                document.documentElement.setAttribute('data-bs-theme', initialTheme);
+    
+                // If URL parameter is provided, override localStorage
+                if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
+                    localStorage.setItem('theme-preference', themeParam);
+                }
             })();
 </script>
 </head>
@@ -1529,7 +1538,7 @@
                             <div class="card-body px-3 pt-3 pb-0" style="min-height: 500px;">
                                 <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-5 gap-3">
                                     <h4 class="mb-0">Revenue Analytics</h4>
-                                    <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                                    <div class="btn-group d-flex flex-wrap" role="group">
                                         <button type="button" class="btn btn-soft-primary btn-sm chart-period-btn active" data-period="12m">12M</button>
                                         <button type="button" class="btn btn-soft-secondary btn-sm chart-period-btn" data-period="6m">6M</button>
                                         <button type="button" class="btn btn-soft-secondary btn-sm chart-period-btn" data-period="3m">3M</button>
@@ -1541,7 +1550,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-6">
                         <!-- CARD WIDGET -->
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column pt-2" style="min-height: 400px;">
@@ -1585,7 +1594,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-6">
                         <!-- BASIC WIDGET -->
                         <div class="card text-center">
                             <div class="card-body"> <i class="material-symbols-rounded text-warning" style="font-size: 3rem;">shopping_cart</i>
@@ -1607,7 +1616,7 @@
                             <div class="card-body">
                                 <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 gap-3">
                                     <h4 class="mb-0">Top Performing Pages</h4>
-                                    <div class="btn-group d-flex flex-wrap gap-2" role="group">
+                                    <div class="btn-group d-flex flex-wrap" role="group">
                                         <button type="button" class="btn btn-soft-primary btn-sm active">Today</button>
                                         <button type="button" class="btn btn-soft-secondary btn-sm">Week</button>
                                         <button type="button" class="btn btn-soft-secondary btn-sm">Month</button>

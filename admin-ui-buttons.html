@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-<!-- start head -->
+<html lang="en" data-bs-theme="dark" <!-- start head -->
 
 <head>
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="PSFsVb4cyHNAjKcEnkzSsjP5J8B1yiAwyWnztQxV">
+    <meta name="csrf-token" content="J4gc7pBYcQ4S04kaXdvRsLbDpr3rRUdKaKP0eYPu">
     <title>Buttons | UltraViolet</title>
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
@@ -182,9 +181,19 @@
 <!-- Theme Initialization (runs before page render to prevent flash) -->
 <script>
     (function() {
-                // Check localStorage for theme preference (default: dark)
+                // Check URL parameter first, then localStorage, then default to dark
+                const urlParams = new URLSearchParams(window.location.search);
+                const themeParam = urlParams.get('theme');
                 const savedTheme = localStorage.getItem('theme-preference') || 'dark';
-                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+                const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
+                    savedTheme;
+    
+                document.documentElement.setAttribute('data-bs-theme', initialTheme);
+    
+                // If URL parameter is provided, override localStorage
+                if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
+                    localStorage.setItem('theme-preference', themeParam);
+                }
             })();
 </script>
 </head>

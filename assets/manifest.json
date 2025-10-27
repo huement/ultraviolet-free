@@ -4,7 +4,7 @@
     "name": "admin-background-animations"
   },
   "resources/js/admin-static.js": {
-    "file": "assets/admin-static-4OhMhqXa.js",
+    "file": "assets/admin-static-BlGPi-Oo.js",
     "name": "admin-static",
     "src": "resources/js/admin-static.js",
     "isEntry": true
@@ -28,7 +28,7 @@
     ]
   },
   "resources/js/basic.js": {
-    "file": "assets/basic-Bfyj2g8X.js",
+    "file": "assets/basic-BlpRp0Ox.js",
     "name": "basic",
     "src": "resources/js/basic.js",
     "isEntry": true
@@ -46,12 +46,12 @@
     "isEntry": true
   },
   "resources/sass/admin-horizontal-dark.scss": {
-    "file": "assets/admin-horizontal-dark-Dilbw_H6.css",
+    "file": "assets/admin-horizontal-dark-DkMXjFFm.css",
     "src": "resources/sass/admin-horizontal-dark.scss",
     "isEntry": true
   },
   "resources/sass/admin-vertical-dark.scss": {
-    "file": "assets/admin-vertical-dark-3Y3xCmor.css",
+    "file": "assets/admin-vertical-dark-DT1WZWJK.css",
     "src": "resources/sass/admin-vertical-dark.scss",
     "isEntry": true
   },
@@ -61,7 +61,7 @@
     "isEntry": true
   },
   "resources/sass/docs.scss": {
-    "file": "assets/docs-C7lGq_Ao.css",
+    "file": "assets/docs-BNU2QiAO.css",
     "src": "resources/sass/docs.scss",
     "isEntry": true
   },
