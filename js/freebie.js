@@ -938,8 +938,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Use separate localStorage key for freebie to avoid conflicts with pro version
     const freebieAnimationKey = 'freebie-background-animation'
 
-    // Set initial value - default to 'space' (starfield) for freebie, like dark mode default
-    const savedAnimation = localStorage.getItem(freebieAnimationKey) || 'space'
+    // Set initial value - always start with 'none' for freebie
+    const savedAnimation = localStorage.getItem(freebieAnimationKey) || 'none'
     backgroundSelect.value = savedAnimation
 
     // Initialize starfield
