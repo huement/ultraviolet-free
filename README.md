@@ -23,6 +23,11 @@
 ## 🌟 Preview
 
 <div align="center">
+  <img src="uv-promo.gif" alt="UltraViolet Promo" width="100%">
+  <p><em>UltraViolet - Futuristic Admin Dashboard Template</em></p>
+</div>
+
+<div align="center">
   <img src="images/promo/dashboard-preview.png" alt="Dashboard Preview" width="100%">
   <p><em>Main Dashboard - Real-time metrics with stunning visual effects</em></p>
 </div>
