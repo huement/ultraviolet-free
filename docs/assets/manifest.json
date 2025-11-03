@@ -1,0 +1,167 @@
+{
+  "_admin-background-animations-legacy.js": {
+    "file": "assets/admin-background-animations-legacy.js",
+    "name": "admin-background-animations"
+  },
+  "_admin-background-animations.js": {
+    "file": "assets/admin-background-animations.js",
+    "name": "admin-background-animations"
+  },
+  "resources/js/admin-inline-utils-legacy.js": {
+    "file": "assets/admin-inline-utils-legacy.js",
+    "name": "admin-inline-utils",
+    "src": "resources/js/admin-inline-utils-legacy.js",
+    "isEntry": true
+  },
+  "resources/js/admin-inline-utils.js": {
+    "file": "assets/admin-inline-utils.js",
+    "name": "admin-inline-utils",
+    "src": "resources/js/admin-inline-utils.js",
+    "isEntry": true
+  },
+  "resources/js/admin-legacy.js": {
+    "file": "assets/admin-legacy.js",
+    "name": "admin",
+    "src": "resources/js/admin-legacy.js",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations-legacy.js"
+    ]
+  },
+  "resources/js/admin-legacy.ts": {
+    "file": "assets/admin-legacy2.js",
+    "name": "admin",
+    "src": "resources/js/admin-legacy.ts",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations-legacy.js"
+    ]
+  },
+  "resources/js/admin-static-legacy.js": {
+    "file": "assets/admin-static-legacy.js",
+    "name": "admin-static",
+    "src": "resources/js/admin-static-legacy.js",
+    "isEntry": true
+  },
+  "resources/js/admin-static.js": {
+    "file": "assets/admin-static.js",
+    "name": "admin-static",
+    "src": "resources/js/admin-static.js",
+    "isEntry": true
+  },
+  "resources/js/admin.js": {
+    "file": "assets/admin.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations.js"
+    ]
+  },
+  "resources/js/admin.ts": {
+    "file": "assets/admin2.js",
+    "name": "admin",
+    "src": "resources/js/admin.ts",
+    "isEntry": true,
+    "imports": [
+      "_admin-background-animations.js"
+    ]
+  },
+  "resources/js/basic-legacy.js": {
+    "file": "assets/basic-legacy.js",
+    "name": "basic",
+    "src": "resources/js/basic-legacy.js",
+    "isEntry": true
+  },
+  "resources/js/basic.js": {
+    "file": "assets/basic.js",
+    "name": "basic",
+    "src": "resources/js/basic.js",
+    "isEntry": true
+  },
+  "resources/js/docs-legacy.js": {
+    "file": "assets/docs-legacy2.js",
+    "name": "docs",
+    "src": "resources/js/docs-legacy.js",
+    "isEntry": true
+  },
+  "resources/js/docs-theme-legacy.js": {
+    "file": "assets/docs-theme-legacy.js",
+    "name": "docs-theme",
+    "src": "resources/js/docs-theme-legacy.js",
+    "isEntry": true
+  },
+  "resources/js/docs-theme.js": {
+    "file": "assets/docs-theme.js",
+    "name": "docs-theme",
+    "src": "resources/js/docs-theme.js",
+    "isEntry": true
+  },
+  "resources/js/docs.js": {
+    "file": "assets/docs2.js",
+    "name": "docs",
+    "src": "resources/js/docs.js",
+    "isEntry": true
+  },
+  "resources/sass/admin-horizontal-dark-legacy.scss": {
+    "file": "assets/admin-horizontal-dark-legacy.js",
+    "name": "admin-horizontal-dark",
+    "src": "resources/sass/admin-horizontal-dark-legacy.scss",
+    "isEntry": true
+  },
+  "resources/sass/admin-horizontal-dark.scss": {
+    "file": "assets/admin-horizontal-dark.css",
+    "src": "resources/sass/admin-horizontal-dark.scss",
+    "isEntry": true
+  },
+  "resources/sass/admin-vertical-dark-legacy.scss": {
+    "file": "assets/admin-vertical-dark-legacy.js",
+    "name": "admin-vertical-dark",
+    "src": "resources/sass/admin-vertical-dark-legacy.scss",
+    "isEntry": true
+  },
+  "resources/sass/admin-vertical-dark.scss": {
+    "file": "assets/admin-vertical-dark.css",
+    "src": "resources/sass/admin-vertical-dark.scss",
+    "isEntry": true
+  },
+  "resources/sass/bootstrap-5.3.5-plus-legacy.scss": {
+    "file": "assets/bootstrap-5.3.5-plus-legacy.js",
+    "name": "bootstrap-5.3.5-plus",
+    "src": "resources/sass/bootstrap-5.3.5-plus-legacy.scss",
+    "isEntry": true
+  },
+  "resources/sass/bootstrap-5.3.5-plus.scss": {
+    "file": "assets/bootstrap-5.3.css",
+    "src": "resources/sass/bootstrap-5.3.5-plus.scss",
+    "isEntry": true
+  },
+  "resources/sass/docs-legacy.scss": {
+    "file": "assets/docs-legacy.js",
+    "name": "docs",
+    "src": "resources/sass/docs-legacy.scss",
+    "isEntry": true
+  },
+  "resources/sass/docs.scss": {
+    "file": "assets/docs.css",
+    "src": "resources/sass/docs.scss",
+    "isEntry": true
+  },
+  "resources/sass/huement-sites-legacy.scss": {
+    "file": "assets/huement-sites-legacy.js",
+    "name": "huement-sites",
+    "src": "resources/sass/huement-sites-legacy.scss",
+    "isEntry": true
+  },
+  "resources/sass/huement-sites.scss": {
+    "file": "assets/huement-sites.css",
+    "src": "resources/sass/huement-sites.scss",
+    "isEntry": true
+  },
+  "vite/legacy-polyfills-legacy": {
+    "file": "assets/polyfills-legacy.js",
+    "name": "polyfills",
+    "src": "vite/legacy-polyfills-legacy",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="7K5E4M1rZZn4IvgaJSoYxdjHGii9UDI5oDf4c3aM">
+    <title>Docs Index | UltraViolet</title>
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <!-- Google Fonts & Material Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload Material Icons font to prevent FOUC -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icon Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Prevent Material Icons FOUC -->
+    <style type="text/css">
+    .material-symbols-rounded,
+        .material-icons {
+            font-size: 24px;
+            line-height: 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+            vertical-align: middle;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+        }
+    
+        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+        .material-icons:not(.material-icons--loaded) {
+            color: transparent;
+            user-select: none;
+        }
+    
+        .material-symbols-rounded--loaded,
+        .material-icons--loaded {
+            color: inherit;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+            margin: 0;
+            padding: 0;
+        }
+    
+        .material-icons {
+            font-family: 'Material Symbols Rounded' !important;
+            font-weight: normal !important;
+            font-style: normal !important;
+            font-size: 24px !important;
+            line-height: 1 !important;
+            letter-spacing: normal !important;
+            text-transform: none !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            word-wrap: normal !important;
+            direction: ltr !important;
+            -webkit-font-feature-settings: 'liga' !important;
+            -webkit-font-smoothing: antialiased !important;
+            text-rendering: optimizeLegibility !important;
+            font-feature-settings: 'liga' !important;
+            vertical-align: middle !important;
+        }
+    </style>
+    <!-- Scripts -->
+    <script src="./assets/polyfills-legacy.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
+    <link rel="stylesheet" href="./assets/docs.css">
+    <script src="./assets/docs-theme-legacy.js"></script>
+    <!-- Additional Meta -->
+    <meta name="description" content="Documentation for UltraViolet Admin Dashboard">
+    <!-- Prism.js for code highlighting (theme loaded dynamically by docs-theme-legacy.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <!-- Load languages in dependency order -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup-templating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+</head>
+
+<body class="docs-layout space-grotesk-300" data-bs-spy="scroll" data-bs-target="#docsSidebar" data-bs-smooth-scroll="true" tabindex="0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <!-- Mobile menu toggle button -->
+            <button class="btn btn-link d-lg-none me-2 p-2 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#docsSidebarOffcanvas" aria-controls="docsSidebarOffcanvas" aria-label="Toggle navigation menu"> <i class="material-symbols-rounded">menu</i>
+            </button>
+            <a class="navbar-brand" href="../admin-dashboard.html"> <i class="material-symbols-rounded me-2 d-none d-lg-inline">arrow_back</i>
+                <img src="./images/uv/ultra-white.png" class="img-fluid" alt="UltraViolet Logo Text" width="170" height="17" />
+            </a>
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-info"> <i class="material-symbols-rounded me-0 me-lg-2">menu_book</i>
+                    <span class="d-none d-lg-inline">Welcome Page</span>
+                </a>
+                <a href="../admin-dashboard.html" class="btn btn-info"> <i class="material-symbols-rounded me-0 me-lg-2">dashboard</i>
+                    <span class="d-none d-lg-inline">Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <cosmic-wave class="fill-primary cosmic-wave" data-wave-points="12" data-wave-variance="2" data-wave-face="bottom">
+    </cosmic-wave>
+    <!-- Offcanvas for mobile/tablet (MD and below) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="docsSidebarOffcanvas" aria-labelledby="docsSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="docsSidebarOffcanvasLabel">Documentation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            </button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="docs-nav">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Getting Started</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="docs.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">home</i>
+                            Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-getting-started-laravel-setup.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Laravel Setup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-getting-started-static-setup.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Static Setup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-getting-started-support.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-getting-started-theming.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">palette</i>
+                            Theming</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Authentication</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-authentication-overview.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">visibility</i>
+                            Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-authentication-oauth-setup.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Oauth Setup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-authentication-laravel.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Laravel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-authentication-page-templates.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Page Templates</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Livewire</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-introduction.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-layout.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Layout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-components.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">extension</i>
+                            Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-best-practices.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Best Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-icons.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Icons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-laravel-sail.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Laravel Sail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-livewire-socialite-integration.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Socialite Integration</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Dashboard &amp; Widgets</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-dashboard-widgets-dashboards.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">dashboard</i>
+                            Dashboards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-dashboard-widgets-templates.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">apps</i>
+                            Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-dashboard-widgets-widgets.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">widgets</i>
+                            Widgets</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Applications</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-apps-readme.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Readme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-apps-ai-agent.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Ai Agent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-apps-calendar.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Calendar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-apps-chat-box.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Chat Box</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-apps-email-box.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Email Box</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>UI Components</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-bootstrap.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">grid_view</i>
+                            Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-components.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">extension</i>
+                            Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-display-modes.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Display Modes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-forms.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">edit_note</i>
+                            Forms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-hud-modal-component.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">view_in_ar</i>
+                            Hud Modal Component</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-lightbox.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Lightbox</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-masonry.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Masonry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-tables.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">table</i>
+                            Tables</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ui-components-ui-elements.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">palette</i>
+                            Ui Elements</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Data Visualization</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-data-visualization-charts.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">bar_chart</i>
+                            Charts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-data-visualization-google-maps.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Google Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-data-visualization-gridjs.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">dataset</i>
+                            Gridjs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-data-visualization-vector-maps.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">public</i>
+                            Vector Maps</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>E-commerce</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ecommerce-ecommerce-orders.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">shopping_cart</i>
+                            Ecommerce Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ecommerce-ecommerce-overview.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">store</i>
+                            Ecommerce Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-ecommerce-ecommerce-products.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">inventory_2</i>
+                            Ecommerce Products</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Job Board</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-job-board-jobs.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">work</i>
+                            Jobs</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Cryptocurrency</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-cryptocurrency-crypto.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                            Crypto</a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Advanced</span>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-advanced-package.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">inventory</i>
+                            Package</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-advanced-plugins.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">extension</i>
+                            Plugins</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-advanced-roadmap.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="docs-advanced-typescript.html" data-bs-dismiss="offcanvas"> <i class="material-symbols-rounded me-2">article</i>
+                            Typescript</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (desktop only - LG and above) -->
+            <nav id="docsSidebar" class="col-lg-4 col-xl-3 col-xxl-2 d-none d-lg-block sidebar docs-sidebar-sticky">
+                <div class="docs-nav">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Getting Started</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="docs.html"> <i class="material-symbols-rounded me-2">home</i>
+                                Introduction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-getting-started-laravel-setup.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Laravel Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-getting-started-static-setup.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Static Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-getting-started-support.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-getting-started-theming.html"> <i class="material-symbols-rounded me-2">palette</i>
+                                Theming</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Authentication</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-authentication-overview.html"> <i class="material-symbols-rounded me-2">visibility</i>
+                                Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-authentication-oauth-setup.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Oauth Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-authentication-laravel.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Laravel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-authentication-page-templates.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Page Templates</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Livewire</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-introduction.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Introduction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-layout.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Layout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-components.html"> <i class="material-symbols-rounded me-2">extension</i>
+                                Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-best-practices.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Best Practices</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-icons.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Icons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-laravel-sail.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Laravel Sail</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-livewire-socialite-integration.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Socialite Integration</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Dashboard &amp; Widgets</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-dashboard-widgets-dashboards.html"> <i class="material-symbols-rounded me-2">dashboard</i>
+                                Dashboards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-dashboard-widgets-templates.html"> <i class="material-symbols-rounded me-2">apps</i>
+                                Templates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-dashboard-widgets-widgets.html"> <i class="material-symbols-rounded me-2">widgets</i>
+                                Widgets</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Applications</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-apps-readme.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Readme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-apps-ai-agent.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Ai Agent</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-apps-calendar.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-apps-chat-box.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Chat Box</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-apps-email-box.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Email Box</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-bootstrap.html"> <i class="material-symbols-rounded me-2">grid_view</i>
+                                Bootstrap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-components.html"> <i class="material-symbols-rounded me-2">extension</i>
+                                Components</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-display-modes.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Display Modes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-forms.html"> <i class="material-symbols-rounded me-2">edit_note</i>
+                                Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-hud-modal-component.html"> <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                Hud Modal Component</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-lightbox.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Lightbox</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-masonry.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Masonry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-tables.html"> <i class="material-symbols-rounded me-2">table</i>
+                                Tables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ui-components-ui-elements.html"> <i class="material-symbols-rounded me-2">palette</i>
+                                Ui Elements</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Data Visualization</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-data-visualization-charts.html"> <i class="material-symbols-rounded me-2">bar_chart</i>
+                                Charts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-data-visualization-google-maps.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Google Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-data-visualization-gridjs.html"> <i class="material-symbols-rounded me-2">dataset</i>
+                                Gridjs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-data-visualization-vector-maps.html"> <i class="material-symbols-rounded me-2">public</i>
+                                Vector Maps</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>E-commerce</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ecommerce-ecommerce-orders.html"> <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                Ecommerce Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ecommerce-ecommerce-overview.html"> <i class="material-symbols-rounded me-2">store</i>
+                                Ecommerce Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-ecommerce-ecommerce-products.html"> <i class="material-symbols-rounded me-2">inventory_2</i>
+                                Ecommerce Products</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Job Board</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-job-board-jobs.html"> <i class="material-symbols-rounded me-2">work</i>
+                                Jobs</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Cryptocurrency</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-cryptocurrency-crypto.html"> <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                Crypto</a>
+                        </li>
+                    </ul>
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info"> <span>Advanced</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-advanced-package.html"> <i class="material-symbols-rounded me-2">inventory</i>
+                                Package</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-advanced-plugins.html"> <i class="material-symbols-rounded me-2">extension</i>
+                                Plugins</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-advanced-roadmap.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Roadmap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="docs-advanced-typescript.html"> <i class="material-symbols-rounded me-2">article</i>
+                                Typescript</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Main content -->
+            <main class="col-12 col-lg-8 col-xl-9 col-xxl-10">
+                <div class="pt-3 pb-2 mb-3">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Documentation</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content area - scrollspy applied to body -->
+                    <div class="docs-content">
+                        <div class="docs-content">
+                            <h1>Welcome to UltraViolet Pro</h1>
+                            <p class="lead"> <strong>The most advanced Bootstrap 5 dashboard template on the market.</strong> Period. UltraViolet Pro isn't just another admin template—it's a complete, production-ready platform that combines cutting-edge design with battle-tested functionality. Featuring futuristic HUD-style interfaces, real-time Livewire components, and over 80 pre-built pages, this is the dashboard template that sets the standard for modern web applications.</p>
+                            <p class="lead">Thank you for choosing UltraViolet Pro. You've just unlocked the most powerful, flexible, and beautifully crafted dashboard template available. Built by <a href="https://huement.com" target="_blank">Huement</a>, this represents years of real-world experience distilled into one exceptional product. Let's build something incredible.</p>
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <img src="./images/promo/outrun-hud.png" class="img-fluid rounded shadow-sm" alt="Outrun HUD Theme Preview">
+                                    <p class="text-center small text-muted mt-2">Futuristic HUD-Style Interface</p>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <img src="./images/promo/live-data.png" class="img-fluid rounded shadow-sm" alt="Live Data & Livewire Preview">
+                                    <p class="text-center small text-muted mt-2">Real-Time Data with Laravel Livewire</p>
+                                </div>
+                            </div>
+                            <div class="alert alert-primary">
+                                <h5><i class="material-symbols-rounded me-2">bolt</i>80+ Production-Ready Pages. Zero Compromises.</h5>
+                                <p class="mb-0">Ship faster than ever with both static HTML exports <strong>and</strong> a full-stack Laravel 11 + Livewire 3 application. Whether you need lightning-fast static pages or dynamic, real-time interfaces, UltraViolet delivers both—without sacrificing quality, performance, or style.</p>
+                            </div>
+                            <h2>Stunning Features That Set Us Apart</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-primary">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-primary me-2">grid_view</i>
+                                                Flexible Layout System</h5>
+                                            <p class="card-text">Switch between <strong>vertical</strong> and <strong>horizontal</strong> navigation layouts on the fly. Every layout is pixel-perfect across all devices—from 4K displays to mobile screens. Your dashboard looks incredible everywhere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-success">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-success me-2">dashboard_customize</i>
+                                                Futuristic HUD Interface</h5>
+                                            <p class="card-text">Eye-catching, cyberpunk-inspired HUD components with glowing effects and animated borders. This isn't your boring corporate dashboard—it's a visual experience that makes data feel alive.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-info">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-info me-2">dark_mode</i>
+                                                Gorgeous Dark & Light Modes</h5>
+                                            <p class="card-text">Seamlessly switch between stunning <strong>dark</strong> and <strong>light</strong> themes with buttery-smooth transitions. Built with CSS variables for instant customization—change the entire color scheme in seconds.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-warning">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-warning me-2">translate</i>
+                                                RTL Support</h5>
+                                            <p class="card-text">Full <strong>Right-to-Left (RTL)</strong> language support for Arabic, Hebrew, and other RTL languages. Seamlessly switch between LTR and RTL layouts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-danger">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-danger me-2">animation</i>
+                                                Cinematic Backgrounds</h5>
+                                            <p class="card-text">Mesmerizing <strong>animated backgrounds</strong> that add depth and motion without distracting from content. Multiple styles included, or disable them entirely for a clean aesthetic. Your choice.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card h-100 border-secondary">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-secondary me-2">devices</i>
+                                                Flawlessly Responsive</h5>
+                                            <p class="card-text">Perfect on <strong>every screen</strong>—from 5K displays to budget smartphones. Mobile-first architecture means your dashboard is fast, beautiful, and functional everywhere.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2>What's Included</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-primary me-2">flash_on</i>
+                                                Laravel 11 + Livewire 3</h5>
+                                            <p class="card-text">Real-time, reactive interfaces powered by <strong>Laravel 11</strong> and <strong>Livewire 3</strong>. Build dynamic dashboards that update instantly—no page refreshes, no complex JavaScript. Just pure magic.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-success me-2">html</i>
+                                                Static HTML Export</h5>
+                                            <p class="card-text"> <strong>100+ production-ready</strong> HTML pages—optimized, minified, and ready to ship. Deploy anywhere, integrate with anything. No backend needed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <i class="material-symbols-rounded text-info me-2">extension</i>
+                                                Premium Components</h5>
+                                            <p class="card-text">Dozens of <strong>hand-crafted components</strong> and meticulously curated plugins. Every piece works together perfectly—no conflicts, no surprises.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2>Dashboard Templates & Applications</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="./images/promo/dashboard-preview.png" class="img-fluid rounded shadow-sm" alt="Dashboard Preview">
+                                    </div>
+                                    <h4><i class="material-symbols-rounded text-primary me-2">monitoring</i>Dashboard Variants</h4>
+                                    <ul>
+                                        <li><strong>Sales Dashboard</strong> - Revenue tracking, KPIs, and sales analytics</li>
+                                        <li><strong>Marketing Dashboard</strong> - Campaign metrics, traffic, and conversions</li>
+                                        <li><strong>CRM Dashboard</strong> - Customer management and pipeline tracking</li>
+                                        <li><strong>Analytics Dashboard</strong> - Comprehensive data visualization</li>
+                                        <li><strong>E-commerce Dashboard</strong> - Products, orders, and inventory</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <img src="./images/promo/app-taskboard.png" class="img-fluid rounded shadow-sm" alt="Applications Preview">
+                                    </div>
+                                    <h4><i class="material-symbols-rounded text-success me-2">apps</i>Complete Applications</h4>
+                                    <ul>
+                                        <li><strong>Crypto Platform</strong> - Wallets, exchanges, lending, and ICO management</li>
+                                        <li><strong>Job Board</strong> - Job listings, applications, and categories</li>
+                                        <li><strong>E-commerce Suite</strong> - Full product catalog and checkout flow</li>
+                                        <li><strong>Task Management</strong> - Kanban boards with drag & drop</li>
+                                        <li><strong>Email & Chat</strong> - Full messaging interfaces</li>
+                                        <li><strong>Calendar</strong> - Event scheduling with FullCalendar</li>
+                                        <li><strong>AI Agent Interface</strong> - Modern AI chat interface</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Rich Component Library</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-4">
+                                    <img src="./images/promo/hud-menu.png" class="img-fluid rounded shadow-sm mb-3" alt="Menu and UI Components">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <img src="./images/promo/horizontal-menu.png" class="img-fluid rounded shadow-sm mb-3" alt="Horizontal Menu Layout">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-3">
+                                    <h5>UI Components</h5>
+                                    <ul class="small">
+                                        <li>20+ Alert variants</li>
+                                        <li>30+ Button styles</li>
+                                        <li>Card layouts</li>
+                                        <li>Modal dialogs</li>
+                                        <li>Tabs & accordions</li>
+                                        <li>Progress bars</li>
+                                        <li>Badges & labels</li>
+                                        <li>Tooltips & popovers</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Forms</h5>
+                                    <ul class="small">
+                                        <li>Basic inputs</li>
+                                        <li>Advanced inputs</li>
+                                        <li>Validation examples</li>
+                                        <li>File uploads</li>
+                                        <li>Rich text editors</li>
+                                        <li>Form layouts</li>
+                                        <li>Input masks</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Data Tables</h5>
+                                    <ul class="small">
+                                        <li>Sortable tables</li>
+                                        <li>Searchable tables</li>
+                                        <li>Paginated tables</li>
+                                        <li>Editable tables</li>
+                                        <li>Grid.js integration</li>
+                                        <li>Export functionality</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Charts & Visualization</h5>
+                                    <ul class="small">
+                                        <li>Line charts</li>
+                                        <li>Bar charts</li>
+                                        <li>Pie/donut charts</li>
+                                        <li>Area charts</li>
+                                        <li>Mixed charts</li>
+                                        <li>Vector maps</li>
+                                        <li>Real-time updates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6 mb-3">
+                                    <img src="./images/promo/form-input-mask.png" class="img-fluid rounded shadow-sm" alt="Forms Example">
+                                    <p class="text-center small text-muted mt-2">Advanced Form Components with Input Masks</p>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <img src="./images/promo/finance-dashboard.png" class="img-fluid rounded shadow-sm" alt="Finance Dashboard">
+                                    <p class="text-center small text-muted mt-2">Financial Analytics Dashboard</p>
+                                </div>
+                            </div>
+                            <h2>Technology Stack</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Technology</th>
+                                            <th>Version</th>
+                                            <th>Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Laravel</td>
+                                            <td>11.x</td>
+                                            <td>Backend Framework</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Livewire</td>
+                                            <td>3.x</td>
+                                            <td>Reactive Components</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bootstrap</td>
+                                            <td>5.3.8</td>
+                                            <td>CSS Framework</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alpine.js</td>
+                                            <td>3.4.2</td>
+                                            <td>Lightweight JavaScript</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ApexCharts</td>
+                                            <td>Latest</td>
+                                            <td>Charts & Visualization</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grid.js</td>
+                                            <td>Latest</td>
+                                            <td>Advanced Tables</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FullCalendar</td>
+                                            <td>Latest</td>
+                                            <td>Calendar & Scheduling</td>
+                                        </tr>
+                                        <tr>
+                                            <td>JSVectorMap</td>
+                                            <td>Latest</td>
+                                            <td>Interactive Maps</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sortable.js</td>
+                                            <td>Latest</td>
+                                            <td>Drag & Drop</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vite</td>
+                                            <td>5.x</td>
+                                            <td>Asset Bundling</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TypeScript</td>
+                                            <td>Latest</td>
+                                            <td>Type Safety</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h2>Cryptocurrency & Wallet Features</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <img src="./images/promo/wallet.png" class="img-fluid rounded shadow-sm mb-3" alt="Crypto Wallet Interface">
+                                    <p class="text-center small text-muted">Cryptocurrency Wallet Management</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Complete cryptocurrency management suite including:</p>
+                                    <ul>
+                                        <li>Wallet Dashboard with balance tracking</li>
+                                        <li>Exchange interface for trading</li>
+                                        <li>Lending platform for crypto lending</li>
+                                        <li>ICO management and token sales</li>
+                                        <li>Transaction history and analytics</li>
+                                        <li>Multiple currency support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2>Authentication Pages</h2>
+                            <p>Complete authentication flow with <strong>3 beautiful variants</strong> for each page type:</p>
+                            <ul>
+                                <li>Login (Basic, Square, Wallpaper variants)</li>
+                                <li>Register (3 variants)</li>
+                                <li>Forgot Password (3 variants)</li>
+                                <li>Reset Password</li>
+                                <li>Lock Screen</li>
+                                <li>Logout</li>
+                            </ul>
+                            <h2>Built by Experts. Proven in Production.</h2>
+                            <p>UltraViolet Pro is crafted by <a href="https://huement.com" target="_blank">Huement</a>—a design and development studio that's been in the trenches building real applications for real clients. This isn't a template thrown together by watching tutorials. It's distilled expertise from years of building production dashboards that actually ship and scale.</p>
+                            <p> <strong>Here's what makes us different:</strong> We're obsessed with modern standards. This entire project is <strong>100% jQuery-free</strong> (yes, really—in 2025, that should be standard). We meticulously curated every single plugin and dependency, personally reviewing each one against alternatives. No bloat. No legacy garbage. Just clean, modern code that works.</p>
+                            <p>We built UltraViolet the way <em>we'd</em> want to use it—whether you're prototyping at 2 AM or deploying to production for enterprise clients. It's rock-solid, blazingly fast, and genuinely enjoyable to work with. Every component is documented. Every feature is tested. Every line of code is intentional.</p>
+                            <p>Want to learn more about our approach to development? Check out the <a href="https://huement.com/blog" target="_blank">Huement blog</a> where we share insights on modern web development and design.</p>
+                            <h2>Quick Start</h2>
+                            <ol>
+                                <li><strong>Installation:</strong> Follow the <a href="docs-installation.html">installation
+                    guide</a> to get started.</li>
+                                <li><strong>Configuration:</strong> Set up your <a href="docs-configuration.html">configuration settings</a>.</li>
+                                <li><strong>Theming:</strong> Learn about the <a href="docs-theming.html">theme system</a> - dark mode, light mode, and customization.</li>
+                                <li><strong>Components:</strong> Explore the <a href="docs-bootstrap.html">Bootstrap
+                    components</a> and <a href="docs-livewire.html">Livewire components</a>.</li>
+                            </ol>
+                            <h2>Why UltraViolet Dominates</h2>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <h4> <i class="material-symbols-rounded text-primary me-2">phone_android</i>
+                                        Pixel-Perfect Everywhere</h4>
+                                    <p>Looks stunning on every device. Period. Bootstrap 5 foundation with custom responsive enhancements means flawless rendering from 320px to 5K displays.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4> <i class="material-symbols-rounded text-success me-2">palette</i>
+                                        Infinitely Customizable</h4>
+                                    <p>Your design, your way. Full SCSS source files, CSS variables, and a complete Vite build system. Change everything or nothing—it's your call.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4> <i class="material-symbols-rounded text-info me-2">rocket_launch</i>
+                                        Blazingly Fast</h4>
+                                    <p>Lightning-fast performance with Vite bundling and zero jQuery bloat. We obsess over performance so you don't have to.</p>
+                                </div>
+                            </div>
+                            <h2>Browser Support</h2>
+                            <p>UltraViolet Pro works on all modern browsers:</p>
+                            <ul>
+                                <li>✅ Chrome (latest 2 versions)</li>
+                                <li>✅ Firefox (latest 2 versions)</li>
+                                <li>✅ Safari (latest 2 versions)</li>
+                                <li>✅ Edge (latest 2 versions)</li>
+                                <li>✅ Mobile browsers (iOS Safari, Chrome Mobile)</li>
+                            </ul>
+                            <h2>Getting Help & Support</h2>
+                            <p>If you need help or have questions, here are some resources:</p>
+                            <ul>
+                                <li><strong>Documentation:</strong> Comprehensive guides for every feature</li>
+                                <li><strong>Examples:</strong> Check out the component examples in the dashboard</li>
+                                <li><strong>Code Comments:</strong> All code is well-commented for easy understanding</li>
+                                <li><strong>Email Support:</strong> support@huement.com</li>
+                            </ul>
+                            <div class="alert alert-info">
+                                <h5><i class="material-symbols-rounded me-2">info</i>Pro Tip</h5>
+                                <p class="mb-0">Start with the <a href="docs-installation.html">installation guide</a> and then explore the <a href="../admin-components-cards.html">component examples</a> to see everything in action.</p>
+                            </div>
+                            <div class="alert alert-secondary mt-4">
+                                <h5><i class="material-symbols-rounded me-2">gavel</i>License</h5>
+                                <p class="mb-0">UltraViolet Pro is a commercial template. Please refer to your license agreement for usage terms and conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <cosmic-wave class="fill-primary ride-the-wave" data-wave-points="12" data-wave-variance="2" data-wave-face="top">
+    </cosmic-wave>
+    <div class="footer-info d-block w-100 bg-primary pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="text-center">A <a href="https://huement.com" class="text-light fw-bold">huement.com</a> Original Project</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5.3.5 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+    <!-- CosmicWave Web Component -->
+    <script src="./js/cosmicwave.min.js"></script>
+    <!-- Additional Scripts -->
+    <script src="./assets/docs-legacy2.js"></script>
+    <!-- Material Icons Loading Script -->
+    <script>
+    // Mark Material Icons as loaded once font is ready
+        if (document.fonts) {
+            // Modern browser with Font Loading API
+            Promise.all([
+                document.fonts.load('400 24px "Material Symbols Rounded"'),
+            ]).then(() => {
+                document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                    icon.classList.add('material-symbols-rounded--loaded');
+                });
+            }).catch(() => {
+                // Fallback: mark as loaded after delay
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        } else {
+            // Fallback for older browsers
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        }
+    </script>
+    <!-- Initialize Offcanvas for Mobile Menu -->
+    <script>
+    // Wait for both DOM and Bootstrap to be ready
+        function initOffcanvas() {
+            if (typeof bootstrap !== 'undefined') {
+                const offcanvasElement = document.getElementById('docsSidebarOffcanvas');
+                const toggleButton = document.querySelector('[data-bs-target="#docsSidebarOffcanvas"]');
+
+                if (offcanvasElement && toggleButton) {
+                    // Bootstrap data attributes should handle this automatically
+                    // But we ensure it's initialized
+                    try {
+                        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                        console.log('Offcanvas initialized successfully');
+                    } catch (e) {
+                        console.warn('Offcanvas already initialized or error:', e);
+                    }
+                } else {
+                    console.warn('Offcanvas elements not found');
+                }
+            } else {
+                // Retry after a short delay
+                setTimeout(initOffcanvas, 100);
+            }
+        }
+
+        // Try to initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOffcanvas);
+        } else {
+            // DOM already ready, check if Bootstrap is loaded
+            initOffcanvas();
+        }
+    </script>
+    <!-- Scrollspy and Sticky Sidebar Styles -->
+    <style>
+    body.docs-layout {
+            margin-bottom: 0 !important;
+        }
+
+        /* Override global overflow-x: hidden that breaks sticky positioning */
+        body.docs-layout,
+        body.docs-layout .container-fluid {
+            overflow-x: visible !important;
+        }
+
+        html:has(body.docs-layout) {
+            overflow-x: visible !important;
+        }
+
+        /* Make the sidebar sticky */
+        #docsSidebar.docs-sidebar-sticky {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 20px !important;
+            align-self: flex-start;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .offcanvas .btn-close {
+            filter: none !important;
+        }
+
+        /* Ensure parent containers don't interfere with sticky */
+        body.docs-layout .container-fluid>.row {
+            align-items: flex-start;
+        }
+
+        /* Scrollspy will work on natural page scroll */
+        /* No need for constrained container in docs layout */
+
+        /* Style active nav links for scrollspy */
+        .docs-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .docs-nav .nav-link {
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add spacing between sections for better scroll tracking */
+        .docs-content h1,
+        .docs-content h2,
+        .docs-content h3,
+        .docs-content h4,
+        .docs-content h5,
+        .docs-content h6 {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            .navbar .btn-group .btn {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .navbar .btn-group .btn .material-symbols-rounded {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-specific improvements for docs pages */
+        @media (max-width: 767.98px) {
+
+            /* Improve typography on mobile */
+            .docs-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .docs-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .docs-content h4 {
+                font-size: 1.125rem;
+                margin-bottom: 0.625rem;
+            }
+
+            /* Improve lead paragraphs on mobile */
+            .docs-content .lead {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Better spacing for cards on mobile */
+            .docs-content .card {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .card-body {
+                padding: 1rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Improve image spacing on mobile */
+            .docs-content img {
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            /* Better spacing for rows on mobile */
+            .docs-content .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+
+            .docs-content .row>[class*="col-"] {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stack component library columns better on mobile */
+            .docs-content .row .col-md-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .docs-content .row .col-md-3:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Improve table responsiveness */
+            .docs-content .table-responsive {
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .docs-content .table {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .table th,
+            .docs-content .table td {
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+
+            /* Better alert spacing on mobile */
+            .docs-content .alert {
+                margin-bottom: 1rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .docs-content .alert h5 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Improve lists on mobile */
+            .docs-content ul,
+            .docs-content ol {
+                padding-left: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better button group spacing */
+            .docs-content .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            /* Improve main content padding on mobile */
+            main {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main .pt-3,
+            main .pb-2 {
+                padding-top: 1rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Better page header on mobile */
+            main .border-bottom {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            main h1.h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            main .btn-toolbar {
+                margin-top: 0.5rem;
+            }
+
+            /* Reduce section spacing on mobile */
+            .docs-content>* {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content>h1,
+            .docs-content>h2 {
+                margin-top: 1.5rem;
+            }
+
+            .docs-content>h1:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* Small mobile devices (320px and up) */
+        @media (max-width: 575.98px) {
+            .docs-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .docs-content .lead {
+                font-size: 0.9375rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 0.9375rem;
+            }
+
+            /* Make component library single column on very small screens */
+            .docs-content .row .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .docs-content .row .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/admin-static-shim.js"></script>
+</body>
+
+</html>

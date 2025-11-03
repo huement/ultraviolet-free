@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="7K5E4M1rZZn4IvgaJSoYxdjHGii9UDI5oDf4c3aM">
+
+<title>Show | UltraViolet</title>
+
+<link rel="icon" href="./favicon-32x32.png" type="image/png">
+
+<!-- Google Fonts & Material Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload Material Icons font to prevent FOUC -->
+<link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+<!-- Bootstrap Icon Font -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- Prevent Material Icons FOUC -->
+<style type="text/css">
+    .material-symbols-rounded,
+    .material-icons {
+        font-size: 24px;
+        line-height: 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
+
+    .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+    .material-icons:not(.material-icons--loaded) {
+        color: transparent;
+        user-select: none;
+    }
+
+    .material-symbols-rounded--loaded,
+    .material-icons--loaded {
+        color: inherit;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .material-icons {
+        font-family: 'Material Symbols Rounded' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 24px !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        word-wrap: normal !important;
+        direction: ltr !important;
+        -webkit-font-feature-settings: 'liga' !important;
+        -webkit-font-smoothing: antialiased !important;
+        text-rendering: optimizeLegibility !important;
+        font-feature-settings: 'liga' !important;
+        vertical-align: middle !important;
+    }
+</style>
+
+    <!-- Scripts -->
+        <script src="./assets/polyfills-legacy.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
+    <link rel="stylesheet" href="./assets/docs.css">
+    <script src="./assets/docs-theme-legacy.js"></script>
+
+    <!-- Additional Meta -->
+    <meta name="description" content="Documentation for UltraViolet Admin Dashboard">
+
+    <!-- Prism.js for code highlighting (theme loaded dynamically by docs-theme-legacy.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <!-- Load languages in dependency order -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup-templating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+
+    </head>
+
+<body class="docs-layout space-grotesk-300" data-bs-spy="scroll" data-bs-target="#docsSidebar" data-bs-smooth-scroll="true"
+    tabindex="0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <!-- Mobile menu toggle button -->
+            <button class="btn btn-link d-lg-none me-2 p-2 text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#docsSidebarOffcanvas" aria-controls="docsSidebarOffcanvas"
+                aria-label="Toggle navigation menu">
+                <i class="material-symbols-rounded">menu</i>
+            </button>
+
+            <a class="navbar-brand" href="../admin-dashboard.html">
+                <i class="material-symbols-rounded me-2 d-none d-lg-inline">arrow_back</i>
+                <img src="./images/uv/ultra-white.png" class="img-fluid" alt="UltraViolet Logo Text"
+                    width="170" height="17" />
+            </a>
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">menu_book</i>
+                    <span class="d-none d-lg-inline">Welcome Page</span>
+                </a>
+                <a href="../admin-dashboard.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">dashboard</i>
+                    <span class="d-none d-lg-inline">Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <cosmic-wave class="fill-primary cosmic-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="bottom"></cosmic-wave>
+
+    <!-- Offcanvas for mobile/tablet (MD and below) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="docsSidebarOffcanvas"
+        aria-labelledby="docsSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="docsSidebarOffcanvasLabel">Documentation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="docs-nav">
+                
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Getting Started</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">home</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-laravel-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-static-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Static Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-support.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Support
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-theming.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Theming
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Authentication</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">visibility</i>
+                                    Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-oauth-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Oauth Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-laravel.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-page-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Page Templates
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Livewire</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-introduction.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-layout.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Layout
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-best-practices.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Best Practices
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-icons.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Icons
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-laravel-sail.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Sail
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-socialite-integration.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Socialite Integration
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Dashboard &amp; Widgets</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-dashboards.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dashboard</i>
+                                    Dashboards
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">apps</i>
+                                    Templates
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-widgets.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">widgets</i>
+                                    Widgets
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Applications</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-readme.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Readme
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-ai-agent.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Ai Agent
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-calendar.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Calendar
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-chat-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Chat Box
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-email-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Email Box
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-bootstrap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">grid_view</i>
+                                    Bootstrap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-display-modes.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Display Modes
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-forms.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">edit_note</i>
+                                    Forms
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-hud-modal-component.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                    Hud Modal Component
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-lightbox.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Lightbox
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-masonry.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Masonry
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-tables.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">table</i>
+                                    Tables
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-ui-elements.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Ui Elements
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Data Visualization</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-charts.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">bar_chart</i>
+                                    Charts
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-google-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Google Maps
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-gridjs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dataset</i>
+                                    Gridjs
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-vector-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">public</i>
+                                    Vector Maps
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>E-commerce</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-orders.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    Ecommerce Orders
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">store</i>
+                                    Ecommerce Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                    href="docs-ecommerce-ecommerce-products.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory_2</i>
+                                    Ecommerce Products
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Job Board</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-job-board-jobs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">work</i>
+                                    Jobs
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Cryptocurrency</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-cryptocurrency-crypto.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                    Crypto
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Advanced</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-package.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory</i>
+                                    Package
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-plugins.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Plugins
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-roadmap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Roadmap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-typescript.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Typescript
+                                </a>
+                            </li>
+                                            </ul>
+                            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (desktop only - LG and above) -->
+            <nav id="docsSidebar" class="col-lg-4 col-xl-3 col-xxl-2 d-none d-lg-block sidebar docs-sidebar-sticky">
+                <div class="docs-nav">
+                    
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Getting Started</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs.html">
+                                        <i class="material-symbols-rounded me-2">home</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-laravel-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-static-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Static Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-support.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Support
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-theming.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Theming
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Authentication</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-overview.html">
+                                        <i class="material-symbols-rounded me-2">visibility</i>
+                                        Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-oauth-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Oauth Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-laravel.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-page-templates.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Page Templates
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Livewire</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-introduction.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-layout.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Layout
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-best-practices.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Best Practices
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-icons.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Icons
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-laravel-sail.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Sail
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-socialite-integration.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Socialite Integration
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Dashboard &amp; Widgets</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-dashboards.html">
+                                        <i class="material-symbols-rounded me-2">dashboard</i>
+                                        Dashboards
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-templates.html">
+                                        <i class="material-symbols-rounded me-2">apps</i>
+                                        Templates
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-widgets.html">
+                                        <i class="material-symbols-rounded me-2">widgets</i>
+                                        Widgets
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Applications</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-readme.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Readme
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-ai-agent.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Ai Agent
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-calendar.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-chat-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Chat Box
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-email-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Email Box
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>UI Components</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-bootstrap.html">
+                                        <i class="material-symbols-rounded me-2">grid_view</i>
+                                        Bootstrap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-display-modes.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Display Modes
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-forms.html">
+                                        <i class="material-symbols-rounded me-2">edit_note</i>
+                                        Forms
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-hud-modal-component.html">
+                                        <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                        Hud Modal Component
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-lightbox.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Lightbox
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-masonry.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Masonry
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-tables.html">
+                                        <i class="material-symbols-rounded me-2">table</i>
+                                        Tables
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-ui-elements.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Ui Elements
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Data Visualization</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-charts.html">
+                                        <i class="material-symbols-rounded me-2">bar_chart</i>
+                                        Charts
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-google-maps.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Google Maps
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-gridjs.html">
+                                        <i class="material-symbols-rounded me-2">dataset</i>
+                                        Gridjs
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-vector-maps.html">
+                                        <i class="material-symbols-rounded me-2">public</i>
+                                        Vector Maps
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>E-commerce</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-orders.html">
+                                        <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                        Ecommerce Orders
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-overview.html">
+                                        <i class="material-symbols-rounded me-2">store</i>
+                                        Ecommerce Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        href="docs-ecommerce-ecommerce-products.html">
+                                        <i class="material-symbols-rounded me-2">inventory_2</i>
+                                        Ecommerce Products
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Job Board</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-job-board-jobs.html">
+                                        <i class="material-symbols-rounded me-2">work</i>
+                                        Jobs
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Cryptocurrency</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-cryptocurrency-crypto.html">
+                                        <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                        Crypto
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Advanced</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-package.html">
+                                        <i class="material-symbols-rounded me-2">inventory</i>
+                                        Package
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-plugins.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Plugins
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-roadmap.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Roadmap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-typescript.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Typescript
+                                    </a>
+                                </li>
+                                                    </ul>
+                                    </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-12 col-lg-8 col-xl-9 col-xxl-10">
+                <div class="pt-3 pb-2 mb-3">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Ecommerce Products</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <!-- Content area - scrollspy applied to body -->
+                    <div class="docs-content">
+                        <div class="docs-content">
+    <h1>Ecommerce Products</h1>
+<p>UltraViolet Pro provides comprehensive product management features for creating, organizing, and displaying products in your online store.</p>
+<h2>Product Management</h2>
+<h3>Creating Products</h3>
+<h4>Basic Product Information</h4>
+<pre><code class="language-php">// Product creation example
+$product = Product::create([
+    'name' =&gt; 'Premium Wireless Headphones',
+    'slug' =&gt; 'premium-wireless-headphones',
+    'description' =&gt; 'Experience premium sound quality with our wireless headphones...',
+    'short_description' =&gt; 'Premium wireless headphones with noise cancellation',
+    'sku' =&gt; 'PWH-001',
+    'price' =&gt; 299.99,
+    'compare_price' =&gt; 399.99,
+    'cost_price' =&gt; 150.00,
+    'stock_quantity' =&gt; 100,
+    'low_stock_threshold' =&gt; 10,
+    'weight' =&gt; 0.5,
+    'dimensions' =&gt; [
+        'length' =&gt; 20,
+        'width' =&gt; 18,
+        'height' =&gt; 8
+    ],
+    'status' =&gt; 'active',
+    'featured' =&gt; true,
+    'meta_title' =&gt; 'Premium Wireless Headphones - Best Audio Quality',
+    'meta_description' =&gt; 'Shop premium wireless headphones with noise cancellation...'
+]);</code></pre>
+<h4>Product Categories</h4>
+<pre><code class="language-php">// Assign categories to product
+$product-&gt;categories()-&gt;attach([1, 2, 3]); // Category IDs
+
+// Create category hierarchy
+$electronics = Category::create([
+    'name' =&gt; 'Electronics',
+    'slug' =&gt; 'electronics',
+    'description' =&gt; 'Electronic devices and accessories',
+    'parent_id' =&gt; null,
+    'sort_order' =&gt; 1
+]);
+
+$audio = Category::create([
+    'name' =&gt; 'Audio',
+    'slug' =&gt; 'audio',
+    'description' =&gt; 'Audio equipment and accessories',
+    'parent_id' =&gt; $electronics-&gt;id,
+    'sort_order' =&gt; 1
+]);
+
+$headphones = Category::create([
+    'name' =&gt; 'Headphones',
+    'slug' =&gt; 'headphones',
+    'description' =&gt; 'Headphones and earphones',
+    'parent_id' =&gt; $audio-&gt;id,
+    'sort_order' =&gt; 1
+]);</code></pre>
+<h3>Product Images</h3>
+<h4>Uploading and Managing Images</h4>
+<pre><code class="language-php">// Upload product images
+$product = Product::find(1);
+
+// Primary image
+$primaryImage = $product-&gt;images()-&gt;create([
+    'image_path' =&gt; 'products/headphones-main.jpg',
+    'alt_text' =&gt; 'Premium Wireless Headphones - Main View',
+    'sort_order' =&gt; 1,
+    'is_primary' =&gt; true
+]);
+
+// Additional images
+$product-&gt;images()-&gt;create([
+    'image_path' =&gt; 'products/headphones-side.jpg',
+    'alt_text' =&gt; 'Premium Wireless Headphones - Side View',
+    'sort_order' =&gt; 2,
+    'is_primary' =&gt; false
+]);
+
+$product-&gt;images()-&gt;create([
+    'image_path' =&gt; 'products/headphones-detail.jpg',
+    'alt_text' =&gt; 'Premium Wireless Headphones - Detail View',
+    'sort_order' =&gt; 3,
+    'is_primary' =&gt; false
+]);</code></pre>
+<h4>Image Upload Form</h4>
+<pre><code class="language-html">&lt;form action="{{ route('admin.products.images.store', $product) }}" method="POST" enctype="multipart/form-data"&gt;
+    @csrf
+
+    &lt;div class="mb-3"&gt;
+        &lt;label for="images" class="form-label"&gt;Product Images&lt;/label&gt;
+        &lt;input type="file" class="form-control" id="images" name="images[]" multiple accept="image/*"&gt;
+        &lt;div class="form-text"&gt;Upload multiple images. First image will be set as primary.&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="mb-3"&gt;
+        &lt;div class="form-check"&gt;
+            &lt;input class="form-check-input" type="checkbox" id="optimize_images" name="optimize_images" checked&gt;
+            &lt;label class="form-check-label" for="optimize_images"&gt;
+                Automatically optimize images
+            &lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button type="submit" class="btn btn-primary"&gt;Upload Images&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<h3>Product Variants</h3>
+<h4>Creating Product Variants</h4>
+<pre><code class="language-php">// Product with variants (e.g., different colors and sizes)
+$product = Product::create([
+    'name' =&gt; 'Classic T-Shirt',
+    'slug' =&gt; 'classic-t-shirt',
+    'description' =&gt; 'Comfortable cotton t-shirt...',
+    'sku' =&gt; 'CTS-BASE', // Base SKU
+    'price' =&gt; 24.99,
+    'status' =&gt; 'active'
+]);
+
+// Create variants
+$variants = [
+    [
+        'name' =&gt; 'Classic T-Shirt - Black - Small',
+        'sku' =&gt; 'CTS-BLK-S',
+        'price' =&gt; 24.99,
+        'stock_quantity' =&gt; 50,
+        'attributes' =&gt; [
+            'color' =&gt; 'Black',
+            'size' =&gt; 'Small'
+        ]
+    ],
+    [
+        'name' =&gt; 'Classic T-Shirt - Black - Medium',
+        'sku' =&gt; 'CTS-BLK-M',
+        'price' =&gt; 24.99,
+        'stock_quantity' =&gt; 75,
+        'attributes' =&gt; [
+            'color' =&gt; 'Black',
+            'size' =&gt; 'Medium'
+        ]
+    ],
+    [
+        'name' =&gt; 'Classic T-Shirt - White - Small',
+        'sku' =&gt; 'CTS-WHT-S',
+        'price' =&gt; 24.99,
+        'stock_quantity' =&gt; 30,
+        'attributes' =&gt; [
+            'color' =&gt; 'White',
+            'size' =&gt; 'Small'
+        ]
+    ]
+];
+
+foreach ($variants as $variantData) {
+    $product-&gt;variants()-&gt;create($variantData);
+}</code></pre>
+<h4>Variant Selection Interface</h4>
+<pre><code class="language-html">&lt;div class="product-variants"&gt;
+    &lt;div class="variant-group mb-3"&gt;
+        &lt;label class="form-label fw-bold"&gt;Color:&lt;/label&gt;
+        &lt;div class="variant-options d-flex gap-2"&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option active" 
+                    data-variant="color" data-value="black"&gt;
+                &lt;span class="color-swatch me-2" style="width: 20px; height: 20px; background-color: #000; border-radius: 50%; display: inline-block;"&gt;&lt;/span&gt;
+                Black
+            &lt;/button&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option" 
+                    data-variant="color" data-value="white"&gt;
+                &lt;span class="color-swatch me-2" style="width: 20px; height: 20px; background-color: #fff; border: 1px solid #ddd; border-radius: 50%; display: inline-block;"&gt;&lt;/span&gt;
+                White
+            &lt;/button&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option" 
+                    data-variant="color" data-value="blue"&gt;
+                &lt;span class="color-swatch me-2" style="width: 20px; height: 20px; background-color: #007bff; border-radius: 50%; display: inline-block;"&gt;&lt;/span&gt;
+                Blue
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="variant-group mb-3"&gt;
+        &lt;label class="form-label fw-bold"&gt;Size:&lt;/label&gt;
+        &lt;div class="variant-options d-flex gap-2"&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option active" 
+                    data-variant="size" data-value="small"&gt;S&lt;/button&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option" 
+                    data-variant="size" data-value="medium"&gt;M&lt;/button&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option" 
+                    data-variant="size" data-value="large"&gt;L&lt;/button&gt;
+            &lt;button type="button" class="btn btn-outline-secondary variant-option" 
+                    data-variant="size" data-value="xlarge"&gt;XL&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    const variantOptions = document.querySelectorAll('.variant-option');
+    let selectedVariants = {};
+
+    variantOptions.forEach(option =&gt; {
+        option.addEventListener('click', function() {
+            const variant = this.dataset.variant;
+            const value = this.dataset.value;
+
+            // Remove active class from siblings
+            this.parentNode.querySelectorAll('.variant-option').forEach(opt =&gt; {
+                opt.classList.remove('active');
+            });
+
+            // Add active class to clicked option
+            this.classList.add('active');
+
+            // Update selected variants
+            selectedVariants[variant] = value;
+
+            // Update product info based on selected variants
+            updateProductInfo(selectedVariants);
+        });
+    });
+
+    function updateProductInfo(variants) {
+        // Make AJAX request to get variant info
+        fetch(`/api/products/${productId}/variant`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify(variants)
+        })
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+            if (data.variant) {
+                document.querySelector('.product-price .current-price').textContent = `$${data.variant.price}`;
+                document.querySelector('.product-sku').textContent = `SKU: ${data.variant.sku}`;
+                document.querySelector('.stock-status').textContent = data.variant.stock_quantity &gt; 0 
+                    ? `In Stock (${data.variant.stock_quantity} available)` 
+                    : 'Out of Stock';
+            }
+        });
+    }
+});
+&lt;/script&gt;</code></pre>
+<h2>Product Display</h2>
+<h3>Product Grid Layout</h3>
+<pre><code class="language-html">&lt;div class="row"&gt;
+    @foreach($products as $product)
+    &lt;div class="col-lg-3 col-md-4 col-sm-6 mb-4"&gt;
+        &lt;div class="card product-card h-100"&gt;
+            &lt;div class="product-image-container"&gt;
+                &lt;img src="{{ $product-&gt;primary_image-&gt;image_path ?? '/images/placeholder.jpg' }}" 
+                     class="card-img-top" alt="{{ $product-&gt;name }}"&gt;
+                @if($product-&gt;discount_percentage &gt; 0)
+                &lt;div class="discount-badge"&gt;
+                    -{{ $product-&gt;discount_percentage }}%
+                &lt;/div&gt;
+                @endif
+                &lt;div class="product-actions"&gt;
+                    &lt;button class="btn btn-sm btn-outline-primary" onclick="quickView({{ $product-&gt;id }})"&gt;
+                        &lt;i class="bi bi-eye"&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                    &lt;button class="btn btn-sm btn-outline-danger" onclick="addToWishlist({{ $product-&gt;id }})"&gt;
+                        &lt;i class="bi bi-heart"&gt;&lt;/i&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="card-body d-flex flex-column"&gt;
+                &lt;h6 class="card-title"&gt;{{ $product-&gt;name }}&lt;/h6&gt;
+                &lt;div class="product-rating mb-2"&gt;
+                    &lt;div class="stars"&gt;
+                        @for($i = 1; $i &lt;= 5; $i++)
+                            &lt;i class="bi bi-star{{ $i &lt;= 4 ? '-fill' : '' }} text-warning"&gt;&lt;/i&gt;
+                        @endfor
+                    &lt;/div&gt;
+                    &lt;small class="text-muted"&gt;(4.5)&lt;/small&gt;
+                &lt;/div&gt;
+                &lt;div class="product-price mb-3"&gt;
+                    &lt;span class="current-price fw-bold"&gt;${{ $product-&gt;price }}&lt;/span&gt;
+                    @if($product-&gt;compare_price)
+                    &lt;span class="original-price text-muted text-decoration-line-through ms-2"&gt;
+                        ${{ $product-&gt;compare_price }}
+                    &lt;/span&gt;
+                    @endif
+                &lt;/div&gt;
+                &lt;div class="mt-auto"&gt;
+                    @if($product-&gt;is_in_stock)
+                    &lt;button class="btn btn-primary w-100" onclick="addToCart({{ $product-&gt;id }})"&gt;
+                        &lt;i class="bi bi-cart-plus"&gt;&lt;/i&gt; Add to Cart
+                    &lt;/button&gt;
+                    @else
+                    &lt;button class="btn btn-secondary w-100" disabled&gt;
+                        Out of Stock
+                    &lt;/button&gt;
+                    @endif
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    @endforeach
+&lt;/div&gt;</code></pre>
+<h3>Product List Layout</h3>
+<pre><code class="language-html">&lt;div class="product-list"&gt;
+    @foreach($products as $product)
+    &lt;div class="product-item border-bottom py-3"&gt;
+        &lt;div class="row align-items-center"&gt;
+            &lt;div class="col-md-2"&gt;
+                &lt;img src="{{ $product-&gt;primary_image-&gt;image_path ?? '/images/placeholder.jpg' }}" 
+                     class="img-fluid rounded" alt="{{ $product-&gt;name }}"&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-6"&gt;
+                &lt;h5 class="product-title mb-1"&gt;
+                    &lt;a href="route-products.show-product-gt-slug.html" class="text-decoration-none"&gt;
+                        {{ $product-&gt;name }}
+                    &lt;/a&gt;
+                &lt;/h5&gt;
+                &lt;p class="product-description text-muted mb-2"&gt;
+                    {{ Str::limit($product-&gt;short_description, 100) }}
+                &lt;/p&gt;
+                &lt;div class="product-rating"&gt;
+                    &lt;div class="stars d-inline-block"&gt;
+                        @for($i = 1; $i &lt;= 5; $i++)
+                            &lt;i class="bi bi-star{{ $i &lt;= 4 ? '-fill' : '' }} text-warning"&gt;&lt;/i&gt;
+                        @endfor
+                    &lt;/div&gt;
+                    &lt;small class="text-muted ms-2"&gt;(4.5) 128 reviews&lt;/small&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-2"&gt;
+                &lt;div class="product-price text-center"&gt;
+                    &lt;div class="current-price fw-bold"&gt;${{ $product-&gt;price }}&lt;/div&gt;
+                    @if($product-&gt;compare_price)
+                    &lt;div class="original-price text-muted text-decoration-line-through"&gt;
+                        ${{ $product-&gt;compare_price }}
+                    &lt;/div&gt;
+                    @endif
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-md-2"&gt;
+                &lt;div class="product-actions text-center"&gt;
+                    @if($product-&gt;is_in_stock)
+                    &lt;button class="btn btn-primary btn-sm mb-2" onclick="addToCart({{ $product-&gt;id }})"&gt;
+                        &lt;i class="bi bi-cart-plus"&gt;&lt;/i&gt; Add to Cart
+                    &lt;/button&gt;
+                    @else
+                    &lt;button class="btn btn-secondary btn-sm mb-2" disabled&gt;
+                        Out of Stock
+                    &lt;/button&gt;
+                    @endif
+                    &lt;div&gt;
+                        &lt;button class="btn btn-outline-secondary btn-sm me-1" onclick="addToWishlist({{ $product-&gt;id }})"&gt;
+                            &lt;i class="bi bi-heart"&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                        &lt;button class="btn btn-outline-secondary btn-sm" onclick="quickView({{ $product-&gt;id }})"&gt;
+                            &lt;i class="bi bi-eye"&gt;&lt;/i&gt;
+                        &lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    @endforeach
+&lt;/div&gt;</code></pre>
+<h2>Product Search and Filtering</h2>
+<h3>Search Interface</h3>
+<pre><code class="language-html">&lt;div class="product-search mb-4"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-8"&gt;
+            &lt;div class="input-group"&gt;
+                &lt;input type="text" class="form-control" id="productSearch" 
+                       placeholder="Search products..." value="{{ request('search') }}"&gt;
+                &lt;button class="btn btn-outline-secondary" type="button" onclick="searchProducts()"&gt;
+                    &lt;i class="bi bi-search"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;select class="form-select" id="sortBy" onchange="sortProducts()"&gt;
+                &lt;option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}&gt;Name A-Z&lt;/option&gt;
+                &lt;option value="name_desc" {{ request('sort') == 'name_desc' ? 'selected' : '' }}&gt;Name Z-A&lt;/option&gt;
+                &lt;option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}&gt;Price Low to High&lt;/option&gt;
+                &lt;option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}&gt;Price High to Low&lt;/option&gt;
+                &lt;option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}&gt;Newest First&lt;/option&gt;
+                &lt;option value="popular" {{ request('sort') == 'popular' ? 'selected' : '' }}&gt;Most Popular&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Filter Sidebar</h3>
+<pre><code class="language-html">&lt;div class="row"&gt;
+    &lt;div class="col-md-3"&gt;
+        &lt;div class="filter-sidebar"&gt;
+            &lt;h5&gt;Filters&lt;/h5&gt;
+
+            &lt;!-- Price Range --&gt;
+            &lt;div class="filter-group mb-4"&gt;
+                &lt;h6&gt;Price Range&lt;/h6&gt;
+                &lt;div class="price-range"&gt;
+                    &lt;input type="range" class="form-range" id="priceMin" min="0" max="1000" value="0"&gt;
+                    &lt;input type="range" class="form-range" id="priceMax" min="0" max="1000" value="1000"&gt;
+                    &lt;div class="price-display"&gt;
+                        $&lt;span id="minPrice"&gt;0&lt;/span&gt; - $&lt;span id="maxPrice"&gt;1000&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Categories --&gt;
+            &lt;div class="filter-group mb-4"&gt;
+                &lt;h6&gt;Categories&lt;/h6&gt;
+                &lt;div class="category-filters"&gt;
+                    @foreach($categories as $category)
+                    &lt;div class="form-check"&gt;
+                        &lt;input class="form-check-input" type="checkbox" 
+                               id="category{{ $category-&gt;id }}" 
+                               value="{{ $category-&gt;id }}"
+                               {{ in_array($category-&gt;id, request('categories', [])) ? 'checked' : '' }}&gt;
+                        &lt;label class="form-check-label" for="category{{ $category-&gt;id }}"&gt;
+                            {{ $category-&gt;name }}
+                            &lt;span class="text-muted"&gt;({{ $category-&gt;products_count }})&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                    @endforeach
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Brands --&gt;
+            &lt;div class="filter-group mb-4"&gt;
+                &lt;h6&gt;Brands&lt;/h6&gt;
+                &lt;div class="brand-filters"&gt;
+                    @foreach($brands as $brand)
+                    &lt;div class="form-check"&gt;
+                        &lt;input class="form-check-input" type="checkbox" 
+                               id="brand{{ $brand-&gt;id }}" 
+                               value="{{ $brand-&gt;id }}"
+                               {{ in_array($brand-&gt;id, request('brands', [])) ? 'checked' : '' }}&gt;
+                        &lt;label class="form-check-label" for="brand{{ $brand-&gt;id }}"&gt;
+                            {{ $brand-&gt;name }}
+                            &lt;span class="text-muted"&gt;({{ $brand-&gt;products_count }})&lt;/span&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                    @endforeach
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Availability --&gt;
+            &lt;div class="filter-group mb-4"&gt;
+                &lt;h6&gt;Availability&lt;/h6&gt;
+                &lt;div class="form-check"&gt;
+                    &lt;input class="form-check-input" type="checkbox" id="inStock" 
+                           {{ request('in_stock') ? 'checked' : '' }}&gt;
+                    &lt;label class="form-check-label" for="inStock"&gt;
+                        In Stock Only
+                    &lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;button class="btn btn-primary w-100" onclick="applyFilters()"&gt;Apply Filters&lt;/button&gt;
+            &lt;button class="btn btn-outline-secondary w-100 mt-2" onclick="clearFilters()"&gt;Clear All&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-md-9"&gt;
+        &lt;!-- Product results will be displayed here --&gt;
+        &lt;div id="productResults"&gt;
+            @include('products.partials.product-grid', ['products' =&gt; $products])
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h2>Inventory Management</h2>
+<h3>Stock Tracking</h3>
+<pre><code class="language-php">// Update stock quantities
+public function updateStock($productId, $quantity, $operation = 'set')
+{
+    $product = Product::findOrFail($productId);
+
+    switch ($operation) {
+        case 'add':
+            $product-&gt;increment('stock_quantity', $quantity);
+            break;
+        case 'subtract':
+            $product-&gt;decrement('stock_quantity', $quantity);
+            break;
+        case 'set':
+        default:
+            $product-&gt;update(['stock_quantity' =&gt; $quantity]);
+            break;
+    }
+
+    // Check for low stock alert
+    if ($product-&gt;stock_quantity &lt;= $product-&gt;low_stock_threshold) {
+        $this-&gt;sendLowStockAlert($product);
+    }
+
+    return $product;
+}
+
+// Low stock alert
+private function sendLowStockAlert($product)
+{
+    // Send notification to admin
+    Notification::route('mail', config('mail.admin_email'))
+        -&gt;notify(new LowStockAlert($product));
+}</code></pre>
+<h3>Bulk Operations</h3>
+<pre><code class="language-html">&lt;!-- Bulk product operations --&gt;
+&lt;div class="bulk-actions mb-3"&gt;
+    &lt;div class="row align-items-center"&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="form-check"&gt;
+                &lt;input class="form-check-input" type="checkbox" id="selectAll"&gt;
+                &lt;label class="form-check-label" for="selectAll"&gt;
+                    Select All Products
+                &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6"&gt;
+            &lt;div class="bulk-actions-buttons"&gt;
+                &lt;select class="form-select d-inline-block w-auto me-2" id="bulkAction"&gt;
+                    &lt;option value=""&gt;Bulk Actions&lt;/option&gt;
+                    &lt;option value="activate"&gt;Activate&lt;/option&gt;
+                    &lt;option value="deactivate"&gt;Deactivate&lt;/option&gt;
+                    &lt;option value="feature"&gt;Mark as Featured&lt;/option&gt;
+                    &lt;option value="unfeature"&gt;Remove from Featured&lt;/option&gt;
+                    &lt;option value="delete"&gt;Delete&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;button class="btn btn-primary" onclick="executeBulkAction()"&gt;Apply&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>This comprehensive product management system provides everything needed to run a professional ecommerce store with advanced features for product organization, display, and inventory management.</p>
+</div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <cosmic-wave class="fill-primary ride-the-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="top"></cosmic-wave>
+    <div class="footer-info d-block w-100 bg-primary pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="text-center">
+                        A <a href="https://huement.com" class="text-light fw-bold">huement.com</a> Original Project
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap 5.3.5 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+
+    <!-- CosmicWave Web Component -->
+    <script src="./js/cosmicwave.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="./assets/docs-legacy2.js"></script>
+    
+        
+    <!-- Material Icons Loading Script -->
+    <script>
+        // Mark Material Icons as loaded once font is ready
+        if (document.fonts) {
+            // Modern browser with Font Loading API
+            Promise.all([
+                document.fonts.load('400 24px "Material Symbols Rounded"'),
+            ]).then(() => {
+                document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                    icon.classList.add('material-symbols-rounded--loaded');
+                });
+            }).catch(() => {
+                // Fallback: mark as loaded after delay
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        } else {
+            // Fallback for older browsers
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        }
+    </script>
+
+    <!-- Initialize Offcanvas for Mobile Menu -->
+    <script>
+        // Wait for both DOM and Bootstrap to be ready
+        function initOffcanvas() {
+            if (typeof bootstrap !== 'undefined') {
+                const offcanvasElement = document.getElementById('docsSidebarOffcanvas');
+                const toggleButton = document.querySelector('[data-bs-target="#docsSidebarOffcanvas"]');
+
+                if (offcanvasElement && toggleButton) {
+                    // Bootstrap data attributes should handle this automatically
+                    // But we ensure it's initialized
+                    try {
+                        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                        console.log('Offcanvas initialized successfully');
+                    } catch (e) {
+                        console.warn('Offcanvas already initialized or error:', e);
+                    }
+                } else {
+                    console.warn('Offcanvas elements not found');
+                }
+            } else {
+                // Retry after a short delay
+                setTimeout(initOffcanvas, 100);
+            }
+        }
+
+        // Try to initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOffcanvas);
+        } else {
+            // DOM already ready, check if Bootstrap is loaded
+            initOffcanvas();
+        }
+    </script>
+
+    <!-- Scrollspy and Sticky Sidebar Styles -->
+    <style>
+        body.docs-layout {
+            margin-bottom: 0 !important;
+        }
+
+        /* Override global overflow-x: hidden that breaks sticky positioning */
+        body.docs-layout,
+        body.docs-layout .container-fluid {
+            overflow-x: visible !important;
+        }
+
+        html:has(body.docs-layout) {
+            overflow-x: visible !important;
+        }
+
+        /* Make the sidebar sticky */
+        #docsSidebar.docs-sidebar-sticky {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 20px !important;
+            align-self: flex-start;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .offcanvas .btn-close {
+            filter: none !important;
+        }
+
+        /* Ensure parent containers don't interfere with sticky */
+        body.docs-layout .container-fluid>.row {
+            align-items: flex-start;
+        }
+
+        /* Scrollspy will work on natural page scroll */
+        /* No need for constrained container in docs layout */
+
+        /* Style active nav links for scrollspy */
+        .docs-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .docs-nav .nav-link {
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add spacing between sections for better scroll tracking */
+        .docs-content h1,
+        .docs-content h2,
+        .docs-content h3,
+        .docs-content h4,
+        .docs-content h5,
+        .docs-content h6 {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            .navbar .btn-group .btn {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .navbar .btn-group .btn .material-symbols-rounded {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-specific improvements for docs pages */
+        @media (max-width: 767.98px) {
+
+            /* Improve typography on mobile */
+            .docs-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .docs-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .docs-content h4 {
+                font-size: 1.125rem;
+                margin-bottom: 0.625rem;
+            }
+
+            /* Improve lead paragraphs on mobile */
+            .docs-content .lead {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Better spacing for cards on mobile */
+            .docs-content .card {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .card-body {
+                padding: 1rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Improve image spacing on mobile */
+            .docs-content img {
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            /* Better spacing for rows on mobile */
+            .docs-content .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+
+            .docs-content .row>[class*="col-"] {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stack component library columns better on mobile */
+            .docs-content .row .col-md-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .docs-content .row .col-md-3:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Improve table responsiveness */
+            .docs-content .table-responsive {
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .docs-content .table {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .table th,
+            .docs-content .table td {
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+
+            /* Better alert spacing on mobile */
+            .docs-content .alert {
+                margin-bottom: 1rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .docs-content .alert h5 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Improve lists on mobile */
+            .docs-content ul,
+            .docs-content ol {
+                padding-left: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better button group spacing */
+            .docs-content .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            /* Improve main content padding on mobile */
+            main {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main .pt-3,
+            main .pb-2 {
+                padding-top: 1rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Better page header on mobile */
+            main .border-bottom {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            main h1.h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            main .btn-toolbar {
+                margin-top: 0.5rem;
+            }
+
+            /* Reduce section spacing on mobile */
+            .docs-content>* {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content>h1,
+            .docs-content>h2 {
+                margin-top: 1.5rem;
+            }
+
+            .docs-content>h1:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* Small mobile devices (320px and up) */
+        @media (max-width: 575.98px) {
+            .docs-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .docs-content .lead {
+                font-size: 0.9375rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 0.9375rem;
+            }
+
+            /* Make component library single column on very small screens */
+            .docs-content .row .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .docs-content .row .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/admin-static-shim.js"></script>
+</body>
+
+</html>

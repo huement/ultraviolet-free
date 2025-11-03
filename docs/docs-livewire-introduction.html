@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="7K5E4M1rZZn4IvgaJSoYxdjHGii9UDI5oDf4c3aM">
+
+<title>Livewire Version | UltraViolet</title>
+
+<link rel="icon" href="./favicon-32x32.png" type="image/png">
+
+<!-- Google Fonts & Material Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload Material Icons font to prevent FOUC -->
+<link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+<!-- Bootstrap Icon Font -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- Prevent Material Icons FOUC -->
+<style type="text/css">
+    .material-symbols-rounded,
+    .material-icons {
+        font-size: 24px;
+        line-height: 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
+
+    .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+    .material-icons:not(.material-icons--loaded) {
+        color: transparent;
+        user-select: none;
+    }
+
+    .material-symbols-rounded--loaded,
+    .material-icons--loaded {
+        color: inherit;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .material-icons {
+        font-family: 'Material Symbols Rounded' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 24px !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        word-wrap: normal !important;
+        direction: ltr !important;
+        -webkit-font-feature-settings: 'liga' !important;
+        -webkit-font-smoothing: antialiased !important;
+        text-rendering: optimizeLegibility !important;
+        font-feature-settings: 'liga' !important;
+        vertical-align: middle !important;
+    }
+</style>
+
+    <!-- Scripts -->
+        <script src="./assets/polyfills-legacy.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
+    <link rel="stylesheet" href="./assets/docs.css">
+    <script src="./assets/docs-theme-legacy.js"></script>
+
+    <!-- Additional Meta -->
+    <meta name="description" content="Documentation for UltraViolet Admin Dashboard">
+
+    <!-- Prism.js for code highlighting (theme loaded dynamically by docs-theme-legacy.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <!-- Load languages in dependency order -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup-templating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+
+    </head>
+
+<body class="docs-layout space-grotesk-300" data-bs-spy="scroll" data-bs-target="#docsSidebar" data-bs-smooth-scroll="true"
+    tabindex="0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <!-- Mobile menu toggle button -->
+            <button class="btn btn-link d-lg-none me-2 p-2 text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#docsSidebarOffcanvas" aria-controls="docsSidebarOffcanvas"
+                aria-label="Toggle navigation menu">
+                <i class="material-symbols-rounded">menu</i>
+            </button>
+
+            <a class="navbar-brand" href="../admin-dashboard.html">
+                <i class="material-symbols-rounded me-2 d-none d-lg-inline">arrow_back</i>
+                <img src="./images/uv/ultra-white.png" class="img-fluid" alt="UltraViolet Logo Text"
+                    width="170" height="17" />
+            </a>
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">menu_book</i>
+                    <span class="d-none d-lg-inline">Welcome Page</span>
+                </a>
+                <a href="../admin-dashboard.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">dashboard</i>
+                    <span class="d-none d-lg-inline">Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <cosmic-wave class="fill-primary cosmic-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="bottom"></cosmic-wave>
+
+    <!-- Offcanvas for mobile/tablet (MD and below) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="docsSidebarOffcanvas"
+        aria-labelledby="docsSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="docsSidebarOffcanvasLabel">Documentation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="docs-nav">
+                
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Getting Started</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">home</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-laravel-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-static-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Static Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-support.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Support
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-theming.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Theming
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Authentication</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">visibility</i>
+                                    Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-oauth-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Oauth Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-laravel.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-page-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Page Templates
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Livewire</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                    href="docs-livewire-introduction.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-layout.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Layout
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-best-practices.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Best Practices
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-icons.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Icons
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-laravel-sail.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Sail
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-socialite-integration.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Socialite Integration
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Dashboard &amp; Widgets</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-dashboards.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dashboard</i>
+                                    Dashboards
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">apps</i>
+                                    Templates
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-widgets.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">widgets</i>
+                                    Widgets
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Applications</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-readme.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Readme
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-ai-agent.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Ai Agent
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-calendar.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Calendar
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-chat-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Chat Box
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-email-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Email Box
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-bootstrap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">grid_view</i>
+                                    Bootstrap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-display-modes.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Display Modes
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-forms.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">edit_note</i>
+                                    Forms
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-hud-modal-component.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                    Hud Modal Component
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-lightbox.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Lightbox
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-masonry.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Masonry
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-tables.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">table</i>
+                                    Tables
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-ui-elements.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Ui Elements
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Data Visualization</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-charts.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">bar_chart</i>
+                                    Charts
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-google-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Google Maps
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-gridjs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dataset</i>
+                                    Gridjs
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-vector-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">public</i>
+                                    Vector Maps
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>E-commerce</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-orders.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    Ecommerce Orders
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">store</i>
+                                    Ecommerce Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-products.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory_2</i>
+                                    Ecommerce Products
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Job Board</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-job-board-jobs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">work</i>
+                                    Jobs
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Cryptocurrency</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-cryptocurrency-crypto.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                    Crypto
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Advanced</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-package.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory</i>
+                                    Package
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-plugins.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Plugins
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-roadmap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Roadmap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-typescript.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Typescript
+                                </a>
+                            </li>
+                                            </ul>
+                            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (desktop only - LG and above) -->
+            <nav id="docsSidebar" class="col-lg-4 col-xl-3 col-xxl-2 d-none d-lg-block sidebar docs-sidebar-sticky">
+                <div class="docs-nav">
+                    
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Getting Started</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs.html">
+                                        <i class="material-symbols-rounded me-2">home</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-laravel-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-static-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Static Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-support.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Support
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-theming.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Theming
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Authentication</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-overview.html">
+                                        <i class="material-symbols-rounded me-2">visibility</i>
+                                        Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-oauth-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Oauth Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-laravel.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-page-templates.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Page Templates
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Livewire</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        href="docs-livewire-introduction.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-layout.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Layout
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-best-practices.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Best Practices
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-icons.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Icons
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-laravel-sail.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Sail
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-socialite-integration.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Socialite Integration
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Dashboard &amp; Widgets</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-dashboards.html">
+                                        <i class="material-symbols-rounded me-2">dashboard</i>
+                                        Dashboards
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-templates.html">
+                                        <i class="material-symbols-rounded me-2">apps</i>
+                                        Templates
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-widgets.html">
+                                        <i class="material-symbols-rounded me-2">widgets</i>
+                                        Widgets
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Applications</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-readme.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Readme
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-ai-agent.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Ai Agent
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-calendar.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-chat-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Chat Box
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-email-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Email Box
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>UI Components</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-bootstrap.html">
+                                        <i class="material-symbols-rounded me-2">grid_view</i>
+                                        Bootstrap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-display-modes.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Display Modes
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-forms.html">
+                                        <i class="material-symbols-rounded me-2">edit_note</i>
+                                        Forms
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-hud-modal-component.html">
+                                        <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                        Hud Modal Component
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-lightbox.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Lightbox
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-masonry.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Masonry
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-tables.html">
+                                        <i class="material-symbols-rounded me-2">table</i>
+                                        Tables
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-ui-elements.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Ui Elements
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Data Visualization</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-charts.html">
+                                        <i class="material-symbols-rounded me-2">bar_chart</i>
+                                        Charts
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-google-maps.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Google Maps
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-gridjs.html">
+                                        <i class="material-symbols-rounded me-2">dataset</i>
+                                        Gridjs
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-vector-maps.html">
+                                        <i class="material-symbols-rounded me-2">public</i>
+                                        Vector Maps
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>E-commerce</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-orders.html">
+                                        <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                        Ecommerce Orders
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-overview.html">
+                                        <i class="material-symbols-rounded me-2">store</i>
+                                        Ecommerce Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-products.html">
+                                        <i class="material-symbols-rounded me-2">inventory_2</i>
+                                        Ecommerce Products
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Job Board</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-job-board-jobs.html">
+                                        <i class="material-symbols-rounded me-2">work</i>
+                                        Jobs
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Cryptocurrency</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-cryptocurrency-crypto.html">
+                                        <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                        Crypto
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Advanced</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-package.html">
+                                        <i class="material-symbols-rounded me-2">inventory</i>
+                                        Package
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-plugins.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Plugins
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-roadmap.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Roadmap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-typescript.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Typescript
+                                    </a>
+                                </li>
+                                                    </ul>
+                                    </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-12 col-lg-8 col-xl-9 col-xxl-10">
+                <div class="pt-3 pb-2 mb-3">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Livewire Introduction</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <!-- Content area - scrollspy applied to body -->
+                    <div class="docs-content">
+                        <div class="docs-content">
+    <h1>Livewire Introduction</h1>
+<p><img src="./images/promo/livewire-preview.png" alt="Livewire Example" /></p>
+<h2>Overview</h2>
+<p>UltraViolet Pro includes a complete <strong>Laravel Livewire 3</strong> integration with 9 pre-built, production-ready components. Livewire allows you to build dynamic, reactive interfaces using Laravel and Blade—no complex JavaScript frameworks required.</p>
+<h2>What is Livewire?</h2>
+<p>Laravel Livewire is a full-stack framework for Laravel that makes building dynamic interfaces simple, without leaving the comfort of Laravel. Think of it as a way to build reactive, modern interfaces using server-side logic instead of complicated JavaScript.</p>
+<h3>Key Benefits</h3>
+<ul>
+<li>✅ <strong>Write in PHP</strong> - No need to write JavaScript for interactivity</li>
+<li>✅ <strong>Real-time updates</strong> - Components update instantly without page refreshes</li>
+<li>✅ <strong>Simple to learn</strong> - If you know Laravel, you know Livewire</li>
+<li>✅ <strong>Powerful features</strong> - File uploads, pagination, validation, and more</li>
+<li>✅ <strong>SEO-friendly</strong> - Server-rendered content that search engines love</li>
+</ul>
+<h2>What's Included</h2>
+<p>UltraViolet Pro comes with everything you need for Livewire development:</p>
+<h3>9 Pre-Built Components</h3>
+<p>All production-ready and fully functional:</p>
+<ol>
+<li><strong>Counter</strong> - Simple increment/decrement with real-time updates</li>
+<li><strong>Todo List</strong> - Full-featured task management with add, toggle, delete</li>
+<li><strong>Contact Form</strong> - Form validation and submission with Livewire</li>
+<li><strong>Search</strong> - Real-time search with instant results</li>
+<li><strong>Vector Maps</strong> - Interactive maps with controls and layers</li>
+<li><strong>Chirps</strong> - Social media posting (like Twitter/X)</li>
+<li><strong>Stats Widget</strong> - Live statistics with auto-refresh</li>
+<li><strong>Mini Counter</strong> - Compact counter for dashboards</li>
+<li><strong>Quick Todo</strong> - Streamlined todo widget for sidebars</li>
+</ol>
+<h3>Complete Authentication System</h3>
+<p>Built on Laravel Breeze with Bootstrap styling and Laravel Socialite integration:</p>
+<ul>
+<li><strong>Email/Password Authentication</strong> - Traditional login and registration</li>
+<li><strong>Social OAuth Login</strong> - Google, GitHub, Facebook, Twitter, LinkedIn, Discord</li>
+<li><strong>Password Reset</strong> - Secure password recovery system</li>
+<li><strong>Email Verification</strong> - Optional email verification workflow</li>
+<li><strong>Profile Management</strong> - User profile editing and password updates</li>
+<li><strong>Social Login Buttons</strong> - Beautiful, branded OAuth buttons with hover effects</li>
+<li><strong>Three Beautiful Auth Templates</strong> - Basic, Square, and Wallpaper layouts</li>
+</ul>
+<h3>Dedicated Layout System</h3>
+<ul>
+<li><strong>admin-livewire.blade.php</strong> - Main Livewire layout</li>
+<li>Full Vite integration for assets</li>
+<li>@push/@stack support for component-specific scripts</li>
+<li>Menu system integration</li>
+<li>Breadcrumb support</li>
+</ul>
+<h3>Complete Documentation</h3>
+<ul>
+<li>Component usage guides</li>
+<li>Layout system documentation</li>
+<li>Best practices</li>
+<li>Real-world examples</li>
+</ul>
+<h2>Quick Start</h2>
+<h3>1. Automated Setup</h3>
+<p>UltraViolet includes a comprehensive setup script that handles everything for you:</p>
+<pre><code class="language-bash">./setup.sh</code></pre>
+<p><strong>The setup script will ask you to choose your development environment:</strong></p>
+<h4>Option 1: Laravel Sail (Recommended) 🚢</h4>
+<ul>
+<li>✅ No local PHP, Composer, or Node.js required</li>
+<li>✅ Uses Docker containers</li>
+<li>✅ Consistent environment across all machines</li>
+<li>✅ Perfect for beginners and teams</li>
+</ul>
+<h4>Option 2: Direct PHP</h4>
+<ul>
+<li>✅ Uses your local PHP installation</li>
+<li>✅ Faster startup times</li>
+<li>✅ Requires PHP 8.2+, Composer, Node.js</li>
+<li>✅ Best for experienced developers</li>
+</ul>
+<p><strong>The script will then:</strong></p>
+<ul>
+<li>✅ Check system requirements (based on your choice)</li>
+<li>✅ Install Composer dependencies</li>
+<li>✅ Install NPM dependencies</li>
+<li>✅ Set up environment files</li>
+<li>✅ Generate application key</li>
+<li>✅ Set up database</li>
+<li>✅ Build frontend assets</li>
+<li>✅ Create storage links</li>
+<li>✅ Set proper permissions</li>
+</ul>
+<p><strong>Important Environment Variables:</strong></p>
+<pre><code class="language-env"># Application
+APP_NAME="UltraViolet Livewire"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
+
+# Database (Sail uses these automatically)
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_DATABASE=laravel
+DB_USERNAME=sail
+DB_PASSWORD=password
+
+# Cache &amp; Sessions
+CACHE_DRIVER=redis
+SESSION_DRIVER=redis
+QUEUE_CONNECTION=redis</code></pre>
+<h3>2. Start the Development Server</h3>
+<p>After setup, the script will tell you exactly which command to use based on your choice:</p>
+<h4>If you chose Laravel Sail:</h4>
+<pre><code class="language-bash">./run-sail.sh</code></pre>
+<p><strong>Then start Vite:</strong></p>
+<pre><code class="language-bash">./vendor/bin/sail npm run dev</code></pre>
+<p><strong>Visit:</strong> <a href="../index.html">http://localhost</a></p>
+<h4>If you chose Direct PHP:</h4>
+<pre><code class="language-bash">./run.sh</code></pre>
+<p><strong>Then start Vite:</strong></p>
+<pre><code class="language-bash">npm run dev</code></pre>
+<p><strong>Visit:</strong> <a href="http://localhost:8080">http://localhost:8080</a></p>
+<h3>3. Access the Livewire Dashboard</h3>
+<p>Navigate to <code>/livewire/dashboard</code> to see all components in action:</p>
+<ul>
+<li><strong>Sail users:</strong> <a href="livewire-dashboard.html">http://localhost/livewire/dashboard</a></li>
+<li><strong>Direct PHP users:</strong> <a href="http://localhost:8080/livewire/dashboard">http://localhost:8080/livewire/dashboard</a></li>
+</ul>
+<h3>4. Set Up Database &amp; Authentication</h3>
+<p>UltraViolet includes a complete authentication system with database setup:</p>
+<pre><code class="language-bash"># Run migrations (includes social auth fields)
+php artisan migrate
+
+# Seed the database with sample data
+php artisan db:seed
+
+# Configure OAuth providers in .env
+# See Authentication docs for detailed setup</code></pre>
+<p><strong>Database Seeding</strong> populates your database with:</p>
+<ul>
+<li>Sample users for testing</li>
+<li>Demo chirps for the social media component</li>
+<li>Test data for all Livewire components</li>
+</ul>
+<p><strong>Available Auth Features:</strong></p>
+<ul>
+<li>Email/password login and registration</li>
+<li>Social OAuth (Google, GitHub, Facebook, Twitter, LinkedIn, Discord)</li>
+<li>Password reset and email verification</li>
+<li>Social login buttons with branded styling</li>
+<li>Three beautiful auth templates</li>
+</ul>
+<h3>5. Database Management</h3>
+<p>UltraViolet includes comprehensive database setup and management:</p>
+<h4>Migrations</h4>
+<pre><code class="language-bash"># Run all pending migrations
+php artisan migrate
+
+# Rollback last migration
+php artisan migrate:rollback
+
+# Reset all migrations
+php artisan migrate:reset
+
+# Fresh install (drop all tables and re-run migrations)
+php artisan migrate:fresh</code></pre>
+<h4>Database Seeding</h4>
+<pre><code class="language-bash"># Seed with sample data
+php artisan db:seed
+
+# Fresh migration + seeding
+php artisan migrate:fresh --seed
+
+# Seed specific seeder
+php artisan db:seed --class=ChirpSeeder</code></pre>
+<h4>Available Seeders</h4>
+<ul>
+<li><strong>DatabaseSeeder</strong> - Main seeder that runs all others</li>
+<li><strong>ChirpSeeder</strong> - Sample social media posts</li>
+<li><strong>UserSeeder</strong> - Test users for authentication</li>
+<li><strong>DemoDataSeeder</strong> - Component demo data</li>
+</ul>
+<h4>Database Reset</h4>
+<pre><code class="language-bash"># Complete reset (useful for development)
+php artisan migrate:fresh --seed
+
+# This will:
+# 1. Drop all tables
+# 2. Re-run all migrations
+# 3. Seed with sample data</code></pre>
+<h3>6. Creating Your First Component</h3>
+<pre><code class="language-bash"># For Sail users
+./vendor/bin/sail artisan make:livewire MyComponent
+
+# For direct PHP users
+php artisan make:livewire MyComponent</code></pre>
+<p>This creates:</p>
+<ul>
+<li><code>app/Livewire/MyComponent.php</code> - Component class</li>
+<li><code>resources/views/livewire/my-component.blade.php</code> - Component view</li>
+</ul>
+<h3>7. Using a Component</h3>
+<p>In any Blade view:</p>
+<pre><code class="language-blade">&lt;livewire:my-component /&gt;</code></pre>
+<p>Or using the @livewire directive:</p>
+<pre><code class="language-blade">@livewire('my-component')</code></pre>
+<h2>Architecture</h2>
+<p>UltraViolet's Livewire integration is built on a solid foundation:</p>
+<h3>Component Structure</h3>
+<pre><code>app/Livewire/              # Component classes (PHP)
+resources/views/livewire/  # Component views (Blade)
+config/livewire.php        # Livewire configuration
+config/livewire-menus.php  # Menu structure for Livewire section</code></pre>
+<h3>Layout System</h3>
+<pre><code>resources/views/layouts/admin-livewire.blade.php  # Main layout
+resources/views/layouts/partials/                 # Layout partials</code></pre>
+<h3>Assets</h3>
+<pre><code>resources/js/     # JavaScript (including Livewire scripts)
+resources/sass/   # Styles (including Livewire component styles)</code></pre>
+<h2>Why Livewire?</h2>
+<h3>Traditional Approach (Complex)</h3>
+<pre><code class="language-javascript">// JavaScript framework required
+import { createApp } from 'vue';
+import axios from 'axios';
+
+export default {
+    data() {
+        return { count: 0 }
+    },
+    methods: {
+        increment() {
+            axios.post('/api/increment')
+                .then(response =&gt; {
+                    this.count = response.data.count;
+                });
+        }
+    }
+}</code></pre>
+<h3>Livewire Approach (Simple)</h3>
+<pre><code class="language-php">&lt;?php
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class Counter extends Component
+{
+    public $count = 0;
+
+    public function increment()
+    {
+        $this-&gt;count++;
+    }
+
+    public function render()
+    {
+        return view('livewire.counter');
+    }
+}</code></pre>
+<pre><code class="language-blade">&lt;div&gt;
+    &lt;h1&gt;{{ $count }}&lt;/h1&gt;
+    &lt;button wire:click="increment"&gt;+&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>That's it!</strong> No API routes, no Axios calls, no complex state management. Just PHP and Blade.</p>
+<h2>Development Workflow</h2>
+<h3>Daily Development Commands</h3>
+<pre><code class="language-bash"># Start development server
+./run-sail.sh  # or ./run.sh
+
+# Start Vite for assets (in separate terminal)
+npm run dev  # or ./vendor/bin/sail npm run dev
+
+# Run tests
+php artisan test  # or ./vendor/bin/sail test
+
+# Clear caches if needed
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear</code></pre>
+<h3>Testing Your Components</h3>
+<pre><code class="language-bash"># Run all tests
+php artisan test
+
+# Run specific test file
+php artisan test --filter=CounterTest
+
+# Run with coverage
+php artisan test --coverage</code></pre>
+<h3>Debugging</h3>
+<pre><code class="language-bash"># Enable debug mode (in .env)
+APP_DEBUG=true
+
+# View logs
+tail -f storage/logs/laravel.log
+
+# Clear logs
+php artisan log:clear</code></pre>
+<h2>Livewire 3 Features</h2>
+<p>UltraViolet uses the latest <strong>Livewire 3</strong>, which includes:</p>
+<ul>
+<li>⚡ <strong>Faster performance</strong> - Optimized for speed</li>
+<li>🎯 <strong>Better DX</strong> - Improved developer experience</li>
+<li>🔄 <strong>Enhanced reactivity</strong> - More intuitive updates</li>
+<li>📦 <strong>Smaller payload</strong> - Less data over the wire</li>
+<li>🎨 <strong>Better integration</strong> - Works seamlessly with Alpine.js</li>
+</ul>
+<h2>Example: Real-Time Search</h2>
+<p>Here's how easy it is to build a live search:</p>
+<pre><code class="language-php">&lt;?php
+namespace App\Livewire;
+
+use Livewire\Component;
+use App\Models\User;
+
+class UserSearch extends Component
+{
+    public $search = '';
+
+    public function render()
+    {
+        return view('livewire.user-search', [
+            'users' =&gt; User::where('name', 'like', "%{$this-&gt;search}%")
+                          -&gt;limit(10)
+                          -&gt;get()
+        ]);
+    }
+}</code></pre>
+<pre><code class="language-blade">&lt;div&gt;
+    &lt;input type="text" wire:model.live="search" placeholder="Search users..."&gt;
+
+    &lt;ul&gt;
+        @foreach($users as $user)
+            &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+        @endforeach
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+<p><strong>That's it!</strong> Type in the input, and results update instantly. No JavaScript required.</p>
+<h2>Development Environment</h2>
+<h3>Why We Recommend Laravel Sail</h3>
+<p><strong>Laravel Sail is the recommended approach</strong> for UltraViolet Livewire development because:</p>
+<ol>
+<li><strong>🚀 Zero Setup Hassle</strong> - No need to install PHP, Composer, or Node.js locally</li>
+<li><strong>🔄 Consistent Environment</strong> - Same setup works on macOS, Windows, and Linux</li>
+<li><strong>👥 Team Collaboration</strong> - Everyone has identical development environments</li>
+<li><strong>🧹 Easy Cleanup</strong> - Remove containers to completely clean up</li>
+<li><strong>🐳 Production Parity</strong> - Environment closer to production deployment</li>
+</ol>
+<h3>Setup Scripts Explained</h3>
+<p>UltraViolet includes three powerful scripts to streamline your development:</p>
+<h4>1. <strong>setup.sh</strong> - One-Time Setup</h4>
+<pre><code class="language-bash">./setup.sh</code></pre>
+<ul>
+<li>Comprehensive system checks</li>
+<li>Automated dependency installation</li>
+<li>Environment configuration</li>
+<li>Database setup</li>
+<li>Asset compilation</li>
+<li>Permission management</li>
+</ul>
+<h4>2. <strong>run-sail.sh</strong> - Start with Docker (Recommended)</h4>
+<pre><code class="language-bash">./run-sail.sh</code></pre>
+<ul>
+<li>Starts all Docker containers</li>
+<li>Provides web server, database, Redis, and Mailpit</li>
+<li>No local dependencies required</li>
+<li>Perfect for beginners and teams</li>
+</ul>
+<h4>3. <strong>run.sh</strong> - Start with Local PHP</h4>
+<pre><code class="language-bash">./run.sh</code></pre>
+<ul>
+<li>Uses your local PHP installation</li>
+<li>Faster startup times</li>
+<li>Requires PHP 8.2+, Composer, Node.js</li>
+<li>Best for experienced developers</li>
+</ul>
+<h3>Which Should You Choose?</h3>
+<p><strong>🏆 We strongly recommend Laravel Sail</strong> for these reasons:</p>
+<ul>
+<li><strong>Beginners</strong>: No complex local setup required</li>
+<li><strong>Teams</strong>: Consistent environment across all developers</li>
+<li><strong>Multiple Projects</strong>: No dependency conflicts</li>
+<li><strong>Clean Development</strong>: Easy to reset and start fresh</li>
+</ul>
+<p><strong>Only use direct PHP if:</strong></p>
+<ul>
+<li>You already have PHP 8.2+ installed and configured</li>
+<li>You need faster startup times</li>
+<li>You're comfortable managing local dependencies</li>
+<li>You need specific local debugging tools</li>
+</ul>
+<h3>Getting Started with Sail</h3>
+<ol>
+<li><strong>Install Docker Desktop</strong> from <a href="https://www.docker.com/products/docker-desktop">docker.com</a></li>
+<li><strong>Run the setup script</strong>: <code>./setup.sh</code></li>
+<li><strong>Start with Sail</strong>: <code>./run-sail.sh</code></li>
+<li><strong>Start Vite</strong>: <code>./vendor/bin/sail npm run dev</code></li>
+<li><strong>Visit</strong>: <a href="../index.html">http://localhost</a></li>
+</ol>
+<p>That's it! No PHP installation, no Composer setup, no Node.js configuration.</p>
+<h3>System Requirements Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Laravel Sail</th>
+<th>Direct PHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Docker</strong></td>
+<td>✅ Required</td>
+<td>❌ Not needed</td>
+</tr>
+<tr>
+<td><strong>PHP 8.2+</strong></td>
+<td>❌ Not needed</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><strong>Composer</strong></td>
+<td>❌ Not needed</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><strong>Node.js/NPM</strong></td>
+<td>❌ Not needed</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><strong>MySQL/PostgreSQL</strong></td>
+<td>❌ Not needed</td>
+<td>✅ Required</td>
+</tr>
+<tr>
+<td><strong>Setup Time</strong></td>
+<td>🚀 5 minutes</td>
+<td>⏰ 30+ minutes</td>
+</tr>
+<tr>
+<td><strong>Environment Consistency</strong></td>
+<td>✅ Perfect</td>
+<td>⚠️ Varies by machine</td>
+</tr>
+<tr>
+<td><strong>Dependency Conflicts</strong></td>
+<td>✅ None</td>
+<td>⚠️ Possible</td>
+</tr>
+<tr>
+<td><strong>Cleanup</strong></td>
+<td>🧹 <code>docker-compose down</code></td>
+<td>🔧 Manual uninstall</td>
+</tr>
+</tbody>
+</table>
+<h3>Why Sail Wins</h3>
+<p><strong>For 95% of developers, Laravel Sail is the better choice</strong> because:</p>
+<ul>
+<li><strong>🎯 Zero Configuration</strong> - Works out of the box</li>
+<li><strong>🔄 Reproducible</strong> - Same environment every time</li>
+<li><strong>👥 Team Friendly</strong> - No &quot;works on my machine&quot; issues</li>
+<li><strong>🧹 Clean</strong> - Easy to reset and start fresh</li>
+<li><strong>📚 Learning</strong> - Focus on Laravel, not system administration</li>
+<li><strong>🚀 Fast Setup</strong> - From zero to running in minutes</li>
+</ul>
+<p><strong>Still not convinced?</strong> Try both approaches:</p>
+<ol>
+<li><strong>Start with Sail</strong>: <code>./run-sail.sh</code> (recommended)</li>
+<li><strong>If you prefer local PHP</strong>: <code>./run.sh</code> (requires setup)</li>
+</ol>
+<p>Most developers who try Sail never go back to local PHP setup.</p>
+<h2>Next Steps</h2>
+<p>Ready to dive in? Check out these pages:</p>
+<ol>
+<li><strong>[Components Guide]({{ route('docs.show', 'livewire/components') }})</strong> - Detailed guide for all 9 components</li>
+<li><strong>[Layout System]({{ route('docs.show', 'livewire/layout') }})</strong> - How the Livewire layout works</li>
+<li><strong>[Socialite Integration]({{ route('docs.show', 'livewire/socialite-integration') }})</strong> - Complete OAuth setup guide</li>
+<li><strong>[Laravel Sail]({{ route('docs.show', 'livewire/laravel-sail') }})</strong> - Complete Sail guide and best practices</li>
+<li><strong>[Best Practices]({{ route('docs.show', 'livewire/best-practices') }})</strong> - Tips for building with Livewire</li>
+</ol>
+<h2>Troubleshooting</h2>
+<h3>Common Issues</h3>
+<h4>1. <strong>Components Not Loading</strong></h4>
+<pre><code class="language-bash"># Clear all caches
+php artisan optimize:clear
+
+# Rebuild assets
+npm run build</code></pre>
+<h4>2. <strong>Database Connection Issues</strong></h4>
+<pre><code class="language-bash"># Check database connection
+php artisan tinker
+# Then run: DB::connection()-&gt;getPdo();
+
+# Reset database
+php artisan migrate:fresh --seed</code></pre>
+<h4>3. <strong>Assets Not Loading</strong></h4>
+<pre><code class="language-bash"># Make sure Vite is running
+npm run dev
+
+# Or rebuild for production
+npm run build</code></pre>
+<h4>4. <strong>Permission Issues</strong></h4>
+<pre><code class="language-bash"># Fix storage permissions
+php artisan storage:link
+chmod -R 775 storage bootstrap/cache</code></pre>
+<h3>Getting Help</h3>
+<ul>
+<li><strong>Live Dashboard</strong>: <code>/livewire/dashboard</code> - See components in action</li>
+<li><strong>Authentication System</strong>: <code>/login</code> - Complete auth with social OAuth</li>
+<li><strong>Official Docs</strong>: <a href="https://livewire.laravel.com">livewire.laravel.com</a></li>
+<li><strong>Livewire 3 Guide</strong>: <a href="https://livewire.laravel.com/docs">Laravel Livewire Documentation</a></li>
+<li><strong>Community</strong>: <a href="https://discord.gg/livewire">Livewire Discord</a></li>
+</ul>
+<h2>When to Use Livewire</h2>
+<h3>✅ Perfect For:</h3>
+<ul>
+<li>Admin dashboards and panels</li>
+<li>Real-time data displays</li>
+<li>Forms with validation</li>
+<li>Interactive tables and lists</li>
+<li>Live search and filtering</li>
+<li>Single-page components</li>
+<li>CRUD operations</li>
+</ul>
+<h3>⚠️ Consider Alternatives For:</h3>
+<ul>
+<li>Complex SPAs with heavy client-side logic</li>
+<li>Applications requiring offline functionality</li>
+<li>Real-time collaboration with multiple users</li>
+<li>High-frequency updates (100+ per second)</li>
+</ul>
+<p>For those cases, consider using a JavaScript framework like Vue or React alongside Livewire.</p>
+<hr />
+<p><strong>Ready to build something amazing?</strong> Let's explore the [Components Guide]({{ route('docs.show', 'livewire/components') }}) next! 🚀</p>
+</div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <cosmic-wave class="fill-primary ride-the-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="top"></cosmic-wave>
+    <div class="footer-info d-block w-100 bg-primary pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="text-center">
+                        A <a href="https://huement.com" class="text-light fw-bold">huement.com</a> Original Project
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap 5.3.5 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+
+    <!-- CosmicWave Web Component -->
+    <script src="./js/cosmicwave.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="./assets/docs-legacy2.js"></script>
+    
+        
+    <!-- Material Icons Loading Script -->
+    <script>
+        // Mark Material Icons as loaded once font is ready
+        if (document.fonts) {
+            // Modern browser with Font Loading API
+            Promise.all([
+                document.fonts.load('400 24px "Material Symbols Rounded"'),
+            ]).then(() => {
+                document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                    icon.classList.add('material-symbols-rounded--loaded');
+                });
+            }).catch(() => {
+                // Fallback: mark as loaded after delay
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        } else {
+            // Fallback for older browsers
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        }
+    </script>
+
+    <!-- Initialize Offcanvas for Mobile Menu -->
+    <script>
+        // Wait for both DOM and Bootstrap to be ready
+        function initOffcanvas() {
+            if (typeof bootstrap !== 'undefined') {
+                const offcanvasElement = document.getElementById('docsSidebarOffcanvas');
+                const toggleButton = document.querySelector('[data-bs-target="#docsSidebarOffcanvas"]');
+
+                if (offcanvasElement && toggleButton) {
+                    // Bootstrap data attributes should handle this automatically
+                    // But we ensure it's initialized
+                    try {
+                        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                        console.log('Offcanvas initialized successfully');
+                    } catch (e) {
+                        console.warn('Offcanvas already initialized or error:', e);
+                    }
+                } else {
+                    console.warn('Offcanvas elements not found');
+                }
+            } else {
+                // Retry after a short delay
+                setTimeout(initOffcanvas, 100);
+            }
+        }
+
+        // Try to initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOffcanvas);
+        } else {
+            // DOM already ready, check if Bootstrap is loaded
+            initOffcanvas();
+        }
+    </script>
+
+    <!-- Scrollspy and Sticky Sidebar Styles -->
+    <style>
+        body.docs-layout {
+            margin-bottom: 0 !important;
+        }
+
+        /* Override global overflow-x: hidden that breaks sticky positioning */
+        body.docs-layout,
+        body.docs-layout .container-fluid {
+            overflow-x: visible !important;
+        }
+
+        html:has(body.docs-layout) {
+            overflow-x: visible !important;
+        }
+
+        /* Make the sidebar sticky */
+        #docsSidebar.docs-sidebar-sticky {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 20px !important;
+            align-self: flex-start;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .offcanvas .btn-close {
+            filter: none !important;
+        }
+
+        /* Ensure parent containers don't interfere with sticky */
+        body.docs-layout .container-fluid>.row {
+            align-items: flex-start;
+        }
+
+        /* Scrollspy will work on natural page scroll */
+        /* No need for constrained container in docs layout */
+
+        /* Style active nav links for scrollspy */
+        .docs-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .docs-nav .nav-link {
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add spacing between sections for better scroll tracking */
+        .docs-content h1,
+        .docs-content h2,
+        .docs-content h3,
+        .docs-content h4,
+        .docs-content h5,
+        .docs-content h6 {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            .navbar .btn-group .btn {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .navbar .btn-group .btn .material-symbols-rounded {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-specific improvements for docs pages */
+        @media (max-width: 767.98px) {
+
+            /* Improve typography on mobile */
+            .docs-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .docs-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .docs-content h4 {
+                font-size: 1.125rem;
+                margin-bottom: 0.625rem;
+            }
+
+            /* Improve lead paragraphs on mobile */
+            .docs-content .lead {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Better spacing for cards on mobile */
+            .docs-content .card {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .card-body {
+                padding: 1rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Improve image spacing on mobile */
+            .docs-content img {
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            /* Better spacing for rows on mobile */
+            .docs-content .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+
+            .docs-content .row>[class*="col-"] {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stack component library columns better on mobile */
+            .docs-content .row .col-md-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .docs-content .row .col-md-3:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Improve table responsiveness */
+            .docs-content .table-responsive {
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .docs-content .table {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .table th,
+            .docs-content .table td {
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+
+            /* Better alert spacing on mobile */
+            .docs-content .alert {
+                margin-bottom: 1rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .docs-content .alert h5 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Improve lists on mobile */
+            .docs-content ul,
+            .docs-content ol {
+                padding-left: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better button group spacing */
+            .docs-content .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            /* Improve main content padding on mobile */
+            main {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main .pt-3,
+            main .pb-2 {
+                padding-top: 1rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Better page header on mobile */
+            main .border-bottom {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            main h1.h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            main .btn-toolbar {
+                margin-top: 0.5rem;
+            }
+
+            /* Reduce section spacing on mobile */
+            .docs-content>* {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content>h1,
+            .docs-content>h2 {
+                margin-top: 1.5rem;
+            }
+
+            .docs-content>h1:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* Small mobile devices (320px and up) */
+        @media (max-width: 575.98px) {
+            .docs-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .docs-content .lead {
+                font-size: 0.9375rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 0.9375rem;
+            }
+
+            /* Make component library single column on very small screens */
+            .docs-content .row .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .docs-content .row .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/admin-static-shim.js"></script>
+</body>
+
+</html>

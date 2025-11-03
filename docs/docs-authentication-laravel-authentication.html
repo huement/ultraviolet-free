@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="eX0n97NNBReLHlkHxjShLdFSSnX82Kj8DpCzcs7i">
+
+<title>Show | UltraViolet</title>
+
+<link rel="icon" href="./favicon-32x32.png" type="image/png">
+
+<!-- Google Fonts & Material Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload Material Icons font to prevent FOUC -->
+<link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+<!-- Bootstrap Icon Font -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- Prevent Material Icons FOUC -->
+<style type="text/css">
+    .material-symbols-rounded,
+    .material-icons {
+        font-size: 24px;
+        line-height: 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
+
+    .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+    .material-icons:not(.material-icons--loaded) {
+        color: transparent;
+        user-select: none;
+    }
+
+    .material-symbols-rounded--loaded,
+    .material-icons--loaded {
+        color: inherit;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .material-icons {
+        font-family: 'Material Symbols Rounded' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 24px !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        word-wrap: normal !important;
+        direction: ltr !important;
+        -webkit-font-feature-settings: 'liga' !important;
+        -webkit-font-smoothing: antialiased !important;
+        text-rendering: optimizeLegibility !important;
+        font-feature-settings: 'liga' !important;
+        vertical-align: middle !important;
+    }
+</style>
+
+    <!-- Scripts -->
+        <script src="./assets/polyfills-legacy.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
+    <link rel="stylesheet" href="./assets/docs.css">
+    <script src="./assets/docs-theme-legacy.js"></script>
+
+    <!-- Additional Meta -->
+    <meta name="description" content="Documentation for UltraViolet Admin Dashboard">
+
+    <!-- Prism.js for code highlighting (theme loaded dynamically by docs-theme-legacy.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <!-- Load languages in dependency order -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup-templating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+
+    </head>
+
+<body class="docs-layout space-grotesk-300" data-bs-spy="scroll" data-bs-target="#docsSidebar" data-bs-smooth-scroll="true"
+    tabindex="0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <!-- Mobile menu toggle button -->
+            <button class="btn btn-link d-lg-none me-2 p-2 text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#docsSidebarOffcanvas" aria-controls="docsSidebarOffcanvas"
+                aria-label="Toggle navigation menu">
+                <i class="material-symbols-rounded">menu</i>
+            </button>
+
+            <a class="navbar-brand" href="../admin-dashboard.html">
+                <i class="material-symbols-rounded me-2 d-none d-lg-inline">arrow_back</i>
+                <img src="./images/uv/ultra-white.png" class="img-fluid" alt="UltraViolet Logo Text"
+                    width="170" height="17" />
+            </a>
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">menu_book</i>
+                    <span class="d-none d-lg-inline">Welcome Page</span>
+                </a>
+                <a href="../admin-dashboard.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">dashboard</i>
+                    <span class="d-none d-lg-inline">Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <cosmic-wave class="fill-primary cosmic-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="bottom"></cosmic-wave>
+
+    <!-- Offcanvas for mobile/tablet (MD and below) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="docsSidebarOffcanvas"
+        aria-labelledby="docsSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="docsSidebarOffcanvasLabel">Documentation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="docs-nav">
+                
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Getting Started</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">home</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-laravel-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-static-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Static Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-support.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Support
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-theming.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Theming
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Authentication</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">visibility</i>
+                                    Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-oauth-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Oauth Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                    href="docs-authentication-laravel-authentication.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Authentication
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-page-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Page Templates
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Livewire</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-introduction.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-layout.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Layout
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-best-practices.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Best Practices
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-icons.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Icons
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-laravel-sail.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Sail
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-socialite-integration.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Socialite Integration
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Dashboard &amp; Widgets</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-dashboards.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dashboard</i>
+                                    Dashboards
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">apps</i>
+                                    Templates
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-widgets.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">widgets</i>
+                                    Widgets
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Applications</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-readme.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Readme
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-ai-agent.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Ai Agent
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-calendar.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Calendar
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-chat-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Chat Box
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-email-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Email Box
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-bootstrap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">grid_view</i>
+                                    Bootstrap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-display-modes.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Display Modes
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-forms.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">edit_note</i>
+                                    Forms
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-hud-modal-component.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                    Hud Modal Component
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-lightbox.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Lightbox
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-masonry.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Masonry
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-tables.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">table</i>
+                                    Tables
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-ui-elements.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Ui Elements
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Data Visualization</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-charts.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">bar_chart</i>
+                                    Charts
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-google-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Google Maps
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-gridjs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dataset</i>
+                                    Gridjs
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-vector-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">public</i>
+                                    Vector Maps
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>E-commerce</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-orders.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    Ecommerce Orders
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">store</i>
+                                    Ecommerce Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-products.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory_2</i>
+                                    Ecommerce Products
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Job Board</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-job-board-jobs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">work</i>
+                                    Jobs
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Cryptocurrency</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-cryptocurrency-crypto.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                    Crypto
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                        <span>Advanced</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-package.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory</i>
+                                    Package
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-plugins.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Plugins
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-roadmap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Roadmap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-typescript.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Typescript
+                                </a>
+                            </li>
+                                            </ul>
+                            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (desktop only - LG and above) -->
+            <nav id="docsSidebar" class="col-lg-4 col-xl-3 col-xxl-2 d-none d-lg-block sidebar docs-sidebar-sticky">
+                <div class="docs-nav">
+                    
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Getting Started</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs.html">
+                                        <i class="material-symbols-rounded me-2">home</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-laravel-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-static-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Static Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-support.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Support
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-theming.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Theming
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Authentication</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-overview.html">
+                                        <i class="material-symbols-rounded me-2">visibility</i>
+                                        Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-oauth-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Oauth Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        href="docs-authentication-laravel-authentication.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Authentication
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-page-templates.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Page Templates
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Livewire</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-introduction.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-layout.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Layout
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-best-practices.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Best Practices
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-icons.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Icons
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-laravel-sail.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Sail
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-socialite-integration.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Socialite Integration
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Dashboard &amp; Widgets</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-dashboards.html">
+                                        <i class="material-symbols-rounded me-2">dashboard</i>
+                                        Dashboards
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-templates.html">
+                                        <i class="material-symbols-rounded me-2">apps</i>
+                                        Templates
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-widgets.html">
+                                        <i class="material-symbols-rounded me-2">widgets</i>
+                                        Widgets
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Applications</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-readme.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Readme
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-ai-agent.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Ai Agent
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-calendar.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-chat-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Chat Box
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-email-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Email Box
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>UI Components</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-bootstrap.html">
+                                        <i class="material-symbols-rounded me-2">grid_view</i>
+                                        Bootstrap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-display-modes.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Display Modes
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-forms.html">
+                                        <i class="material-symbols-rounded me-2">edit_note</i>
+                                        Forms
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-hud-modal-component.html">
+                                        <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                        Hud Modal Component
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-lightbox.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Lightbox
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-masonry.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Masonry
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-tables.html">
+                                        <i class="material-symbols-rounded me-2">table</i>
+                                        Tables
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-ui-elements.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Ui Elements
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Data Visualization</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-charts.html">
+                                        <i class="material-symbols-rounded me-2">bar_chart</i>
+                                        Charts
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-google-maps.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Google Maps
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-gridjs.html">
+                                        <i class="material-symbols-rounded me-2">dataset</i>
+                                        Gridjs
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-vector-maps.html">
+                                        <i class="material-symbols-rounded me-2">public</i>
+                                        Vector Maps
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>E-commerce</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-orders.html">
+                                        <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                        Ecommerce Orders
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-overview.html">
+                                        <i class="material-symbols-rounded me-2">store</i>
+                                        Ecommerce Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-products.html">
+                                        <i class="material-symbols-rounded me-2">inventory_2</i>
+                                        Ecommerce Products
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Job Board</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-job-board-jobs.html">
+                                        <i class="material-symbols-rounded me-2">work</i>
+                                        Jobs
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Cryptocurrency</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-cryptocurrency-crypto.html">
+                                        <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                        Crypto
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-0 mb-1 text-info">
+                            <span>Advanced</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-package.html">
+                                        <i class="material-symbols-rounded me-2">inventory</i>
+                                        Package
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-plugins.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Plugins
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-roadmap.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Roadmap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-typescript.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Typescript
+                                    </a>
+                                </li>
+                                                    </ul>
+                                    </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-12 col-lg-8 col-xl-9 col-xxl-10">
+                <div class="pt-3 pb-2 mb-3">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Laravel Authentication</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <!-- Content area - scrollspy applied to body -->
+                    <div class="docs-content">
+                        <div class="docs-content">
+    <h1>Laravel Authentication</h1>
+<p>This guide covers the <strong>Laravel authentication system</strong> included with UltraViolet Pro. The authentication is built with Laravel Breeze and provides a complete user management solution with login, registration, password reset, and email verification.</p>
+<h2>Overview</h2>
+<p>UltraViolet Pro's authentication system includes:</p>
+<ul>
+<li><strong>Laravel Breeze</strong> - Minimal, simple authentication scaffolding</li>
+<li><strong>User Registration</strong> - New user sign up</li>
+<li><strong>User Login</strong> - Session-based authentication</li>
+<li><strong>Password Reset</strong> - Email-based password recovery</li>
+<li><strong>Email Verification</strong> - Verify user email addresses</li>
+<li><strong>Remember Me</strong> - Persistent login sessions</li>
+<li><strong>Profile Management</strong> - Update user information</li>
+<li><strong>CSRF Protection</strong> - Security against cross-site attacks</li>
+</ul>
+<p><img src="./images/auth/auth-login-basic.png" alt="Authentication Pages Preview" /></p>
+<p>UltraViolet includes beautiful, pre-styled authentication pages with multiple design variants. See the <a href="page-templates.md">Page Templates</a> guide for more design options.</p>
+<h2>What's Included</h2>
+<h3>Pre-built Features</h3>
+<p>✅ <strong>Registration</strong> - Users can create accounts
+✅ <strong>Login/Logout</strong> - Session management
+✅ <strong>Password Reset</strong> - Forgot password flow
+✅ <strong>Email Verification</strong> - Optional email confirmation
+✅ <strong>Remember Me</strong> - Long-term sessions
+✅ <strong>Profile Updates</strong> - Edit user information
+✅ <strong>Password Updates</strong> - Change password
+✅ <strong>Account Deletion</strong> - Delete user account</p>
+<h3>Authentication Routes</h3>
+<pre><code class="language-php">// Authentication routes (defined in routes/auth.php)
+
+// Registration
+GET  /register           - Show registration form
+POST /register           - Handle registration
+
+// Login
+GET  /login             - Show login form
+POST /login             - Handle login
+POST /logout            - Handle logout
+
+// Password Reset
+GET  /forgot-password   - Show forgot password form
+POST /forgot-password   - Send reset link email
+GET  /reset-password    - Show reset password form
+POST /reset-password    - Handle password reset
+
+// Email Verification
+GET  /verify-email      - Email verification notice
+GET  /verify-email/{id}/{hash} - Verify email
+POST /email/verification-notification - Resend verification
+
+// Profile
+GET  /profile           - Show profile edit form
+PATCH /profile          - Update profile
+DELETE /profile         - Delete account</code></pre>
+<h2>Setup Instructions</h2>
+<h3>Already Installed</h3>
+<p>If you followed the <a href="laravel-setup.md">Laravel Setup Guide</a>, authentication is already installed and configured!</p>
+<h3>Manual Installation (if needed)</h3>
+<p>If starting fresh or reinstalling:</p>
+<pre><code class="language-bash"># Install Laravel Breeze
+composer require laravel/breeze --dev
+
+# Install Breeze scaffolding
+php artisan breeze:install blade
+
+# Install dependencies
+npm install
+
+# Build assets
+npm run build
+
+# Run migrations
+php artisan migrate</code></pre>
+<h2>Using Authentication</h2>
+<h3>Registering Users</h3>
+<p><img src="./images/auth/auth-login-square.png" alt="Registration Page" /></p>
+<h4>Via Web Interface</h4>
+<ol>
+<li>Visit <code>/register</code> in your browser</li>
+<li>Fill out the registration form:
+<ul>
+<li>Name</li>
+<li>Email</li>
+<li>Password (min 8 characters)</li>
+<li>Password Confirmation</li>
+</ul></li>
+<li>Click &quot;Register&quot;</li>
+<li>User is automatically logged in</li>
+</ol>
+<h4>Programmatically</h4>
+<pre><code class="language-php">use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
+$user = User::create([
+    'name' =&gt; 'John Doe',
+    'email' =&gt; 'john@example.com',
+    'password' =&gt; Hash::make('password123'),
+]);</code></pre>
+<h3>Logging In Users</h3>
+<h4>Via Web Interface</h4>
+<ol>
+<li>Visit <code>/login</code></li>
+<li>Enter email and password</li>
+<li>Optionally check &quot;Remember Me&quot;</li>
+<li>Click &quot;Login&quot;</li>
+</ol>
+<h4>Programmatically</h4>
+<pre><code class="language-php">use Illuminate\Support\Facades\Auth;
+
+// Attempt login
+if (Auth::attempt(['email' =&gt; $email, 'password' =&gt; $password])) {
+    // Authentication passed
+    return redirect()-&gt;intended('admin-dashboard.html');
+}
+
+// With remember me
+Auth::attempt($credentials, $remember = true);
+
+// Login by user ID
+Auth::loginUsingId(1);
+
+// Login without credentials check (e.g., after registration)
+Auth::login($user);</code></pre>
+<h3>Logging Out</h3>
+<pre><code class="language-php">use Illuminate\Support\Facades\Auth;
+
+Auth::logout();
+request()-&gt;session()-&gt;invalidate();
+request()-&gt;session()-&gt;regenerateToken();
+
+return redirect('/login');</code></pre>
+<h3>Checking Authentication</h3>
+<h4>In Controllers</h4>
+<pre><code class="language-php">use Illuminate\Support\Facades\Auth;
+
+// Check if user is logged in
+if (Auth::check()) {
+    // User is authenticated
+}
+
+// Get current user
+$user = Auth::user();
+
+// Get user ID
+$id = Auth::id();
+
+// Check for guest
+if (Auth::guest()) {
+    // User is not authenticated
+}</code></pre>
+<h4>In Blade Templates</h4>
+<pre><code class="language-blade">@auth
+    &lt;!-- User is logged in --&gt;
+    &lt;p&gt;Welcome, {{ auth()-&gt;user()-&gt;name }}!&lt;/p&gt;
+@endauth
+
+@guest
+    &lt;!-- User is not logged in --&gt;
+    &lt;a href="route-login.html"&gt;Login&lt;/a&gt;
+@endguest
+
+&lt;!-- Get current user --&gt;
+{{ auth()-&gt;user()-&gt;email }}
+{{ auth()-&gt;id() }}</code></pre>
+<h3>Protecting Routes</h3>
+<h4>Middleware</h4>
+<pre><code class="language-php">use Illuminate\Support\Facades\Route;
+
+// Single route
+Route::get('admin-dashboard.html', [DashboardController::class, 'index'])
+    -&gt;middleware('auth');
+
+// Route group
+Route::middleware(['auth'])-&gt;group(function () {
+    Route::get('admin-dashboard.html', [DashboardController::class, 'index']);
+    Route::get('admin-profile.html', [ProfileController::class, 'edit']);
+    Route::get('admin-settings.html', [SettingsController::class, 'index']);
+});
+
+// Multiple middleware
+Route::middleware(['auth', 'verified'])-&gt;group(function () {
+    // These routes require authentication AND email verification
+    Route::get('admin-dashboard.html', [DashboardController::class, 'index']);
+});
+
+// Guest only (not logged in)
+Route::middleware(['guest'])-&gt;group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin']);
+    Route::get('/register', [AuthController::class, 'showRegister']);
+});</code></pre>
+<h4>In Controllers</h4>
+<pre><code class="language-php">class DashboardController extends Controller
+{
+    public function __construct()
+    {
+        // Require authentication for all methods
+        $this-&gt;middleware('auth');
+
+        // Require authentication except for specific methods
+        $this-&gt;middleware('auth')-&gt;except(['index', 'show']);
+
+        // Require authentication only for specific methods
+        $this-&gt;middleware('auth')-&gt;only(['create', 'store', 'edit', 'update']);
+    }
+}</code></pre>
+<h2>Password Reset Flow</h2>
+<h3>User Requests Reset</h3>
+<ol>
+<li>User visits <code>/forgot-password</code></li>
+<li>Enters their email address</li>
+<li>System sends password reset email</li>
+<li>User clicks link in email</li>
+<li>User enters new password</li>
+<li>Password is updated</li>
+</ol>
+<h3>Customizing Reset Emails</h3>
+<p>Edit the notification:</p>
+<pre><code class="language-php">// app/Models/User.php
+
+use Illuminate\Auth\Notifications\ResetPassword;
+
+public function sendPasswordResetNotification($token)
+{
+    $url = url('/reset-password/'.$token.'?email='.$this-&gt;email);
+
+    // Send custom notification
+    $this-&gt;notify(new ResetPassword($url));
+}</code></pre>
+<p>Or create custom notification:</p>
+<pre><code class="language-bash">php artisan make:notification CustomResetPassword</code></pre>
+<pre><code class="language-php">// app/Notifications/CustomResetPassword.php
+
+public function toMail($notifiable)
+{
+    return (new MailMessage)
+        -&gt;subject('Reset Your Password')
+        -&gt;line('You requested a password reset.')
+        -&gt;action('Reset Password', url(config('app.url').route('password.reset', $this-&gt;token, false)))
+        -&gt;line('This link will expire in 60 minutes.');
+}</code></pre>
+<h2>Email Verification</h2>
+<h3>Enable Email Verification</h3>
+<ol>
+<li>Make User model implement <code>MustVerifyEmail</code>:</li>
+</ol>
+<pre><code class="language-php">// app/Models/User.php
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+class User extends Authenticatable implements MustVerifyEmail
+{
+    // ...
+}</code></pre>
+<ol start="2">
+<li>Protect routes with <code>verified</code> middleware:</li>
+</ol>
+<pre><code class="language-php">Route::middleware(['auth', 'verified'])-&gt;group(function () {
+    Route::get('admin-dashboard.html', [DashboardController::class, 'index']);
+});</code></pre>
+<ol start="3">
+<li>Users must verify email before accessing protected routes</li>
+</ol>
+<h3>Customizing Verification Emails</h3>
+<pre><code class="language-php">// app/Models/User.php
+
+use Illuminate\Auth\Notifications\VerifyEmail;
+
+public function sendEmailVerificationNotification()
+{
+    $this-&gt;notify(new VerifyEmail);
+}</code></pre>
+<h3>Resending Verification Email</h3>
+<pre><code class="language-php">use Illuminate\Http\Request;
+
+public function resend(Request $request)
+{
+    if ($request-&gt;user()-&gt;hasVerifiedEmail()) {
+        return redirect()-&gt;intended('admin-dashboard.html');
+    }
+
+    $request-&gt;user()-&gt;sendEmailVerificationNotification();
+
+    return back()-&gt;with('status', 'verification-link-sent');
+}</code></pre>
+<h2>User Profile Management</h2>
+<h3>View Profile</h3>
+<pre><code class="language-php">// app/Http/Controllers/ProfileController.php
+
+public function edit(Request $request)
+{
+    return view('profile.edit', [
+        'user' =&gt; $request-&gt;user(),
+    ]);
+}</code></pre>
+<h3>Update Profile</h3>
+<pre><code class="language-php">public function update(Request $request)
+{
+    $request-&gt;validate([
+        'name' =&gt; 'required|string|max:255',
+        'email' =&gt; 'required|email|max:255|unique:users,email,'.$request-&gt;user()-&gt;id,
+    ]);
+
+    $request-&gt;user()-&gt;fill([
+        'name' =&gt; $request-&gt;name,
+        'email' =&gt; $request-&gt;email,
+    ]);
+
+    if ($request-&gt;user()-&gt;isDirty('email')) {
+        $request-&gt;user()-&gt;email_verified_at = null;
+    }
+
+    $request-&gt;user()-&gt;save();
+
+    return back()-&gt;with('status', 'profile-updated');
+}</code></pre>
+<h3>Update Password</h3>
+<pre><code class="language-php">use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
+
+public function updatePassword(Request $request)
+{
+    $validated = $request-&gt;validate([
+        'current_password' =&gt; ['required', 'current_password'],
+        'password' =&gt; ['required', Password::defaults(), 'confirmed'],
+    ]);
+
+    $request-&gt;user()-&gt;update([
+        'password' =&gt; Hash::make($validated['password']),
+    ]);
+
+    return back()-&gt;with('status', 'password-updated');
+}</code></pre>
+<h3>Delete Account</h3>
+<pre><code class="language-php">use Illuminate\Support\Facades\Auth;
+
+public function destroy(Request $request)
+{
+    $request-&gt;validate([
+        'password' =&gt; ['required', 'current_password'],
+    ]);
+
+    $user = $request-&gt;user();
+
+    Auth::logout();
+
+    $user-&gt;delete();
+
+    $request-&gt;session()-&gt;invalidate();
+    $request-&gt;session()-&gt;regenerateToken();
+
+    return redirect('/');
+}</code></pre>
+<h2>Customizing Authentication</h2>
+<p><img src="./images/auth/auth-login-wallpaper.png" alt="Wallpaper Authentication Variant" /></p>
+<p>UltraViolet includes three authentication design variants. Customize your authentication pages to match your brand. Learn more in the <a href="page-templates.md">Page Templates</a> guide.</p>
+<h3>Redirect After Login</h3>
+<p>Edit <code>app/Providers/RouteServiceProvider.php</code>:</p>
+<pre><code class="language-php">public const HOME = 'admin-dashboard.html';</code></pre>
+<p>Or in login controller:</p>
+<pre><code class="language-php">protected function authenticated(Request $request, $user)
+{
+    if ($user-&gt;is_admin) {
+        return redirect('admin-dashboard.html');
+    }
+
+    return redirect('/dashboard');
+}</code></pre>
+<h3>Custom Login Logic</h3>
+<p>Create custom authentication:</p>
+<pre><code class="language-php">use Illuminate\Support\Facades\Auth;
+
+public function login(Request $request)
+{
+    $credentials = $request-&gt;validate([
+        'email' =&gt; 'required|email',
+        'password' =&gt; 'required',
+    ]);
+
+    // Add custom conditions
+    $credentials['is_active'] = 1;
+
+    if (Auth::attempt($credentials, $request-&gt;filled('remember'))) {
+        $request-&gt;session()-&gt;regenerate();
+
+        // Custom logic after login
+        activity()-&gt;log('User logged in');
+
+        return redirect()-&gt;intended('admin-dashboard.html');
+    }
+
+    return back()-&gt;withErrors([
+        'email' =&gt; 'Invalid credentials or account is not active.',
+    ])-&gt;onlyInput('email');
+}</code></pre>
+<h3>Rate Limiting</h3>
+<p>Breeze includes rate limiting by default. Customize in <code>app/Http/Controllers/Auth/LoginController.php</code>:</p>
+<pre><code class="language-php">use Illuminate\Support\Facades\RateLimiter;
+
+protected function checkTooManyFailedAttempts(Request $request)
+{
+    $key = 'login.'.$request-&gt;ip();
+
+    if (RateLimiter::tooManyAttempts($key, 5)) {
+        $seconds = RateLimiter::availableIn($key);
+
+        throw ValidationException::withMessages([
+            'email' =&gt; "Too many login attempts. Try again in {$seconds} seconds.",
+        ]);
+    }
+}</code></pre>
+<h3>Remember Me Duration</h3>
+<p>Edit <code>config/session.php</code>:</p>
+<pre><code class="language-php">'lifetime' =&gt; 120, // Session lifetime in minutes
+'expire_on_close' =&gt; false,</code></pre>
+<p>Or in login controller:</p>
+<pre><code class="language-php">// Remember for 30 days
+Auth::login($user, $remember = true);
+config(['session.lifetime' =&gt; 43200]); // 30 days in minutes</code></pre>
+<h2>Adding User Roles</h2>
+<h3>Create Roles</h3>
+<pre><code class="language-bash">php artisan make:migration add_role_to_users_table</code></pre>
+<pre><code class="language-php">public function up()
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table-&gt;string('role')-&gt;default('user');
+    });
+}</code></pre>
+<pre><code class="language-bash">php artisan migrate</code></pre>
+<h3>Check Roles</h3>
+<pre><code class="language-php">// In User model
+public function isAdmin()
+{
+    return $this-&gt;role === 'admin';
+}
+
+public function isModerator()
+{
+    return $this-&gt;role === 'moderator';
+}
+
+// In controllers
+if (auth()-&gt;user()-&gt;isAdmin()) {
+    // Admin only logic
+}
+
+// In Blade
+@if(auth()-&gt;user()-&gt;isAdmin())
+    &lt;a href="../admin-dashboard.html"&gt;Admin Panel&lt;/a&gt;
+@endif</code></pre>
+<h3>Role Middleware</h3>
+<pre><code class="language-bash">php artisan make:middleware CheckRole</code></pre>
+<pre><code class="language-php">// app/Http/Middleware/CheckRole.php
+
+public function handle(Request $request, Closure $next, ...$roles)
+{
+    if (!$request-&gt;user() || !in_array($request-&gt;user()-&gt;role, $roles)) {
+        abort(403, 'Unauthorized');
+    }
+
+    return $next($request);
+}</code></pre>
+<p>Register middleware in <code>app/Http/Kernel.php</code>:</p>
+<pre><code class="language-php">protected $middlewareAliases = [
+    'role' =&gt; \App\Http\Middleware\CheckRole::class,
+];</code></pre>
+<p>Use in routes:</p>
+<pre><code class="language-php">Route::middleware(['auth', 'role:admin'])-&gt;group(function () {
+    Route::get('admin-users.html', [UserController::class, 'index']);
+});
+
+Route::middleware(['auth', 'role:admin,moderator'])-&gt;group(function () {
+    Route::get('admin-posts.html', [PostController::class, 'index']);
+});</code></pre>
+<h2>Social Authentication (OAuth)</h2>
+<h3>Install Laravel Socialite</h3>
+<pre><code class="language-bash">composer require laravel/socialite</code></pre>
+<h3>Configure Providers</h3>
+<p>Add to <code>config/services.php</code>:</p>
+<pre><code class="language-php">'google' =&gt; [
+    'client_id' =&gt; env('GOOGLE_CLIENT_ID'),
+    'client_secret' =&gt; env('GOOGLE_CLIENT_SECRET'),
+    'redirect' =&gt; env('GOOGLE_REDIRECT_URL'),
+],
+
+'github' =&gt; [
+    'client_id' =&gt; env('GITHUB_CLIENT_ID'),
+    'client_secret' =&gt; env('GITHUB_CLIENT_SECRET'),
+    'redirect' =&gt; env('GITHUB_REDIRECT_URL'),
+],</code></pre>
+<p>Add to <code>.env</code>:</p>
+<pre><code class="language-env">GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GOOGLE_REDIRECT_URL=http://localhost:8000/auth/google/callback</code></pre>
+<h3>Create Routes</h3>
+<pre><code class="language-php">use Laravel\Socialite\Facades\Socialite;
+
+Route::get('/auth/{provider}', function ($provider) {
+    return Socialite::driver($provider)-&gt;redirect();
+});
+
+Route::get('/auth/{provider}/callback', function ($provider) {
+    $socialiteUser = Socialite::driver($provider)-&gt;user();
+
+    $user = User::updateOrCreate([
+        'email' =&gt; $socialiteUser-&gt;email,
+    ], [
+        'name' =&gt; $socialiteUser-&gt;name,
+        'provider_id' =&gt; $socialiteUser-&gt;id,
+        'provider' =&gt; $provider,
+    ]);
+
+    Auth::login($user);
+
+    return redirect('admin-dashboard.html');
+});</code></pre>
+<h3>Add Buttons to Login Page</h3>
+<pre><code class="language-blade">&lt;div class="text-center mt-4"&gt;
+    &lt;p class="text-muted"&gt;Or sign in with&lt;/p&gt;
+    &lt;div class="d-flex gap-2 justify-content-center"&gt;
+        &lt;a href="url-auth-google.html" class="btn btn-outline-primary"&gt;
+            &lt;i class="fab fa-google"&gt;&lt;/i&gt; Google
+        &lt;/a&gt;
+        &lt;a href="url-auth-github.html" class="btn btn-outline-primary"&gt;
+            &lt;i class="fab fa-github"&gt;&lt;/i&gt; GitHub
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h2>Security Best Practices</h2>
+<h3>1. Use Strong Passwords</h3>
+<p>Configure in <code>app/Providers/AppServiceProvider.php</code>:</p>
+<pre><code class="language-php">use Illuminate\Validation\Rules\Password;
+
+Password::defaults(function () {
+    return Password::min(8)
+        -&gt;letters()
+        -&gt;mixedCase()
+        -&gt;numbers()
+        -&gt;symbols()
+        -&gt;uncompromised();
+});</code></pre>
+<h3>2. Enable HTTPS</h3>
+<p>In <code>.env</code>:</p>
+<pre><code class="language-env">APP_URL=https://yourdomain.com
+SESSION_SECURE_COOKIE=true</code></pre>
+<h3>3. CSRF Protection</h3>
+<p>Laravel includes CSRF protection by default. Ensure your forms include:</p>
+<pre><code class="language-blade">&lt;form method="POST" action="/login"&gt;
+    @csrf
+    &lt;!-- form fields --&gt;
+&lt;/form&gt;</code></pre>
+<h3>4. Rate Limiting</h3>
+<p>Protect against brute force:</p>
+<pre><code class="language-php">use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+
+RateLimiter::for('login', function (Request $request) {
+    return Limit::perMinute(5)-&gt;by($request-&gt;email.$request-&gt;ip());
+});</code></pre>
+<h3>5. Session Security</h3>
+<p>In <code>config/session.php</code>:</p>
+<pre><code class="language-php">'http_only' =&gt; true,     // Prevent JavaScript access
+'same_site' =&gt; 'strict', // CSRF protection
+'secure' =&gt; env('SESSION_SECURE_COOKIE', false), // HTTPS only</code></pre>
+<h2>Testing Authentication</h2>
+<h3>Feature Tests</h3>
+<pre><code class="language-php">use App\Models\User;
+use Tests\TestCase;
+
+class AuthenticationTest extends TestCase
+{
+    public function test_users_can_authenticate()
+    {
+        $user = User::factory()-&gt;create();
+
+        $response = $this-&gt;post('/login', [
+            'email' =&gt; $user-&gt;email,
+            'password' =&gt; 'password',
+        ]);
+
+        $this-&gt;assertAuthenticated();
+        $response-&gt;assertRedirect('admin-dashboard.html');
+    }
+
+    public function test_users_cannot_authenticate_with_invalid_password()
+    {
+        $user = User::factory()-&gt;create();
+
+        $this-&gt;post('/login', [
+            'email' =&gt; $user-&gt;email,
+            'password' =&gt; 'wrong-password',
+        ]);
+
+        $this-&gt;assertGuest();
+    }
+}</code></pre>
+<h2>Troubleshooting</h2>
+<h3>Session Not Persisting</h3>
+<pre><code class="language-bash"># Clear session files
+php artisan session:clear
+
+# Check session driver in .env
+SESSION_DRIVER=file  # or database, redis</code></pre>
+<h3>Password Reset Not Working</h3>
+<pre><code class="language-bash"># Check mail configuration
+php artisan config:clear
+
+# Test email
+php artisan tinker
+Mail::raw('Test email', function($msg) {
+    $msg-&gt;to('test@example.com')-&gt;subject('Test');
+});</code></pre>
+<h3>CSRF Token Mismatch</h3>
+<pre><code class="language-bash"># Clear application cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Check if @csrf directive is in forms</code></pre>
+<h2>Next Steps</h2>
+<ul>
+<li><a href="page-templates.md">Page Templates</a> - HTML auth page designs</li>
+<li><a href="../getting-started/theming.md">Theming Guide</a> - Customize authentication page styles</li>
+<li><a href="https://laravel.com/docs/authentication">Laravel Documentation</a> - Official Laravel auth docs</li>
+</ul>
+<h2>Support</h2>
+<p>Need help with Laravel authentication?</p>
+<ul>
+<li>Laravel Docs: <a href="https://laravel.com/docs/authentication">https://laravel.com/docs/authentication</a></li>
+<li>Laravel Breeze Docs: <a href="https://laravel.com/docs/starter-kits#breeze">https://laravel.com/docs/starter-kits#breeze</a></li>
+<li>Email: support@huement.com</li>
+</ul>
+</div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <cosmic-wave class="fill-primary ride-the-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="top"></cosmic-wave>
+
+    <!-- start viewport debugger -->
+    <div class="mediaq xs-debug sm-debug md-debug lg-debug xl-debug xxl-debug" id="viewport-debugger"
+        title="Click to remove"></div>
+    <!-- end viewport debugger -->
+
+    <!-- Bootstrap 5.3.5 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+
+    <!-- CosmicWave Web Component -->
+    <script src="./js/cosmicwave.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="./assets/docs-legacy2.js"></script>
+    
+        
+    <!-- Material Icons Loading Script -->
+    <script>
+        // Mark Material Icons as loaded once font is ready
+        if (document.fonts) {
+            // Modern browser with Font Loading API
+            Promise.all([
+                document.fonts.load('400 24px "Material Symbols Rounded"'),
+            ]).then(() => {
+                document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                    icon.classList.add('material-symbols-rounded--loaded');
+                });
+            }).catch(() => {
+                // Fallback: mark as loaded after delay
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        } else {
+            // Fallback for older browsers
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        }
+    </script>
+
+    <!-- Initialize Offcanvas for Mobile Menu -->
+    <script>
+        // Wait for both DOM and Bootstrap to be ready
+        function initOffcanvas() {
+            if (typeof bootstrap !== 'undefined') {
+                const offcanvasElement = document.getElementById('docsSidebarOffcanvas');
+                const toggleButton = document.querySelector('[data-bs-target="#docsSidebarOffcanvas"]');
+
+                if (offcanvasElement && toggleButton) {
+                    // Bootstrap data attributes should handle this automatically
+                    // But we ensure it's initialized
+                    try {
+                        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                        console.log('Offcanvas initialized successfully');
+                    } catch (e) {
+                        console.warn('Offcanvas already initialized or error:', e);
+                    }
+                } else {
+                    console.warn('Offcanvas elements not found');
+                }
+            } else {
+                // Retry after a short delay
+                setTimeout(initOffcanvas, 100);
+            }
+        }
+
+        // Try to initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOffcanvas);
+        } else {
+            // DOM already ready, check if Bootstrap is loaded
+            initOffcanvas();
+        }
+    </script>
+
+    <!-- Scrollspy and Sticky Sidebar Styles -->
+    <style>
+        body.docs-layout {
+            margin-bottom: 0 !important;
+        }
+
+        /* Override global overflow-x: hidden that breaks sticky positioning */
+        body.docs-layout,
+        body.docs-layout .container-fluid {
+            overflow-x: visible !important;
+        }
+
+        html:has(body.docs-layout) {
+            overflow-x: visible !important;
+        }
+
+        /* Make the sidebar sticky */
+        #docsSidebar.docs-sidebar-sticky {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 20px !important;
+            align-self: flex-start;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .offcanvas .btn-close {
+            filter: none !important;
+        }
+
+        /* Ensure parent containers don't interfere with sticky */
+        body.docs-layout .container-fluid>.row {
+            align-items: flex-start;
+        }
+
+        /* Scrollspy will work on natural page scroll */
+        /* No need for constrained container in docs layout */
+
+        /* Style active nav links for scrollspy */
+        .docs-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .docs-nav .nav-link {
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add spacing between sections for better scroll tracking */
+        .docs-content h1,
+        .docs-content h2,
+        .docs-content h3,
+        .docs-content h4,
+        .docs-content h5,
+        .docs-content h6 {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            .navbar .btn-group .btn {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .navbar .btn-group .btn .material-symbols-rounded {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-specific improvements for docs pages */
+        @media (max-width: 767.98px) {
+
+            /* Improve typography on mobile */
+            .docs-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .docs-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .docs-content h4 {
+                font-size: 1.125rem;
+                margin-bottom: 0.625rem;
+            }
+
+            /* Improve lead paragraphs on mobile */
+            .docs-content .lead {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Better spacing for cards on mobile */
+            .docs-content .card {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .card-body {
+                padding: 1rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Improve image spacing on mobile */
+            .docs-content img {
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            /* Better spacing for rows on mobile */
+            .docs-content .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+
+            .docs-content .row>[class*="col-"] {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stack component library columns better on mobile */
+            .docs-content .row .col-md-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .docs-content .row .col-md-3:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Improve table responsiveness */
+            .docs-content .table-responsive {
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .docs-content .table {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .table th,
+            .docs-content .table td {
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+
+            /* Better alert spacing on mobile */
+            .docs-content .alert {
+                margin-bottom: 1rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .docs-content .alert h5 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Improve lists on mobile */
+            .docs-content ul,
+            .docs-content ol {
+                padding-left: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better button group spacing */
+            .docs-content .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            /* Improve main content padding on mobile */
+            main {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main .pt-3,
+            main .pb-2 {
+                padding-top: 1rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Better page header on mobile */
+            main .border-bottom {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            main h1.h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            main .btn-toolbar {
+                margin-top: 0.5rem;
+            }
+
+            /* Reduce section spacing on mobile */
+            .docs-content>* {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content>h1,
+            .docs-content>h2 {
+                margin-top: 1.5rem;
+            }
+
+            .docs-content>h1:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* Small mobile devices (320px and up) */
+        @media (max-width: 575.98px) {
+            .docs-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .docs-content .lead {
+                font-size: 0.9375rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 0.9375rem;
+            }
+
+            /* Make component library single column on very small screens */
+            .docs-content .row .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .docs-content .row .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/admin-static-shim.js"></script>
+</body>
+
+</html>

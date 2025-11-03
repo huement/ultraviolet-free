@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="7K5E4M1rZZn4IvgaJSoYxdjHGii9UDI5oDf4c3aM">
+
+<title>Show | UltraViolet</title>
+
+<link rel="icon" href="./favicon-32x32.png" type="image/png">
+
+<!-- Google Fonts & Material Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Preload Material Icons font to prevent FOUC -->
+<link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+<link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet">
+<!-- Bootstrap Icon Font -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- Prevent Material Icons FOUC -->
+<style type="text/css">
+    .material-symbols-rounded,
+    .material-icons {
+        font-size: 24px;
+        line-height: 1;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+        vertical-align: middle;
+        overflow: hidden;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
+
+    .material-symbols-rounded:not(.material-symbols-rounded--loaded),
+    .material-icons:not(.material-icons--loaded) {
+        color: transparent;
+        user-select: none;
+    }
+
+    .material-symbols-rounded--loaded,
+    .material-icons--loaded {
+        color: inherit;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
+    .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .material-icons {
+        font-family: 'Material Symbols Rounded' !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        font-size: 24px !important;
+        line-height: 1 !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        word-wrap: normal !important;
+        direction: ltr !important;
+        -webkit-font-feature-settings: 'liga' !important;
+        -webkit-font-smoothing: antialiased !important;
+        text-rendering: optimizeLegibility !important;
+        font-feature-settings: 'liga' !important;
+        vertical-align: middle !important;
+    }
+</style>
+
+    <!-- Scripts -->
+        <script src="./assets/polyfills-legacy.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
+    <link rel="stylesheet" href="./assets/docs.css">
+    <script src="./assets/docs-theme-legacy.js"></script>
+
+    <!-- Additional Meta -->
+    <meta name="description" content="Documentation for UltraViolet Admin Dashboard">
+
+    <!-- Prism.js for code highlighting (theme loaded dynamically by docs-theme-legacy.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <!-- Load languages in dependency order -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup-templating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+
+    </head>
+
+<body class="docs-layout space-grotesk-300" data-bs-spy="scroll" data-bs-target="#docsSidebar" data-bs-smooth-scroll="true"
+    tabindex="0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <!-- Mobile menu toggle button -->
+            <button class="btn btn-link d-lg-none me-2 p-2 text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#docsSidebarOffcanvas" aria-controls="docsSidebarOffcanvas"
+                aria-label="Toggle navigation menu">
+                <i class="material-symbols-rounded">menu</i>
+            </button>
+
+            <a class="navbar-brand" href="../admin-dashboard.html">
+                <i class="material-symbols-rounded me-2 d-none d-lg-inline">arrow_back</i>
+                <img src="./images/uv/ultra-white.png" class="img-fluid" alt="UltraViolet Logo Text"
+                    width="170" height="17" />
+            </a>
+            <div class="btn-group">
+                <a href="../index.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">menu_book</i>
+                    <span class="d-none d-lg-inline">Welcome Page</span>
+                </a>
+                <a href="../admin-dashboard.html" class="btn btn-info">
+                    <i class="material-symbols-rounded me-0 me-lg-2">dashboard</i>
+                    <span class="d-none d-lg-inline">Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <cosmic-wave class="fill-primary cosmic-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="bottom"></cosmic-wave>
+
+    <!-- Offcanvas for mobile/tablet (MD and below) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="docsSidebarOffcanvas"
+        aria-labelledby="docsSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="docsSidebarOffcanvasLabel">Documentation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="docs-nav">
+                
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Getting Started</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">home</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-laravel-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-static-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Static Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-support.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Support
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-getting-started-theming.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Theming
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Authentication</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">visibility</i>
+                                    Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-oauth-setup.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Oauth Setup
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-laravel.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-authentication-page-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Page Templates
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Livewire</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-introduction.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Introduction
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-layout.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Layout
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-best-practices.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Best Practices
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-icons.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Icons
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-laravel-sail.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Laravel Sail
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-livewire-socialite-integration.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Socialite Integration
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Dashboard &amp; Widgets</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-dashboards.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dashboard</i>
+                                    Dashboards
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-templates.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">apps</i>
+                                    Templates
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-dashboard-widgets-widgets.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">widgets</i>
+                                    Widgets
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Applications</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-readme.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Readme
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-ai-agent.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Ai Agent
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-calendar.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Calendar
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-chat-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Chat Box
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-apps-email-box.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Email Box
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>UI Components</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-bootstrap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">grid_view</i>
+                                    Bootstrap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-components.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Components
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link active"
+                                    href="docs-ui-components-display-modes.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Display Modes
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-forms.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">edit_note</i>
+                                    Forms
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-hud-modal-component.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                    Hud Modal Component
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-lightbox.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Lightbox
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-masonry.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Masonry
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-tables.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">table</i>
+                                    Tables
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ui-components-ui-elements.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">palette</i>
+                                    Ui Elements
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Data Visualization</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-charts.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">bar_chart</i>
+                                    Charts
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-google-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Google Maps
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-gridjs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">dataset</i>
+                                    Gridjs
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-data-visualization-vector-maps.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">public</i>
+                                    Vector Maps
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>E-commerce</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-orders.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                    Ecommerce Orders
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-overview.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">store</i>
+                                    Ecommerce Overview
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-ecommerce-ecommerce-products.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory_2</i>
+                                    Ecommerce Products
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Job Board</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-job-board-jobs.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">work</i>
+                                    Jobs
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Cryptocurrency</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-cryptocurrency-crypto.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                    Crypto
+                                </a>
+                            </li>
+                                            </ul>
+                                    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                        <span>Advanced</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-package.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">inventory</i>
+                                    Package
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-plugins.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">extension</i>
+                                    Plugins
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-roadmap.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Roadmap
+                                </a>
+                            </li>
+                                                    
+                            <li class="nav-item">
+                                <a class="nav-link "
+                                    href="docs-advanced-typescript.html"
+                                    data-bs-dismiss="offcanvas">
+                                    <i class="material-symbols-rounded me-2">article</i>
+                                    Typescript
+                                </a>
+                            </li>
+                                            </ul>
+                            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (desktop only - LG and above) -->
+            <nav id="docsSidebar" class="col-lg-4 col-xl-3 col-xxl-2 d-none d-lg-block sidebar docs-sidebar-sticky">
+                <div class="docs-nav">
+                    
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Getting Started</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs.html">
+                                        <i class="material-symbols-rounded me-2">home</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-laravel-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-static-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Static Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-support.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Support
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-getting-started-theming.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Theming
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Authentication</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-overview.html">
+                                        <i class="material-symbols-rounded me-2">visibility</i>
+                                        Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-oauth-setup.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Oauth Setup
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-laravel.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-authentication-page-templates.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Page Templates
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Livewire</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-introduction.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Introduction
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-layout.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Layout
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-best-practices.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Best Practices
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-icons.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Icons
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-laravel-sail.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Laravel Sail
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-livewire-socialite-integration.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Socialite Integration
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Dashboard &amp; Widgets</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-dashboards.html">
+                                        <i class="material-symbols-rounded me-2">dashboard</i>
+                                        Dashboards
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-templates.html">
+                                        <i class="material-symbols-rounded me-2">apps</i>
+                                        Templates
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-dashboard-widgets-widgets.html">
+                                        <i class="material-symbols-rounded me-2">widgets</i>
+                                        Widgets
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Applications</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-readme.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Readme
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-ai-agent.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Ai Agent
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-calendar.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-chat-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Chat Box
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-apps-email-box.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Email Box
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>UI Components</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-bootstrap.html">
+                                        <i class="material-symbols-rounded me-2">grid_view</i>
+                                        Bootstrap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-components.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Components
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        href="docs-ui-components-display-modes.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Display Modes
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-forms.html">
+                                        <i class="material-symbols-rounded me-2">edit_note</i>
+                                        Forms
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-hud-modal-component.html">
+                                        <i class="material-symbols-rounded me-2">view_in_ar</i>
+                                        Hud Modal Component
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-lightbox.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Lightbox
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-masonry.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Masonry
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-tables.html">
+                                        <i class="material-symbols-rounded me-2">table</i>
+                                        Tables
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ui-components-ui-elements.html">
+                                        <i class="material-symbols-rounded me-2">palette</i>
+                                        Ui Elements
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Data Visualization</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-charts.html">
+                                        <i class="material-symbols-rounded me-2">bar_chart</i>
+                                        Charts
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-google-maps.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Google Maps
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-gridjs.html">
+                                        <i class="material-symbols-rounded me-2">dataset</i>
+                                        Gridjs
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-data-visualization-vector-maps.html">
+                                        <i class="material-symbols-rounded me-2">public</i>
+                                        Vector Maps
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>E-commerce</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-orders.html">
+                                        <i class="material-symbols-rounded me-2">shopping_cart</i>
+                                        Ecommerce Orders
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-overview.html">
+                                        <i class="material-symbols-rounded me-2">store</i>
+                                        Ecommerce Overview
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-ecommerce-ecommerce-products.html">
+                                        <i class="material-symbols-rounded me-2">inventory_2</i>
+                                        Ecommerce Products
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Job Board</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-job-board-jobs.html">
+                                        <i class="material-symbols-rounded me-2">work</i>
+                                        Jobs
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Cryptocurrency</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-cryptocurrency-crypto.html">
+                                        <i class="material-symbols-rounded me-2">account_balance_wallet</i>
+                                        Crypto
+                                    </a>
+                                </li>
+                                                    </ul>
+                                            
+                        <h6
+                            class="sidebar-heading d-flex justify-content-between align-items-center px-0 mt-0 mb-1 text-info">
+                            <span>Advanced</span>
+                        </h6>
+                        <ul class="nav flex-column mb-2">
+                            
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-package.html">
+                                        <i class="material-symbols-rounded me-2">inventory</i>
+                                        Package
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-plugins.html">
+                                        <i class="material-symbols-rounded me-2">extension</i>
+                                        Plugins
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-roadmap.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Roadmap
+                                    </a>
+                                </li>
+                                                            
+                                <li class="nav-item">
+                                    <a class="nav-link "
+                                        href="docs-advanced-typescript.html">
+                                        <i class="material-symbols-rounded me-2">article</i>
+                                        Typescript
+                                    </a>
+                                </li>
+                                                    </ul>
+                                    </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-12 col-lg-8 col-xl-9 col-xxl-10">
+                <div class="pt-3 pb-2 mb-3">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Display Modes &amp; Layout Options</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <!-- Content area - scrollspy applied to body -->
+                    <div class="docs-content">
+                        <div class="docs-content">
+    <h1>Display Modes &amp; Layout Options</h1>
+<p>UltraViolet Pro provides multiple display modes and layout configurations to suit different preferences, languages, and device sizes. This guide covers all available modes and how to switch between them.</p>
+<h2>Overview</h2>
+<p>UltraViolet Pro supports the following modes:</p>
+<ul>
+<li><strong>Theme Modes</strong>: Light and Dark themes</li>
+<li><strong>Direction Modes</strong>: LTR (Left-to-Right) and RTL (Right-to-Left)</li>
+<li><strong>Layout Modes</strong>: Horizontal and Vertical navigation</li>
+<li><strong>Responsive Modes</strong>: Mobile, Tablet, Desktop, and larger screens</li>
+</ul>
+<p>All modes can be combined, providing maximum flexibility for your application.</p>
+<hr />
+<h2>Theme Modes</h2>
+<h3>Dark Mode (Default)</h3>
+<p>The default theme features a dark synthwave-inspired aesthetic with neon accents.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Dark backgrounds optimized for low-light environments</li>
+<li>High contrast for better readability</li>
+<li>Neon cyan and magenta accents</li>
+<li>Reduces eye strain during extended use</li>
+</ul>
+<p><strong>Activating Dark Mode:</strong></p>
+<pre><code class="language-javascript">// Set dark theme
+document.documentElement.setAttribute('data-bs-theme', 'dark');
+localStorage.setItem('theme-preference', 'dark');</code></pre>
+<h3>Light Mode</h3>
+<p>A clean, professional light theme for daytime use.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Bright backgrounds for well-lit environments</li>
+<li>Optimized contrast ratios</li>
+<li>Professional appearance</li>
+<li>Better for printing and screenshots</li>
+</ul>
+<p><img src="./images/promo/light-mode.png" alt="Light Mode Example" /></p>
+<p><em>UltraViolet Pro in Light Mode - Professional light theme with optimized contrast</em></p>
+<p><strong>Activating Light Mode:</strong></p>
+<pre><code class="language-javascript">// Set light theme
+document.documentElement.setAttribute('data-bs-theme', 'light');
+localStorage.setItem('theme-preference', 'light');</code></pre>
+<h3>Using the Theme Toggle</h3>
+<p>Users can switch themes using the settings panel:</p>
+<ol>
+<li>Click the <strong>gear icon (⚙️)</strong> in the top-right header</li>
+<li>Toggle the <strong>&quot;Dark / Light Mode&quot;</strong> switch</li>
+<li>Theme changes instantly and saves to localStorage</li>
+</ol>
+<p><strong>Programmatic Toggle:</strong></p>
+<pre><code class="language-javascript">function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
+    localStorage.setItem('theme-preference', newTheme);
+}</code></pre>
+<h3>Theme Persistence</h3>
+<p>The selected theme is automatically saved to <code>localStorage</code> and restored on page load:</p>
+<pre><code class="language-javascript">// Theme is restored on page load
+const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+document.documentElement.setAttribute('data-bs-theme', savedTheme);</code></pre>
+<hr />
+<h2>Direction Modes</h2>
+<p>UltraViolet Pro fully supports both LTR and RTL text directions for international applications.</p>
+<h3>LTR Mode (Left-to-Right)</h3>
+<p>Default mode for English and most Western languages.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Navigation on the left side</li>
+<li>Text flows left to right</li>
+<li>Menus expand to the right</li>
+<li>Standard Western layout conventions</li>
+</ul>
+<h3>RTL Mode (Right-to-Left)</h3>
+<p>Full support for Arabic, Hebrew, Persian, and other RTL languages.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Navigation on the right side</li>
+<li>Text flows right to left</li>
+<li>Menus expand to the left</li>
+<li>Mirrored layout for natural reading flow</li>
+</ul>
+<p><strong>Activating RTL Mode:</strong></p>
+<pre><code class="language-html">&lt;!-- Add dir="rtl" to the html element --&gt;
+&lt;html dir="rtl" lang="ar"&gt;</code></pre>
+<p><strong>Programmatic Toggle:</strong></p>
+<pre><code class="language-javascript">function toggleDirection() {
+    const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+    const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+
+    document.documentElement.setAttribute('dir', newDir);
+    localStorage.setItem('text-direction', newDir);
+}</code></pre>
+<h3>RTL-Aware Components</h3>
+<p>All UltraViolet components are RTL-aware:</p>
+<ul>
+<li><strong>Navigation menus</strong> automatically flip</li>
+<li><strong>Dropdowns</strong> open in the correct direction</li>
+<li><strong>Icons</strong> and <strong>arrows</strong> mirror appropriately</li>
+<li><strong>Grid layouts</strong> reverse for natural flow</li>
+<li><strong>Text alignment</strong> adjusts automatically</li>
+</ul>
+<h3>Testing RTL Mode</h3>
+<pre><code class="language-javascript">// Test RTL mode in browser console
+document.documentElement.setAttribute('dir', 'rtl');
+
+// Restore LTR mode
+document.documentElement.setAttribute('dir', 'ltr');</code></pre>
+<hr />
+<h2>Layout Modes</h2>
+<p>UltraViolet Pro offers two distinct navigation layouts.</p>
+<h3>Vertical Layout (Default)</h3>
+<p>Traditional sidebar navigation on the left (or right in RTL mode).</p>
+<p><strong>Route:</strong> <code>/admin/dashboard</code> (default layout)</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Sidebar navigation with collapsible sections</li>
+<li>More vertical screen space for content</li>
+<li>Ideal for applications with many menu items</li>
+<li>Supports nested submenus</li>
+<li>Collapsible sidebar for more workspace</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<pre><code>┌─────────┬──────────────────┐
+│ Sidebar │   Main Content   │
+│  Menu   │                  │
+│         │                  │
+│         │                  │
+└─────────┴──────────────────┘</code></pre>
+<p><strong>Accessing Vertical Layout:</strong></p>
+<pre><code class="language-html">&lt;!-- In Laravel --&gt;
+&lt;x-admin-layout&gt;
+    &lt;!-- Uses vertical layout by default --&gt;
+&lt;/x-admin-layout&gt;
+
+&lt;!-- Static HTML --&gt;
+&lt;!-- Navigate to /exports/flat-vertical/ --&gt;</code></pre>
+<h3>Horizontal Layout</h3>
+<p>Top navigation bar with dropdown menus.</p>
+<p><strong>Route:</strong> <code>/admin/dashboard?layout=horizontal</code></p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Horizontal menu bar at the top</li>
+<li>More horizontal screen space</li>
+<li>Modern, streamlined appearance</li>
+<li>Ideal for applications with fewer menu items</li>
+<li>Better for wide-screen displays</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<pre><code>┌─────────────────────────────┐
+│    Horizontal Menu Bar      │
+├─────────────────────────────┤
+│                             │
+│       Main Content          │
+│                             │
+└─────────────────────────────┘</code></pre>
+<p><strong>Accessing Horizontal Layout:</strong></p>
+<pre><code class="language-html">&lt;!-- In Laravel --&gt;
+&lt;x-admin-layout layout="horizontal"&gt;
+    &lt;!-- Uses horizontal layout --&gt;
+&lt;/x-admin-layout&gt;
+
+&lt;!-- Static HTML --&gt;
+&lt;!-- Navigate to /exports/flat-horizontal/ --&gt;</code></pre>
+<h3>Switching Between Layouts</h3>
+<pre><code class="language-javascript">// Switch layout programmatically
+function switchLayout(layout) {
+    // layout can be 'vertical' or 'horizontal'
+    localStorage.setItem('preferred-layout', layout);
+
+    // Redirect to appropriate layout
+    if (layout === 'horizontal') {
+        window.location.href = 'admin-dashboard.html';
+    } else {
+        window.location.href = 'admin-dashboard.html';
+    }
+}</code></pre>
+<h3>Layout Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Vertical Layout</th>
+<th>Horizontal Layout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Menu Position</td>
+<td>Left/Right sidebar</td>
+<td>Top bar</td>
+</tr>
+<tr>
+<td>Content Width</td>
+<td>Reduced by sidebar</td>
+<td>Full width</td>
+</tr>
+<tr>
+<td>Nested Menus</td>
+<td>Multiple levels</td>
+<td>Limited nesting</td>
+</tr>
+<tr>
+<td>Best For</td>
+<td>Many menu items</td>
+<td>Few menu items</td>
+</tr>
+<tr>
+<td>Screen Use</td>
+<td>Better for tall screens</td>
+<td>Better for wide screens</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Responsive Modes</h2>
+<p>UltraViolet Pro is fully responsive and adapts to all screen sizes using Bootstrap 5's breakpoint system.</p>
+<h3>Bootstrap Breakpoints</h3>
+<table>
+<thead>
+<tr>
+<th>Breakpoint</th>
+<th>Code</th>
+<th>Width</th>
+<th>Device Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extra Small</td>
+<td><code>xs</code></td>
+<td>&lt; 576px</td>
+<td>Mobile phones (portrait)</td>
+</tr>
+<tr>
+<td>Small</td>
+<td><code>sm</code></td>
+<td>≥ 576px</td>
+<td>Mobile phones (landscape)</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td><code>md</code></td>
+<td>≥ 768px</td>
+<td>Tablets</td>
+</tr>
+<tr>
+<td>Large</td>
+<td><code>lg</code></td>
+<td>≥ 992px</td>
+<td>Laptops/Desktops</td>
+</tr>
+<tr>
+<td>Extra Large</td>
+<td><code>xl</code></td>
+<td>≥ 1200px</td>
+<td>Large desktops</td>
+</tr>
+<tr>
+<td>Extra Extra Large</td>
+<td><code>xxl</code></td>
+<td>≥ 1400px</td>
+<td>Large monitors</td>
+</tr>
+</tbody>
+</table>
+<h3>Mobile Mode (&lt; 768px)</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Collapsed sidebar/navigation</li>
+<li>Hamburger menu button</li>
+<li>Stacked layouts</li>
+<li>Touch-optimized controls</li>
+<li>Single-column content</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Mobile Menu</strong>: Hamburger icon opens slide-out navigation</li>
+<li><strong>Responsive Tables</strong>: Horizontal scroll or card layout</li>
+<li><strong>Touch-Friendly</strong>: Larger touch targets (44×44px minimum)</li>
+<li><strong>Optimized Performance</strong>: Reduced animations and effects</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;!-- Mobile-specific styling --&gt;
+&lt;div class="d-block d-md-none"&gt;
+    &lt;!-- Only visible on mobile --&gt;
+    &lt;button class="btn btn-primary" id="mobile-menu-toggle"&gt;
+        &lt;i class="material-symbols-rounded"&gt;menu&lt;/i&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+<h3>Tablet Mode (768px - 991px)</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Compact sidebar</li>
+<li>Two-column layouts</li>
+<li>Optimized for touch and mouse</li>
+<li>Balanced spacing</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Adaptive Layout</strong>: Reduced margins and padding</li>
+<li><strong>Flexible Grid</strong>: 2-3 columns depending on content</li>
+<li><strong>Touch Support</strong>: Works with touch and mouse input</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;!-- Tablet-specific columns --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6 col-lg-4"&gt;
+        &lt;!-- 2 columns on tablet, 3 on desktop --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Desktop Mode (≥ 992px)</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Full sidebar navigation</li>
+<li>Multi-column layouts</li>
+<li>Rich interactions</li>
+<li>Optimal spacing</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Full Navigation</strong>: Complete sidebar with all menu items</li>
+<li><strong>Multi-Column Grids</strong>: 3-4 columns for efficient space use</li>
+<li><strong>Hover Effects</strong>: Advanced hover interactions</li>
+<li><strong>Keyboard Shortcuts</strong>: Full keyboard navigation</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="language-html">&lt;!-- Desktop-specific layout --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-lg-3"&gt;Sidebar&lt;/div&gt;
+    &lt;div class="col-lg-6"&gt;Main Content&lt;/div&gt;
+    &lt;div class="col-lg-3"&gt;Right Panel&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3>Large Display Mode (≥ 1400px)</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Wide layouts</li>
+<li>Maximum content visibility</li>
+<li>Enhanced sidebars</li>
+<li>More whitespace</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Wider Containers</strong>: Maximum 1320px container width</li>
+<li><strong>Four Column Grids</strong>: Utilize full screen width</li>
+<li><strong>Enhanced Spacing</strong>: More comfortable layout</li>
+</ul>
+<hr />
+<h2>Responsive Utilities</h2>
+<h3>Display Classes</h3>
+<p>Control element visibility at different breakpoints:</p>
+<pre><code class="language-html">&lt;!-- Show only on mobile --&gt;
+&lt;div class="d-block d-md-none"&gt;Mobile only&lt;/div&gt;
+
+&lt;!-- Hide on mobile --&gt;
+&lt;div class="d-none d-md-block"&gt;Desktop only&lt;/div&gt;
+
+&lt;!-- Show on tablet and up --&gt;
+&lt;div class="d-none d-md-block"&gt;Tablet and Desktop&lt;/div&gt;
+
+&lt;!-- Show on desktop and up --&gt;
+&lt;div class="d-none d-lg-block"&gt;Desktop only&lt;/div&gt;</code></pre>
+<h3>Responsive Spacing</h3>
+<pre><code class="language-html">&lt;!-- Responsive margins --&gt;
+&lt;div class="mb-3 mb-lg-5"&gt;
+    &lt;!-- 1rem margin on mobile, 3rem on desktop --&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive padding --&gt;
+&lt;div class="p-2 p-md-4 p-lg-5"&gt;
+    &lt;!-- Increases padding as screen size increases --&gt;
+&lt;/div&gt;</code></pre>
+<h3>Responsive Typography</h3>
+<pre><code class="language-html">&lt;!-- Responsive font sizes --&gt;
+&lt;h1 class="fs-3 fs-md-2 fs-lg-1"&gt;
+    &lt;!-- Smaller on mobile, larger on desktop --&gt;
+&lt;/h1&gt;</code></pre>
+<h3>Responsive Grid</h3>
+<pre><code class="language-html">&lt;div class="row"&gt;
+    &lt;div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"&gt;
+        &lt;!-- Responsive columns:
+             - 1 column on mobile
+             - 2 columns on small devices
+             - 3 columns on tablets
+             - 4 columns on laptops
+             - 6 columns on large desktops --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<hr />
+<h2>Combining Modes</h2>
+<p>All modes can be combined for maximum flexibility:</p>
+<h3>Example 1: RTL + Dark Mode + Horizontal Layout</h3>
+<pre><code class="language-html">&lt;html dir="rtl" data-bs-theme="dark"&gt;
+    &lt;body&gt;
+        &lt;x-admin-layout layout="horizontal"&gt;
+            &lt;!-- RTL, dark theme, horizontal navigation --&gt;
+        &lt;/x-admin-layout&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>Example 2: LTR + Light Mode + Vertical Layout</h3>
+<pre><code class="language-html">&lt;html dir="ltr" data-bs-theme="light"&gt;
+    &lt;body&gt;
+        &lt;x-admin-layout layout="vertical"&gt;
+            &lt;!-- LTR, light theme, vertical navigation --&gt;
+        &lt;/x-admin-layout&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>Example 3: Responsive + Theme Auto-Detection</h3>
+<pre><code class="language-javascript">// Detect system theme preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const theme = localStorage.getItem('theme-preference') || (prefersDark ? 'dark' : 'light');
+
+document.documentElement.setAttribute('data-bs-theme', theme);
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) =&gt; {
+    if (!localStorage.getItem('theme-preference')) {
+        document.documentElement.setAttribute('data-bs-theme', e.matches ? 'dark' : 'light');
+    }
+});</code></pre>
+<hr />
+<h2>Testing Different Modes</h2>
+<h3>Browser DevTools</h3>
+<p><strong>Test Responsive Modes:</strong></p>
+<ol>
+<li>Open Chrome DevTools (F12)</li>
+<li>Click the device toolbar icon (Ctrl+Shift+M)</li>
+<li>Select different devices or set custom dimensions</li>
+<li>Test all breakpoints</li>
+</ol>
+<p><strong>Test RTL Mode:</strong></p>
+<pre><code class="language-javascript">// In browser console
+document.documentElement.setAttribute('dir', 'rtl');</code></pre>
+<p><strong>Test Theme Modes:</strong></p>
+<pre><code class="language-javascript">// In browser console
+document.documentElement.setAttribute('data-bs-theme', 'light');
+document.documentElement.setAttribute('data-bs-theme', 'dark');</code></pre>
+<h3>Testing Checklist</h3>
+<ul>
+<li>[ ] Light mode displays correctly</li>
+<li>[ ] Dark mode displays correctly</li>
+<li>[ ] RTL mode mirrors layout properly</li>
+<li>[ ] LTR mode works as expected</li>
+<li>[ ] Horizontal layout functions correctly</li>
+<li>[ ] Vertical layout functions correctly</li>
+<li>[ ] Mobile menu opens/closes</li>
+<li>[ ] Tablet layout adapts properly</li>
+<li>[ ] Desktop layout utilizes space well</li>
+<li>[ ] All breakpoints transition smoothly</li>
+<li>[ ] Theme persists on page reload</li>
+<li>[ ] Layout preference saves correctly</li>
+</ul>
+<hr />
+<h2>Configuration</h2>
+<h3>Default Settings</h3>
+<p>Set default modes in your application:</p>
+<pre><code class="language-javascript">// config/app.js or similar
+
+const appConfig = {
+    // Default theme: 'dark' or 'light'
+    defaultTheme: 'dark',
+
+    // Default direction: 'ltr' or 'rtl'
+    defaultDirection: 'ltr',
+
+    // Default layout: 'vertical' or 'horizontal'
+    defaultLayout: 'vertical',
+
+    // Allow users to change theme
+    allowThemeSwitch: true,
+
+    // Allow users to change direction
+    allowDirectionSwitch: true,
+
+    // Allow users to change layout
+    allowLayoutSwitch: true,
+
+    // Respect system theme preference
+    respectSystemTheme: true,
+};</code></pre>
+<h3>Laravel Configuration</h3>
+<pre><code class="language-php">// config/app.php
+
+return [
+    'theme' =&gt; [
+        'default' =&gt; env('APP_THEME', 'dark'),
+        'available' =&gt; ['dark', 'light'],
+    ],
+
+    'layout' =&gt; [
+        'default' =&gt; env('APP_LAYOUT', 'vertical'),
+        'available' =&gt; ['vertical', 'horizontal'],
+    ],
+
+    'locale' =&gt; [
+        'default' =&gt; env('APP_LOCALE', 'en'),
+        'direction' =&gt; env('TEXT_DIRECTION', 'ltr'),
+    ],
+];</code></pre>
+<h3>User Preferences</h3>
+<p>Store user preferences in the database:</p>
+<pre><code class="language-php">// User model
+class User extends Authenticatable
+{
+    protected $fillable = [
+        'name', 'email', 'password',
+        'theme_preference',
+        'layout_preference',
+        'language',
+    ];
+
+    public function getThemeAttribute()
+    {
+        return $this-&gt;theme_preference ?? config('app.theme.default');
+    }
+
+    public function getLayoutAttribute()
+    {
+        return $this-&gt;layout_preference ?? config('app.layout.default');
+    }
+}</code></pre>
+<hr />
+<h2>Performance Considerations</h2>
+<h3>Lazy Loading</h3>
+<p>Load layout-specific assets only when needed:</p>
+<pre><code class="language-javascript">// Load horizontal layout styles only when using horizontal layout
+if (document.body.classList.contains('layout-horizontal')) {
+    import('./styles/horizontal-layout.scss');
+}</code></pre>
+<h3>Responsive Images</h3>
+<p>Use responsive images for different screen sizes:</p>
+<pre><code class="language-html">&lt;img 
+    srcset="
+        /images/logo-sm.png 576w,
+        /images/logo-md.png 768w,
+        /images/logo-lg.png 992w,
+        /images/logo-xl.png 1200w
+    "
+    sizes="
+        (max-width: 576px) 100vw,
+        (max-width: 768px) 50vw,
+        (max-width: 992px) 33vw,
+        25vw
+    "
+    src="./images/logo-lg.png"
+    alt="Logo"
+&gt;</code></pre>
+<h3>CSS Optimization</h3>
+<pre><code class="language-scss">// Use CSS custom properties for theme switching
+// This is faster than loading separate CSS files
+:root[data-bs-theme="dark"] {
+    --body-bg: #0a1929;
+    --text-color: #e7edf3;
+}
+
+:root[data-bs-theme="light"] {
+    --body-bg: #ffffff;
+    --text-color: #212529;
+}</code></pre>
+<hr />
+<h2>Accessibility</h2>
+<h3>Theme Mode Accessibility</h3>
+<pre><code class="language-html">&lt;!-- Announce theme changes to screen readers --&gt;
+&lt;div role="status" aria-live="polite" class="sr-only" id="theme-announcement"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function announceTheme(theme) {
+    const announcement = document.getElementById('theme-announcement');
+    announcement.textContent = `Theme changed to ${theme} mode`;
+}
+&lt;/script&gt;</code></pre>
+<h3>Keyboard Navigation</h3>
+<p>All modes support full keyboard navigation:</p>
+<ul>
+<li><strong>Tab</strong>: Navigate through interactive elements</li>
+<li><strong>Enter/Space</strong>: Activate buttons and links</li>
+<li><strong>Escape</strong>: Close modals and menus</li>
+<li><strong>Arrow Keys</strong>: Navigate through menus</li>
+</ul>
+<h3>High Contrast Mode</h3>
+<pre><code class="language-css">/* Support for Windows High Contrast Mode */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid;
+    }
+
+    .card {
+        border: 2px solid;
+    }
+}</code></pre>
+<hr />
+<h2>Browser Support</h2>
+<p>All display modes are supported in:</p>
+<ul>
+<li>✅ <strong>Chrome</strong> (latest 2 versions)</li>
+<li>✅ <strong>Firefox</strong> (latest 2 versions)</li>
+<li>✅ <strong>Safari</strong> (latest 2 versions)</li>
+<li>✅ <strong>Edge</strong> (latest 2 versions)</li>
+<li>✅ <strong>Mobile Safari</strong> (iOS 12+)</li>
+<li>✅ <strong>Chrome Mobile</strong> (Android 5+)</li>
+</ul>
+<h3>Fallbacks</h3>
+<p>For older browsers:</p>
+<pre><code class="language-javascript">// Check for CSS custom property support
+if (window.CSS &amp;&amp; CSS.supports('color', 'var(--primary)')) {
+    // Browser supports CSS custom properties
+    initThemeSystem();
+} else {
+    // Fallback for older browsers
+    document.body.classList.add('legacy-browser');
+}</code></pre>
+<hr />
+<h2>Troubleshooting</h2>
+<h3>Theme Not Saving</h3>
+<pre><code class="language-javascript">// Check if localStorage is available
+if (typeof Storage !== 'undefined') {
+    localStorage.setItem('theme-preference', 'dark');
+} else {
+    console.warn('localStorage not available');
+    // Use cookies as fallback
+}</code></pre>
+<h3>RTL Mode Issues</h3>
+<pre><code class="language-css">/* Ensure RTL support is enabled */
+html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Fix float issues */
+html[dir="rtl"] .float-start {
+    float: right !important;
+}
+
+html[dir="rtl"] .float-end {
+    float: left !important;
+}</code></pre>
+<h3>Layout Not Switching</h3>
+<pre><code class="language-javascript">// Clear cached preferences
+localStorage.removeItem('preferred-layout');
+location.reload();</code></pre>
+<h3>Responsive Issues</h3>
+<pre><code class="language-css">/* Ensure viewport meta tag is present */
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+/* Check for overflow issues */
+html, body {
+    overflow-x: hidden;
+}</code></pre>
+<hr />
+<h2>Best Practices</h2>
+<ol>
+<li><strong>Test All Combinations</strong>: Test theme + direction + layout combinations</li>
+<li><strong>Save Preferences</strong>: Always save user preferences to localStorage or database</li>
+<li><strong>Smooth Transitions</strong>: Use CSS transitions when switching modes</li>
+<li><strong>Provide Toggles</strong>: Make it easy for users to switch modes</li>
+<li><strong>Respect System Settings</strong>: Honor user's system theme preferences</li>
+<li><strong>Accessibility First</strong>: Ensure all modes are accessible</li>
+<li><strong>Performance</strong>: Optimize for fast mode switching</li>
+<li><strong>Documentation</strong>: Document any custom modes you create</li>
+</ol>
+<hr />
+<h2>Related Documentation</h2>
+<ul>
+<li><a href="../getting-started/theming.md">Theming Guide</a> - Customize colors and styles</li>
+<li><a href="bootstrap.md">Bootstrap Components</a> - Bootstrap 5 components</li>
+<li><a href="ui-elements.md">Responsive Design</a> - Responsive utilities</li>
+<li><a href="../getting-started/static-setup.md">Static Setup</a> - Using static HTML files</li>
+</ul>
+<hr />
+<h2>Support</h2>
+<p>Need help with display modes?</p>
+<ul>
+<li><strong>Documentation</strong>: You're reading it!</li>
+<li><strong>Email</strong>: support@huement.com</li>
+<li><strong>Website</strong>: <a href="https://huement.com">huement.com</a></li>
+</ul>
+<hr />
+<p><strong>Quick Reference:</strong></p>
+<pre><code class="language-javascript">// Switch theme
+document.documentElement.setAttribute('data-bs-theme', 'light');
+
+// Switch direction
+document.documentElement.setAttribute('dir', 'rtl');
+
+// Test responsive mode (in DevTools)
+// Press Ctrl+Shift+M and select device
+
+// Check current mode
+console.log('Theme:', document.documentElement.getAttribute('data-bs-theme'));
+console.log('Direction:', document.documentElement.getAttribute('dir'));
+console.log('Viewport:', window.innerWidth + 'px');</code></pre>
+</div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <cosmic-wave class="fill-primary ride-the-wave" data-wave-points="12" data-wave-variance="2"
+        data-wave-face="top"></cosmic-wave>
+    <div class="footer-info d-block w-100 bg-primary pt-4 pb-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p class="text-center">
+                        A <a href="https://huement.com" class="text-light fw-bold">huement.com</a> Original Project
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap 5.3.5 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+
+    <!-- CosmicWave Web Component -->
+    <script src="./js/cosmicwave.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="./assets/docs-legacy2.js"></script>
+    
+        
+    <!-- Material Icons Loading Script -->
+    <script>
+        // Mark Material Icons as loaded once font is ready
+        if (document.fonts) {
+            // Modern browser with Font Loading API
+            Promise.all([
+                document.fonts.load('400 24px "Material Symbols Rounded"'),
+            ]).then(() => {
+                document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                    icon.classList.add('material-symbols-rounded--loaded');
+                });
+            }).catch(() => {
+                // Fallback: mark as loaded after delay
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        } else {
+            // Fallback for older browsers
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.querySelectorAll('.material-symbols-rounded').forEach(icon => {
+                        icon.classList.add('material-symbols-rounded--loaded');
+                    });
+                }, 100);
+            });
+        }
+    </script>
+
+    <!-- Initialize Offcanvas for Mobile Menu -->
+    <script>
+        // Wait for both DOM and Bootstrap to be ready
+        function initOffcanvas() {
+            if (typeof bootstrap !== 'undefined') {
+                const offcanvasElement = document.getElementById('docsSidebarOffcanvas');
+                const toggleButton = document.querySelector('[data-bs-target="#docsSidebarOffcanvas"]');
+
+                if (offcanvasElement && toggleButton) {
+                    // Bootstrap data attributes should handle this automatically
+                    // But we ensure it's initialized
+                    try {
+                        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+                        console.log('Offcanvas initialized successfully');
+                    } catch (e) {
+                        console.warn('Offcanvas already initialized or error:', e);
+                    }
+                } else {
+                    console.warn('Offcanvas elements not found');
+                }
+            } else {
+                // Retry after a short delay
+                setTimeout(initOffcanvas, 100);
+            }
+        }
+
+        // Try to initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initOffcanvas);
+        } else {
+            // DOM already ready, check if Bootstrap is loaded
+            initOffcanvas();
+        }
+    </script>
+
+    <!-- Scrollspy and Sticky Sidebar Styles -->
+    <style>
+        body.docs-layout {
+            margin-bottom: 0 !important;
+        }
+
+        /* Override global overflow-x: hidden that breaks sticky positioning */
+        body.docs-layout,
+        body.docs-layout .container-fluid {
+            overflow-x: visible !important;
+        }
+
+        html:has(body.docs-layout) {
+            overflow-x: visible !important;
+        }
+
+        /* Make the sidebar sticky */
+        #docsSidebar.docs-sidebar-sticky {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 20px !important;
+            align-self: flex-start;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .offcanvas .btn-close {
+            filter: none !important;
+        }
+
+        /* Ensure parent containers don't interfere with sticky */
+        body.docs-layout .container-fluid>.row {
+            align-items: flex-start;
+        }
+
+        /* Scrollspy will work on natural page scroll */
+        /* No need for constrained container in docs layout */
+
+        /* Style active nav links for scrollspy */
+        .docs-nav .nav-link.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .docs-nav .nav-link {
+            color: var(--bs-body-color);
+            transition: all 0.2s ease;
+        }
+
+        .docs-nav .nav-link:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        /* Add spacing between sections for better scroll tracking */
+        .docs-content h1,
+        .docs-content h2,
+        .docs-content h3,
+        .docs-content h4,
+        .docs-content h5,
+        .docs-content h6 {
+            scroll-margin-top: 80px;
+        }
+
+        /* Mobile navbar improvements */
+        @media (max-width: 767.98px) {
+            .navbar .navbar-brand img {
+                max-width: 140px;
+                height: auto;
+            }
+
+            .navbar .btn-group .btn {
+                padding: 0.375rem 0.5rem;
+                font-size: 0.875rem;
+            }
+
+            .navbar .btn-group .btn .material-symbols-rounded {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Mobile-specific improvements for docs pages */
+        @media (max-width: 767.98px) {
+
+            /* Improve typography on mobile */
+            .docs-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0.875rem;
+            }
+
+            .docs-content h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .docs-content h4 {
+                font-size: 1.125rem;
+                margin-bottom: 0.625rem;
+            }
+
+            /* Improve lead paragraphs on mobile */
+            .docs-content .lead {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* Better spacing for cards on mobile */
+            .docs-content .card {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .card-body {
+                padding: 1rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            /* Improve image spacing on mobile */
+            .docs-content img {
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            /* Better spacing for rows on mobile */
+            .docs-content .row {
+                margin-left: -0.5rem;
+                margin-right: -0.5rem;
+            }
+
+            .docs-content .row>[class*="col-"] {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Stack component library columns better on mobile */
+            .docs-content .row .col-md-3 {
+                margin-bottom: 1.5rem;
+            }
+
+            .docs-content .row .col-md-3:last-child {
+                margin-bottom: 0;
+            }
+
+            /* Improve table responsiveness */
+            .docs-content .table-responsive {
+                border-radius: 0.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .docs-content .table {
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content .table th,
+            .docs-content .table td {
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+
+            /* Better alert spacing on mobile */
+            .docs-content .alert {
+                margin-bottom: 1rem;
+                padding: 0.875rem 1rem;
+            }
+
+            .docs-content .alert h5 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Improve lists on mobile */
+            .docs-content ul,
+            .docs-content ol {
+                padding-left: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .docs-content li {
+                margin-bottom: 0.5rem;
+                line-height: 1.6;
+            }
+
+            /* Better button group spacing */
+            .docs-content .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            /* Improve main content padding on mobile */
+            main {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            main .pt-3,
+            main .pb-2 {
+                padding-top: 1rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Better page header on mobile */
+            main .border-bottom {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
+            }
+
+            main h1.h2 {
+                font-size: 1.5rem;
+                margin-bottom: 0;
+            }
+
+            main .btn-toolbar {
+                margin-top: 0.5rem;
+            }
+
+            /* Reduce section spacing on mobile */
+            .docs-content>* {
+                margin-bottom: 1rem;
+            }
+
+            .docs-content>h1,
+            .docs-content>h2 {
+                margin-top: 1.5rem;
+            }
+
+            .docs-content>h1:first-child {
+                margin-top: 0;
+            }
+        }
+
+        /* Small mobile devices (320px and up) */
+        @media (max-width: 575.98px) {
+            .docs-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .docs-content h2 {
+                font-size: 1.25rem;
+            }
+
+            .docs-content .lead {
+                font-size: 0.9375rem;
+            }
+
+            .docs-content .card-title {
+                font-size: 0.9375rem;
+            }
+
+            /* Make component library single column on very small screens */
+            .docs-content .row .col-md-3 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .docs-content .row .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+    <script src="./js/admin-static-shim.js"></script>
+</body>
+
+</html>
