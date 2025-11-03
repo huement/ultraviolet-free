@@ -1,26 +1,25 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark" <!-- start head -->
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="J4gc7pBYcQ4S04kaXdvRsLbDpr3rRUdKaKP0eYPu">
+    <meta name="csrf-token" content="Ol515z2jGDbRDVomWvSSagcTDKDaYD4Rqg0wa4sl">
     <title>Dashboard | UltraViolet</title>
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Preload Material Icons font to prevent FOUC -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icon Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Prevent Material Icons FOUC -->
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
+    <style type="text/css">
+    .material-symbols-rounded,
         .material-icons {
             font-size: 24px;
             line-height: 1;
@@ -34,20 +33,17 @@
             white-space: nowrap;
         }
     
-        /* Hide icon text content until font loads */
         .material-symbols-rounded:not(.material-symbols-rounded--loaded),
         .material-icons:not(.material-icons--loaded) {
             color: transparent;
             user-select: none;
         }
     
-        /* Ensure icons are visible when loaded */
         .material-symbols-rounded--loaded,
         .material-icons--loaded {
             color: inherit;
         }
     
-        /* Fix navbar icon alignment specifically */
         .ultraviolet-action-bar .navbar-nav .nav-link {
             display: flex;
             align-items: center;
@@ -60,7 +56,6 @@
             padding: 0;
         }
     
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
         .material-icons {
             font-family: 'Material Symbols Rounded' !important;
             font-weight: normal !important;
@@ -85,7 +80,6 @@
     <!-- The main CDN being used -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <!-- Vector Map -->
-    <link href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css" rel="stylesheet" />
     <!-- Scrollbar Plugin -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css">
     <!-- ApexCharts CSS -->
@@ -94,8 +88,8 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
     <!-- Grid JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
-    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static-4OhMhqXa.js) -->
-    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
     <!-- BProgress Loading Indicator -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
     <!-- Form Enhancement CSS -->
@@ -105,77 +99,16 @@
     <!-- Flatpickr -->
     <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
     <!-- BS5 Lightbox - Image Modal Gallery -->
-    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- Note: bs5-lightbox doesn't require a separate CSS file, it uses Bootstrap's modal/carousel styles -->
     <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <!-- Note: FullCalendar CSS is typically included via themes or bundled with the main package -->
     <!-- xterm.js Terminal CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
     <!-- end plugins -->
     <!-- start vite CSS & JS -->
-    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
     <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
-        .material-icons {
-            font-size: 24px;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: 'liga';
-            vertical-align: middle;
-            overflow: hidden;
-            text-overflow: clip;
-            white-space: nowrap;
-        }
-    
-        /* Hide icon text content until font loads */
-        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
-        .material-icons:not(.material-icons--loaded) {
-            color: transparent;
-            user-select: none;
-        }
-    
-        /* Ensure icons are visible when loaded */
-        .material-symbols-rounded--loaded,
-        .material-icons--loaded {
-            color: inherit;
-        }
-    
-        /* Fix navbar icon alignment specifically */
-        .ultraviolet-action-bar .navbar-nav .nav-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
-            margin: 0;
-            padding: 0;
-        }
-    
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
-        .material-icons {
-            font-family: 'Material Symbols Rounded' !important;
-            font-weight: normal !important;
-            font-style: normal !important;
-            font-size: 24px !important;
-            line-height: 1 !important;
-            letter-spacing: normal !important;
-            text-transform: none !important;
-            display: inline-block !important;
-            white-space: nowrap !important;
-            word-wrap: normal !important;
-            direction: ltr !important;
-            -webkit-font-feature-settings: 'liga' !important;
-            -webkit-font-smoothing: antialiased !important;
-            text-rendering: optimizeLegibility !important;
-            font-feature-settings: 'liga' !important;
-            vertical-align: middle !important;
-        }
-    </style>
+    <!-- end vite CSS & JS -->
     <style>
     .fade-in {
             animation: fadeIn 0.5s ease-in;
@@ -551,8 +484,8 @@
         }
 
         /* =============================================================================
-                       FREEBIE DASHBOARD MOBILE RESPONSIVE STYLES
-                       ============================================================================= */
+                                               FREEBIE DASHBOARD MOBILE RESPONSIVE STYLES
+                                               ============================================================================= */
 
         @media (max-width: 991.98px) {
             .freebie-dashboard {
@@ -1070,8 +1003,8 @@
         }
 
         /* =============================================================================
-                       ENHANCED MOBILE INTERACTIONS
-                       ============================================================================= */
+                                               ENHANCED MOBILE INTERACTIONS
+                                               ============================================================================= */
 
         @media (max-width: 991.98px) {
             .freebie-dashboard {
@@ -1120,974 +1053,58 @@
                 }
             }
         }
+
+        /* Screenshots Carousel Styles */
+        #screenshotsCarousel {
+            max-width: 100%;
+        }
+
+        #screenshotsCarousel .carousel-item img {
+            transition: transform 0.3s ease;
+        }
+
+        #screenshotsCarousel .carousel-item:hover img {
+            transform: scale(1.02);
+        }
+
+        #screenshotsCarousel .carousel-control-prev-icon,
+        #screenshotsCarousel .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        #screenshotsCarousel .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        #screenshotsCarousel .carousel-indicators button.active {
+            background-color: var(--bs-primary);
+        }
     </style>
-    <!-- end vite CSS & JS -->
-</head>
-<style>
-    .fade-in {
-                animation: fadeIn 0.5s ease-in;
-            }
-    
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-    
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-    
-            .pulse-icon {
-                animation: pulse 2s infinite;
-            }
-    
-            @keyframes pulse {
-    
-                0%,
-                100% {
-                    opacity: 1;
-                }
-    
-                50% {
-                    opacity: 0.5;
-                }
-            }
-    
-            .activity-timeline .activity-item {
-                transition: all 0.3s ease;
-            }
-    
-            .activity-timeline .activity-item:hover {
-                background: rgba(0, 255, 255, 0.05);
-                border-radius: 4px;
-                padding: 4px;
-            }
-    
-            .live-indicator i {
-                opacity: 0.6;
-                filter: drop-shadow(0 0 10px currentColor);
-            }
-    
-            /* Performance Monitor Widget Styles */
-            .performance-monitor-widget .performance-metrics {
-                padding: 0;
-            }
-    
-            .performance-monitor-widget .metric-row {
-                position: relative;
-            }
-    
-            .performance-monitor-widget .metric-label {
-                font-weight: 600;
-                letter-spacing: 1px;
-            }
-    
-            .performance-monitor-widget .metric-value {
-                font-weight: 700;
-                font-size: 0.95rem;
-            }
-    
-            .performance-bar {
-                width: 100%;
-                height: 12px;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 6px;
-                overflow: hidden;
-                position: relative;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-            }
-    
-            .performance-fill {
-                height: 100%;
-                transition: width 0.6s ease-in-out;
-                border-radius: 6px;
-                position: relative;
-                box-shadow: 0 0 10px currentColor;
-            }
-    
-            .performance-fill::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 50%;
-                background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
-                border-radius: 6px 6px 0 0;
-            }
-    
-            /* Gradient backgrounds with glow effects */
-            .bg-gradient-cyan {
-                background: linear-gradient(90deg, rgba(0, 255, 255, 0.8) 0%, rgba(0, 255, 255, 1) 100%);
-                box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.3);
-            }
-    
-            .bg-gradient-magenta {
-                background: linear-gradient(90deg, rgba(255, 0, 255, 0.8) 0%, rgba(255, 0, 255, 1) 100%);
-                box-shadow: 0 0 15px rgba(255, 0, 255, 0.5), inset 0 0 10px rgba(255, 0, 255, 0.3);
-            }
-    
-            .bg-gradient-success {
-                background: linear-gradient(90deg, rgba(16, 185, 129, 0.8) 0%, rgba(16, 185, 129, 1) 100%);
-                box-shadow: 0 0 15px rgba(16, 185, 129, 0.5), inset 0 0 10px rgba(16, 185, 129, 0.3);
-            }
-    
-            .bg-gradient-warning {
-                background: linear-gradient(90deg, rgba(255, 193, 7, 0.8) 0%, rgba(255, 193, 7, 1) 100%);
-                box-shadow: 0 0 15px rgba(255, 193, 7, 0.5), inset 0 0 10px rgba(255, 193, 7, 0.3);
-            }
-    
-            /* Animated pulse effect for high values */
-            @keyframes barPulse {
-    
-                0%,
-                100% {
-                    opacity: 1;
-                }
-    
-                50% {
-                    opacity: 0.85;
-                }
-            }
-    
-            .performance-fill[style*="width: 8"],
-            .performance-fill[style*="width: 9"] {
-                animation: barPulse 2s ease-in-out infinite;
-            }
-    
-            /* TODO Widget Styles */
-            .todo-list {
-                padding: 0.5rem;
-                /* Height will be set dynamically by JavaScript */
-            }
-    
-            .todo-widget .card-body {
-                padding: 0;
-            }
-    
-            .todo-item {
-                background: rgba(255, 255, 255, 0.03);
-                border: 1px solid rgba(0, 255, 255, 0.1);
-                border-radius: 8px;
-                padding: 0.75rem;
-                margin-bottom: 0.5rem;
-                transition: all 0.3s ease;
-            }
-    
-            /* Light mode overrides for todo items */
-            [data-bs-theme="light"] .todo-item {
-                background: rgba(0, 0, 0, 0.03);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-            }
-    
-            .todo-content {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-            }
-    
-            .todo-item:hover {
-                background: rgba(255, 255, 255, 0.05);
-                border-color: rgba(0, 255, 255, 0.2);
-                transform: translateX(2px);
-            }
-    
-            /* Light mode hover */
-            [data-bs-theme="light"] .todo-item:hover {
-                background: rgba(0, 0, 0, 0.05);
-                border-color: rgba(0, 0, 0, 0.2);
-            }
-    
-            .todo-item.completed {
-                opacity: 0.6;
-                background: rgba(0, 180, 0, 0.25);
-                border-color: rgba(0, 180, 0, 0.6);
-            }
-    
-            /* Light mode completed */
-            [data-bs-theme="light"] .todo-item.completed {
-                background: rgba(0, 100, 0, 0.3);
-                border-color: rgba(0, 100, 0, 0.7);
-            }
-    
-            .todo-checkbox {
-                width: 18px;
-                height: 18px;
-                border: 2px solid rgba(0, 255, 255, 0.5);
-                border-radius: 4px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                position: relative;
-                flex-shrink: 0;
-            }
-    
-            /* Light mode checkbox */
-            [data-bs-theme="light"] .todo-checkbox {
-                border: 2px solid rgba(0, 0, 0, 0.3);
-            }
-    
-            .todo-checkbox:hover {
-                border-color: rgba(0, 255, 255, 0.8);
-                box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
-            }
-    
-            /* Light mode checkbox hover */
-            [data-bs-theme="light"] .todo-checkbox:hover {
-                border-color: rgba(0, 0, 0, 0.6);
-                box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-            }
-    
-            .todo-checkbox.checked {
-                background: rgba(0, 255, 255, 0.8);
-                border-color: rgba(0, 255, 255, 1);
-            }
-    
-            /* Light mode checked checkbox */
-            [data-bs-theme="light"] .todo-checkbox.checked {
-                background: rgba(0, 0, 0, 0.8);
-                border-color: rgba(0, 0, 0, 1);
-            }
-    
-            .todo-checkbox.checked::after {
-                content: '✓';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: #000;
-                font-size: 12px;
-                font-weight: bold;
-            }
-    
-            /* Light mode checked checkbox text */
-            [data-bs-theme="light"] .todo-checkbox.checked::after {
-                color: #fff;
-            }
-    
-            .todo-text {
-                flex: 1;
-                color: var(--body-color);
-                font-size: 0.9rem;
-                line-height: 1.4;
-            }
-    
-            /* Light mode todo text */
-            [data-bs-theme="light"] .todo-text {
-                color: #000 !important;
-            }
-    
-            .todo-item.completed .todo-text {
-                text-decoration: line-through;
-                opacity: 0.7;
-            }
-    
-            /* Light mode completed todo text */
-            [data-bs-theme="light"] .todo-item.completed .todo-text {
-                color: #333 !important;
-            }
-    
-            .todo-actions {
-                display: flex;
-                gap: 0.5rem;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-    
-            .todo-item:hover .todo-actions {
-                opacity: 1;
-            }
-    
-            .todo-action-btn {
-                background: none;
-                border: none;
-                color: rgba(255, 0, 0, 0.6);
-                cursor: pointer;
-                padding: 0.25rem;
-                border-radius: 4px;
-                transition: all 0.3s ease;
-            }
-    
-            .todo-action-btn:hover {
-                color: rgba(255, 0, 0, 1);
-                background: rgba(255, 0, 0, 0.1);
-            }
-    
-            .form-control-hud {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(0, 255, 255, 0.2);
-                color: var(--body-color);
-                border-radius: 8px;
-            }
-    
-            /* Light mode form control */
-            [data-bs-theme="light"] .form-control-hud {
-                background: rgba(0, 0, 0, 0.05);
-                border: 1px solid rgba(0, 0, 0, 0.2);
-            }
-    
-            .form-control-hud:focus {
-                background: rgba(255, 255, 255, 0.08);
-                border-color: rgba(0, 255, 255, 0.5);
-                box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.1);
-                color: var(--body-color);
-            }
-    
-            /* Light mode form control focus */
-            [data-bs-theme="light"] .form-control-hud:focus {
-                background: rgba(0, 0, 0, 0.08);
-                border-color: rgba(0, 0, 0, 0.5);
-                box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
-            }
-    
-            .form-control-hud::placeholder {
-                color: rgba(255, 255, 255, 0.5);
-            }
-    
-            /* Light mode placeholder */
-            [data-bs-theme="light"] .form-control-hud::placeholder {
-                color: rgba(0, 0, 0, 0.5);
-            }
-    
-            .input-group .btn-cyber {
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
-    
-            .empty-state {
-                text-align: center;
-                padding: 2rem 1rem;
-                color: rgba(255, 255, 255, 0.5);
-            }
-    
-            /* Light mode empty state */
-            [data-bs-theme="light"] .empty-state {
-                color: rgba(0, 0, 0, 0.5);
-            }
-    
-            .empty-state i {
-                font-size: 2rem;
-                margin-bottom: 0.5rem;
-                opacity: 0.5;
-            }
-    
-            .empty-state p {
-                margin: 0;
-                font-size: 0.9rem;
-            }
-    
-            /* Welcome Info Alignment */
-            .welcome-features {
-                text-align: center;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-    
-            .welcome-features li {
-                display: flex;
-                align-items: center;
-                text-align: left;
-            }
-    
-            .welcome-features .material-symbols-rounded {
-                flex-shrink: 0;
-                margin-right: 0.75rem;
-            }
-    
-            /* =============================================================================
-                           FREEBIE DASHBOARD MOBILE RESPONSIVE STYLES
-                           ============================================================================= */
-    
-            @media (max-width: 991.98px) {
-                .freebie-dashboard {
-    
-                    /* Hero Section Mobile */
-                    .display-5 {
-                        font-size: 2.5rem !important;
-                    }
-    
-                    .display-lg-4 {
-                        font-size: 2rem !important;
-                    }
-    
-                    /* Command Center Buttons */
-                    .d-flex.flex-wrap.gap-2 {
-                        flex-direction: column;
-                        gap: 0.75rem !important;
-    
-                        .btn {
-                            width: 100%;
-                            justify-content: center;
-                        }
-                    }
-    
-                    /* Quick Actions Grid */
-                    .row.g-2 .col-6 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    .row.g-2 .col-md-4 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    .row.g-2 .col-xl-4 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    /* Analytics Widgets */
-                    .row-cols-xl-4>* {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    /* USA Map Section */
-                    .col-xl-7 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 1rem;
-                    }
-    
-                    .col-xl-5 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                    }
-    
-                    /* Map Card */
-                    .map-card .card-body {
-                        padding: 1rem !important;
-                    }
-    
-                    #usa-live-map {
-                        height: 250px !important;
-                    }
-    
-                    /* Map Footer Stats */
-                    .card-footer .row.g-3 .col-6 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    .card-footer .row.g-3 .col-md-3 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    /* TODO Widget */
-                    .todo-widget .card-body {
-                        padding: 0.5rem !important;
-                    }
-    
-                    .nav-tabs-hud .nav-link {
-                        font-size: 0.8rem;
-                        padding: 0.5rem 0.75rem;
-                    }
-    
-                    .nav-tabs-hud .nav-link .material-symbols-rounded {
-                        font-size: 14px !important;
-                    }
-    
-                    /* Financial Metrics */
-                    .col-xl-3 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 1rem;
-                    }
-    
-                    .col-xl-6 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                    }
-    
-                    /* What's in Full Version Section */
-                    .row.g-2.g-lg-3 .col-6 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    .row.g-2.g-lg-3 .col-lg-3 {
-                        flex: 0 0 50%;
-                        max-width: 50%;
-                    }
-    
-                    /* Feature Lists */
-                    .row .col-md-6 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 1rem;
-                    }
-    
-                    /* Purchase Button */
-                    .px-2.py-1 .btn {
-                        width: 100%;
-                        padding: 0.75rem 1rem;
-                        font-size: 1rem;
-                    }
-                }
-            }
-    
-            @media (max-width: 767.98px) {
-                .freebie-dashboard {
-    
-                    /* Hero Section Small Mobile */
-                    .display-5 {
-                        font-size: 2rem !important;
-                    }
-    
-                    .display-lg-4 {
-                        font-size: 1.75rem !important;
-                    }
-    
-                    /* Command Center */
-                    .command-center-content {
-                        padding: 1rem 0.5rem;
-                    }
-    
-                    .hCard {
-                        padding: 1rem;
-                    }
-    
-                    .card-title {
-                        font-size: 1rem;
-                    }
-    
-                    .card-value {
-                        font-size: 1.5rem;
-                    }
-    
-                    .data-values-container {
-                        margin-top: 0.5rem;
-                    }
-    
-                    .data-value {
-                        margin-bottom: 0.25rem;
-                    }
-    
-                    .data-label {
-                        font-size: 0.7rem;
-                    }
-    
-                    .data-number {
-                        font-size: 0.8rem;
-                    }
-    
-                    /* Quick Actions - Stack on very small screens */
-                    .row.g-2 .col-6 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 0.5rem;
-                    }
-    
-                    .row.g-2 .col-md-4,
-                    .row.g-2 .col-xl-4 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 0.5rem;
-                    }
-    
-                    /* Analytics Widgets - Stack on mobile */
-                    .row-cols-xl-4>* {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 1rem;
-                    }
-    
-                    /* Map Section */
-                    #usa-live-map {
-                        height: 200px !important;
-                    }
-    
-                    .map-card .card-header {
-                        padding: 0.75rem;
-                    }
-    
-                    .map-card .card-header h5 {
-                        font-size: 1rem;
-                    }
-    
-                    .map-card .card-header .d-flex {
-                        flex-direction: column;
-                        gap: 0.5rem;
-                        align-items: flex-start !important;
-                    }
-    
-                    .map-card .card-header .d-flex .d-flex {
-                        width: 100%;
-                        justify-content: space-between;
-                    }
-    
-                    /* Map Footer - Stack stats */
-                    .card-footer .row.g-3 .col-6,
-                    .card-footer .row.g-3 .col-md-3 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 0.5rem;
-                    }
-    
-                    /* TODO Widget */
-                    .todo-widget .card-header {
-                        padding: 0.75rem;
-                    }
-    
-                    .nav-tabs-hud {
-                        flex-wrap: wrap;
-                    }
-    
-                    .nav-tabs-hud .nav-item {
-                        flex: 1;
-                        min-width: 0;
-                    }
-    
-                    .nav-tabs-hud .nav-link {
-                        font-size: 0.75rem;
-                        padding: 0.4rem 0.5rem;
-                        text-align: center;
-                    }
-    
-                    .nav-tabs-hud .nav-link .badge {
-                        font-size: 0.6rem;
-                        padding: 0.2rem 0.4rem;
-                    }
-    
-                    /* Financial Metrics */
-                    .hud-card .card-header {
-                        padding: 0.75rem;
-                    }
-    
-                    .hud-card .card-header h6 {
-                        font-size: 0.9rem;
-                    }
-    
-                    .hud-card .card-body {
-                        padding: 1rem 0.75rem;
-                    }
-    
-                    /* Profit Margin Card */
-                    .avatar-sm {
-                        width: 2.5rem;
-                        height: 2.5rem;
-                    }
-    
-                    .avatar-title {
-                        font-size: 1rem;
-                    }
-    
-                    h3 {
-                        font-size: 1.5rem;
-                    }
-    
-                    .fs-4 {
-                        font-size: 1.25rem !important;
-                    }
-    
-                    /* What's in Full Version - Mobile Optimized */
-                    .row.g-2.g-lg-3 .col-6 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 0.75rem;
-                    }
-    
-                    .row.g-2.g-lg-3 .col-lg-3 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-bottom: 0.75rem;
-                    }
-    
-                    .bg-glass {
-                        padding: 1rem !important;
-                    }
-    
-                    .bg-glass h2 {
-                        font-size: 1.5rem !important;
-                        margin-bottom: 0.5rem !important;
-                    }
-    
-                    .bg-glass small {
-                        font-size: 0.7rem !important;
-                    }
-    
-                    /* Feature Lists - Better Mobile Layout */
-                    .list-unstyled li {
-                        margin-bottom: 0.75rem;
-                        display: flex;
-                        align-items: flex-start;
-                    }
-    
-                    .list-unstyled li .material-symbols-rounded {
-                        font-size: 20px !important;
-                        margin-right: 0.5rem;
-                        margin-top: 0.1rem;
-                        flex-shrink: 0;
-                    }
-    
-                    .list-unstyled li small {
-                        font-size: 0.8rem;
-                        line-height: 1.4;
-                    }
-    
-                    /* Purchase Button */
-                    .px-2.py-1 {
-                        padding: 1rem !important;
-                    }
-    
-                    .px-2.py-1 .btn {
-                        padding: 1rem 1.5rem;
-                        font-size: 1.1rem;
-                        font-weight: 600;
-                    }
-    
-                    /* Table Responsive */
-                    .table-responsive {
-                        font-size: 0.8rem;
-                    }
-    
-                    .table th,
-                    .table td {
-                        padding: 0.5rem 0.25rem;
-                    }
-    
-                    .badge-sm {
-                        font-size: 0.6rem;
-                        padding: 0.25rem 0.4rem;
-                    }
-    
-                    /* Modal Responsive */
-                    .modal-dialog {
-                        margin: 0.5rem;
-                    }
-    
-                    .modal-content {
-                        border-radius: 0.5rem;
-                    }
-    
-                    .modal-header {
-                        padding: 1rem;
-                    }
-    
-                    .modal-body {
-                        padding: 1rem;
-                    }
-    
-                    /* Offcanvas Responsive */
-                    .offcanvas-start {
-                        width: 280px;
-                    }
-    
-                    .offcanvas-header {
-                        padding: 1rem;
-                    }
-    
-                    .offcanvas-body {
-                        padding: 1rem;
-                    }
-    
-                    .list-group-item {
-                        padding: 0.75rem 1rem;
-                    }
-    
-                    .list-group-item .material-symbols-rounded {
-                        font-size: 18px !important;
-                    }
-    
-                    .list-group-item .badge {
-                        font-size: 0.7rem;
-                    }
-                }
-            }
-    
-            @media (max-width: 575.98px) {
-                .freebie-dashboard {
-    
-                    /* Extra Small Mobile */
-                    .display-5 {
-                        font-size: 1.75rem !important;
-                    }
-    
-                    .display-lg-4 {
-                        font-size: 1.5rem !important;
-                    }
-    
-                    /* Command Center - Very Small */
-                    .command-center-content {
-                        padding: 0.75rem 0.25rem;
-                    }
-    
-                    .hCard {
-                        padding: 0.75rem;
-                    }
-    
-                    .card-value {
-                        font-size: 1.25rem;
-                    }
-    
-                    .data-label {
-                        font-size: 0.65rem;
-                    }
-    
-                    .data-number {
-                        font-size: 0.75rem;
-                    }
-    
-                    /* Chart Bars */
-                    .chart-bar {
-                        width: 8px !important;
-                    }
-    
-                    /* Quick Actions - Single Column */
-                    .row.g-2 .col-6,
-                    .row.g-2 .col-md-4,
-                    .row.g-2 .col-xl-4 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                    }
-    
-                    /* Map */
-                    #usa-live-map {
-                        height: 180px !important;
-                    }
-    
-                    /* TODO Widget */
-                    .nav-tabs-hud .nav-link {
-                        font-size: 0.7rem;
-                        padding: 0.35rem 0.4rem;
-                    }
-    
-                    /* Financial Cards */
-                    .hud-card .card-body {
-                        padding: 0.75rem 0.5rem;
-                    }
-    
-                    h3 {
-                        font-size: 1.25rem;
-                    }
-    
-                    .fs-4 {
-                        font-size: 1.1rem !important;
-                    }
-    
-                    /* What's in Full Version */
-                    .bg-glass {
-                        padding: 0.75rem !important;
-                    }
-    
-                    .bg-glass h2 {
-                        font-size: 1.25rem !important;
-                    }
-    
-                    .bg-glass small {
-                        font-size: 0.65rem !important;
-                    }
-    
-                    /* Feature Lists */
-                    .list-unstyled li {
-                        margin-bottom: 0.5rem;
-                    }
-    
-                    .list-unstyled li .material-symbols-rounded {
-                        font-size: 18px !important;
-                    }
-    
-                    .list-unstyled li small {
-                        font-size: 0.75rem;
-                    }
-    
-                    /* Purchase Button */
-                    .px-2.py-1 .btn {
-                        padding: 0.875rem 1.25rem;
-                        font-size: 1rem;
-                    }
-    
-                    /* Table */
-                    .table th,
-                    .table td {
-                        padding: 0.4rem 0.2rem;
-                        font-size: 0.75rem;
-                    }
-    
-                    .badge-sm {
-                        font-size: 0.55rem;
-                        padding: 0.2rem 0.3rem;
-                    }
-                }
-            }
-    
-            /* =============================================================================
-                           ENHANCED MOBILE INTERACTIONS
-                           ============================================================================= */
-    
-            @media (max-width: 991.98px) {
-                .freebie-dashboard {
-    
-                    /* Touch-friendly interactions */
-                    .btn {
-                        min-height: 44px;
-                        touch-action: manipulation;
-                    }
-    
-                    .btn-sm {
-                        min-height: 40px;
-                    }
-    
-                    /* Better spacing for touch */
-                    .card {
-                        margin-bottom: 1rem;
-                    }
-    
-                    .hud-card {
-                        border-radius: 0.75rem;
-                    }
-    
-                    /* Improved readability */
-                    .text-muted {
-                        opacity: 0.8;
-                    }
-    
-                    /* Better contrast for small screens */
-                    .badge {
-                        font-weight: 600;
-                    }
-    
-                    /* Smooth transitions */
-                    .card,
-                    .btn,
-                    .nav-link {
-                        transition: all 0.3s ease;
-                    }
-    
-                    /* Hover effects for touch devices */
-                    .btn:hover,
-                    .card:hover {
-                        transform: translateY(-1px);
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-                    }
-                }
-            }
-</style>
-<!-- Theme Initialization (runs before page render to prevent flash) -->
-<script>
+    <!-- Theme Initialization (runs before page render to prevent flash) -->
+    <script>
     (function() {
-                // Check URL parameter first, then localStorage, then default to dark
-                const urlParams = new URLSearchParams(window.location.search);
-                const themeParam = urlParams.get('theme');
-                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
-                const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
-                    savedTheme;
-    
-                document.documentElement.setAttribute('data-bs-theme', initialTheme);
-    
-                // If URL parameter is provided, override localStorage
-                if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
-                    localStorage.setItem('theme-preference', themeParam);
-                }
-            })();
-</script>
+            // Check URL parameter first, then localStorage, then default to dark
+            const urlParams = new URLSearchParams(window.location.search);
+            const themeParam = urlParams.get('theme');
+            const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+            const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
+                savedTheme;
+
+            document.documentElement.setAttribute('data-bs-theme', initialTheme);
+
+            // If URL parameter is provided, override localStorage
+            if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
+                localStorage.setItem('theme-preference', themeParam);
+            }
+        })();
+    </script>
 </head>
-<!-- end head -->
 
 <body class="space-grotesk-300 vertical-menu " dir="ltr">
     <!-- Background animation container -->
@@ -2103,112 +1120,83 @@
                 <!-- SEARCH BAR -->
                 <div class="search-bar d-lg-block d-none flex-grow-1">
                     <div class="position-relative">
-                        <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                        <input id="hud-search" class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-expanded="false" aria-controls="searchCollapse"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50" style="color:#FFF">search</span>
                         <span class="material-symbols-rounded position-absolute d-lg-block d-none me-3 translate-middle-y end-0 top-50 search-close">close</span>
-                        <div class="search-popup d-none">
-                            <!-- This is the component -->
-                            <div class="hud-search-container">
-                                <!-- 1. THE "LIVE" ELEMENT: Canvas for animations -->
-                                <canvas id="hud-scanner-canvas">
-                                </canvas>
-                                <!-- 2. THE CONTENT: Sits on top of the canvas -->
-                                <div class="hud-content">
-                                    <div class="row g-4">
-                                        <!-- Left Column: "Quick Access" reimagined as "Live Status" -->
-                                        <div class="col-xxl-5 col-xl-12">
-                                            <h3 class="hud-title">System Status</h3>
-                                            <div class="status-grid">
-                                                <!-- Status Item 1 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                        <span>CPU Load</span>
-                                                    </div>
-                                                    <div class="status-value">32<small>%</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 32%;">
+                        <!-- SEARCH WIDGETS -->
+                        <div id="searchCollapse" class="collapse position-absolute w-100 mt-2" style="z-index: 1050;">
+                            <div class="card shadow border-0 rounded-4">
+                                <div class="card-body p-2">
+                                    <div class="row g-1 h-100">
+                                        <!-- Left Column (Appears on the Right in RTL) -->
+                                        <!-- This column holds the 2x2 grid -->
+                                        <div class="col-7 h-100">
+                                            <div class="row g-1 h-100">
+                                                <!-- CPU Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="cpu-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 2 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">storage</i>
-                                                        <span>DB Queries</span>
-                                                    </div>
-                                                    <div class="status-value">128<small>/s</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 60%;">
+                                                <!-- Memory Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="mem-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 3 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                        <span>Memory</span>
-                                                    </div>
-                                                    <div class="status-value">4.5<small>GB</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 45%;">
+                                                <!-- Network Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="net-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 4 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">warning</i>
-                                                        <span>Errors</span>
-                                                    </div>
-                                                    <div class="status-value">12<small>/hr</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <!-- Using Bootstrap's built-in color class here -->
-                                                        <div class="status-bar-inner bg-danger" style="width: 10%; box-shadow: 0 0 8px rgba(220, 53, 69, 0.7);">
+                                                <!-- Errors Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="err-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Right Column: Command Palette -->
-                                        <div class="col-xxl-7 col-xl-12">
-                                            <h3 class="hud-title">Command Palette</h3>
-                                            <ul class="command-list" id="command-list">
-                                                <!-- Items will be filtered by JS -->
-                                                <li class="command-list-item"> <span class="command-name">run:diagnostics</span>
-                                                    <span class="command-desc">Run all system checks</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">db:connect</span>
-                                                    <span class="command-desc">Connect to primary DB</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">db:backup</span>
-                                                    <span class="command-desc">Initiate database backup</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">cache:clear</span>
-                                                    <span class="command-desc">Clear application cache</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">logs:tail</span>
-                                                    <span class="command-desc">View real-time error logs</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">users:list</span>
-                                                    <span class="command-desc">Show all active users</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">deploy:prod</span>
-                                                    <span class="command-desc">Deploy to production</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">server:restart</span>
-                                                    <span class="command-desc">Restart web server</span>
-                                                </li>
-                                            </ul>
+                                        <!-- Right Column (Appears on the Left in RTL) -->
+                                        <div class="col-5 h-100">
+                                            <div class="stat-card system-details-card h-100 d-flex flex-column">
+                                                <ul class="list-group list-group-flush border-0 w-100">
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-info">dns</i>
+                                                            <span class="fw-bold">Hostname:</span>
+                                                        </div> <span class="text-end text-muted">server-01.example.com</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-primary">storage</i>
+                                                            <span class="fw-bold">Database:</span>
+                                                        </div> <span class="text-end text-muted">PostgreSQL 14.5</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-success">memory</i>
+                                                            <span class="fw-bold">PHP Version:</span>
+                                                        </div> <span class="text-end text-muted">8.2.10</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-warning">terminal</i>
+                                                            <span class="fw-bold">Web Server:</span>
+                                                        </div> <span class="text-end text-muted">Nginx 1.22.1</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- END SEARCH WIDGETS -->
                     </div>
                 </div>
                 <!-- END SEARCH BAR -->
             </div>
-            <!-- END LEFT SIDE -->
             <!-- RIGHT SIDE: Nav Items -->
             <ul class="navbar-nav gap-1 nav-right-links align-items-center">
                 <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
@@ -2216,7 +1204,7 @@
                 <!-- Fixed Header Toggle (only visible in horizontal mode) -->
                 <!-- Menu Type Toggle (vert / horiz) -->
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    <a class="nav-link" href="?menu=horizontal" title="Switch Menu Type (Current: Vertical)" data-bs-toggle="tooltip" data-bs-title="Switch Menu Type"> <i class="material-symbols-rounded r-180">horizontal_split</i>
                     </a>
                 </li>
                 <!-- Apps -->
@@ -2242,7 +1230,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col"> <a href="./admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
                                     </div>
@@ -2254,7 +1242,7 @@
                             </div>
                             <!--end row-->
                             <div class="row row-cols-3 g-0 border-bottom">
-                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="./admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
                                     </div>
@@ -2352,8 +1340,7 @@
                     </a>
                 </li>
                 <!-- Notifications -->
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
-                        class="material-symbols-rounded">notifications</i>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">notifications</i>
                     <span class="badge-notify">5</span>
                 </a>
                     <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
@@ -2390,7 +1377,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -2407,8 +1394,7 @@
                             </div>
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="user-wrapper bg-success text-dark">
+                                    <div class="user-wrapper bg-success text-dark">
                                         <span>AB</span>
                                     </div>
                                     <div class="">
@@ -2425,7 +1411,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -2442,7 +1428,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -2460,7 +1446,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -2477,8 +1463,7 @@
                             </div>
                             <div> <a class="dropdown-item py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="user-wrapper bg-warning text-white">
+                                    <div class="user-wrapper bg-warning text-white">
                                         <span>MJ</span>
                                     </div>
                                     <div class="">
@@ -2497,13 +1482,13 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href="javascript:void(0);" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
-                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                <li class="nav-item dropdown"> <a href="javascript:;" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="./images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
                     <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
                             <div class="text-center">
-                                <img src="images/assets/profile-image.png"
+                                <img src="./images/assets/profile-image.png"
                                     class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
                                 <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
                             </div>
@@ -2569,13 +1554,13 @@
             <div class="mb-3">
                 <label for="admin-background-select" class="form-label">Background Animation</label>
                 <select class="form-select form-select-sm" id="admin-background-select">
-                    <option value="none">None (Off)</option>
-                    <option value="wave-lines">Wave Lines</option>
-                    <option value="node-lines">Node Lines</option>
-                    <option value="circles">Circles</option>
-                    <option value="space">Starfield</option>
-                    <option value="hud">HUD Lines</option>
-                </select>
+                  <option value="none">None (Off)</option>
+                  <option value="wave-lines">Wave Lines</option>
+                  <option value="node-lines">Node Lines</option>
+                  <option value="circles">Circles</option>
+                  <option value="space">Starfield</option>
+                  <option value="hud">HUD Lines</option>
+              </select>
             </div>
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
@@ -2585,7 +1570,7 @@
                 <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
                 <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
             </div>
-            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+            <img src="./images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
         </div>
     </div>
     <!-- end page action bar -->
@@ -2594,12 +1579,12 @@
         <!-- start sidebar header -->
         <div class="sidebar-header">
             <div class="logo-icon">
-                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+                <img src="./images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
             </div>
             <div class="logo-name flex-grow-1">
                 <h5 class="mb-0">
-                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
-                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="./images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="./images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
                 </h5>
             </div>
             <div class="sidebar-close d-xl-none">
@@ -2610,228 +1595,166 @@
         <!-- end sidebar header -->
         <!-- start sidebar navigation -->
         <div class="sidebar-nav">
-            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
-                            aria-expanded="show" aria-controls="collapse_dashboards"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
-                            </div>
-                                                    <div class="menu-title">Dashboards</div>
+            <ul class="hui-admin-menu" id="sidenav">
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_0" role="button" aria-controls="collapse_0" data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                                </div>
+                                                        <div class="menu-title">Dashboards</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse show rounded" id="collapse_dashboards">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link active"
-                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Outrun HUD">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Outrun HUD
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Analytics">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Analytics
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
-                            aria-expanded="" aria-controls="collapse_templates"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
-                            </div>
-                                                    <div class="menu-title">Templates</div>
+                    <div class="collapse rounded show" id="collapse_0">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link active" href="admin-dashboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Freebie Dashboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Freebie Dashboard</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-analytics.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Analytics"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Analytics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_1" role="button" aria-controls="collapse_1" data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                                </div>
+                                                        <div class="menu-title">Templates</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_templates">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Calendar">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Calendar
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Taskboard">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Taskboard
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
-                            aria-expanded="" aria-controls="collapse_ui_elements"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
-                            </div>
-                                                    <div class="menu-title">UI Elements</div>
+                    <div class="collapse rounded " id="collapse_1">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-apps-calendar.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Calendar"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Calendar</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-apps-taskboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Taskboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Taskboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">System Interface</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_3" role="button" aria-controls="collapse_3" data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                                </div>
+                                                        <div class="menu-title">UI Elements</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_ui_elements">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Alerts">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Alerts
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Buttons">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Buttons
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Grid & Flexbox">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Grid & Flexbox
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
-                            aria-expanded="" aria-controls="collapse_components"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
-                            </div>
-                                                    <div class="menu-title">Components</div>
+                    <div class="collapse rounded " id="collapse_3">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-alerts.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Alerts"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Alerts</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-buttons.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Buttons"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Buttons</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-grid.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Grid &amp; Flexbox"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Grid &amp; Flexbox</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_4" role="button" aria-controls="collapse_4" data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                                </div>
+                                                        <div class="menu-title">Components</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_components">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Toasts">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Toasts
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Timeline">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Timeline
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Carousel">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Carousel
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Tabs">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Tabs
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Progress">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Progress
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Modals">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Modals
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Popovers & Tooltips">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Popovers & Tooltips
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Source Code">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Source Code
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="HUD Elements">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    HUD Elements
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
-                            aria-expanded="" aria-controls="collapse_jobs"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
-                            </div>
-                                                    <div class="menu-title">Jobs</div>
+                    <div class="collapse rounded " id="collapse_4">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-toasts.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Toasts"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Toasts</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-timeline.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Timeline"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Timeline</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-carousel.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Carousel"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Carousel</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-tabs.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Tabs"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Tabs</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-progress.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Progress"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Progress</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-modals.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Modals"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Modals</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-popovers.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Popovers &amp; Tooltips"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Popovers &amp; Tooltips</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-source-code.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Source Code"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Source Code</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-hud-elements.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="HUD Elements"> <i class="material-symbols-rounded">arrow_right</i>
+                                    HUD Elements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Job Board</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_6" role="button" aria-controls="collapse_6" data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                                </div>
+                                                        <div class="menu-title">Jobs</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_jobs">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Job Dashboard">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Job Dashboard
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <div class="menu-label">Upgrade</div>
-                    </li>
-                    <li class="admin-nav-item px-0 mt-2">
-                        <a class="admin-nav-link bg-success text-dark"
-                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
-                                                        <div class="parent-icon">
-                                <i class="material-symbols-rounded">shopping_cart</i>
-                            </div>
-                                                    <div class="menu-title">Purchase PRO Version</div>
-                        </a>
-                    </li>
-</ul>
+                    <div class="collapse rounded " id="collapse_6">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-jobs-dashboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Job Dashboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Job Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Details</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  " href="./index.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Welcome Page">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">home</i>
+                    </div>
+                                <div class="menu-title">Welcome Page</div>
+                </a>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  " href="./screenshots.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Screenshots">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">photo_library</i>
+                    </div>
+                                <div class="menu-title">Screenshots</div>
+                </a>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Upgrade</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  bg-primary text-dark" href="#upgradeModal" data-bs-tooltip="tooltip" data-bs-placement="right" title="Purchase PRO Version" data-bs-toggle="modal" data-bs-target="#upgradeModal">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">shopping_cart</i>
+                    </div>
+                                <div class="menu-title">Purchase PRO Version</div>
+                </a>
+                </li>
+            </ul>
+            <img src="./images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3 d-md-block d-none" />
         </div>
-        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3 d-md-block d-none" />
         <!-- end sidebar navigation -->
     </aside>
     <!-- END HUI VERTICAL MENU -->
@@ -2845,7 +1768,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb-chevron">
                                 <li class="breadcrumb-item">
-                                    <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                    <a href="./admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
                                         Home</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
@@ -2856,28 +1779,26 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex justify-content-start justify-content-md-end">
-                    <div class="dashboard-margin">
-                        <div class="dropdown">
-                            <button type="button" class="btn btn-cyber btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Quick Actions</button>
-                            <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
-                                <li><a class="dropdown-item" href="admin-ui-alerts.html"><i
+                <div class="col-md-6 d-flex justify-content-start justify-content-md-end align-items-start">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-cyber btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Quick Actions</button>
+                        <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
+                            <li><a class="dropdown-item" href="./admin-ui-alerts.html"><i
                         class="material-symbols-rounded me-2" style="font-size: 16px;">notifications</i>View Alerts</a>
-                                </li>
-                                <li><a class="dropdown-item" href="admin-ui-buttons.html"><i
+                            </li>
+                            <li><a class="dropdown-item" href="./admin-ui-buttons.html"><i
                         class="material-symbols-rounded me-2" style="font-size: 16px;">smart_button</i>View Buttons</a>
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal"><i
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="modal" data-bs-target="#upgradeModal"><i
                         class="material-symbols-rounded me-2" style="font-size: 16px;">star</i>Upgrade</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">menu</i>More Options</a>
-                                </li>
-                            </ul>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -2890,7 +1811,7 @@
                         <div class="hud-card text-center">
                             <h1 class="display-5 display-lg-4 fw-bold mb-3 orbitron-bold uv-header">Free Version</h1>
                             <div class="command-center-content">
-                                <div class="hCard">
+                                <div class="hCard border-0">
                                     <div class="card-title">Network Traffic</div>
                                     <div class="row g-3">
                                         <div class="col-12 col-lg-6">
@@ -2955,27 +1876,27 @@
                             <div class="card-body">
                                 <div class="row g-2 pt-2">
                                     <div class="col-6 col-md-4 col-xl-4">
-                                        <a href="admin-ui-alerts.html" class="btn btn-soft-secondary bol w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">notifications</i>
+                                        <a href="./admin-ui-alerts.html" class="btn btn-soft-secondary bol w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">notifications</i>
                                             <small class="text-center">Alerts</small>
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-4 col-xl-4">
-                                        <a href="admin-ui-buttons.html" class="btn btn-outline-success w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">smart_button</i>
+                                        <a href="./admin-ui-buttons.html" class="btn btn-outline-success w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">smart_button</i>
                                             <small class="text-center">Buttons</small>
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-4 col-xl-4">
-                                        <a href="admin-ui-modals.html" class="btn btn-outline-info w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">window</i>
+                                        <a href="./admin-ui-modals.html" class="btn btn-outline-info w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">window</i>
                                             <small class="text-center">Modals</small>
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-4 col-xl-4">
-                                        <a href="admin-ui-grid.html" class="btn btn-outline-warning w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">grid_view</i>
+                                        <a href="./admin-ui-grid.html" class="btn btn-outline-warning w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">grid_view</i>
                                             <small class="text-center">Grid</small>
                                         </a>
                                     </div>
                                     <div class="col-6 col-md-4 col-xl-4">
-                                        <a href="admin-ui-popovers.html" class="btn btn-outline-primary w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">help</i>
+                                        <a href="./admin-ui-popovers.html" class="btn btn-outline-primary w-100 d-flex flex-column align-items-center justify-content-center gap-1 py-3"> <i class="material-symbols-rounded">help</i>
                                             <small class="text-center">Popovers</small>
                                         </a>
                                     </div>
@@ -3106,6 +2027,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- SYSTEM TICKER ROW -->
+                <div class="row dashboard-margin mb-4">
+                    <div class="col-12">
+                        <div class="ticker-wrap ticker-system" id="system-ticker">
+                            <div class="ticker-move">
+                                <!-- Ticker items will be dynamically inserted here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- USA MAP WIDGET -->
                 <div class="row g-3 g-lg-4 mb-4">
                     <div class="col-xl-7 col-md-6">
@@ -3215,7 +2146,7 @@
                     </div>
                 </div>
                 <!-- Financial Metrics -->
-                <div class="row">
+                <div class="row dashboard-margin">
                     <div class="col-xl-3 col-md-6">
                         <div class="hud-card dashboard-margin">
                             <div class="card-header rounded-top-4">
@@ -3325,7 +2256,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <img src="images/uv/uv-circle.png" class="img-fluid mx-auto d-block p-relative pt-2 mb-n1 mt-1" style="max-height:150px" />
+                                <img src="./images/uv/uv-circle.png" class="img-fluid mx-auto d-block p-relative pt-2 mb-n1 mt-1" style="max-height:150px" />
                             </div>
                         </div>
                     </div>
@@ -3378,6 +2309,62 @@
                                         <span class="d-none d-sm-inline">Purchase Full Version</span>
                                         <span class="d-inline d-sm-none">Purchase PRO</span>
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Screenshots Carousel Widget -->
+                <div class="row mb-4 mt-4">
+                    <div class="col-12">
+                        <div class="hud-card dashboard-margin">
+                            <div class="card-header rounded-top-4">
+                                <h5 class="card-title mb-0 fs-6 fs-lg-5">Dashboard Screenshots</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="screenshotsCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                                        </button>
+                                        <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="1" aria-label="Slide 2">
+                                        </button>
+                                        <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="2" aria-label="Slide 3">
+                                        </button>
+                                        <button type="button" data-bs-target="#screenshotsCarousel" data-bs-slide-to="3" aria-label="Slide 4">
+                                        </button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active"> <a href="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/appschat-desktop.jpg" data-toggle="lightbox" data-gallery="screenshots-gallery" data-caption="Apps Chat Dashboard">
+                                        <img src="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/appschat-desktop.jpg"
+                                            class="d-block w-100" alt="Apps Chat Dashboard"
+                                            style="height: 300px; object-fit: cover; cursor: pointer;">
+                                    </a>
+                                        </div>
+                                        <div class="carousel-item"> <a href="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/dashboardfinance-desktop.jpg" data-toggle="lightbox" data-gallery="screenshots-gallery" data-caption="Finance Dashboard">
+                                        <img src="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/dashboardfinance-desktop.jpg"
+                                            class="d-block w-100" alt="Finance Dashboard"
+                                            style="height: 300px; object-fit: cover; cursor: pointer;">
+                                    </a>
+                                        </div>
+                                        <div class="carousel-item"> <a href="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/cryptoexchange-desktop.jpg" data-toggle="lightbox" data-gallery="screenshots-gallery" data-caption="Crypto Exchange Dashboard">
+                                        <img src="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/cryptoexchange-desktop.jpg"
+                                            class="d-block w-100" alt="Crypto Exchange Dashboard"
+                                            style="height: 300px; object-fit: cover; cursor: pointer;">
+                                    </a>
+                                        </div>
+                                        <div class="carousel-item"> <a href="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/appscalendar-desktop.jpg" data-toggle="lightbox" data-gallery="screenshots-gallery" data-caption="Apps Calendar Dashboard">
+                                        <img src="https://huement.sfo3.digitaloceanspaces.com/products/ultraviolet/appscalendar-desktop.jpg"
+                                            class="d-block w-100" alt="Apps Calendar Dashboard"
+                                            style="height: 300px; object-fit: cover; cursor: pointer;">
+                                    </a>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#screenshotsCarousel" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -3576,23 +2563,23 @@
                     <div class="offcanvas-body">
                         <div class="menu-header orbitron">🎯 Free Components</div>
                         <div class="list-group list-group-flush">
-                            <a href="admin-ui-alerts.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">notifications</span>
+                            <a href="./admin-ui-alerts.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">notifications</span>
                                 <span>Alerts</span>
                                 <span class="badge bg-success ms-auto">Free</span>
                             </a>
-                            <a href="admin-ui-buttons.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">smart_button</span>
+                            <a href="./admin-ui-buttons.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">smart_button</span>
                                 <span>Buttons</span>
                                 <span class="badge bg-success ms-auto">Free</span>
                             </a>
-                            <a href="admin-ui-modals.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">window</span>
+                            <a href="./admin-ui-modals.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">window</span>
                                 <span>Modals</span>
                                 <span class="badge bg-success ms-auto">Free</span>
                             </a>
-                            <a href="admin-ui-grid.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">grid_view</span>
+                            <a href="./admin-ui-grid.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">grid_view</span>
                                 <span>Grid System</span>
                                 <span class="badge bg-success ms-auto">Free</span>
                             </a>
-                            <a href="admin-ui-popovers.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">help</span>
+                            <a href="./admin-ui-popovers.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">help</span>
                                 <span>Popovers</span>
                                 <span class="badge bg-success ms-auto">Free</span>
                             </a>
@@ -3726,9 +2713,87 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
     <!-- Anime.js 3.2.1 from CDN for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- BProgress Loading Indicator -->
     <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <script>
+    (function () {
+        function initBProgressEarly() {
+          try {
+            if (window.__BPROGRESS_PAGE_STARTED__) return true
+            var API = null
+            if (window.BProgressJS) {
+              API = window.BProgressJS.BProgress || window.BProgressJS.default || window.BProgressJS
+            } else if (typeof window.BProgress === 'function') {
+              API = window.BProgress
+            }
+            if (!API) return false
+    
+            // Prefer singleton static API if available
+            if (typeof API.start === 'function') {
+              window.__BPROGRESS_PAGE__ = API
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              API.start()
+            } else {
+              // Fallback: try to instantiate
+              var inst = null
+              try { inst = new API({ position: 'top', height: 3, color: '#0d6efd' }) } catch (e1) {
+                try { inst = new API() } catch (e2) { inst = null }
+              }
+              if (!inst) return false
+              window.__BPROGRESS_PAGE__ = inst
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              var start = inst.start || inst.show || inst.begin
+              if (typeof start === 'function') start.call(inst)
+            }
+    
+            function finish() {
+              if (!window.__BPROGRESS_PAGE__) return
+              var p = window.__BPROGRESS_PAGE__
+              // Singleton
+              if (typeof p.finish === 'function' && p === API) {
+                p.finish()
+                window.__BPROGRESS_PAGE_STARTED__ = false
+                return
+              }
+              // Instance
+              var f = p.finish || p.complete || p.hide || p.end
+              if (typeof f === 'function') {
+                f.call(p)
+                window.__BPROGRESS_PAGE_STARTED__ = false
+              } else if (typeof p.set === 'function') {
+                p.set(100)
+                setTimeout(function () {
+                  var el = document.querySelector('[data-bprogress]') ||
+                           document.querySelector('.bprogress') ||
+                           document.querySelector('#bprogress')
+                  if (el && el.parentNode) el.parentNode.removeChild(el)
+                  window.__BPROGRESS_PAGE_STARTED__ = false
+                }, 500)
+              }
+            }
+    
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', finish)
+            } else {
+              setTimeout(finish, 0)
+            }
+    
+            return true
+          } catch (e) {
+            return false
+          }
+        }
+    
+        if (!initBProgressEarly()) {
+          var tries = 0
+          var id = setInterval(function () {
+            tries++
+            if (initBProgressEarly() || tries >= 40) clearInterval(id)
+          }, 25)
+        }
+      })()
+    </script>
     <!-- end core javascript libraries -->
     <!-- start chart & visualization libraries -->
     <!-- ApexCharts JS -->
@@ -3738,7 +2803,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js">
     </script>
     <!-- JSVector Maps Core Library -->
-    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
     <!-- end chart & visualization libraries -->
     <!-- start UI component libraries -->
     <!-- Grid.js -->
@@ -3774,127 +2838,15 @@
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <!-- xterm.js Terminal -->
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.7.0/lib/xterm-addon-fit.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.11.0/lib/addon-web-links.min.js"></script>
     <!-- end UI component libraries -->
     <!-- end CDN scripts -->
     <!-- Jquery Free JSON Table (local asset) -->
     <script src="./js/JsonTable.js"></script>
-    <!-- start custom application scripts -->
-    <!-- end custom application scripts -->
-    <!-- start site-wide javascript -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-            const viewportDebugger = document.getElementById('viewport-debugger');
-            if (viewportDebugger) {
-                viewportDebugger.addEventListener('click', function() {
-                    this.remove();
-                });
-            }
-
-            // BProgress Configuration
-            const {
-                BProgress
-            } = BProgressJS;
-            BProgress.configure({
-                color: '#FF3300', // RED
-                height: '6px',
-                position: 'top',
-                showSpinner: false,
-                trickleSpeed: 200,
-                minimum: 0.08
-            });
-
-            // Global BProgress functions for easy access
-            window.showProgress = () => {
-                BProgress.start();
-            };
-            window.hideProgress = () => BProgress.done();
-
-            window.setProgress = (percent) => {
-                BProgress.set(percent);
-            };
-
-            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
-            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
-                el.addEventListener('click', Lightbox.initialize);
-            });
-
-            // Auto-trigger BProgress on dropdown item clicks
-            document.addEventListener('click', function(e) {
-                // Check if clicked element is a dropdown item
-                const dropdownItem = e.target.closest('.dropdown-item');
-                if (dropdownItem) {
-                    // Skip if it's a divider or disabled
-                    if (dropdownItem.classList.contains('dropdown-divider') ||
-                        dropdownItem.classList.contains('disabled') ||
-                        dropdownItem.hasAttribute('disabled')) {
-                        return;
-                    }
-
-                    // Skip if it's a JavaScript link (no real action)
-                    const href = dropdownItem.getAttribute('href');
-                    if (href === 'javascript:;' || href === '#') {
-                        return;
-                    }
-
-                    // Skip if it's an admin navigation link (handled by page transition)
-                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
-                        return;
-                    }
-
-                    console.log('Dropdown item clicked, triggering BProgress');
-
-                    // Quick BProgress sequence
-                    BProgress.start();
-                    setTimeout(() => BProgress.set(30), 100);
-                    setTimeout(() => BProgress.set(60), 200);
-                    setTimeout(() => BProgress.set(90), 300);
-                    setTimeout(() => BProgress.done(), 400);
-                }
-            });
-
-            // BProgress on page navigation
-            // Intercept all admin navigation links
-            document.addEventListener('click', function(e) {
-                const link = e.target.closest('a[href]');
-                if (!link) return;
-
-                // Only handle admin links
-                const href = link.getAttribute('href');
-                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
-                    return;
-                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
-
-                console.log("Admin navigation detected, starting BProgress");
-
-                // Start BProgress for navigation
-                BProgress.start();
-
-                // Let the navigation happen naturally
-            });
-
-            // Page load - BProgress only
-            window.addEventListener('load', function() {
-                // Start BProgress for page load
-                BProgress.start();
-                setTimeout(() => BProgress.set(50), 100);
-                setTimeout(() => BProgress.set(80), 200);
-                setTimeout(() => BProgress.set(100), 300);
-
-                // Complete BProgress
-                setTimeout(() => {
-                    BProgress.done();
-                }, 400);
-            });
-        });
-    </script>
-    <!-- end site-wide javascript -->
     <!-- start page-specific scripts -->
     <!-- Map Data Files -->
-    <script src="./js/vectormaps/jsvectormap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap@latest/dist/js/jsvectormap.min.js" onerror="this.onerror=null;this.src='./js/vectormaps/jsvectormap.min.js'"></script>
     <script src="./js/vectormaps/us-merc-en.js"></script>
     <script>
     console.log('🎁 UltraViolet Free Version - Limited Feature Set');
@@ -4638,10 +3590,33 @@
             marginChart.render();
         }
 
+        // Initialize System Ticker with retry mechanism
+        function initSystemTicker() {
+            console.log('Attempting to initialize system ticker...');
+            console.log('window.SystemTicker available?', typeof window.SystemTicker);
+
+            if (window.SystemTicker) {
+                try {
+                    const systemTicker = new window.SystemTicker('#system-ticker', {
+                        refreshInterval: 30000 // Refresh every 30 seconds
+                    });
+                    console.log('✓ System ticker initialized successfully');
+                } catch (error) {
+                    console.error('Error initializing system ticker:', error);
+                }
+            } else {
+                console.log('SystemTicker class not yet available, retrying in 100ms...');
+                setTimeout(initSystemTicker, 100);
+            }
+        }
+
         // Initialize everything on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize charts
             initFreebieCharts();
+
+            // Initialize System Ticker
+            initSystemTicker();
 
             // Initialize USA Map
             setTimeout(() => {
@@ -4973,100 +3948,82 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(initTodoWidget, 200);
         });
-    </script>
-    <!-- end page-specific scripts -->
-    <!-- start additional utilities -->
-    <script>
-    // Store menu preference
-                    sessionStorage.setItem('menu_type', 'vertical');
-        
-        // Menu toggle links work normally - middleware handles cookie setting and page reload
 
-        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
-        function fixCosmicWaveOverflow() {
-            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
-            cosmicWaves.forEach(svg => {
-                // Only fix the sizing, don't change the viewBox
-                svg.style.width = '100%';
-                svg.style.height = '100%';
-                svg.style.maxWidth = '100%';
-                svg.style.overflow = 'hidden';
-            });
-        }
+        // Initialize Screenshots Carousel with imagesLoaded and Lightbox
+        function initScreenshotsCarousel() {
+            const carousel = document.getElementById('screenshotsCarousel');
+            if (!carousel) {
+                console.log('Screenshots carousel not found, will retry...');
+                setTimeout(initScreenshotsCarousel, 100);
+                return;
+            }
 
-        // Run immediately and also after a delay to catch dynamically loaded waves
-        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
-        setTimeout(fixCosmicWaveOverflow, 100);
-        setTimeout(fixCosmicWaveOverflow, 500);
-        setTimeout(fixCosmicWaveOverflow, 1000);
+            // Wait for all images to load using imagesLoaded (if available) or native Image load
+            const carouselImages = carousel.querySelectorAll('img');
 
-        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
-        if (typeof MutationObserver !== 'undefined') {
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.type === 'childList') {
-                        mutation.addedNodes.forEach(function(node) {
-                            if (node.nodeType === 1) { // Element node
-                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
-                                        'cosmic-wave')) {
-                                    setTimeout(fixCosmicWaveOverflow, 50);
-                                }
+            if (typeof imagesLoaded !== 'undefined') {
+                // Use imagesLoaded plugin if available
+                imagesLoaded(carousel, function() {
+                    console.log('All carousel images loaded');
+                    initializeLightbox();
+                });
+            } else {
+                // Fallback: wait for all images to load natively
+                let loadedCount = 0;
+                const totalImages = carouselImages.length;
+
+                if (totalImages === 0) {
+                    initializeLightbox();
+                    return;
+                }
+
+                carouselImages.forEach((img) => {
+                    if (img.complete) {
+                        loadedCount++;
+                        if (loadedCount === totalImages) {
+                            initializeLightbox();
+                        }
+                    } else {
+                        img.addEventListener('load', () => {
+                            loadedCount++;
+                            if (loadedCount === totalImages) {
+                                initializeLightbox();
+                            }
+                        });
+                        img.addEventListener('error', () => {
+                            loadedCount++;
+                            if (loadedCount === totalImages) {
+                                initializeLightbox();
                             }
                         });
                     }
                 });
-            });
-
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-        }
-
-        // Sidebar hover functionality for collapsed state
-        function initSidebarHover() {
-            const sidebar = document.querySelector('.sidebar-wrapper');
-            const body = document.body;
-
-            if (!sidebar) return;
-
-            // Only apply hover behavior when sidebar is toggled (collapsed)
-            function handleSidebarHover() {
-                if (body.classList.contains('toggled')) {
-                    sidebar.addEventListener('mouseenter', function() {
-                        body.classList.add('sidebar-hovered');
-                    });
-
-                    sidebar.addEventListener('mouseleave', function() {
-                        body.classList.remove('sidebar-hovered');
-                    });
-                }
             }
 
-            // Initialize on page load
-            handleSidebarHover();
-
-            // Re-initialize when toggle state changes
-            const toggleButton = document.querySelector('.btn-toggle');
-            if (toggleButton) {
-                toggleButton.addEventListener('click', function() {
-                    // Wait for the toggle animation to complete
-                    setTimeout(handleSidebarHover, 300);
-                });
+            function initializeLightbox() {
+                // Lightbox is initialized globally in layout files (basic.blade.php)
+                // No need to add custom event listeners here as it would cause double initialization
+                // Just log that images are ready for lightbox
+                const lightboxLinks = carousel.querySelectorAll('[data-toggle="lightbox"]');
+                console.log('Screenshots carousel images loaded. Lightbox will be handled globally.', lightboxLinks.length,
+                    'images');
             }
         }
 
-        // Initialize sidebar hover when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initSidebarHover);
-        } else {
-            initSidebarHover();
-        }
+        // Initialize carousel on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(initScreenshotsCarousel, 100);
+        });
     </script>
-    <!-- end additional utilities -->
+    <!-- end page-specific scripts -->
+    <script src="./js/admin-inline-utils.js"></script>
+    <script src="./js/admin-static-shim.js"></script>
+    <script src="./js/search-popup-shim.js"></script>
+    <script src="./js/system-ticker-shim.js"></script>
+
     <!-- Material Icons Font Loading Detection -->
     <script>
-    // Function to mark icons as loaded
+        // Function to mark icons as loaded
         function markIconsAsLoaded() {
             document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
                 icon.classList.add('material-symbols-rounded--loaded');
@@ -5078,7 +4035,6 @@
         if ('fonts' in document) {
             document.fonts.ready.then(function() {
                 markIconsAsLoaded();
-                console.log('Material Symbols font loaded');
             });
         } else {
             // Fallback for browsers that don't support Font Loading API
@@ -5086,77 +4042,12 @@
         }
 
         // Also mark icons as loaded immediately to prevent flickering
-        // The font is usually cached after first page load
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
         } else {
             markIconsAsLoaded();
         }
-
-        // Watch for dynamically added icons (e.g., from AJAX content)
-        const iconObserver = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1) { // Element node
-                        // Check if the node itself is an icon
-                        if (node.classList && (node.classList.contains(
-                                'material-symbols-rounded') || node.classList.contains(
-                                'material-icons'))) {
-                            node.classList.add('material-symbols-rounded--loaded');
-                        }
-                        // Check for icons within the added node
-                        if (node.querySelectorAll) {
-                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
-                                .forEach(function(icon) {
-                                    icon.classList.add('material-symbols-rounded--loaded');
-                                });
-                        }
-                    }
-                });
-            });
-        });
-
-        // Start observing the document body for changes
-        iconObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
     </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/basic.js"></script>
-    <script src="./js/freebie.js?v=76ed1217"></script>
-<!-- Upgrade to Pro Modal -->
-<div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-dark">
-        <h5 class="modal-title" id="upgradeModalLabel">
-          <i class="material-symbols-rounded me-2" style="vertical-align: middle;">star</i>
-          Upgrade to UltraViolet Pro
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="text-center py-4">
-          <i class="material-symbols-rounded text-primary mb-3" style="font-size: 64px;">workspace_premium</i>
-          <h4 class="mb-3">Unlock All Features</h4>
-          <p class="mb-4">Get access to the full UltraViolet Pro with 80+ pages, horizontal menu layouts, advanced apps, and much more!</p>
-          <ul class="text-start mb-4">
-            <li>Horizontal & Vertical menu layouts</li>
-            <li>80+ admin pages and templates</li>
-            <li>Advanced apps (Email, Chat, Calendar, etc.)</li>
-            <li>Laravel Livewire edition included</li>
-            <li>Premium support and updates</li>
-          </ul>
-          <a href="https://huement.com/ultraviolet" class="btn btn-primary btn-lg w-100" target="_blank">
-            <i class="material-symbols-rounded me-2" style="vertical-align: middle;">shopping_cart</i>
-            Purchase on ThemeForest
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 
 </html>

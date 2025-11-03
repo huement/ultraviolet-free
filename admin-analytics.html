@@ -1,26 +1,25 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark" <!-- start head -->
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <!-- start meta tags & title -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="J4gc7pBYcQ4S04kaXdvRsLbDpr3rRUdKaKP0eYPu">
+    <meta name="csrf-token" content="Ol515z2jGDbRDVomWvSSagcTDKDaYD4Rqg0wa4sl">
     <title>Analytics | UltraViolet</title>
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Preload Material Icons font to prevent FOUC -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icon Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Prevent Material Icons FOUC -->
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
+    <style type="text/css">
+    .material-symbols-rounded,
         .material-icons {
             font-size: 24px;
             line-height: 1;
@@ -34,20 +33,17 @@
             white-space: nowrap;
         }
     
-        /* Hide icon text content until font loads */
         .material-symbols-rounded:not(.material-symbols-rounded--loaded),
         .material-icons:not(.material-icons--loaded) {
             color: transparent;
             user-select: none;
         }
     
-        /* Ensure icons are visible when loaded */
         .material-symbols-rounded--loaded,
         .material-icons--loaded {
             color: inherit;
         }
     
-        /* Fix navbar icon alignment specifically */
         .ultraviolet-action-bar .navbar-nav .nav-link {
             display: flex;
             align-items: center;
@@ -60,7 +56,6 @@
             padding: 0;
         }
     
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
         .material-icons {
             font-family: 'Material Symbols Rounded' !important;
             font-weight: normal !important;
@@ -94,8 +89,8 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
     <!-- Grid JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
-    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static-4OhMhqXa.js) -->
-    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
     <!-- BProgress Loading Indicator -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
     <!-- Form Enhancement CSS -->
@@ -105,99 +100,35 @@
     <!-- Flatpickr -->
     <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
     <!-- BS5 Lightbox - Image Modal Gallery -->
-    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- Note: bs5-lightbox doesn't require a separate CSS file, it uses Bootstrap's modal/carousel styles -->
     <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <!-- Note: FullCalendar CSS is typically included via themes or bundled with the main package -->
     <!-- xterm.js Terminal CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
     <!-- end plugins -->
     <!-- start vite CSS & JS -->
-    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
     <link rel="stylesheet" href="./assets/admin-vertical-dark.css">
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
-        .material-icons {
-            font-size: 24px;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: 'liga';
-            vertical-align: middle;
-            overflow: hidden;
-            text-overflow: clip;
-            white-space: nowrap;
-        }
-    
-        /* Hide icon text content until font loads */
-        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
-        .material-icons:not(.material-icons--loaded) {
-            color: transparent;
-            user-select: none;
-        }
-    
-        /* Ensure icons are visible when loaded */
-        .material-symbols-rounded--loaded,
-        .material-icons--loaded {
-            color: inherit;
-        }
-    
-        /* Fix navbar icon alignment specifically */
-        .ultraviolet-action-bar .navbar-nav .nav-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
-            margin: 0;
-            padding: 0;
-        }
-    
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
-        .material-icons {
-            font-family: 'Material Symbols Rounded' !important;
-            font-weight: normal !important;
-            font-style: normal !important;
-            font-size: 24px !important;
-            line-height: 1 !important;
-            letter-spacing: normal !important;
-            text-transform: none !important;
-            display: inline-block !important;
-            white-space: nowrap !important;
-            word-wrap: normal !important;
-            direction: ltr !important;
-            -webkit-font-feature-settings: 'liga' !important;
-            -webkit-font-smoothing: antialiased !important;
-            text-rendering: optimizeLegibility !important;
-            font-feature-settings: 'liga' !important;
-            vertical-align: middle !important;
-        }
-    </style>
     <!-- end vite CSS & JS -->
-</head>
-<!-- Theme Initialization (runs before page render to prevent flash) -->
-<script>
+    <!-- Theme Initialization (runs before page render to prevent flash) -->
+    <script>
     (function() {
-                // Check URL parameter first, then localStorage, then default to dark
-                const urlParams = new URLSearchParams(window.location.search);
-                const themeParam = urlParams.get('theme');
-                const savedTheme = localStorage.getItem('theme-preference') || 'dark';
-                const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
-                    savedTheme;
-    
-                document.documentElement.setAttribute('data-bs-theme', initialTheme);
-    
-                // If URL parameter is provided, override localStorage
-                if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
-                    localStorage.setItem('theme-preference', themeParam);
-                }
-            })();
-</script>
+            // Check URL parameter first, then localStorage, then default to dark
+            const urlParams = new URLSearchParams(window.location.search);
+            const themeParam = urlParams.get('theme');
+            const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+            const initialTheme = themeParam && (themeParam === 'light' || themeParam === 'dark') ? themeParam :
+                savedTheme;
+
+            document.documentElement.setAttribute('data-bs-theme', initialTheme);
+
+            // If URL parameter is provided, override localStorage
+            if (themeParam && (themeParam === 'light' || themeParam === 'dark')) {
+                localStorage.setItem('theme-preference', themeParam);
+            }
+        })();
+    </script>
 </head>
-<!-- end head -->
 
 <body class="space-grotesk-300 vertical-menu " dir="ltr">
     <!-- Background animation container -->
@@ -213,112 +144,83 @@
                 <!-- SEARCH BAR -->
                 <div class="search-bar d-lg-block d-none flex-grow-1">
                     <div class="position-relative">
-                        <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
+                        <input id="hud-search" class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search pages, components, or features..." name="action_search" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-expanded="false" aria-controls="searchCollapse"> <span class="material-symbols-rounded position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50" style="color:#FFF">search</span>
                         <span class="material-symbols-rounded position-absolute d-lg-block d-none me-3 translate-middle-y end-0 top-50 search-close">close</span>
-                        <div class="search-popup d-none">
-                            <!-- This is the component -->
-                            <div class="hud-search-container">
-                                <!-- 1. THE "LIVE" ELEMENT: Canvas for animations -->
-                                <canvas id="hud-scanner-canvas">
-                                </canvas>
-                                <!-- 2. THE CONTENT: Sits on top of the canvas -->
-                                <div class="hud-content">
-                                    <div class="row g-4">
-                                        <!-- Left Column: "Quick Access" reimagined as "Live Status" -->
-                                        <div class="col-xxl-5 col-xl-12">
-                                            <h3 class="hud-title">System Status</h3>
-                                            <div class="status-grid">
-                                                <!-- Status Item 1 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                        <span>CPU Load</span>
-                                                    </div>
-                                                    <div class="status-value">32<small>%</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 32%;">
+                        <!-- SEARCH WIDGETS -->
+                        <div id="searchCollapse" class="collapse position-absolute w-100 mt-2" style="z-index: 1050;">
+                            <div class="card shadow border-0 rounded-4">
+                                <div class="card-body p-2">
+                                    <div class="row g-1 h-100">
+                                        <!-- Left Column (Appears on the Right in RTL) -->
+                                        <!-- This column holds the 2x2 grid -->
+                                        <div class="col-7 h-100">
+                                            <div class="row g-1 h-100">
+                                                <!-- CPU Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="cpu-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 2 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">storage</i>
-                                                        <span>DB Queries</span>
-                                                    </div>
-                                                    <div class="status-value">128<small>/s</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 60%;">
+                                                <!-- Memory Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="mem-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 3 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">memory</i>
-                                                        <span>Memory</span>
-                                                    </div>
-                                                    <div class="status-value">4.5<small>GB</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <div class="status-bar-inner" style="width: 45%;">
+                                                <!-- Network Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="net-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- Status Item 4 -->
-                                                <div class="status-item">
-                                                    <div class="status-label"> <i class="material-symbols-rounded">warning</i>
-                                                        <span>Errors</span>
-                                                    </div>
-                                                    <div class="status-value">12<small>/hr</small>
-                                                    </div>
-                                                    <div class="status-bar">
-                                                        <!-- Using Bootstrap's built-in color class here -->
-                                                        <div class="status-bar-inner bg-danger" style="width: 10%; box-shadow: 0 0 8px rgba(220, 53, 69, 0.7);">
+                                                <!-- Errors Chart -->
+                                                <div class="col-6 h-50">
+                                                    <div class="stat-card h-100">
+                                                        <div id="err-chart" class="w-100">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Right Column: Command Palette -->
-                                        <div class="col-xxl-7 col-xl-12">
-                                            <h3 class="hud-title">Command Palette</h3>
-                                            <ul class="command-list" id="command-list">
-                                                <!-- Items will be filtered by JS -->
-                                                <li class="command-list-item"> <span class="command-name">run:diagnostics</span>
-                                                    <span class="command-desc">Run all system checks</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">db:connect</span>
-                                                    <span class="command-desc">Connect to primary DB</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">db:backup</span>
-                                                    <span class="command-desc">Initiate database backup</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">cache:clear</span>
-                                                    <span class="command-desc">Clear application cache</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">logs:tail</span>
-                                                    <span class="command-desc">View real-time error logs</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">users:list</span>
-                                                    <span class="command-desc">Show all active users</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">deploy:prod</span>
-                                                    <span class="command-desc">Deploy to production</span>
-                                                </li>
-                                                <li class="command-list-item"> <span class="command-name">server:restart</span>
-                                                    <span class="command-desc">Restart web server</span>
-                                                </li>
-                                            </ul>
+                                        <!-- Right Column (Appears on the Left in RTL) -->
+                                        <div class="col-5 h-100">
+                                            <div class="stat-card system-details-card h-100 d-flex flex-column">
+                                                <ul class="list-group list-group-flush border-0 w-100">
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-info">dns</i>
+                                                            <span class="fw-bold">Hostname:</span>
+                                                        </div> <span class="text-end text-muted">server-01.example.com</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-primary">storage</i>
+                                                            <span class="fw-bold">Database:</span>
+                                                        </div> <span class="text-end text-muted">PostgreSQL 14.5</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-success">memory</i>
+                                                            <span class="fw-bold">PHP Version:</span>
+                                                        </div> <span class="text-end text-muted">8.2.10</span>
+                                                    </li>
+                                                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                                                        <div> <i class="material-symbols-rounded me-2 text-warning">terminal</i>
+                                                            <span class="fw-bold">Web Server:</span>
+                                                        </div> <span class="text-end text-muted">Nginx 1.22.1</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- END SEARCH WIDGETS -->
                     </div>
                 </div>
                 <!-- END SEARCH BAR -->
             </div>
-            <!-- END LEFT SIDE -->
             <!-- RIGHT SIDE: Nav Items -->
             <ul class="navbar-nav gap-1 nav-right-links align-items-center">
                 <li class="nav-item d-lg-none mobile-search-btn"> <a class="nav-link" href="javascript:;"><i class="material-symbols-rounded">search</i></a>
@@ -326,7 +228,7 @@
                 <!-- Fixed Header Toggle (only visible in horizontal mode) -->
                 <!-- Menu Type Toggle (vert / horiz) -->
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" title="Upgrade to Pro"> <i class="material-symbols-rounded r-180">horizontal_split</i>
+                    <a class="nav-link" href="?menu=horizontal" title="Switch Menu Type (Current: Vertical)" data-bs-toggle="tooltip" data-bs-title="Switch Menu Type"> <i class="material-symbols-rounded r-180">horizontal_split</i>
                     </a>
                 </li>
                 <!-- Apps -->
@@ -352,7 +254,7 @@
                                     </div>
                                 </a>
                                 </div>
-                                <div class="col"> <a href="admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col"> <a href="./admin-apps-calendar.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-calendar-event-fill icon-xl" style="color: #10b981;"></i>
                                     </div>
@@ -364,7 +266,7 @@
                             </div>
                             <!--end row-->
                             <div class="row row-cols-3 g-0 border-bottom">
-                                <div class="col border-end"> <a href="admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
+                                <div class="col border-end"> <a href="./admin-apps-taskboard.html" class="app-wrapper d-flex flex-column gap-2 text-center text-decoration-none">
                                     <div class="app-icon">
                                         <i class="bi bi-kanban-fill icon-xl" style="color: #8b5cf6;"></i>
                                     </div>
@@ -462,8 +364,7 @@
                     </a>
                 </li>
                 <!-- Notifications -->
-                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i
-                        class="material-symbols-rounded">notifications</i>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle dropdown-no-caret position-relative" title="Notifications Menu" data-bs-toggle="dropdown" data-bs-title="Notifications Menu" data-bs-auto-close="outside" href="javascript:;"><i class="material-symbols-rounded">notifications</i>
                     <span class="badge-notify">5</span>
                 </a>
                     <div class="dropdown-menu dropdown-notify dropdown-menu-end shadow">
@@ -500,7 +401,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -517,8 +418,7 @@
                             </div>
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="user-wrapper bg-success text-dark">
+                                    <div class="user-wrapper bg-success text-dark">
                                         <span>AB</span>
                                     </div>
                                     <div class="">
@@ -535,7 +435,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -552,7 +452,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -570,7 +470,7 @@
                             <div> <a class="dropdown-item border-bottom py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
                                     <div class="">
-                                        <img src="images/assets/profile-image.png"
+                                        <img src="./images/assets/profile-image.png"
                                             class="rounded-circle" width="45" height="45" alt="">
                                     </div>
                                     <div class="">
@@ -587,8 +487,7 @@
                             </div>
                             <div> <a class="dropdown-item py-2" href="javascript:;">
                                 <div class="d-flex align-items-center gap-3">
-                                    <div
-                                        class="user-wrapper bg-warning text-white">
+                                    <div class="user-wrapper bg-warning text-white">
                                         <span>MJ</span>
                                     </div>
                                     <div class="">
@@ -607,13 +506,13 @@
                     </div>
                 </li>
                 <!-- User Dropdown -->
-                <li class="nav-item dropdown"> <a href="javascript:void(0);" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
-                        <img src="images/assets/profile-image.png" class="rounded-circle p-1 border"
+                <li class="nav-item dropdown"> <a href="javascript:;" class="dropdown-toggle dropdown-no-caret" data-bs-toggle="dropdown">
+                        <img src="./images/assets/profile-image.png" class="rounded-circle p-1 border"
                             width="45" height="45" alt="">
                     </a>
                     <div class="dropdown-menu dropdown-user dropdown-menu-end shadow"> <a class="dropdown-item gap-2 py-2" href="javascript:;">
                             <div class="text-center">
-                                <img src="images/assets/profile-image.png"
+                                <img src="./images/assets/profile-image.png"
                                     class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
                                 <h5 class="user-name mb-0 fw-bold">Hello, Huement</h5>
                             </div>
@@ -679,13 +578,13 @@
             <div class="mb-3">
                 <label for="admin-background-select" class="form-label">Background Animation</label>
                 <select class="form-select form-select-sm" id="admin-background-select">
-                    <option value="none">None (Off)</option>
-                    <option value="wave-lines">Wave Lines</option>
-                    <option value="node-lines">Node Lines</option>
-                    <option value="circles">Circles</option>
-                    <option value="space">Starfield</option>
-                    <option value="hud">HUD Lines</option>
-                </select>
+                  <option value="none">None (Off)</option>
+                  <option value="wave-lines">Wave Lines</option>
+                  <option value="node-lines">Node Lines</option>
+                  <option value="circles">Circles</option>
+                  <option value="space">Starfield</option>
+                  <option value="hud">HUD Lines</option>
+              </select>
             </div>
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="admin-rtl-switch">
@@ -695,7 +594,7 @@
                 <input class="form-check-input" type="checkbox" role="switch" id="admin-dark-mode-switch" checked>
                 <label class="form-check-label" for="admin-dark-mode-switch">Dark / Light Mode</label>
             </div>
-            <img src="images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
+            <img src="./images/hud/hud-divider-thin.png" class="img-fluid py-2 hud-divider-image" />
         </div>
     </div>
     <!-- end page action bar -->
@@ -704,12 +603,12 @@
         <!-- start sidebar header -->
         <div class="sidebar-header">
             <div class="logo-icon">
-                <img src="images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
+                <img src="./images/uv/uv-circle.png" class="logo-img" width="45" alt="UV Circle Logo">
             </div>
             <div class="logo-name flex-grow-1">
                 <h5 class="mb-0">
-                    <img src="images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
-                    <img src="images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="./images/uv/ultra-white.png" class="img-fluid logo-dark-theme" alt="UltraViolet Logo Text" width="170" height="17">
+                    <img src="./images/uv/ultra-black.png" class="img-fluid logo-light-theme" alt="UltraViolet Logo Text" width="170" height="17">
                 </h5>
             </div>
             <div class="sidebar-close d-xl-none">
@@ -720,228 +619,166 @@
         <!-- end sidebar header -->
         <!-- start sidebar navigation -->
         <div class="sidebar-nav">
-            <ul class="hui-admin-menu" id="sidenav">                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_dashboards" role="button"
-                            aria-expanded="show" aria-controls="collapse_dashboards"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
-                            </div>
-                                                    <div class="menu-title">Dashboards</div>
+            <ul class="hui-admin-menu" id="sidenav">
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_0" role="button" aria-controls="collapse_0" data-bs-tooltip="tooltip" data-bs-placement="right" title="Dashboards">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">dashboard</i>
+                                </div>
+                                                        <div class="menu-title">Dashboards</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse show rounded" id="collapse_dashboards">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-dashboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Outrun HUD">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Outrun HUD
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link active"
-                                            href="admin-analytics.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Analytics">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Analytics
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_templates" role="button"
-                            aria-expanded="" aria-controls="collapse_templates"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
-                            </div>
-                                                    <div class="menu-title">Templates</div>
+                    <div class="collapse rounded show" id="collapse_0">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="admin-dashboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Freebie Dashboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Freebie Dashboard</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link active" href="./admin-analytics.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Analytics"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Analytics</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_1" role="button" aria-controls="collapse_1" data-bs-tooltip="tooltip" data-bs-placement="right" title="Templates">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">apps</i>
+                                </div>
+                                                        <div class="menu-title">Templates</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_templates">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-apps-calendar.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Calendar">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Calendar
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-apps-taskboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Taskboard">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Taskboard
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_ui_elements" role="button"
-                            aria-expanded="" aria-controls="collapse_ui_elements"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
-                            </div>
-                                                    <div class="menu-title">UI Elements</div>
+                    <div class="collapse rounded " id="collapse_1">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-apps-calendar.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Calendar"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Calendar</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-apps-taskboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Taskboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Taskboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">System Interface</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_3" role="button" aria-controls="collapse_3" data-bs-tooltip="tooltip" data-bs-placement="right" title="UI Elements">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">view_quilt</i>
+                                </div>
+                                                        <div class="menu-title">UI Elements</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_ui_elements">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-alerts.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Alerts">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Alerts
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-buttons.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Buttons">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Buttons
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-grid.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Grid & Flexbox">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Grid & Flexbox
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_components" role="button"
-                            aria-expanded="" aria-controls="collapse_components"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
-                            </div>
-                                                    <div class="menu-title">Components</div>
+                    <div class="collapse rounded " id="collapse_3">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-alerts.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Alerts"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Alerts</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-buttons.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Buttons"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Buttons</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-grid.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Grid &amp; Flexbox"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Grid &amp; Flexbox</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_4" role="button" aria-controls="collapse_4" data-bs-tooltip="tooltip" data-bs-placement="right" title="Components">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">extension</i>
+                                </div>
+                                                        <div class="menu-title">Components</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_components">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-toasts.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Toasts">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Toasts
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-timeline.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Timeline">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Timeline
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-carousel.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Carousel">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Carousel
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-tabs.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Tabs">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Tabs
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-progress.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Progress">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Progress
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-modals.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Modals">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Modals
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-ui-popovers.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Popovers & Tooltips">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Popovers & Tooltips
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-source-code.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Source Code">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Source Code
-                                        </a>
-                                    </li>
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-components-hud-elements.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="HUD Elements">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    HUD Elements
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_jobs" role="button"
-                            aria-expanded="" aria-controls="collapse_jobs"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
-                                                        <div class="parent-icon"><i class="material-symbols-rounded">work</i>
-                            </div>
-                                                    <div class="menu-title">Jobs</div>
+                    <div class="collapse rounded " id="collapse_4">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-toasts.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Toasts"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Toasts</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-timeline.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Timeline"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Timeline</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-carousel.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Carousel"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Carousel</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-tabs.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Tabs"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Tabs</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-progress.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Progress"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Progress</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-modals.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Modals"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Modals</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-ui-popovers.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Popovers &amp; Tooltips"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Popovers &amp; Tooltips</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-source-code.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Source Code"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Source Code</a>
+                            </li>
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-components-hud-elements.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="HUD Elements"> <i class="material-symbols-rounded">arrow_right</i>
+                                    HUD Elements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Job Board</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link" data-bs-toggle="collapse" href="#collapse_6" role="button" aria-controls="collapse_6" data-bs-tooltip="tooltip" data-bs-placement="right" title="Jobs">
+                                                            <div class="parent-icon"><i class="material-symbols-rounded">work</i>
+                                </div>
+                                                        <div class="menu-title">Jobs</div>
                             <div class="ms-auto"><i class="material-symbols-rounded">expand_more</i></div>
                         </a>
-                        <div class="collapse  rounded" id="collapse_jobs">
-                            <ul class="nav nav-pills flex-column rounded">
-                                    <li class="admin-nav-item">
-                                        <a class="admin-nav-link "
-                                            href="admin-jobs-dashboard.html" data-bs-tooltip="tooltip"
-                                            data-bs-placement="right" title="Job Dashboard">
-                                                                                        <i class="material-symbols-rounded">arrow_right</i>
-                                                                                    Job Dashboard
-                                        </a>
-                                    </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="admin-nav-item">
-                        <div class="menu-label">Upgrade</div>
-                    </li>
-                    <li class="admin-nav-item px-0 mt-2">
-                        <a class="admin-nav-link bg-success text-dark"
-                            href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"
-                            data-bs-tooltip="tooltip" data-bs-placement="right" title="Get Full Version">
-                                                        <div class="parent-icon">
-                                <i class="material-symbols-rounded">shopping_cart</i>
-                            </div>
-                                                    <div class="menu-title">Purchase PRO Version</div>
-                        </a>
-                    </li>
-</ul>
+                    <div class="collapse rounded " id="collapse_6">
+                        <ul class="nav nav-pills flex-column rounded">
+                            <li class="admin-nav-item">
+                                <a class="admin-nav-link " href="./admin-jobs-dashboard.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Job Dashboard"> <i class="material-symbols-rounded">arrow_right</i>
+                                    Job Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Details</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  " href="./index.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Welcome Page">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">home</i>
+                    </div>
+                                <div class="menu-title">Welcome Page</div>
+                </a>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  " href="./screenshots.html" data-bs-tooltip="tooltip" data-bs-placement="right" title="Screenshots">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">photo_library</i>
+                    </div>
+                                <div class="menu-title">Screenshots</div>
+                </a>
+                </li>
+                <li class="admin-nav-item">
+                    <div class="menu-label">Upgrade</div>
+                </li>
+                <li class="admin-nav-item"> <a class="admin-nav-link  bg-primary text-dark" href="#upgradeModal" data-bs-tooltip="tooltip" data-bs-placement="right" title="Purchase PRO Version" data-bs-toggle="modal" data-bs-target="#upgradeModal">
+                                    <div class="parent-icon">
+                        <i class="material-symbols-rounded">shopping_cart</i>
+                    </div>
+                                <div class="menu-title">Purchase PRO Version</div>
+                </a>
+                </li>
+            </ul>
+            <img src="./images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3 d-md-block d-none" />
         </div>
-        <img src="images/hud/hud-divider-line-2.png" class="img-fluid mx-auto py-1 mt-2 px-3 mb-3 d-md-block d-none" />
         <!-- end sidebar navigation -->
     </aside>
     <!-- END HUI VERTICAL MENU -->
@@ -955,11 +792,11 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb-chevron">
                                 <li class="breadcrumb-item">
-                                    <a href="admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
+                                    <a href="./admin-dashboard.html"> <span class="material-symbols-rounded">home</span>
                                         Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="admin-dashboard.html"> <span class="material-symbols-rounded">folder</span>
+                                    <a href="./admin-dashboard.html"> <span class="material-symbols-rounded">folder</span>
                                         Dashboard</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
@@ -970,34 +807,32 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex justify-content-start justify-content-md-end">
-                    <div class="dashboard-margin">
-                        <div class="dropdown">
-                            <button type="button" class="cpubtn cpubtn-info btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Page Actions</button>
-                            <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                <div class="col-md-6 d-flex justify-content-start justify-content-md-end align-items-start">
+                    <div class="dropdown">
+                        <button type="button" class="cpubtn cpubtn-info btn-sm dropdown-toggle" data-bs-toggle="dropdown" data-bs-boundary="viewport" aria-expanded="false">Page Actions</button>
+                        <ul class="dropdown-menu dropdown-menu-end border shadow shadow-lg">
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">all_inclusive</i>All Activities</a>
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">person_add</i>User Activities</a>
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">payment</i>Payments</a>
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">warning</i>Alerts</a>
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">star</i>Active Awesomeness</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="javascript:;" data-bs-toggle="offcanvas" data-bs-target="#quickActionsOffcanvas"><i class="material-symbols-rounded me-2"
                         style="font-size: 16px;">settings</i>Activity Settings</a>
-                                </li>
-                            </ul>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1025,10 +860,12 @@
                             <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">$47K</p> <span class="badge bg-success rounded-pill fs-6">+3.5%</span>
-                                        <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales"><i
-                                        class="material-symbols-rounded text-primary"
-                                        style="font-size: 1rem;">question_mark</i></span>
+                                        <div class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">$47K</div>
+                                        <div class="d-block p-relative w-100"> <span class="badge bg-success rounded-pill fs-6">+3.5%</span>
+                                            <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's sales"><i
+                                            class="material-symbols-rounded text-primary"
+                                            style="font-size: 1rem;">question_mark</i></span>
+                                        </div>
                                     </div>
                                     <div class="col-6 ps-0">
                                         <div id="minimal-chart" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
@@ -1105,10 +942,12 @@
                             <div class="card-body d-flex flex-column justify-content-end pt-0 pb-1" style="min-height: 140px;">
                                 <div class="row">
                                     <div class="col-6">
-                                        <p class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">42K</p> <span class="badge bg-danger rounded-pill fs-6">-8.0%</span>
-                                        <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's requests"><i
-                                        class="material-symbols-rounded text-primary"
-                                        style="font-size: 1rem;">question_mark</i></span>
+                                        <div class="font-sans-serif lh-1 mb-2 pt-0 pb-2 mt-n1 stat-number">42K</div>
+                                        <div class="d-block p-relative w-100"> <span class="badge bg-danger rounded-pill fs-6">-8.0%</span>
+                                            <span class="ms-1 text-400" data-bs-toggle="tooltip" data-bs-placement="top" title="Calculated according to last week's requests"><i
+                                            class="material-symbols-rounded text-primary"
+                                            style="font-size: 1rem;">question_mark</i></span>
+                                        </div>
                                     </div>
                                     <div class="col-6 ps-0">
                                         <div id="minimal-chart-3" class="h-100" style="height: 100px; padding-top: 0px;width:100%;">
@@ -1888,7 +1727,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="pe-3">
-                                            <img src="images/uv/watermark-logo.png" class="img-fluid" />
+                                            <img src="./images/uv/watermark-logo.png" class="img-fluid" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -2020,7 +1859,7 @@
                 <div class="offcanvas-body">
                     <div class="menu-header orbitron">Navigation</div>
                     <div class="list-group list-group-flush">
-                        <a href="admin-dashboard.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">dashboard</span>
+                        <a href="./admin-dashboard.html" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">dashboard</span>
                             Main Dashboard</a>
                         <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal" class="list-group-item list-group-item-action"> <span class="material-symbols-rounded">widgets</span>
                             Widgets</a>
@@ -2138,9 +1977,87 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
     <!-- Anime.js 3.2.1 from CDN for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- BProgress Loading Indicator -->
     <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <script>
+    (function () {
+        function initBProgressEarly() {
+          try {
+            if (window.__BPROGRESS_PAGE_STARTED__) return true
+            var API = null
+            if (window.BProgressJS) {
+              API = window.BProgressJS.BProgress || window.BProgressJS.default || window.BProgressJS
+            } else if (typeof window.BProgress === 'function') {
+              API = window.BProgress
+            }
+            if (!API) return false
+    
+            // Prefer singleton static API if available
+            if (typeof API.start === 'function') {
+              window.__BPROGRESS_PAGE__ = API
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              API.start()
+            } else {
+              // Fallback: try to instantiate
+              var inst = null
+              try { inst = new API({ position: 'top', height: 3, color: '#0d6efd' }) } catch (e1) {
+                try { inst = new API() } catch (e2) { inst = null }
+              }
+              if (!inst) return false
+              window.__BPROGRESS_PAGE__ = inst
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              var start = inst.start || inst.show || inst.begin
+              if (typeof start === 'function') start.call(inst)
+            }
+    
+            function finish() {
+              if (!window.__BPROGRESS_PAGE__) return
+              var p = window.__BPROGRESS_PAGE__
+              // Singleton
+              if (typeof p.finish === 'function' && p === API) {
+                p.finish()
+                window.__BPROGRESS_PAGE_STARTED__ = false
+                return
+              }
+              // Instance
+              var f = p.finish || p.complete || p.hide || p.end
+              if (typeof f === 'function') {
+                f.call(p)
+                window.__BPROGRESS_PAGE_STARTED__ = false
+              } else if (typeof p.set === 'function') {
+                p.set(100)
+                setTimeout(function () {
+                  var el = document.querySelector('[data-bprogress]') ||
+                           document.querySelector('.bprogress') ||
+                           document.querySelector('#bprogress')
+                  if (el && el.parentNode) el.parentNode.removeChild(el)
+                  window.__BPROGRESS_PAGE_STARTED__ = false
+                }, 500)
+              }
+            }
+    
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', finish)
+            } else {
+              setTimeout(finish, 0)
+            }
+    
+            return true
+          } catch (e) {
+            return false
+          }
+        }
+    
+        if (!initBProgressEarly()) {
+          var tries = 0
+          var id = setInterval(function () {
+            tries++
+            if (initBProgressEarly() || tries >= 40) clearInterval(id)
+          }, 25)
+        }
+      })()
+    </script>
     <!-- end core javascript libraries -->
     <!-- start chart & visualization libraries -->
     <!-- ApexCharts JS -->
@@ -2186,124 +2103,12 @@
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <!-- xterm.js Terminal -->
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.7.0/lib/xterm-addon-fit.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.11.0/lib/addon-web-links.min.js"></script>
     <!-- end UI component libraries -->
     <!-- end CDN scripts -->
     <!-- Jquery Free JSON Table (local asset) -->
     <script src="./js/JsonTable.js"></script>
-    <!-- start custom application scripts -->
-    <!-- end custom application scripts -->
-    <!-- start site-wide javascript -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-            const viewportDebugger = document.getElementById('viewport-debugger');
-            if (viewportDebugger) {
-                viewportDebugger.addEventListener('click', function() {
-                    this.remove();
-                });
-            }
-
-            // BProgress Configuration
-            const {
-                BProgress
-            } = BProgressJS;
-            BProgress.configure({
-                color: '#FF3300', // RED
-                height: '6px',
-                position: 'top',
-                showSpinner: false,
-                trickleSpeed: 200,
-                minimum: 0.08
-            });
-
-            // Global BProgress functions for easy access
-            window.showProgress = () => {
-                BProgress.start();
-            };
-            window.hideProgress = () => BProgress.done();
-
-            window.setProgress = (percent) => {
-                BProgress.set(percent);
-            };
-
-            // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
-            document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => {
-                el.addEventListener('click', Lightbox.initialize);
-            });
-
-            // Auto-trigger BProgress on dropdown item clicks
-            document.addEventListener('click', function(e) {
-                // Check if clicked element is a dropdown item
-                const dropdownItem = e.target.closest('.dropdown-item');
-                if (dropdownItem) {
-                    // Skip if it's a divider or disabled
-                    if (dropdownItem.classList.contains('dropdown-divider') ||
-                        dropdownItem.classList.contains('disabled') ||
-                        dropdownItem.hasAttribute('disabled')) {
-                        return;
-                    }
-
-                    // Skip if it's a JavaScript link (no real action)
-                    const href = dropdownItem.getAttribute('href');
-                    if (href === 'javascript:;' || href === '#') {
-                        return;
-                    }
-
-                    // Skip if it's an admin navigation link (handled by page transition)
-                    if (href && (href.startsWith('/admin') || href.includes('admin.'))) {
-                        return;
-                    }
-
-                    console.log('Dropdown item clicked, triggering BProgress');
-
-                    // Quick BProgress sequence
-                    BProgress.start();
-                    setTimeout(() => BProgress.set(30), 100);
-                    setTimeout(() => BProgress.set(60), 200);
-                    setTimeout(() => BProgress.set(90), 300);
-                    setTimeout(() => BProgress.done(), 400);
-                }
-            });
-
-            // BProgress on page navigation
-            // Intercept all admin navigation links
-            document.addEventListener('click', function(e) {
-                const link = e.target.closest('a[href]');
-                if (!link) return;
-
-                // Only handle admin links
-                const href = link.getAttribute('href');
-                if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.includes('://'))
-                    return;
-                if (!href.startsWith('/admin') && !href.includes('admin.')) return;
-
-                console.log("Admin navigation detected, starting BProgress");
-
-                // Start BProgress for navigation
-                BProgress.start();
-
-                // Let the navigation happen naturally
-            });
-
-            // Page load - BProgress only
-            window.addEventListener('load', function() {
-                // Start BProgress for page load
-                BProgress.start();
-                setTimeout(() => BProgress.set(50), 100);
-                setTimeout(() => BProgress.set(80), 200);
-                setTimeout(() => BProgress.set(100), 300);
-
-                // Complete BProgress
-                setTimeout(() => {
-                    BProgress.done();
-                }, 400);
-            });
-        });
-    </script>
-    <!-- end site-wide javascript -->
     <!-- start page-specific scripts -->
     <script>
     // Helper function to get CSS variables for theme-aware charts
@@ -2491,8 +2296,6 @@
                 return;
             }
 
-            console.log('Initializing dashboard chart...');
-
             // Generate demo data for the last 12 months
             const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             const revenueData = [45000, 52000, 48000, 61000, 55000, 67000, 72000, 68000, 75000, 82000, 78000, 89000];
@@ -2645,7 +2448,6 @@
                 const chart = new ApexCharts(chartElement, options);
                 chart.render();
                 chartElement.__apexChart = chart;
-                console.log('Dashboard chart rendered successfully');
             } catch (error) {
                 console.error('Error creating dashboard chart:', error);
             }
@@ -2797,7 +2599,6 @@
             try {
                 const donutChart = new ApexCharts(donutElement, donutOptions);
                 donutChart.render();
-                console.log('Donut chart rendered successfully');
             } catch (error) {
                 console.error('Error creating donut chart:', error);
             }
@@ -3026,156 +2827,9 @@
         });
     </script>
     <!-- end page-specific scripts -->
-    <!-- start additional utilities -->
-    <script>
-    // Store menu preference
-                    sessionStorage.setItem('menu_type', 'vertical');
-        
-        // Menu toggle links work normally - middleware handles cookie setting and page reload
-
-        // Fix cosmic wave overflow by constraining the SVG without breaking functionality
-        function fixCosmicWaveOverflow() {
-            const cosmicWaves = document.querySelectorAll('cosmic-wave svg');
-            cosmicWaves.forEach(svg => {
-                // Only fix the sizing, don't change the viewBox
-                svg.style.width = '100%';
-                svg.style.height = '100%';
-                svg.style.maxWidth = '100%';
-                svg.style.overflow = 'hidden';
-            });
-        }
-
-        // Run immediately and also after a delay to catch dynamically loaded waves
-        document.addEventListener('DOMContentLoaded', fixCosmicWaveOverflow);
-        setTimeout(fixCosmicWaveOverflow, 100);
-        setTimeout(fixCosmicWaveOverflow, 500);
-        setTimeout(fixCosmicWaveOverflow, 1000);
-
-        // Use MutationObserver to catch when cosmic wave SVGs are added dynamically
-        if (typeof MutationObserver !== 'undefined') {
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.type === 'childList') {
-                        mutation.addedNodes.forEach(function(node) {
-                            if (node.nodeType === 1) { // Element node
-                                if (node.tagName === 'COSMIC-WAVE' || node.querySelector(
-                                        'cosmic-wave')) {
-                                    setTimeout(fixCosmicWaveOverflow, 50);
-                                }
-                            }
-                        });
-                    }
-                });
-            });
-
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true
-            });
-        }
-
-        // Sidebar hover functionality for collapsed state
-        function initSidebarHover() {
-            const sidebar = document.querySelector('.sidebar-wrapper');
-            const body = document.body;
-
-            if (!sidebar) return;
-
-            // Only apply hover behavior when sidebar is toggled (collapsed)
-            function handleSidebarHover() {
-                if (body.classList.contains('toggled')) {
-                    sidebar.addEventListener('mouseenter', function() {
-                        body.classList.add('sidebar-hovered');
-                    });
-
-                    sidebar.addEventListener('mouseleave', function() {
-                        body.classList.remove('sidebar-hovered');
-                    });
-                }
-            }
-
-            // Initialize on page load
-            handleSidebarHover();
-
-            // Re-initialize when toggle state changes
-            const toggleButton = document.querySelector('.btn-toggle');
-            if (toggleButton) {
-                toggleButton.addEventListener('click', function() {
-                    // Wait for the toggle animation to complete
-                    setTimeout(handleSidebarHover, 300);
-                });
-            }
-        }
-
-        // Initialize sidebar hover when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initSidebarHover);
-        } else {
-            initSidebarHover();
-        }
-    </script>
-    <!-- end additional utilities -->
-    <!-- Material Icons Font Loading Detection -->
-    <script>
-    // Function to mark icons as loaded
-        function markIconsAsLoaded() {
-            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
-                icon.classList.add('material-symbols-rounded--loaded');
-                icon.style.color = '';
-            });
-        }
-
-        // Use Font Loading API to detect when Material Symbols is loaded
-        if ('fonts' in document) {
-            document.fonts.ready.then(function() {
-                markIconsAsLoaded();
-                console.log('Material Symbols font loaded');
-            });
-        } else {
-            // Fallback for browsers that don't support Font Loading API
-            setTimeout(markIconsAsLoaded, 100);
-        }
-
-        // Also mark icons as loaded immediately to prevent flickering
-        // The font is usually cached after first page load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
-        } else {
-            markIconsAsLoaded();
-        }
-
-        // Watch for dynamically added icons (e.g., from AJAX content)
-        const iconObserver = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1) { // Element node
-                        // Check if the node itself is an icon
-                        if (node.classList && (node.classList.contains(
-                                'material-symbols-rounded') || node.classList.contains(
-                                'material-icons'))) {
-                            node.classList.add('material-symbols-rounded--loaded');
-                        }
-                        // Check for icons within the added node
-                        if (node.querySelectorAll) {
-                            node.querySelectorAll('.material-symbols-rounded, .material-icons')
-                                .forEach(function(icon) {
-                                    icon.classList.add('material-symbols-rounded--loaded');
-                                });
-                        }
-                    }
-                });
-            });
-        });
-
-        // Start observing the document body for changes
-        iconObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/basic.js"></script>
-    <script src="./js/freebie.js?v=76ed1217"></script>
+    <script src="./js/admin-inline-utils.js"></script>
+    <script src="./js/admin-static-shim.js"></script>
+    <script src="./js/search-popup-shim.js"></script>
 <!-- Upgrade to Pro Modal -->
 <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -3208,6 +2862,34 @@
     </div>
   </div>
 </div>
+
+    <!-- Material Icons Font Loading Detection -->
+    <script>
+        // Function to mark icons as loaded
+        function markIconsAsLoaded() {
+            document.querySelectorAll('.material-symbols-rounded, .material-icons').forEach(function(icon) {
+                icon.classList.add('material-symbols-rounded--loaded');
+                icon.style.color = '';
+            });
+        }
+
+        // Use Font Loading API to detect when Material Symbols is loaded
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                markIconsAsLoaded();
+            });
+        } else {
+            // Fallback for browsers that don't support Font Loading API
+            setTimeout(markIconsAsLoaded, 100);
+        }
+
+        // Also mark icons as loaded immediately to prevent flickering
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', markIconsAsLoaded);
+        } else {
+            markIconsAsLoaded();
+        }
+    </script>
 </body>
 
 </html>

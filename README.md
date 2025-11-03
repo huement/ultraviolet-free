@@ -23,7 +23,7 @@
 ## 🌟 Preview
 
 <div align="center">
-  <img src="images/promo/dashbooard-preview.png" alt="Dashboard Preview" width="100%">
+  <img src="images/promo/dashboard-preview.png" alt="Dashboard Preview" width="100%">
   <p><em>Main Dashboard - Real-time metrics with stunning visual effects</em></p>
 </div>
 
@@ -152,7 +152,7 @@ ultraviolet-free/
 
 ## 🎯 What Makes UltraViolet Special?
 
-### 🌈 **Unique UltraDash Theme**
+### 🌈 **Unique UltraViolet Theme**
 UltraViolet isn't just another admin template. It features:
 - **Vibrant ultraviolet color palette** that stands out
 - **HUD-style components** inspired by sci-fi interfaces

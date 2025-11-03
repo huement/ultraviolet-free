@@ -4,22 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="J4gc7pBYcQ4S04kaXdvRsLbDpr3rRUdKaKP0eYPu">
+    <meta name="csrf-token" content="Ol515z2jGDbRDVomWvSSagcTDKDaYD4Rqg0wa4sl">
     <title>Freebie | UltraViolet</title>
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <!-- Google Fonts & Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Preload Material Icons font to prevent FOUC -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=block">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <!-- Bootstrap Icon Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- Prevent Material Icons FOUC -->
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
+    <style type="text/css">
+    .material-symbols-rounded,
         .material-icons {
             font-size: 24px;
             line-height: 1;
@@ -33,20 +32,17 @@
             white-space: nowrap;
         }
     
-        /* Hide icon text content until font loads */
         .material-symbols-rounded:not(.material-symbols-rounded--loaded),
         .material-icons:not(.material-icons--loaded) {
             color: transparent;
             user-select: none;
         }
     
-        /* Ensure icons are visible when loaded */
         .material-symbols-rounded--loaded,
         .material-icons--loaded {
             color: inherit;
         }
     
-        /* Fix navbar icon alignment specifically */
         .ultraviolet-action-bar .navbar-nav .nav-link {
             display: flex;
             align-items: center;
@@ -59,7 +55,6 @@
             padding: 0;
         }
     
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
         .material-icons {
             font-family: 'Material Symbols Rounded' !important;
             font-weight: normal !important;
@@ -91,8 +86,8 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
     <!-- Grid JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
-    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static-4OhMhqXa.js) -->
-    <link id="prism-theme-link" href="css/hui-prism.min.css" rel="stylesheet" />
+    <!-- Prism.js for code highlighting (theme loaded dynamically by admin-static.js) -->
+    <link id="prism-theme-link" href="./assets/hui-prism.min.css" rel="stylesheet" />
     <!-- BProgress Loading Indicator -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.css">
     <!-- Form Enhancement CSS -->
@@ -102,76 +97,16 @@
     <!-- Flatpickr -->
     <link href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.css" rel="stylesheet">
     <!-- BS5 Lightbox - Image Modal Gallery -->
-    <link href="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.css" rel="stylesheet">
+    <!-- Note: bs5-lightbox doesn't require a separate CSS file, it uses Bootstrap's modal/carousel styles -->
     <!-- FullCalendar CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
+    <!-- Note: FullCalendar CSS is typically included via themes or bundled with the main package -->
     <!-- xterm.js Terminal CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
     <!-- start vite CSS & JS -->
-    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap-5.3.css" />
     <link rel="stylesheet" href="./assets/docs.css">
-    <style>
-    /* Reserve space for icons before font loads */
-        .material-symbols-rounded,
-        .material-icons {
-            font-size: 24px;
-            line-height: 1;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            font-feature-settings: 'liga';
-            vertical-align: middle;
-            overflow: hidden;
-            text-overflow: clip;
-            white-space: nowrap;
-        }
-    
-        /* Hide icon text content until font loads */
-        .material-symbols-rounded:not(.material-symbols-rounded--loaded),
-        .material-icons:not(.material-icons--loaded) {
-            color: transparent;
-            user-select: none;
-        }
-    
-        /* Ensure icons are visible when loaded */
-        .material-symbols-rounded--loaded,
-        .material-icons--loaded {
-            color: inherit;
-        }
-    
-        /* Fix navbar icon alignment specifically */
-        .ultraviolet-action-bar .navbar-nav .nav-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-symbols-rounded,
-        .ultraviolet-action-bar .navbar-nav .nav-link .material-icons {
-            margin: 0;
-            padding: 0;
-        }
-    
-        /* AI ENFORCEMENT: Ensure all icons use Material Symbols Rounded */
-        .material-icons {
-            font-family: 'Material Symbols Rounded' !important;
-            font-weight: normal !important;
-            font-style: normal !important;
-            font-size: 24px !important;
-            line-height: 1 !important;
-            letter-spacing: normal !important;
-            text-transform: none !important;
-            display: inline-block !important;
-            white-space: nowrap !important;
-            word-wrap: normal !important;
-            direction: ltr !important;
-            -webkit-font-feature-settings: 'liga' !important;
-            -webkit-font-smoothing: antialiased !important;
-            text-rendering: optimizeLegibility !important;
-            font-feature-settings: 'liga' !important;
-            vertical-align: middle !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/huement-sites.css">
+    <!-- end vite CSS & JS -->
     <style>
     @keyframes logoPulse {
             0% {
@@ -215,51 +150,6 @@
             filter: drop-shadow(0 6px 12px rgba(138, 43, 226, 0.4)) !important;
         }
     </style>
-    <!-- end vite CSS & JS -->
-</head>
-<style>
-    @keyframes logoPulse {
-                0% {
-                    transform: scale(1);
-                    opacity: 0.3;
-                }
-    
-                100% {
-                    transform: scale(1.1);
-                    opacity: 0.6;
-                }
-            }
-    
-            @keyframes gradientShift {
-                0% {
-                    background-position: 0% 50%;
-                }
-    
-                50% {
-                    background-position: 100% 50%;
-                }
-    
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-    
-            .logo-container {
-                transition: transform 0.3s ease;
-            }
-    
-            .logo-container:hover {
-                transform: scale(1.05);
-            }
-    
-            .logo-main {
-                transition: all 0.3s ease;
-            }
-    
-            .logo-container:hover .logo-main {
-                filter: drop-shadow(0 6px 12px rgba(138, 43, 226, 0.4)) !important;
-            }
-</style>
 </head>
 
 <body class="font-sans antialiased basic-layout ">
@@ -268,9 +158,9 @@
             <div class="container-fluid position-relative py-2">
                 <div class="docs-logo-wrapper">
                     <div class="site-logo"> <a class="navbar-brand" href="index.html">
-                            <img class="logo-icon me-2" src="images/uv/UV.png" width="45"
+                            <img class="logo-icon me-2" src="./images/uv/UV.png" width="45"
                                 alt="logo">
-                            <span class="logo-text"><img src="images/uv/ultra-white.png"
+                            <span class="logo-text"><img src="./images/uv/ultra-white.png"
                                     class="img-fluid" alt="UltraViolet Logo Text" width="170" height="17"></span>
                         </a>
                     </div>
@@ -308,12 +198,12 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-10">
                     <div class="w-100 d-block pt-4 pb-3">
-                        <img src="images/promo/dashbooard-preview.png" class="img-fluid rounded shadow-lg" alt="UltraViolet Dashboard Preview">
+                        <img src="./images/promo/dashboard-preview.png" class="img-fluid rounded shadow-lg" alt="UltraViolet Dashboard Preview">
                     </div>
                     <h1 class="display-3 fw-bold text-dark mb-3 mt-4">Welcome to <span class="text-white">UltraViolet</span> FREE</h1>
                     <p class="lead text-dark mb-4 mx-auto" style="max-width: 700px;">Experience the power of UltraViolet with this free edition. Get a taste of modern Bootstrap 5 admin dashboard design with production-ready HTML templates. Perfect for small projects and learning.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="admin-dashboard.html" class="btn btn-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">dashboard</i>
+                        <a href="./admin-dashboard.html" class="btn btn-dark btn-lg px-5"> <i class="material-symbols-rounded me-2">dashboard</i>
                             Explore Free Dashboard</a>
                         <a href="screenshots.html" class="btn btn-primary btn-lg px-5"> <i class="material-symbols-rounded me-2">photo_library</i>
                             View All Screenshots</a>
@@ -324,45 +214,6 @@
             </div>
         </div>
     </div>
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3 text-dark">See UltraViolet in Action</h2>
-                <p class="lead text-muted">Explore all the pages and components available in the PRO version</p>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card border-0 shadow-lg">
-                        <div class="card-body p-5 text-center">
-                            <div class="mb-4"> <i class="material-symbols-rounded text-primary mb-3" style="font-size: 80px;">photo_library</i>
-                                <h3 class="h2 fw-bold mb-3">Complete Screenshot Gallery</h3>
-                                <p class="lead text-muted mb-4">Browse through 80+ pages of the PRO version. See dashboards, applications, ecommerce pages, crypto platforms, and much more in high resolution.</p>
-                            </div>
-                            <div class="row g-3 mb-4">
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-center justify-content-center"> <i class="material-symbols-rounded text-success me-2">dashboard</i>
-                                        <span><strong>15+ Dashboards</strong></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-center justify-content-center"> <i class="material-symbols-rounded text-info me-2">apps</i>
-                                        <span><strong>10+ Applications</strong></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="d-flex align-items-center justify-content-center"> <i class="material-symbols-rounded text-warning me-2">shopping_cart</i>
-                                        <span><strong>Ecommerce Suite</strong></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="screenshots.html" class="btn btn-primary btn-lg px-5"> <i class="material-symbols-rounded me-2">visibility</i>
-                                View Screenshot Gallery</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="py-5 bg-dark">
         <div class="container">
             <div class="text-center mb-5">
@@ -397,9 +248,9 @@
             </div>
             <div class="row g-4 mt-2">
                 <div class="col-md-6">
-                    <div class="card shadow-lg border-0 h-100"> <a href="images/promo/outrun-hud.png" data-toggle="lightbox" data-caption="Vertical Sidebar Layout">
+                    <div class="card shadow-lg border-0 h-100"> <a href="./images/promo/outrun-hud.png" data-toggle="lightbox" data-caption="Vertical Sidebar Layout">
                             <div
-                                style="height: 250px; background-image: url('images/promo/outrun-hud.png'); background-size: cover; background-position: center; cursor: pointer;">
+                                style="height: 250px; background-image: url('./images/promo/outrun-hud.png'); background-size: cover; background-position: center; cursor: pointer;">
                             </div>
                         </a>
                         <div class="card-body p-4">
@@ -411,9 +262,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card shadow-lg border-0 h-100"> <a href="images/promo/dashbooard-preview.png" data-toggle="lightbox" data-caption="Light & Dark Themes">
+                    <div class="card shadow-lg border-0 h-100"> <a href="./images/promo/dashboard-preview.png" data-toggle="lightbox" data-caption="Light & Dark Themes">
                             <div
-                                style="height: 250px; background-image: url('images/promo/dashbooard-preview.png'); background-size: cover; background-position: center; cursor: pointer;">
+                                style="height: 250px; background-image: url('./images/promo/dashboard-preview.png'); background-size: cover; background-position: center; cursor: pointer;">
                             </div>
                         </a>
                         <div class="card-body p-4">
@@ -510,8 +361,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 text-center"> <a href="images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design">
-                                <img src="images/promo/hud-menu.png" class="img-fluid rounded shadow"
+                        <div class="col-lg-4 text-center"> <a href="./images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design">
+                                <img src="./images/promo/hud-menu.png" class="img-fluid rounded shadow"
                                     alt="UltraViolet Design" style="max-height: 250px;">
                             </a>
                         </div>
@@ -531,9 +382,9 @@
                 <p class="lead text-white-50">Upgrade to PRO and get 80+ pages, dual layouts, complete applications, and so much more</p>
             </div>
             <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
-                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design System">
+                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="./images/promo/hud-menu.png" data-toggle="lightbox" data-caption="Outrun HUD Design System">
                         <div class="rounded shadow-lg"
-                            style="height: 350px; background-image: url('images/promo/hud-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
+                            style="height: 350px; background-image: url('./images/promo/hud-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
                         </div>
                     </a>
                 </div>
@@ -558,9 +409,9 @@
                 </div>
             </div>
             <div class="row align-items-center mb-5 pb-4 border-bottom border-secondary">
-                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0"> <a href="images/promo/horizontal-menu.png" data-toggle="lightbox" data-caption="Horizontal Mega Menu Layout">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0"> <a href="./images/promo/horizontal-menu.png" data-toggle="lightbox" data-caption="Horizontal Mega Menu Layout">
                         <div class="rounded shadow-lg"
-                            style="height: 350px; background-image: url('images/promo/horizontal-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
+                            style="height: 350px; background-image: url('./images/promo/horizontal-menu.png'); background-size: cover; background-position: center; cursor: pointer;">
                         </div>
                     </a>
                 </div>
@@ -588,9 +439,9 @@
                 </div>
             </div>
             <div class="row align-items-center mb-5">
-                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="images/promo/animated-backgrounds.png" data-toggle="lightbox" data-caption="Animated Background Effects">
+                <div class="col-lg-6 mb-4 mb-lg-0"> <a href="./images/promo/animated-backgrounds.png" data-toggle="lightbox" data-caption="Animated Background Effects">
                         <div class="rounded shadow-lg"
-                            style="height: 350px; background-image: url('images/promo/animated-backgrounds.png'); background-size: cover; background-position: center; cursor: pointer;">
+                            style="height: 350px; background-image: url('./images/promo/animated-backgrounds.png'); background-size: cover; background-position: center; cursor: pointer;">
                         </div>
                     </a>
                 </div>
@@ -760,9 +611,9 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-5"> <a href="images/promo/app-taskboard.png" data-toggle="lightbox" data-caption="Application Taskboard Example">
+            <div class="text-center mt-5"> <a href="./images/promo/app-taskboard.png" data-toggle="lightbox" data-caption="Application Taskboard Example">
                     <div class="rounded shadow-lg mb-4 mx-auto"
-                        style="height: 400px; max-width: 800px; background-image: url('images/promo/app-taskboard.png'); background-size: cover; background-position: center; cursor: pointer;">
+                        style="height: 400px; max-width: 800px; background-image: url('./images/promo/app-taskboard.png'); background-size: cover; background-position: center; cursor: pointer;">
                     </div>
                 </a>
                 <p class="lead text-white"> <strong>Plus:</strong> Advanced forms, data tables, multiple chart types, maps, authentication pages, user management, and much more!</p>
@@ -942,7 +793,7 @@
             <div class="mb-4">
                 <div class="d-flex justify-content-center align-items-center mb-3">
                     <div class="logo-container position-relative">
-                        <img src="images/uv/double-logo-white.png" alt="UltraViolet" class="logo-main" height="250" />
+                        <img src="./images/uv/double-logo-white.png" alt="UltraViolet" class="logo-main" height="250" />
                     </div>
                 </div>
             </div>
@@ -951,7 +802,7 @@
             <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
                 <a class="btn btn-dark btn-lg px-5" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upgradeModal"> <i class="material-symbols-rounded me-2">shopping_cart</i>
                     Purchase PRO Version</a>
-                <a class="btn btn-outline-dark btn-lg px-5" href="admin-dashboard.html"> <i class="material-symbols-rounded me-2">dashboard</i>
+                <a class="btn btn-outline-dark btn-lg px-5" href="./admin-dashboard.html"> <i class="material-symbols-rounded me-2">dashboard</i>
                     Explore FREE Dashboard</a>
             </div>
             <div class="row justify-content-center mt-5">
@@ -1068,9 +919,87 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
     <!-- Anime.js 3.2.1 from CDN for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" xintegrity="sha512-z4OUqw38qNLpn10FRBYOaoAs8I9p/4oe5sFCoqtkjW9bECEkaOUxxaSCK3DbnZSM37SGS/+7klGPWcUHuOp5Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- BProgress Loading Indicator -->
     <script src="https://cdn.jsdelivr.net/npm/@bprogress/core/dist/index.global.js"></script>
+    <script>
+    (function () {
+        function initBProgressEarly() {
+          try {
+            if (window.__BPROGRESS_PAGE_STARTED__) return true
+            var API = null
+            if (window.BProgressJS) {
+              API = window.BProgressJS.BProgress || window.BProgressJS.default || window.BProgressJS
+            } else if (typeof window.BProgress === 'function') {
+              API = window.BProgress
+            }
+            if (!API) return false
+    
+            // Prefer singleton static API if available
+            if (typeof API.start === 'function') {
+              window.__BPROGRESS_PAGE__ = API
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              API.start()
+            } else {
+              // Fallback: try to instantiate
+              var inst = null
+              try { inst = new API({ position: 'top', height: 3, color: '#0d6efd' }) } catch (e1) {
+                try { inst = new API() } catch (e2) { inst = null }
+              }
+              if (!inst) return false
+              window.__BPROGRESS_PAGE__ = inst
+              window.__BPROGRESS_PAGE_STARTED__ = true
+              var start = inst.start || inst.show || inst.begin
+              if (typeof start === 'function') start.call(inst)
+            }
+    
+            function finish() {
+              if (!window.__BPROGRESS_PAGE__) return
+              var p = window.__BPROGRESS_PAGE__
+              // Singleton
+              if (typeof p.finish === 'function' && p === API) {
+                p.finish()
+                window.__BPROGRESS_PAGE_STARTED__ = false
+                return
+              }
+              // Instance
+              var f = p.finish || p.complete || p.hide || p.end
+              if (typeof f === 'function') {
+                f.call(p)
+                window.__BPROGRESS_PAGE_STARTED__ = false
+              } else if (typeof p.set === 'function') {
+                p.set(100)
+                setTimeout(function () {
+                  var el = document.querySelector('[data-bprogress]') ||
+                           document.querySelector('.bprogress') ||
+                           document.querySelector('#bprogress')
+                  if (el && el.parentNode) el.parentNode.removeChild(el)
+                  window.__BPROGRESS_PAGE_STARTED__ = false
+                }, 500)
+              }
+            }
+    
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', finish)
+            } else {
+              setTimeout(finish, 0)
+            }
+    
+            return true
+          } catch (e) {
+            return false
+          }
+        }
+    
+        if (!initBProgressEarly()) {
+          var tries = 0
+          var id = setInterval(function () {
+            tries++
+            if (initBProgressEarly() || tries >= 40) clearInterval(id)
+          }, 25)
+        }
+      })()
+    </script>
     <!-- end core javascript libraries -->
     <!-- start chart & visualization libraries -->
     <!-- ApexCharts JS -->
@@ -1116,13 +1045,9 @@
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <!-- xterm.js Terminal -->
     <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.7.0/lib/xterm-addon-fit.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.11.0/lib/addon-web-links.min.js"></script>
     <!-- end UI component libraries -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/basic.js"></script>
-
-
     <script>
     // Initialize BS5 Lightbox for all images with data-toggle="lightbox"
         document.addEventListener('DOMContentLoaded', function() {
@@ -1131,433 +1056,7 @@
             });
         });
     </script>
-    <script>
-    // Essential functionality for static export (no ES modules)
-        document.addEventListener('DOMContentLoaded', function() {
-          // Sidebar toggle functionality
-          const toggleBtn = document.querySelector('.btn-toggle');
-          const sidebar = document.querySelector('.sidebar-wrapper');
-          const overlay = document.querySelector('.overlay');
-          
-          if (toggleBtn && sidebar) {
-            toggleBtn.addEventListener('click', function(e) {
-              e.preventDefault();
-              
-              if (window.innerWidth < 992) {
-                // Mobile: offcanvas behavior
-                sidebar.classList.toggle('mobile-open');
-                if (overlay) {
-                  if (sidebar.classList.contains('mobile-open')) {
-                    overlay.style.display = 'block';
-                    setTimeout(() => {
-                      overlay.style.opacity = '1';
-                      overlay.style.visibility = 'visible';
-                    }, 10);
-                  } else {
-                    overlay.style.opacity = '0';
-                    overlay.style.visibility = 'hidden';
-                    setTimeout(() => overlay.style.display = 'none', 300);
-                  }
-                }
-              } else {
-                // Desktop: collapsed sidebar
-                document.body.classList.toggle('toggled');
-                
-                if (document.body.classList.contains('toggled')) {
-                  sidebar.addEventListener('mouseenter', function() {
-                    document.body.classList.add('sidebar-hovered');
-                  });
-                  sidebar.addEventListener('mouseleave', function() {
-                    document.body.classList.remove('sidebar-hovered');
-                  });
-                }
-              }
-            });
-          }
-          
-          // Close sidebar on overlay click
-          if (overlay) {
-            overlay.addEventListener('click', function() {
-              document.body.classList.remove('toggled', 'sidebar-hovered');
-              if (sidebar) {
-                sidebar.classList.remove('mobile-open');
-                overlay.style.opacity = '0';
-                overlay.style.visibility = 'hidden';
-                setTimeout(() => overlay.style.display = 'none', 300);
-              }
-            });
-          }
-          
-          // Initialize Bootstrap components
-          if (typeof bootstrap !== 'undefined') {
-            // Popovers
-            [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-              .map(el => new bootstrap.Popover(el));
-            
-            // Dropdowns
-            [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-              .map(el => new bootstrap.Dropdown(el));
-          }
-          
-          // Initialize SimpleBar if available
-          if (typeof SimpleBar !== 'undefined') {
-            document.querySelectorAll('[data-simplebar]').forEach(el => {
-              new SimpleBar(el, { autoHide: false });
-            });
-          }
-          
-          // Watch for body style changes (Bootstrap offcanvas adds overflow: hidden)
-          // When offcanvas opens, add mobile-menu-open class to body
-          const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-              if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                const style = document.body.getAttribute('style');
-                if (style && style.includes('overflow: hidden')) {
-                  document.body.classList.add('mobile-menu-open');
-                } else if (!style || !style.includes('overflow: hidden')) {
-                  document.body.classList.remove('mobile-menu-open');
-                }
-              }
-            });
-          });
-          
-          observer.observe(document.body, {
-            attributes: true,
-            attributeFilter: ['style']
-          });
-          
-          // Fixed header toggle (horizontal layout only)
-          const fixedHeaderToggle = document.querySelector('[data-bs-title="Toggle Fixed Header"]');
-          if (fixedHeaderToggle) {
-            const header = document.querySelector('.ultraviolet-action-bar');
-            const icon = fixedHeaderToggle.querySelector('.material-symbols-rounded');
-            
-            // No localStorage - server controls initial state via exported HTML
-            
-            // Toggle handler
-            fixedHeaderToggle.addEventListener('click', function(e) {
-              e.preventDefault();
-              if (header) {
-                header.classList.toggle('fixed-to-top');
-                
-                // Toggle icon color
-                if (icon) {
-                  icon.classList.toggle('text-primary');
-                }
-                
-                // Toggle background
-                this.classList.toggle('bg-info');
-                
-                // Toggle body class
-                document.body.classList.toggle('fixed-top-header');
-              }
-            });
-          }
-          
-          // Initialize settings menu toggle
-          const settingsToggle = document.getElementById('admin-settings-toggle');
-          const settingsMenu = document.getElementById('admin-settings-menu');
-          let isSettingsMenuOpen = false;
-          
-          if (settingsToggle && settingsMenu) {
-            settingsToggle.addEventListener('click', (e) => {
-              e.preventDefault();
-              isSettingsMenuOpen = !isSettingsMenuOpen;
-              
-              if (isSettingsMenuOpen) {
-                settingsMenu.classList.add('show');
-              } else {
-                settingsMenu.classList.remove('show');
-              }
-            });
-            
-            // Close settings menu when clicking outside
-            document.addEventListener('click', (e) => {
-              if (isSettingsMenuOpen && !settingsMenu.contains(e.target) && !settingsToggle.contains(e.target)) {
-                isSettingsMenuOpen = false;
-                settingsMenu.classList.remove('show');
-              }
-            });
-          }
-          
-          // Handle RTL toggle switch (enhanced with client-side styling)
-          const rtlSwitch = document.getElementById('admin-rtl-switch');
-          if (rtlSwitch) {
-            // Check for RTL preference in URL parameter or localStorage
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlRTL = urlParams.get('text') === 'rtl';
-            const urlLTR = urlParams.get('text') === 'ltr';
-            const savedRTL = localStorage.getItem('rtl-preference') === 'true';
-            
-            // Prioritize URL parameter over localStorage
-            let isRTL;
-            if (urlRTL || urlLTR) {
-              isRTL = urlRTL;
-            } else {
-              isRTL = savedRTL;
-            }
-    
-            // Set initial state
-            rtlSwitch.checked = isRTL;
-            applyRTL(isRTL);
-    
-            // Save preference to localStorage if it came from URL
-            if (urlRTL) {
-              localStorage.setItem('rtl-preference', 'true');
-            } else if (urlParams.get('text') === 'ltr') {
-              localStorage.setItem('rtl-preference', 'false');
-            }
-    
-            rtlSwitch.addEventListener('change', (e) => {
-              const isRTL = e.target.checked;
-              // Reload page with URL parameter
-              const url = new URL(window.location.href);
-              url.searchParams.set('text', isRTL ? 'rtl' : 'ltr');
-              window.location.href = url.toString();
-            });
-          }
-    
-          // Function to apply RTL/LTR styling (enhanced for live version)
-          function applyRTL(isRTL) {
-            const html = document.documentElement;
-            const body = document.body;
-    
-            if (isRTL) {
-              html.setAttribute('dir', 'rtl');
-              html.setAttribute('lang', 'ar');
-              body.classList.add('rtl');
-              body.classList.remove('ltr');
-              
-              // Add inline RTL styles to make text direction visible
-              addRTLStyles();
-            } else {
-              html.setAttribute('dir', 'ltr');
-              html.setAttribute('lang', 'en');
-              body.classList.add('ltr');
-              body.classList.remove('rtl');
-              
-              // Remove RTL styles
-              removeRTLStyles();
-            }
-    
-            console.log(`RTL mode ${isRTL ? 'enabled' : 'disabled'}`, {
-              htmlDir: html.getAttribute('dir'),
-              bodyClasses: body.className,
-              htmlLang: html.getAttribute('lang')
-            });
-          }
-    
-          // Add RTL styles to make text direction visible
-          function addRTLStyles() {
-            // Remove existing RTL styles first
-            removeRTLStyles();
-            
-            const style = document.createElement('style');
-            style.id = 'rtl-styles';
-            style.textContent = `
-              [dir="rtl"] {
-                direction: rtl !important;
-                text-align: right !important;
-              }
-              
-              [dir="rtl"] .card,
-              [dir="rtl"] .card-body,
-              [dir="rtl"] .card-header,
-              [dir="rtl"] .card-footer,
-              [dir="rtl"] .navbar,
-              [dir="rtl"] .navbar-nav,
-              [dir="rtl"] .nav-link,
-              [dir="rtl"] .dropdown-menu,
-              [dir="rtl"] .btn,
-              [dir="rtl"] .form-control,
-              [dir="rtl"] .form-label,
-              [dir="rtl"] .table,
-              [dir="rtl"] .table th,
-              [dir="rtl"] .table td,
-              [dir="rtl"] .breadcrumb,
-              [dir="rtl"] .breadcrumb-item,
-              [dir="rtl"] .list-group,
-              [dir="rtl"] .list-group-item,
-              [dir="rtl"] .modal-content,
-              [dir="rtl"] .modal-header,
-              [dir="rtl"] .modal-body,
-              [dir="rtl"] .modal-footer,
-              [dir="rtl"] .alert,
-              [dir="rtl"] .badge,
-              [dir="rtl"] .progress,
-              [dir="rtl"] .sidebar-wrapper,
-              [dir="rtl"] .ultraviolet-action-bar,
-              [dir="rtl"] .ultraviolet-content,
-              [dir="rtl"] .page-breadcrumb,
-              [dir="rtl"] .row,
-              [dir="rtl"] .col,
-              [dir="rtl"] .col-md-6,
-              [dir="rtl"] .col-lg-4,
-              [dir="rtl"] .col-xl-4,
-              [dir="rtl"] .d-flex,
-              [dir="rtl"] .justify-content-between,
-              [dir="rtl"] .text-start,
-              [dir="rtl"] .text-end,
-              [dir="rtl"] .ms-auto,
-              [dir="rtl"] .me-auto,
-              [dir="rtl"] .float-start,
-              [dir="rtl"] .float-end,
-              [dir="rtl"] .nav-pills,
-              [dir="rtl"] .nav-link,
-              [dir="rtl"] .form-select,
-              [dir="rtl"] .form-label,
-              [dir="rtl"] .offcanvas,
-              [dir="rtl"] .offcanvas-header,
-              [dir="rtl"] .offcanvas-body {
-                direction: rtl !important;
-                text-align: right !important;
-              }
-              
-              /* Flip Bootstrap spacing classes for RTL */
-              [dir="rtl"] .ms-auto {
-                margin-left: auto !important;
-                margin-right: 0 !important;
-              }
-              
-              [dir="rtl"] .me-auto {
-                margin-left: 0 !important;
-                margin-right: auto !important;
-              }
-              
-              [dir="rtl"] .text-start {
-                text-align: right !important;
-              }
-              
-              [dir="rtl"] .text-end {
-                text-align: left !important;
-              }
-              
-              [dir="rtl"] .float-start {
-                float: right !important;
-              }
-              
-              [dir="rtl"] .float-end {
-                float: left !important;
-              }
-              
-              /* Fix main content area padding for RTL */
-              [dir="rtl"] .ultraviolet-main-wrapper,
-              [dir="rtl"] .ultraviolet-content,
-              [dir="rtl"] .page-content,
-              [dir="rtl"] .main-content,
-              [dir="rtl"] .content-wrapper,
-              [dir="rtl"] .page-wrapper {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-              }
-              
-              /* Fix sidebar positioning for RTL */
-              [dir="rtl"] .sidebar-wrapper {
-                right: 0 !important;
-                left: auto !important;
-              }
-              
-              /* Fix main content when sidebar is present */
-              [dir="rtl"] body:not(.toggled) .ultraviolet-main-wrapper,
-              [dir="rtl"] body:not(.toggled) .ultraviolet-content {
-                margin-left: 0 !important;
-                margin-right: 280px !important;
-              }
-              
-              /* Fix main content when sidebar is toggled/collapsed */
-              [dir="rtl"] body.toggled .ultraviolet-main-wrapper,
-              [dir="rtl"] body.toggled .ultraviolet-content {
-                margin-left: 0 !important;
-                margin-right: 80px !important;
-              }
-              
-              /* Fix page action bar layout for RTL - reverse the flex order */
-              [dir="rtl"] .page-actions {
-                direction: rtl !important;
-                flex-direction: row-reverse !important;
-              }
-              
-              /* Keep breadcrumb on the right side in RTL */
-              [dir="rtl"] .page-breadcrumb {
-                direction: rtl !important;
-                text-align: right !important;
-                margin-left: auto !important;
-                margin-right: 0 !important;
-              }
-              
-              /* Keep action buttons on the left side in RTL */
-              [dir="rtl"] .page-actions .dropdown,
-              [dir="rtl"] .page-actions .btn,
-              [dir="rtl"] .page-actions .form-control,
-              [dir="rtl"] .page-actions .input-group {
-                direction: rtl !important;
-                text-align: right !important;
-                margin-left: 0 !important;
-                margin-right: auto !important;
-              }
-              
-              /* Fix page actions container positioning for RTL */
-              [dir="rtl"] .ms-auto {
-                margin-left: 0 !important;
-                margin-right: auto !important;
-              }
-              
-              /* Specifically fix the page actions wrapper */
-              [dir="rtl"] .page-actions,
-              [dir="rtl"] .page-actions.ms-auto {
-                margin-left: 0 !important;
-                margin-right: auto !important;
-              }
-              
-              /* Fix dropdown positioning for RTL */
-              [dir="rtl"] .dropdown-menu {
-                right: 0 !important;
-                left: auto !important;
-                text-align: right !important;
-              }
-              
-              [dir="rtl"] .dropdown-menu-end {
-                right: auto !important;
-                left: 0 !important;
-              }
-              
-              /* Fix user dropdown in action bar for RTL */
-              [dir="rtl"] .ultraviolet-action-bar .dropdown-menu,
-              [dir="rtl"] .navbar .dropdown-menu {
-                right: auto !important;
-                left: 0 !important;
-                transform: translateX(0) !important;
-              }
-              
-              /* Fix dropdown positioning for navbar items */
-              [dir="rtl"] .navbar-nav .dropdown-menu {
-                right: auto !important;
-                left: 0 !important;
-              }
-              
-              /* Fix button groups and form controls in action bar */
-              [dir="rtl"] .btn-group,
-              [dir="rtl"] .input-group,
-              [dir="rtl"] .form-control,
-              [dir="rtl"] .btn {
-                direction: rtl !important;
-                text-align: right !important;
-              }
-            `;
-            document.head.appendChild(style);
-          }
-    
-          // Remove RTL styles
-          function removeRTLStyles() {
-            const existingStyle = document.getElementById('rtl-styles');
-            if (existingStyle) {
-              existingStyle.remove();
-            }
-          }
-        });
-    </script>
+    <script src="./js/admin-static-shim.js"></script>
 
     <!-- Material Icons Font Loading Detection -->
     <script>
