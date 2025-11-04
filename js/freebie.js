@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
               <p class="text-muted mb-4">Upgrade to UltraViolet Pro to unlock this feature and 50+ additional pages, components, and layouts.</p>
               <div class="d-flex gap-2 justify-content-center">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Maybe Later</button>
-                <a href="https://huement.com/ultraviolet-pro" class="btn btn-primary" target="_blank">
+                <a href="https://huement.com/blog/ultraviolet-bootstrap-5-dashboard" class="btn btn-primary" target="_blank">
                   <i class="material-symbols-rounded me-1" style="font-size: 16px;">shopping_cart</i>
                   View Pro Version
                 </a>
